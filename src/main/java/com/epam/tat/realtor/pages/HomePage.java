@@ -28,7 +28,7 @@ public class HomePage extends BasePage{
     private WebElement userIcon;
     @FindBy(xpath = "//*[@id='logout']")
     private WebElement logOutLink;
-    @FindBy(xpath = "(//a[contains(text(),'Saved Homes')])[1]")
+    @FindBy(xpath = "//a[contains(text(),'Saved Homes')]")
     private WebElement savedHomesLink;
     @FindBy(linkText = "(//a[contains(text(),'Saved Searches')])[1]")
     private WebElement savedSearchLink;
@@ -120,7 +120,7 @@ public class HomePage extends BasePage{
      /**
       * wait for Saved Homes button to be visible
      */
-    public HomePage waitForSaveddHomesLinkToAppear () {
+    public HomePage waitForSavedHomesLinkToAppear () {
         waitUntilElementIsVisible(savedHomesLink);
         return this;
     }

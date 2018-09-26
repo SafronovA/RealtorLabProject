@@ -4,7 +4,7 @@ import com.epam.tat.realtor.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 
 
-public class HomePageStep extends BasePageStep{
+public class  HomePageStep extends BasePageStep{
     private HomePage homePage;
 
     public HomePageStep(WebDriver driver){
@@ -48,6 +48,13 @@ public class HomePageStep extends BasePageStep{
     public SearchPageStep clickSearchButton(){
         homePage.clickSearchButton();
         return new SearchPageStep(driver);
+    }
+
+    public SavedSearchesPageStep openSavedSearches(){
+        homePage.navigateToUserIcon()
+                .waitForSavedSearchLinkToAppear()
+                .clickSavedSearchLink();
+        return new SavedSearchesPageStep(driver);
     }
 
     /**
