@@ -6,9 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class SearchPage extends BasePage {
 
@@ -18,129 +16,269 @@ public class SearchPage extends BasePage {
     }
 
     @FindBy (id = "desktop-price-div")
-    WebElement priceButton;
+    private WebElement priceButton;
     @FindBy (id = "price-input-1-desktop")
-    WebElement minPriceInput;
+    private WebElement minPriceInput;
     @FindBy (id = "price-input-2-desktop")
-    WebElement maxPriceInput;
+    private WebElement maxPriceInput;
     @FindBy (xpath = "(//*[@id='price-input-1-list'])[1]/li")
-    List<WebElement> minPriceRange;
+    private List<WebElement> minPriceRange;
     @FindBy (xpath = "(//*[@id='price-input-2-list'])[1]/li")
-    List<WebElement> maxPriceRange;
+    private List<WebElement> maxPriceRange;
     @FindBy (id = "desktop-bedroom-div")
-    WebElement bedButton;
+    private WebElement bedButton;
     @FindBy (xpath = "//*[@id='filter-section-bedroom-desktop']//label")
-    List<WebElement> bedQuantityList;
+    private List<WebElement> bedQuantityList;
     @FindBy (id = "desktop-bathroom-div")
-    WebElement bathButton;
+    private WebElement bathButton;
     @FindBy (xpath = "//*[@id='filter-section-bathroom-desktop']//label")
-    List<WebElement> bathQuantityList;
+    private List<WebElement> bathQuantityList;
     @FindBy (xpath = "//span[contains(text(),'Filters')]")
-    WebElement moreFiltersButton;
+    private WebElement moreFiltersButton;
     @FindBy (xpath = "//div[@class='filter-section filter-section-home-size']/a")
-    WebElement homeSizeButton;
+    private WebElement homeSizeButton;
     @FindBy (id="home-size-input-1")
-    WebElement minHomeSizeDropdownButton;
+    private WebElement minHomeSizeDropdownButton;
     @FindBy(xpath = "//*[@id='home-size-input-1']/option")
-    List<WebElement> minHomeSizeList;
+    private List<WebElement> minHomeSizeList;
     @FindBy (id="home-size-input-2")
-    WebElement maxHomeSizeDropdownButton;
+    private WebElement maxHomeSizeDropdownButton;
     @FindBy(xpath = "//*[@id='home-size-input-2']/option")
-    List<WebElement> maxHomeSizeList;
+    private List<WebElement> maxHomeSizeList;
     @FindBy(xpath = "//button[@class='btn-filter-submit btn btn-primary btn-block']")
-    WebElement viewListinsButton;
+    private WebElement viewListinsButton;
     @FindBy(xpath = "//span[@class='data-price']")
-    List<WebElement> searchedHousePricesList;
+    private List<WebElement> searchedHousePricesList;
     @FindBy(xpath = "//span[@class='data-value meta-beds']")
-    List<WebElement> searchedHouseBedList;
+    private List<WebElement> searchedHouseBedList;
     @FindBy(xpath = "//li[@data-label='property-meta-baths']/span")
-    List<WebElement> searchedHouseBathList;
+    private List<WebElement> searchedHouseBathList;
     @FindBy(xpath = "//li[@data-label='property-meta-sqft']/span")
-    List<WebElement> searchedHouseSqftList;
+    private List<WebElement> searchedHouseSqftList;
+    @FindBy(xpath = "//div[@class='srp-view-toggle btn-group']/a[@class='btn btn-default srp-view-map-toggle ']")
+    private WebElement viewMapButton;
+    @FindBy(xpath = "//span[@class='pinIcon pin-dot']")
+    private List<WebElement> mapMarksList;
+    @FindBy (xpath = "//span[@class='mini-card-price ellipsis mini-card-float-meta']")
+    private WebElement mapMarkPrice;
+    @FindBy (xpath = "//ul[@class='minicard-meta ellipsis']/li[@data-label='property-meta-beds']/span")
+    private WebElement mapMarkBed;
+    @FindBy (xpath = "//ul[@class='minicard-meta ellipsis']/li[@data-label='property-meta-baths']/span")
+    private WebElement mapMarkBath;
+    @FindBy (xpath = "//ul[@class='minicard-meta ellipsis']/li[@data-label='property-meta-sqft']")
+    private WebElement mapMarkSqft;
 
 
 
+    /**
+     * click Price button
+     * @return this page
+     */
     public SearchPage clickPriceButton() {
         priceButton.click();
         return this;
     }
 
+    /**
+     * click No Min input in the Price section
+     * @return this page
+     */
     public SearchPage clickMinPriceInput() {
         minPriceInput.click();
         return this;
     }
+    /**
+     * click No Max input in the Price section
+     * @return this page
+     */
     public SearchPage clickMaxPriceInput() {
         maxPriceInput.click();
         return this;
     }
+
+    /**
+     * get list of available min prices in the dropdown menu
+     * @return list of the min price constants
+     */
     public List<WebElement> getMinPriceRange() {
         RealtorUtil.sleep(1000);
         return minPriceRange;
     }
+    /**
+     * get list of available min prices in the dropdown menu
+     * @return list of the max price constants
+     */
     public List<WebElement> getMaxPriceRange() {
         waitJSExecuteScriptDocumentReady();
         return maxPriceRange;
     }
 
+    /**
+     * click Bed button
+     * @return this page
+     */
     public SearchPage clickBedButton() {
         bedButton.click();
         return this;
     }
+    /**
+     * click Bath button
+     * @return this page
+     */
     public SearchPage clickBathButton() {
         bathButton.click();
         return this;
     }
-
+    /**
+     * get list of available bed number constants
+     * @return list of the bed number constants
+     */
     public List<WebElement> getBedQuantityList() {
         return bedQuantityList;
     }
-
+    /**
+     * get list of available bath number constants
+     * @return list of the bath number constants
+     */
     public List<WebElement> getBathQuantity() {
         return bathQuantityList;
     }
 
+    /**
+     * click More Filters button
+     * @return this page
+     */
     public SearchPage clickMoreFiltersButton() {
         moreFiltersButton.click();
         return this;
     }
 
+    /**
+     * click Home Size button in the MoreFilters section
+     * @return
+     */
     public SearchPage clickHomeSizeButton() {
         homeSizeButton.click();
         return this;
     }
 
+    /**
+     * click MinSquare dropdown menu in the Home Size section
+     * @return
+     */
     public SearchPage clickMinDropdownMenu() {
         minHomeSizeDropdownButton.click();
         return this;
     }
+    /**
+     * click MaxSquare dropdown menu in the Home Size section
+     * @return
+     */
     public SearchPage clickMaxDropdownMenu() {
         maxHomeSizeDropdownButton.click();
         return this;
     }
+
+    /**
+     * get list of available min square constants in the Home Size section
+     * @return list of min square constants
+     */
     public List<WebElement> getMinHomeSizeList(){
         return minHomeSizeList;
     }
+    /**
+     * get list of available max square constants in the Home Size section
+     * @return list of max square constants
+     */
     public List<WebElement> getMaxHomeSizeList(){
         return maxHomeSizeList;
     }
 
+    /**
+     * click View()Listings button(submit search request)
+     * wait for result download
+     * @return this page
+     */
     public SearchPage clickViewListingsButton() {
         viewListinsButton.click();
         RealtorUtil.sleep(3000);
         return this;
     }
+
+    /**
+     * get price list of the searched houses
+     * @return list of prices according search result
+     */
     public List<WebElement> getSearchedHousePricesList(){
-        waitJSExecuteScriptDocumentReady();
         return searchedHousePricesList;
     }
+    /**
+     * get bed list of the searched houses
+     * @return list of beds according search result
+     */
     public List<WebElement> getSearchedHouseBedList(){
         return searchedHouseBedList;
     }
+    /**
+     * get bath list of the searched houses
+     * @return list of bathes according search result
+     */
     public List<WebElement> getSearchedHouseBathList(){
         return searchedHouseBathList;
     }
+    /**
+     * get house square feet size list of the searched houses
+     * @return list of house square feet size according search result
+     */
     public List<WebElement> getSearchedHouseSqftList(){
         return searchedHouseSqftList;
     }
+
+    /**
+     * click View Map button
+     * @return this page
+     */
+    public SearchPage clickViewMapButton(){
+        viewMapButton.click();
+        return this;
+    }
+
+    /**
+     * get map marks of houses according search result on the iframe map
+     * @return list of map marks
+     */
+    public List<WebElement> getMapMarks(){
+        return mapMarksList;
+    }
+
+    /**
+     * get price from map mark photo
+     * @return map mark price
+     */
+    public String getMapMarkPrice(){
+        return mapMarkPrice.getText();
+    }
+    /**
+     * get beds number  from map mark photo
+     * @return map mark beds number
+     */
+    public String getMapMarkBed(){
+        return mapMarkBed.getText();
+    }
+    /**
+     * get baths number  from map mark photo
+     * @return map mark baths number
+     */
+    public String getMapMarkBath(){
+        return mapMarkBath.getText();
+    }
+    /**
+     * get square feet house size from map mark photo
+     * @return map mark square feet size
+     */
+    public String getMapMarkSqft(){
+        return mapMarkSqft.getText();
+    }
+
 
 }

@@ -22,7 +22,7 @@ public class BaseTest {
     void initResources(){
         driver = DriverFactory.FIREFOXDRIVER.getDriver();
         driver.manage().timeouts().implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
-        homePageStep = new HomePageStep(driver);
+
     }
 
     /**
@@ -32,14 +32,13 @@ public class BaseTest {
 
     @BeforeTest
     void initPage(){
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
         driver.navigate().to(ConfigProperties.getTestProperty("url"));
+        driver.manage().window().maximize();
+        homePageStep = new HomePageStep(driver);
     }
 
     /**
-     * maximize browser window
-     * open the homepage URL in browser
+     * close browser
      */
     @AfterSuite
     void closeResources(){

@@ -176,4 +176,13 @@ public class HomePage extends BasePage{
         savedHomesLink.click();
         return new SavedHomesPage(driver);
     }
+
+    /**
+     * wait for Search input to be visible
+     * @return this page
+     */
+    public HomePage waitForSearchInput(){
+        waitUntilElementIsVisible(searchInput);
+        return this;
+    }
 }

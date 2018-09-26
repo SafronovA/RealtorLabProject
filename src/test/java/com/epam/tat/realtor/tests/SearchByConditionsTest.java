@@ -5,9 +5,10 @@ import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.steps.SearchPageStep;
 import com.epam.tat.realtor.util.RealtorUtil;
 import org.testng.annotations.Test;
+
 import java.util.List;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertTrue;
 
 public class SearchByConditionsTest extends BaseTest {
     private final String CITY_NAME = "San Francisco, CA";
@@ -26,10 +27,9 @@ public class SearchByConditionsTest extends BaseTest {
         List<House> searchResult = searchPageStep
                 .createSearchRequest(MIN_PRICE_VALUE,MAX_PRICE_VALUE,BED_NUMBER,BATH_NUMBER,MIN_SQFT_VALUE,MAX_SQFT_VALUE)
                 .createHomesList();
-        searchPageStep.printList(searchResult);
         assertTrue(searchPageStep.checkSearchResult(searchResult,
-                                                    RealtorUtil.parse(MIN_PRICE_VALUE,1000),
-                                                    RealtorUtil.parse(MAX_PRICE_VALUE,100000),
+                                                    RealtorUtil.parsePrice(MIN_PRICE_VALUE),
+                                                    RealtorUtil.parsePrice(MAX_PRICE_VALUE),
                                                     RealtorUtil.parse(BED_NUMBER),
                                                     RealtorUtil.parse(BATH_NUMBER),
                                                     RealtorUtil.parse(MIN_SQFT_VALUE),

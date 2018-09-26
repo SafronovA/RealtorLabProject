@@ -36,7 +36,8 @@ public class HomePageStep extends BasePageStep{
      * @return search result page
      */
     public HomePageStep enterCityName(String city){
-        homePage.clearInputField()
+        homePage.waitForSearchInput()
+                .clearInputField()
                 .enterCityInMainSearchInput(city);
         return this;
     }
