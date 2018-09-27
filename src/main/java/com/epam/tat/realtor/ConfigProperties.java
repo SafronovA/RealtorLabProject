@@ -27,6 +27,11 @@ import java.util.Properties;
          }
      }
 
+     /**
+      * get property from properties file by key
+      * @param key
+      * @return
+      */
      public static String getTestProperty(String key) {
          return PROPERTIES.getProperty(key);
      }

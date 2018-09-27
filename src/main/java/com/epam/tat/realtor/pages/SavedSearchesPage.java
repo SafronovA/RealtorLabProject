@@ -3,6 +3,7 @@ package com.epam.tat.realtor.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,6 +28,10 @@ public class SavedSearchesPage extends BasePage {
     private WebElement cardTextCity;
     @FindBy(xpath = "//*[@id='__next']//div[2]//div[4]/h4/div[2]")
     private WebElement cardTextPrice;
+    @FindBy(xpath = "//*[@id='header-navbar']//ul//span")
+    private WebElement userIcon;
+    @FindBy(linkText = "Sign Out")
+    private WebElement logOutLink;
 
     /**
      * get saved searches list
@@ -38,7 +43,7 @@ public class SavedSearchesPage extends BasePage {
 
     /**
      * click delete button
-     * @return
+     * @return this page
      */
     public SavedSearchesPage clickDeleteButton(){
         deleteButton.click();
@@ -69,6 +74,25 @@ public class SavedSearchesPage extends BasePage {
      */
     public String getPrice(){
         return cardTextPrice.getText();
+    }
+
+    /**
+     * navigate to user icon
+     * @return this page
+     */
+    public SavedSearchesPage navigateToUserIcon(){
+        new Actions(driver).moveToElement(userIcon).perform();
+        return this;
+    }
+
+    /**
+     * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
+     * @return new HomePage
+     */
+    public HomePage clickLogOutLink (){
+        waitUntilElementIsClickable(logOutLink);
+        logOutLink.click();
+        return new HomePage(driver);
     }
 
 }

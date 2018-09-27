@@ -10,7 +10,10 @@ public class BasePageStep {
         this.driver=driver;
     }
 
-
+    /**
+     * go to start page
+     * @return HomePageStep
+     */
     public HomePageStep moveToHomePage(){
         driver.navigate().to(ConfigProperties.getTestProperty("url"));
         return new HomePageStep(driver);

@@ -26,8 +26,8 @@ public class SearchPage extends BasePage {
     private WebElement saveSearchButton;
     @FindBy(xpath = "//*[@id='my-account-url']/following-sibling::span[1]")
     private WebElement userIcon;
-    @FindBy(xpath = "//*[@id='my_search_div']/div/a")
-    private WebElement savedSearchLink;
+    @FindBy(xpath = "//*[@id='facet-followbtn']/span")
+    private WebElement saveButtonText;
 
     /**
      * get list of min prices
@@ -64,28 +64,13 @@ public class SearchPage extends BasePage {
     }
 
     /**
-     * navigate to user icon
-     * @return this page
+     * click on user icon
+     * @return new SavedHomesPage
      */
-    public SearchPage navigateToUserIcon(){
-        try {
-            TimeUnit.SECONDS.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        new Actions(driver).moveToElement(userIcon).perform();
-        return this;
+    public SavedHomesPage clickUserIcon(){
+        waitUntilElementIsClickable(userIcon);
+        userIcon.click();
+        return new SavedHomesPage(driver);
     }
-
-    /**
-     * click saved search link to navigate to page with saved searches
-     * @return Saved Searches Page (navigate to new page)
-     */
-    public SavedSearchesPage clickSavedSearchLink(){
-        waitUntilElementIsClickable(savedSearchLink);
-        savedSearchLink.click();
-        return new SavedSearchesPage(driver);
-    }
-
 
 }

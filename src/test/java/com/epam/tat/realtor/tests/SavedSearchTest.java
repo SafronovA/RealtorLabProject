@@ -13,14 +13,22 @@ public class SavedSearchTest extends BaseTest{
     private static final String MAX_PRICE = "$600k";
     private SavedSearchesPageStep savedSearchesPageStep;
 
+    /**
+     * login with valid credentials
+     * go to saved searches page and delete all saved searches
+     */
     @BeforeTest
     public void logIn(){
         homePageStep.userLogIn()
-                .openSavedSearches()
+                .clickUserIcon()
+                .clickSavedSearchesLink()
                 .clearAllOldSavedSearches()
                 .moveToHomePage();
     }
 
+    /**
+     * test that search saved with selected parameters
+     */
     @Test
     public void savedSearch(){
         homePageStep.enterCityName(CITY_NAME)
@@ -29,15 +37,16 @@ public class SavedSearchTest extends BaseTest{
                 .clickSaveSearchButton()
                 .openSavedSearches();
         savedSearchesPageStep = new SavedSearchesPageStep(driver);
-//        Assert.assertTrue(savedSearchesPageStep.checkSavedSearchDescriptionContainsInputText(CITY_NAME, MIN_PRICE, MAX_PRICE),
-//                "Description does not contains needed parameters");
+        Assert.assertTrue(savedSearchesPageStep.checkSavedSearchDescriptionContainsInputText(CITY_NAME, MIN_PRICE, MAX_PRICE),
+                "Description does not contains needed parameters");
     }
 
+    /**
+     * delete created search and log out
+     */
     @AfterTest
     public void deleteCreatedSaveSearch(){
-        savedSearchesPageStep.clearAllOldSavedSearches()
-                .moveToHomePage();
-        homePageStep.logOut();
+        savedSearchesPageStep.clearAllOldSavedSearches().logOut();
     }
 
 }

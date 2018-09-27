@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class SavedSearchesPageStep extends BasePageStep {
 
+    private static final String DASH = "-";
     private SavedSearchesPage savedSearchesPage;
 
     public SavedSearchesPageStep(WebDriver driver) {
@@ -15,7 +16,7 @@ public class SavedSearchesPageStep extends BasePageStep {
 
     /**
      * delete saved searches
-     * @return
+     * @return this page
      */
     public SavedSearchesPageStep clearAllOldSavedSearches(){
         if(!savedSearchesPage.getSavedSearchesList().isEmpty()) {
@@ -32,18 +33,34 @@ public class SavedSearchesPageStep extends BasePageStep {
      * @param city entered city
      * @param minPrice selected min price
      * @param maxPrice selected max price
-     * @return 
+     * @return true if description contains input parameters, false if if does not
      */
     public boolean checkSavedSearchDescriptionContainsInputText(String city, String minPrice, String maxPrice){
         int min = Parser.parse(minPrice);
         int max = Parser.parse(maxPrice);
         boolean containingInputTextInDescription = savedSearchesPage.getCity().contains(city)
-                && checkSavedSearchDescriptionContainsPrice(min, max);
+                && doesSavedSearchDescriptionContainPrice(min, max);
         return containingInputTextInDescription;
     }
 
-    private boolean checkSavedSearchDescriptionContainsPrice(int minPrice, int maxPrice){
-        String[] minMaxPrices = savedSearchesPage.getPrice().split("-");
+    /**
+     * navigate to user icon
+     * click sign out button
+     */
+    public HomePageStep logOut(){
+        savedSearchesPage.navigateToUserIcon()
+                .clickLogOutLink();
+        return new HomePageStep(driver);
+    }
+
+    /**
+     * check that saved search description min and max price corresponds to entered min and max price
+     * @param minPrice
+     * @param maxPrice
+     * @return true if description contains input prices, false if if does not
+     */
+    private boolean doesSavedSearchDescriptionContainPrice(int minPrice, int maxPrice){
+        String[] minMaxPrices = savedSearchesPage.getPrice().split(DASH);
         return minPrice == Parser.parse(minMaxPrices[0]) && maxPrice == Parser.parse(minMaxPrices[1]);
     }
 

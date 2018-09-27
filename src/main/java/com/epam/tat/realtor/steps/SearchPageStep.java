@@ -12,6 +12,12 @@ public class SearchPageStep extends BasePageStep{
         searchPage = new SearchPage(driver);
     }
 
+    /**
+     * set min and max price to drop-down menu
+     * @param minPrice will be set to drop-down menu
+     * @param maxPrice will be set to drop-down menu
+     * @return SearchPageStep
+     */
     public SearchPageStep selectMinMaxPrices(String minPrice, String maxPrice){
         searchPage.clickPriceButton();
         searchPage.getMinPriceRange().stream().filter(WebElement -> WebElement.getText().equals(minPrice)).findFirst().get().click();
@@ -19,14 +25,22 @@ public class SearchPageStep extends BasePageStep{
         return this;
     }
 
+    /**
+     * click save button to save search
+     * @return SearchPageStep
+     */
     public SearchPageStep clickSaveSearchButton(){
         searchPage.clickSaveSearchButton();
         return this;
     }
 
+    /**
+     * open saved searches page
+     * @return SavedSearchesPageStep
+     */
     public SavedSearchesPageStep openSavedSearches(){
-        searchPage.navigateToUserIcon()
-                .clickSavedSearchLink();
+        searchPage.clickUserIcon()
+                .clickSavedSearches();
         return new SavedSearchesPageStep(driver);
     }
 

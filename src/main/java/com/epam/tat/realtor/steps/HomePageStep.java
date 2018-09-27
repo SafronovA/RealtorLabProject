@@ -21,7 +21,6 @@ public class  HomePageStep extends BasePageStep{
      * @return HomePageStep
      */
     public HomePageStep userLogIn(){
-
         homePage.waitForSignInLinkToAppear()
                 .clickSignInButton()
                 .enterEmail()
@@ -43,17 +42,11 @@ public class  HomePageStep extends BasePageStep{
 
     /**
      * click search button
-     * @return
+     * @return SearchPageStep
      */
     public SearchPageStep clickSearchButton(){
         homePage.clickSearchButton();
         return new SearchPageStep(driver);
-    }
-
-    public SavedSearchesPageStep openSavedSearches(){
-        homePage.navigateToUserIcon()
-                .clickSavedSearchLink();
-        return new SavedSearchesPageStep(driver);
     }
 
     /**
@@ -61,11 +54,20 @@ public class  HomePageStep extends BasePageStep{
      * click sign out button
      */
     public HomePageStep logOut(){
-        homePage.clickBuyButton()
+        homePage
                 .navigateToUserIcon()
                 .waitForSignOutLinkToAppear()
                 .clickLogOutLink();
         return this;
+    }
+
+    /**
+     * click on user icon
+     * @return new SavedHomesPageStep
+     */
+    public SavedHomesPageStep clickUserIcon(){
+        homePage.clickUserIcon();
+        return new SavedHomesPageStep(driver);
     }
 
 
