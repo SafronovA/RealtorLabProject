@@ -18,7 +18,11 @@ public class SearchByConditionsTest extends BaseTest {
     private final String BATH_NUMBER = "2+";
     private final String MIN_SQFT_VALUE = "1,750 sqft";
     private final String MAX_SQFT_VALUE = "2,000 sqft";
-
+    /**
+     * enter city name in the main search input, submit search request
+     * create search request by: min/max house price, number of beds, bathes, min/max square feet house size
+     * check that every house in the list of search result match search parameters
+     */
     @Test
     public void searchByCondition(){
         SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)
