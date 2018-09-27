@@ -26,8 +26,6 @@ public class SearchPage extends BasePage {
     private WebElement saveSearchButton;
     @FindBy(xpath = "//*[@id='my-account-url']/following-sibling::span[1]")
     private WebElement userIcon;
-    @FindBy(xpath = "//*[@id='facet-followbtn']/span")
-    private WebElement saveButtonText;
 
     /**
      * get list of min prices
@@ -59,6 +57,7 @@ public class SearchPage extends BasePage {
      * @return
      */
     public SearchPage clickSaveSearchButton(){
+        waitUntilElementIsClickable(saveSearchButton);
         saveSearchButton.click();
         return this;
     }

@@ -32,6 +32,8 @@ public class SavedSearchesPage extends BasePage {
     private WebElement userIcon;
     @FindBy(linkText = "Sign Out")
     private WebElement logOutLink;
+    @FindBy(xpath = "//*[@id='header-rdc-logo']/svg")
+    private WebElement logo;
 
     /**
      * get saved searches list
