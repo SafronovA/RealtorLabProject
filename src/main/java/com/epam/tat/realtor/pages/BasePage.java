@@ -4,13 +4,13 @@ import com.epam.tat.realtor.ConfigProperties;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait driverWait;
+    private static final String INNER_HTML = "innerHTML";
 
     public BasePage(WebDriver driver){
         this.driver = driver;
@@ -30,6 +30,15 @@ public class BasePage {
      */
     public void waitUntilElementIsClickable(WebElement webElement){
         driverWait.until(ExpectedConditions.elementToBeClickable(webElement));
+    }
+
+    /**
+     * waiting for a specific attribute value in the Web element
+     * @param webElement checked webElement
+     * @param value      expected value
+     */
+    public void waitUntilAttributeInnerHTMLToBe(WebElement webElement, String value ) {
+        driverWait.until(ExpectedConditions.attributeToBe(webElement, INNER_HTML, value));
     }
 
 }

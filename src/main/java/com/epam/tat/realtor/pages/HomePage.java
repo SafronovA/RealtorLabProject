@@ -16,7 +16,7 @@ public class HomePage extends BasePage{
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(xpath = "//span[text()='Log In']")
+    @FindBy(linkText = "Log In")
     private WebElement signInButton;
     @FindBy(id = "email_address")
     private WebElement emailInput;
@@ -32,7 +32,7 @@ public class HomePage extends BasePage{
     private WebElement savedHomesLink;
     @FindBy(xpath = "//*[@id='my_search_div']/div/a")
     private WebElement savedSearchLink;
-    @FindBy(name = "q")
+    @FindBy(xpath = "//*[@id='searchBox']")
     private WebElement searchInput;
     @FindBy(xpath = "(//button[@class='btn btn-primary js-searchButton '])[1]")
     private WebElement searchButton;

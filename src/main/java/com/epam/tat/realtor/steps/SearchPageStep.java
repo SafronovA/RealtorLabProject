@@ -39,7 +39,8 @@ public class SearchPageStep extends BasePageStep{
      * @return SavedSearchesPageStep
      */
     public SavedSearchesPageStep openSavedSearches(){
-        searchPage.clickUserIcon()
+        searchPage.waitUntilSaveButtonChangeState()
+                .clickUserIcon()
                 .clickSavedSearches();
         return new SavedSearchesPageStep(driver);
     }

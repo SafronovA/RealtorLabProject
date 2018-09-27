@@ -20,7 +20,7 @@ public class BaseTest {
      */
     @BeforeSuite
     void initResources(){
-        driver = DriverFactory.FIREFOXDRIVER.getDriver();
+        driver = DriverFactory.CHROMEDRIVER.getDriver();
         driver.manage().timeouts().implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
         homePageStep = new HomePageStep(driver);
     }
@@ -33,6 +33,7 @@ public class BaseTest {
     @BeforeTest
     void initPage(){
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.navigate().to(ConfigProperties.getTestProperty("url"));
     }
