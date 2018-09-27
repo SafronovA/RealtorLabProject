@@ -70,6 +70,7 @@ public class SearchPageStep extends BasePageStep{
      * @return list of searched houses
      */
     public List<House> createHomesList(){
+        searchPage.waitForHomeSizeFilter();
         List<House> homesList = new ArrayList<>();
         for (int i = 0; i < searchPage.getSearchedHousePricesList().size() ; i++) {
             homesList.add(new House( RealtorUtil.parse(searchPage.getSearchedHouseBedList().get(i).getText()),
@@ -163,7 +164,12 @@ public class SearchPageStep extends BasePageStep{
      */
     public boolean checkMapMarks(int minPrice, int maxPrice, int bedNumber, int bathNumber, int minSqft, int maxSqft ){
         searchPage.clickViewMapButton();
-        return searchPage.getMapMarks().stream().allMatch(x->{RealtorUtil.clickByJEx(x,driver);;
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return searchPage.getMapMarks().stream().allMatch(x->{ RealtorUtil.clickByJEx(x,driver);
             return (minPrice<=RealtorUtil.parse(searchPage.getMapMarkPrice()))
                     && (maxPrice>=RealtorUtil.parse(searchPage.getMapMarkPrice()))
                     && (bedNumber<=RealtorUtil.parse(searchPage.getMapMarkBed()))

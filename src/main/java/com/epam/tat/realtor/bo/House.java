@@ -13,18 +13,31 @@ public class House {
         this.square = square;
     }
 
+    /**
+     * get bed number in searched house
+     * @return bed number
+     */
     public int getBedNumber() {
         return bedNumber;
     }
-
+    /**
+     * get bath number in searched house
+     * @return bath number
+     */
     public int getBathNumber() {
         return bathNumber;
     }
-
+    /**
+     * get price of searched house
+     * @return price value
+     */
     public int getPrice() {
         return price;
     }
-
+    /**
+     * get square of searched house
+     * @return square value
+     */
     public int getSquare() {
         return square;
     }

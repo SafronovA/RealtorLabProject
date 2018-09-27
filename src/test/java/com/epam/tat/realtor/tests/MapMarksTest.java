@@ -1,23 +1,19 @@
 package com.epam.tat.realtor.tests;
 
-import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.steps.SearchPageStep;
 import com.epam.tat.realtor.util.RealtorUtil;
 import org.testng.annotations.Test;
 
-import java.util.List;
-
 import static org.testng.Assert.assertTrue;
 
 public class MapMarksTest extends BaseTest {
-    private final String CITY_NAME = "San Francisco, CA";
-    private final String MIN_PRICE_VALUE = "$350k";
-    private final String MAX_PRICE_VALUE = "$1.2M";
+    private final String CITY_NAME = "Berkeley, CA";
+    private final String MIN_PRICE_VALUE = "$250k";
+    private final String MAX_PRICE_VALUE = "$1.4M";
     private final String BED_NUMBER = "2+";
     private final String BATH_NUMBER = "2+";
-    private final String MIN_SQFT_VALUE = "1,500 sqft";
+    private final String MIN_SQFT_VALUE = "1,750 sqft";
     private final String MAX_SQFT_VALUE = "2,000 sqft";
-
 
     @Test
     public void checkMapMarks(){

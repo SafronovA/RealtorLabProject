@@ -7,7 +7,11 @@ import org.openqa.selenium.WebElement;
 import java.util.concurrent.TimeUnit;
 
 public class RealtorUtil {
-
+    /**
+     * parse String value removing any non digit character
+     * @param str
+     * @return
+     */
     public static int parse(String str){
         return Integer.valueOf(str.replaceAll("[^\\d]","").trim());
     }
@@ -17,13 +21,7 @@ public class RealtorUtil {
             else if (price<100) {return price*100000;}
             else {return price*1000;}
     }
-    public static void sleep(int milliseconds){
-        try {
-            TimeUnit.MILLISECONDS.sleep((long)milliseconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+
     public static void clickByJEx (WebElement webElement, WebDriver webDriver){
         JavascriptExecutor executor = (JavascriptExecutor) webDriver;
         executor.executeScript("arguments[0].click();", webElement);

@@ -1,6 +1,5 @@
 package com.epam.tat.realtor.pages;
 
-import com.epam.tat.realtor.util.RealtorUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,7 +34,7 @@ public class SearchPage extends BasePage {
     private List<WebElement> bathQuantityList;
     @FindBy (xpath = "//span[contains(text(),'Filters')]")
     private WebElement moreFiltersButton;
-    @FindBy (xpath = "//div[@class='filter-section filter-section-home-size']/a")
+    @FindBy (xpath = "//div[contains(@class,'filter-section filter-section-home-size')]/a")
     private WebElement homeSizeButton;
     @FindBy (id="home-size-input-1")
     private WebElement minHomeSizeDropdownButton;
@@ -57,9 +56,10 @@ public class SearchPage extends BasePage {
     private List<WebElement> searchedHouseSqftList;
     @FindBy(xpath = "//div[@class='srp-view-toggle btn-group']/a[@class='btn btn-default srp-view-map-toggle ']")
     private WebElement viewMapButton;
-    @FindBy(xpath = "//span[@class='pinIcon pin-dot']")
+    //@FindBy(xpath = "//span[@class='pinIcon pin-dot']")
+    @FindBy(xpath = "//div[contains(@class,'map-property-pin for_sale')]")
     private List<WebElement> mapMarksList;
-    @FindBy (xpath = "//span[@class='mini-card-price ellipsis mini-card-float-meta']")
+    @FindBy (xpath = "//div[@class='minicard-price']/span")
     private WebElement mapMarkPrice;
     @FindBy (xpath = "//ul[@class='minicard-meta ellipsis']/li[@data-label='property-meta-beds']/span")
     private WebElement mapMarkBed;
@@ -67,14 +67,15 @@ public class SearchPage extends BasePage {
     private WebElement mapMarkBath;
     @FindBy (xpath = "//ul[@class='minicard-meta ellipsis']/li[@data-label='property-meta-sqft']")
     private WebElement mapMarkSqft;
-
-
+    @FindBy (xpath = "//li[@id='js-home-size-filter-pill-xx']/label[contains(text(),'2,000')]")
+    private WebElement homeSizeFilterIcon;
 
     /**
      * click Price button
      * @return this page
      */
     public SearchPage clickPriceButton() {
+        waitUntilElementIsClickable(priceButton);
         priceButton.click();
         return this;
     }
@@ -84,6 +85,7 @@ public class SearchPage extends BasePage {
      * @return this page
      */
     public SearchPage clickMinPriceInput() {
+        waitUntilElementIsClickable(minPriceInput);
         minPriceInput.click();
         return this;
     }
@@ -92,6 +94,7 @@ public class SearchPage extends BasePage {
      * @return this page
      */
     public SearchPage clickMaxPriceInput() {
+        waitUntilElementIsClickable(maxPriceInput);
         maxPriceInput.click();
         return this;
     }
@@ -101,7 +104,6 @@ public class SearchPage extends BasePage {
      * @return list of the min price constants
      */
     public List<WebElement> getMinPriceRange() {
-        RealtorUtil.sleep(1000);
         return minPriceRange;
     }
     /**
@@ -109,7 +111,6 @@ public class SearchPage extends BasePage {
      * @return list of the max price constants
      */
     public List<WebElement> getMaxPriceRange() {
-        waitJSExecuteScriptDocumentReady();
         return maxPriceRange;
     }
 
@@ -201,7 +202,6 @@ public class SearchPage extends BasePage {
      */
     public SearchPage clickViewListingsButton() {
         viewListinsButton.click();
-        RealtorUtil.sleep(3000);
         return this;
     }
 
@@ -280,5 +280,15 @@ public class SearchPage extends BasePage {
         return mapMarkSqft.getText();
     }
 
+    /**
+     * wait for home size filter to appear in order to download search results
+     * @return this page
+     */
+    public SearchPage waitForHomeSizeFilter(){
+        waitUntilElementIsVisible(homeSizeFilterIcon);
+        return this;
+    }
 
 }
+
+

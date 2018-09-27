@@ -32,7 +32,7 @@ public class HomePage extends BasePage{
     private WebElement savedHomesLink;
     @FindBy(linkText = "(//a[contains(text(),'Saved Searches')])[1]")
     private WebElement savedSearchLink;
-    @FindBy(name = "q")
+    @FindBy(xpath = "//*[@id='searchBox']")
     private WebElement searchInput;
     @FindBy(xpath = "(//button[@class='btn btn-primary js-searchButton '])[1]")
     private WebElement searchButton;
@@ -78,11 +78,6 @@ public class HomePage extends BasePage{
      * @return this page
      */
     public HomePage navigateToUserIcon(){
-        try {
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         new Actions(driver).moveToElement(userIcon).perform();
         return this;
     }
