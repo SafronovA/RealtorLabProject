@@ -32,13 +32,4 @@ public class BasePage {
         driverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
-    /**
-     * waiting for a specific attribute value in the Web element
-     * @param webElement checked webElement
-     * @param value      expected value
-     */
-    public void waitUntilAttributeInnerHTMLToBe(WebElement webElement, String value ) {
-        driverWait.until(ExpectedConditions.attributeToBe(webElement, INNER_HTML, value));
-    }
-
 }

@@ -70,7 +70,7 @@ public class SearchPage extends BasePage {
     }
 
     public SearchPage waitUntilSaveButtonChangeState(){
-        waitUntilAttributeInnerHTMLToBe(saveButtonText, "Saved");
+        waitUntilElementIsVisible(saveButtonText);
         return this;
     }
 
