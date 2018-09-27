@@ -19,4 +19,15 @@ public class SearchPageStep extends BasePageStep{
         return this;
     }
 
+    public SearchPageStep clickSaveSearchButton(){
+        searchPage.clickSaveSearchButton();
+        return this;
+    }
+
+    public SavedSearchesPageStep openSavedSearches(){
+        searchPage.navigateToUserIcon()
+                .clickSavedSearchLink();
+        return new SavedSearchesPageStep(driver);
+    }
+
 }

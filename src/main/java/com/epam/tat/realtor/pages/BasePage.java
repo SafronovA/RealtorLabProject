@@ -30,6 +30,7 @@ public class BasePage {
     public void waitUntilElementIsClickable(WebElement webElement){
         driverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
+
     public void waitJSExecuteScriptDocumentReady(){
         new WebDriverWait(driver, Integer.valueOf(ConfigProperties.getTestProperty("webDriverWaitTime"))).until(
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));

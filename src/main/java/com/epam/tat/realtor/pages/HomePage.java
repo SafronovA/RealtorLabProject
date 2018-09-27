@@ -30,13 +30,14 @@ public class HomePage extends BasePage{
     private WebElement logOutLink;
     @FindBy(xpath = "//a[contains(text(),'Saved Homes')]")
     private WebElement savedHomesLink;
-    @FindBy(linkText = "(//a[contains(text(),'Saved Searches')])[1]")
+    @FindBy(xpath = "//*[@id='my_search_div']/div/a")
     private WebElement savedSearchLink;
     @FindBy(name = "q")
     private WebElement searchInput;
     @FindBy(xpath = "(//button[@class='btn btn-primary js-searchButton '])[1]")
     private WebElement searchButton;
-
+    @FindBy(xpath = "//*[@id=\"property-status-wrapper\"]/div[3]/label")
+    private WebElement rentButton;
 
     /**
      * click SignIn button
@@ -79,14 +80,13 @@ public class HomePage extends BasePage{
      */
     public HomePage navigateToUserIcon(){
         try {
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(10);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         new Actions(driver).moveToElement(userIcon).perform();
         return this;
     }
-
 
     /**
      * clear city entered by default
@@ -126,13 +126,6 @@ public class HomePage extends BasePage{
     }
 
     /**
-     * wait for Saved Homes button to be visible
-     */
-    public HomePage waitForSavedSearchLinkToAppear () {
-        waitUntilElementIsVisible(savedSearchLink);
-        return this;
-    }
-    /**
      * wait for SignOut button to be visible
      */
     public HomePage waitForSignOutLinkToAppear () {
@@ -153,7 +146,7 @@ public class HomePage extends BasePage{
      * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
      * @return new HomePage
      */
-    public HomePage clickLogOutLink () {
+    public HomePage clickLogOutLink (){
         logOutLink.click();
         return new HomePage(driver);
     }
@@ -167,6 +160,7 @@ public class HomePage extends BasePage{
         savedSearchLink.click();
         return new SavedSearchesPage(driver);
     }
+
     /**
      * click saved homes link to navigate to page with saved homes
      * @return Saved Homes Page (navigate to new page)
@@ -176,4 +170,10 @@ public class HomePage extends BasePage{
         savedHomesLink.click();
         return new SavedHomesPage(driver);
     }
+
+    public HomePage clickBuyButton(){
+        rentButton.click(); //new Actions(driver).click(buyButton).build().perform();
+        return this;
+    }
+
 }

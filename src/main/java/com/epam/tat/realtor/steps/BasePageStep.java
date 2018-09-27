@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.steps;
 
+import com.epam.tat.realtor.ConfigProperties;
 import org.openqa.selenium.WebDriver;
 
 public class BasePageStep {
@@ -8,4 +9,11 @@ public class BasePageStep {
     public BasePageStep(WebDriver driver){
         this.driver=driver;
     }
+
+
+    public HomePageStep moveToHomePage(){
+        driver.navigate().to(ConfigProperties.getTestProperty("url"));
+        return new HomePageStep(driver);
+    }
+
 }

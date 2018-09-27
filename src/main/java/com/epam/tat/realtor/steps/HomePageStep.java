@@ -52,7 +52,6 @@ public class  HomePageStep extends BasePageStep{
 
     public SavedSearchesPageStep openSavedSearches(){
         homePage.navigateToUserIcon()
-                .waitForSavedSearchLinkToAppear()
                 .clickSavedSearchLink();
         return new SavedSearchesPageStep(driver);
     }
@@ -62,7 +61,8 @@ public class  HomePageStep extends BasePageStep{
      * click sign out button
      */
     public HomePageStep logOut(){
-        homePage.navigateToUserIcon()
+        homePage.clickBuyButton()
+                .navigateToUserIcon()
                 .waitForSignOutLinkToAppear()
                 .clickLogOutLink();
         return this;
