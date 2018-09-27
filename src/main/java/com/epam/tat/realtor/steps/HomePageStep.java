@@ -51,15 +51,29 @@ public class HomePageStep extends BasePageStep{
     }
 
     /**
+     * click 'Just Sold ' button
      * navigate to user icon
+     * waiting for the 'Sign Out' link to appear
      * click sign out button
      */
     public HomePageStep logOut(){
-        homePage.navigateToUserIcon()
+        homePage.clickJustSoldButton()
+                .navigateToUserIcon()
                 .waitForSignOutLinkToAppear()
                 .clickLogOutLink();
         return this;
     }
 
+    /**
+     * perform the operation to go to the 'Saved Homes' section
+     * click 'Just Sold' button (because often the page header disappears and this operation allows to return it)
+     * click 'User Icon'
+     * @return new SavedHomesPageStep
+     */
+    public SavedHomesPageStep goToSavedHomesSection(){
+        homePage.clickJustSoldButton()
+                .clickUserIcon();
+        return new SavedHomesPageStep(driver);
+    }
 
 }

@@ -1,12 +1,17 @@
 package com.epam.tat.realtor.pages;
 
 import com.epam.tat.realtor.ConfigProperties;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 public class HomePage extends BasePage{
@@ -16,7 +21,7 @@ public class HomePage extends BasePage{
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(xpath = "//span[text()='Log In']")
+    @FindBy(xpath = "//*[text()='Log In']")
     private WebElement signInButton;
     @FindBy(id = "email_address")
     private WebElement emailInput;
@@ -24,7 +29,7 @@ public class HomePage extends BasePage{
     private WebElement passwordInput;
     @FindBy(id = "global_login_btn")
     private WebElement logInSubmitButton;
-    @FindBy(xpath = "//*[@id='my-account-url']/following-sibling::span[1]")
+    @FindBy(xpath = "(//*[@id=\"header-navbar\"]//li)[1]")
     private WebElement userIcon;
     @FindBy(xpath = "//*[@id='logout']")
     private WebElement logOutLink;
@@ -36,7 +41,8 @@ public class HomePage extends BasePage{
     private WebElement searchInput;
     @FindBy(xpath = "(//button[@class='btn btn-primary js-searchButton '])[1]")
     private WebElement searchButton;
-
+    @FindBy(xpath = "//*[text()='Just Sold']")
+    private WebElement justSoldButton;
 
     /**
      * click SignIn button
@@ -70,6 +76,7 @@ public class HomePage extends BasePage{
      */
     public HomePage clickLoginSubmitButton(){
         logInSubmitButton.click();
+        waitUntilElementIsVisible(userIcon);
         return this;
     }
 
@@ -78,15 +85,9 @@ public class HomePage extends BasePage{
      * @return this page
      */
     public HomePage navigateToUserIcon(){
-        try {
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         new Actions(driver).moveToElement(userIcon).perform();
         return this;
     }
-
 
     /**
      * clear city entered by default
@@ -119,6 +120,7 @@ public class HomePage extends BasePage{
 
      /**
       * wait for Saved Homes button to be visible
+      * @return this page
      */
     public HomePage waitForSaveddHomesLinkToAppear () {
         waitUntilElementIsVisible(savedHomesLink);
@@ -127,6 +129,7 @@ public class HomePage extends BasePage{
 
     /**
      * wait for Saved Homes button to be visible
+     * @return this page
      */
     public HomePage waitForSavedSearchLinkToAppear () {
         waitUntilElementIsVisible(savedSearchLink);
@@ -134,6 +137,7 @@ public class HomePage extends BasePage{
     }
     /**
      * wait for SignOut button to be visible
+     * @return this page
      */
     public HomePage waitForSignOutLinkToAppear () {
         waitUntilElementIsVisible(logOutLink);
@@ -142,7 +146,7 @@ public class HomePage extends BasePage{
 
     /**
      * wait for SignIn button to be visible
-     * @return
+     * @return this page
      */
     public HomePage waitForSignInLinkToAppear () {
         waitUntilElementIsVisible(signInButton);
@@ -167,13 +171,26 @@ public class HomePage extends BasePage{
         savedSearchLink.click();
         return new SavedSearchesPage(driver);
     }
+
     /**
-     * click saved homes link to navigate to page with saved homes
-     * @return Saved Homes Page (navigate to new page)
+     * wait until user icon become clickable
+     * click user icon
+     * @return  new SavedHomesPage
      */
-    public SavedHomesPage clickSavedHomesLink(){
-        waitUntilElementIsClickable(savedHomesLink);
-        savedHomesLink.click();
+    public SavedHomesPage clickUserIcon(){
+        waitUntilElementIsClickable(userIcon);
+        userIcon.click();
         return new SavedHomesPage(driver);
     }
+
+    /**
+     * click click 'Just Sold' button
+     * @return this page
+     */
+    public HomePage clickJustSoldButton(){
+        waitUntilElementIsClickable(justSoldButton);
+        justSoldButton.click();
+        return this;
+    }
+
 }
