@@ -15,6 +15,10 @@ public class SavedHomesPage extends BasePage {
     @FindBy(linkText = "Saved Searches")
     private WebElement savedSearches;
 
+    /**
+     * click on saved searches link and go in saved searches page
+     * @return new SavedSearchesPage
+     */
     public SavedSearchesPage clickSavedSearches(){
         waitUntilElementIsClickable(savedSearches);
         savedSearches.click();

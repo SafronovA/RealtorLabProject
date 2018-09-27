@@ -46,7 +46,8 @@ public class SavedSearchTest extends BaseTest{
      */
     @AfterTest
     public void deleteCreatedSaveSearch(){
-        savedSearchesPageStep.clearAllOldSavedSearches().logOut();
+        savedSearchesPageStep.clearAllOldSavedSearches()
+                .logOut();
     }
 
 }
