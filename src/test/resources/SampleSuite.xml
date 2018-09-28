@@ -7,8 +7,10 @@
 
     <test name="RealtorTest" >
         <classes>
+            <class name="com.epam.tat.realtor.tests.SavedSearchTest"/>
             <class name="com.epam.tat.realtor.tests.MapMarksTest"/>
             <class name = "com.epam.tat.realtor.tests.SearchByConditionsTest"/>
+
         </classes>
     </test>
 

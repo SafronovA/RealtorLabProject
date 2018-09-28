@@ -3,7 +3,7 @@ package com.epam.tat.realtor.steps;
 import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.pages.SearchPage;
-import com.epam.tat.realtor.util.RealtorUtil;
+import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
@@ -16,6 +16,40 @@ public class SearchPageStep extends BasePageStep{
         super(driver);
         searchPage = new SearchPage(driver);
     }
+
+    /**
+     * set min and max price to drop-down menu
+     * @param minPrice will be set to drop-down menu
+     * @param maxPrice will be set to drop-down menu
+     * @return SearchPageStep
+     */
+    public SearchPageStep selectMinMaxPrices(String minPrice, String maxPrice){
+        searchPage.clickPriceButton();
+        searchPage.getMinPriceRange().stream().filter(WebElement -> WebElement.getText().equals(minPrice)).findFirst().get().click();
+        searchPage.getMaxPriceRange().stream().filter(WebElement -> WebElement.getText().equals(maxPrice)).findFirst().get().click();
+        return this;
+    }
+
+    /**
+     * click save button to save search
+     * @return SearchPageStep
+     */
+    public SearchPageStep clickSaveSearchButton(){
+        searchPage.clickSaveSearchButton();
+        return this;
+    }
+
+    /**
+     * open saved searches page
+     * @return SavedSearchesPageStep
+     */
+    public SavedSearchesPageStep openSavedSearches(){
+        searchPage.waitUntilSaveButtonChangeState()
+                .clickUserIcon()
+                .clickSavedSearches();
+        return new SavedSearchesPageStep(driver);
+    }
+
 
     /**
      * navigate to home page
@@ -73,10 +107,10 @@ public class SearchPageStep extends BasePageStep{
         searchPage.waitForHomeSizeFilter();
         List<House> homesList = new ArrayList<>();
         for (int i = 0; i < searchPage.getSearchedHousePricesList().size() ; i++) {
-            homesList.add(new House( RealtorUtil.parse(searchPage.getSearchedHouseBedList().get(i).getText()),
-                    RealtorUtil.parse(searchPage.getSearchedHouseBathList().get(i).getText()),
-                    RealtorUtil.parse(searchPage.getSearchedHousePricesList().get(i).getText()),
-                    RealtorUtil.parse(searchPage.getSearchedHouseSqftList().get(i).getText())));
+            homesList.add(new House( Parser.parse(searchPage.getSearchedHouseBedList().get(i).getText()),
+                    Parser.parse(searchPage.getSearchedHouseBathList().get(i).getText()),
+                    Parser.parse(searchPage.getSearchedHousePricesList().get(i).getText()),
+                    Parser.parse(searchPage.getSearchedHouseSqftList().get(i).getText())));
         }
         return homesList;
     }
@@ -169,12 +203,12 @@ public class SearchPageStep extends BasePageStep{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return searchPage.getMapMarks().stream().allMatch(x->{ RealtorUtil.clickByJEx(x,driver);
-            return (minPrice<=RealtorUtil.parse(searchPage.getMapMarkPrice()))
-                    && (maxPrice>=RealtorUtil.parse(searchPage.getMapMarkPrice()))
-                    && (bedNumber<=RealtorUtil.parse(searchPage.getMapMarkBed()))
-                    && (bathNumber<=RealtorUtil.parse(searchPage.getMapMarkBath()))
-                    && (minSqft<=RealtorUtil.parse(searchPage.getMapMarkSqft()))
-                    && (maxSqft>=RealtorUtil.parse(searchPage.getMapMarkSqft()));});
+        return searchPage.getMapMarks().stream().allMatch(x->{ searchPage.clickByJEx(x,driver);
+            return (minPrice<=Parser.parse(searchPage.getMapMarkPrice()))
+                    && (maxPrice>=Parser.parse(searchPage.getMapMarkPrice()))
+                    && (bedNumber<=Parser.parse(searchPage.getMapMarkBed()))
+                    && (bathNumber<=Parser.parse(searchPage.getMapMarkBath()))
+                    && (minSqft<=Parser.parse(searchPage.getMapMarkSqft()))
+                    && (maxSqft>=Parser.parse(searchPage.getMapMarkSqft()));});
     }
 }

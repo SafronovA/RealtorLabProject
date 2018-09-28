@@ -22,7 +22,6 @@ public class BaseTest {
     @BeforeClass(alwaysRun = true)
     void initPage(){
         driver = DriverFactory.CHROMEDRIVER.getDriver();
-        //driver = DriverFactory.FIREFOXDRIVER.getDriver();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
         driver.navigate().to(ConfigProperties.getTestProperty("url"));

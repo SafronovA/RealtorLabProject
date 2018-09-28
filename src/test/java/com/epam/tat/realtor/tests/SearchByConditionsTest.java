@@ -3,7 +3,7 @@ package com.epam.tat.realtor.tests;
 
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.steps.SearchPageStep;
-import com.epam.tat.realtor.util.RealtorUtil;
+import com.epam.tat.realtor.util.Parser;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -32,11 +32,11 @@ public class SearchByConditionsTest extends BaseTest {
                 .createHomesList();
         searchPageStep.printList(searchResult);
         assertTrue(searchPageStep.checkSearchResult(searchResult,
-                                                    RealtorUtil.parsePrice(MIN_PRICE_VALUE),
-                                                    RealtorUtil.parsePrice(MAX_PRICE_VALUE),
-                                                    RealtorUtil.parse(BED_NUMBER),
-                                                    RealtorUtil.parse(BATH_NUMBER),
-                                                    RealtorUtil.parse(MIN_SQFT_VALUE),
-                                                    RealtorUtil.parse(MAX_SQFT_VALUE)));
+                                                    Parser.parsePrice(MIN_PRICE_VALUE),
+                                                    Parser.parsePrice(MAX_PRICE_VALUE),
+                                                    Parser.parse(BED_NUMBER),
+                                                    Parser.parse(BATH_NUMBER),
+                                                    Parser.parse(MIN_SQFT_VALUE),
+                                                    Parser.parse(MAX_SQFT_VALUE)));
     }
 }

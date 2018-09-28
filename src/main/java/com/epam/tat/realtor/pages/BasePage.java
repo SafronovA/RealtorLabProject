@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-
 public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait driverWait;
@@ -32,4 +30,16 @@ public class BasePage {
     public void waitUntilElementIsClickable(WebElement webElement){
         driverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
+
+
+    /**
+     * click element by Java Executor
+     * @param webElement web element to be clicked
+     * @param webDriver used webdriver
+     */
+    public static void clickByJEx (WebElement webElement, WebDriver webDriver){
+        JavascriptExecutor executor = (JavascriptExecutor) webDriver;
+        executor.executeScript("arguments[0].click();", webElement);
+    }
+
 }

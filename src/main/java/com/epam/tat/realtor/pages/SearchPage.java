@@ -56,7 +56,6 @@ public class SearchPage extends BasePage {
     private List<WebElement> searchedHouseSqftList;
     @FindBy(xpath = "//div[@class='srp-view-toggle btn-group']/a[@class='btn btn-default srp-view-map-toggle ']")
     private WebElement viewMapButton;
-    //@FindBy(xpath = "//span[@class='pinIcon pin-dot']")
     @FindBy(xpath = "//div[contains(@class,'map-property-pin for_sale')]")
     private List<WebElement> mapMarksList;
     @FindBy (xpath = "//div[@class='minicard-price']/span")
@@ -69,6 +68,14 @@ public class SearchPage extends BasePage {
     private WebElement mapMarkSqft;
     @FindBy (xpath = "//li[@id='js-home-size-filter-pill-xx']/label[contains(text(),'2,000')]")
     private WebElement homeSizeFilterIcon;
+    @FindBy(id = "facet-followbtn")
+    private WebElement saveSearchButton;
+    @FindBy(xpath = "//*[@id='my-account-url']/following-sibling::span[1]")
+    private WebElement userIcon;
+    @FindBy(xpath = "//*[@id='js-price-filter-pill-xx']")
+    private WebElement chosenCriteria;
+    @FindBy(xpath = "(//*[@id='facet-followbtn'])[2]/span")
+    private WebElement saveButtonText;
 
     /**
      * click Price button
@@ -164,6 +171,31 @@ public class SearchPage extends BasePage {
     }
 
     /**
+     * click save search button
+     * @return
+     */
+    public SearchPage clickSaveSearchButton(){
+        waitUntilElementIsVisible(chosenCriteria);
+        saveSearchButton.click();
+        return this;
+    }
+
+    public SearchPage waitUntilSaveButtonChangeState(){
+        waitUntilElementIsVisible(saveButtonText);
+        return this;
+    }
+
+    /**
+     * click on user icon
+     * @return new SavedHomesPage
+     */
+    public SavedHomesPage clickUserIcon(){
+        waitUntilElementIsClickable(userIcon);
+        userIcon.click();
+        return new SavedHomesPage(driver);
+    }
+
+    /**
      * click MinSquare dropdown menu in the Home Size section
      * @return
      */
@@ -239,6 +271,7 @@ public class SearchPage extends BasePage {
      * @return this page
      */
     public SearchPage clickViewMapButton(){
+        waitUntilElementIsClickable(viewMapButton);
         viewMapButton.click();
         return this;
     }
