@@ -19,7 +19,7 @@ public class BaseTest {
      * configure driver implicitlyWaite timeouts
      */
     @BeforeSuite
-    void initResources(){
+    void initResources() {
         driver = DriverFactory.FIREFOXDRIVER.getDriver();
         driver.manage().timeouts().implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
         homePageStep = new HomePageStep(driver);
@@ -31,7 +31,7 @@ public class BaseTest {
      */
 
     @BeforeTest
-    void initPage(){
+    void initPage() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
@@ -43,7 +43,7 @@ public class BaseTest {
      * open the homepage URL in browser
      */
     @AfterSuite
-    void closeResources(){
+    void closeResources() {
         driver.quit();
     }
 }

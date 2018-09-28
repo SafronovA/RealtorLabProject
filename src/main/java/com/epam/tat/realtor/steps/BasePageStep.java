@@ -8,16 +8,17 @@ public class BasePageStep {
     protected WebDriver driver;
     private BasePage basePage;
 
-    public BasePageStep(WebDriver driver){
-        this.driver=driver;
+    public BasePageStep(WebDriver driver) {
+        this.driver = driver;
         basePage = new BasePage(driver);
     }
 
     /**
      * go to start page
+     *
      * @return HomePageStep
      */
-    public HomePageStep moveToHomePage(){
+    public HomePageStep moveToHomePage() {
         driver.navigate().to(ConfigProperties.getTestProperty("url"));
         return new HomePageStep(driver);
     }

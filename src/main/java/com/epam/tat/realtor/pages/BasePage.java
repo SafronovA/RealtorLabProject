@@ -12,23 +12,26 @@ public class BasePage {
     protected WebDriverWait driverWait;
     private static final String INNER_HTML = "innerHTML";
 
-    public BasePage(WebDriver driver){
+    public BasePage(WebDriver driver) {
         this.driver = driver;
-        driverWait = new WebDriverWait(driver,Integer.valueOf(ConfigProperties.getTestProperty("webDriverWaitTime")));
+        driverWait = new WebDriverWait(driver, Integer.valueOf(ConfigProperties.getTestProperty("webDriverWaitTime")));
     }
 
     /**
      * wait until webElement is visible
+     *
      * @param webElement webElement to be visible
      */
-    public void waitUntilElementIsVisible(WebElement webElement){
+    public void waitUntilElementIsVisible(WebElement webElement) {
         driverWait.until(ExpectedConditions.visibilityOf(webElement));
     }
+
     /**
      * wait until webElement is clickable
+     *
      * @param webElement webElement to be clickable
      */
-    public void waitUntilElementIsClickable(WebElement webElement){
+    public void waitUntilElementIsClickable(WebElement webElement) {
         driverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 

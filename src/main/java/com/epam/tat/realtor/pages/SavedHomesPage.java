@@ -7,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SavedHomesPage extends BasePage {
 
-    public SavedHomesPage (WebDriver driver){
+    public SavedHomesPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(linkText = "Saved Searches")
@@ -17,9 +17,10 @@ public class SavedHomesPage extends BasePage {
 
     /**
      * click on saved searches link and go in saved searches page
+     *
      * @return new SavedSearchesPage
      */
-    public SavedSearchesPage clickSavedSearches(){
+    public SavedSearchesPage clickSavedSearches() {
         waitUntilElementIsClickable(savedSearches);
         savedSearches.click();
         return new SavedSearchesPage(driver);
