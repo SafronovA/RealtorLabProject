@@ -38,7 +38,7 @@ public class SavedSearchTest extends BaseTest{
                 .openSavedSearches();
         savedSearchesPageStep = new SavedSearchesPageStep(driver);
         Assert.assertTrue(savedSearchesPageStep.checkSavedSearchDescriptionContainsInputText(CITY_NAME, MIN_PRICE, MAX_PRICE),
-                "Description does not contains needed parameters");
+                "Saved search description does not contain selected min or max, or entered town");
     }
 
     /**

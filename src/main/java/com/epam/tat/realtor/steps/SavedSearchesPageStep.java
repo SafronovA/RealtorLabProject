@@ -33,7 +33,7 @@ public class SavedSearchesPageStep extends BasePageStep {
      * @param city entered city
      * @param minPrice selected min price
      * @param maxPrice selected max price
-     * @return true if description contains input parameters, false if if does not
+     * @return true if saved search description contains selected min and max prices, entered town, false if does not contain
      */
     public boolean checkSavedSearchDescriptionContainsInputText(String city, String minPrice, String maxPrice){
         int min = Parser.parse(minPrice);
