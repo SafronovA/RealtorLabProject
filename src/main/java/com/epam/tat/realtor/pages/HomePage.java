@@ -16,7 +16,7 @@ public class HomePage extends BasePage{
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(xpath = "//span[text()='Log In']")
+    @FindBy(linkText = "Log In")
     private WebElement signInButton;
     @FindBy(id = "email_address")
     private WebElement emailInput;
@@ -28,15 +28,16 @@ public class HomePage extends BasePage{
     private WebElement userIcon;
     @FindBy(xpath = "//*[@id='logout']")
     private WebElement logOutLink;
-    @FindBy(xpath = "(//a[contains(text(),'Saved Homes')])[1]")
+    @FindBy(xpath = "//a[contains(text(),'Saved Homes')]")
     private WebElement savedHomesLink;
-    @FindBy(linkText = "(//a[contains(text(),'Saved Searches')])[1]")
+    @FindBy(xpath = "//*[@id='my_search_div']/div/a")
     private WebElement savedSearchLink;
-    @FindBy(name = "q")
+    @FindBy(xpath = "//*[@id='searchBox']")
     private WebElement searchInput;
     @FindBy(xpath = "(//button[@class='btn btn-primary js-searchButton '])[1]")
     private WebElement searchButton;
-
+    @FindBy(xpath = "//*[text()='Just Sold']")
+    private WebElement rentButton;
 
     /**
      * click SignIn button
@@ -79,14 +80,13 @@ public class HomePage extends BasePage{
      */
     public HomePage navigateToUserIcon(){
         try {
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(10);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         new Actions(driver).moveToElement(userIcon).perform();
         return this;
     }
-
 
     /**
      * clear city entered by default
@@ -119,21 +119,16 @@ public class HomePage extends BasePage{
 
      /**
       * wait for Saved Homes button to be visible
+      *@return this page
      */
-    public HomePage waitForSaveddHomesLinkToAppear () {
+    public HomePage waitForSavedHomesLinkToAppear () {
         waitUntilElementIsVisible(savedHomesLink);
         return this;
     }
 
     /**
-     * wait for Saved Homes button to be visible
-     */
-    public HomePage waitForSavedSearchLinkToAppear () {
-        waitUntilElementIsVisible(savedSearchLink);
-        return this;
-    }
-    /**
      * wait for SignOut button to be visible
+     * @return this page
      */
     public HomePage waitForSignOutLinkToAppear () {
         waitUntilElementIsVisible(logOutLink);
@@ -142,7 +137,7 @@ public class HomePage extends BasePage{
 
     /**
      * wait for SignIn button to be visible
-     * @return
+     * @return this page
      */
     public HomePage waitForSignInLinkToAppear () {
         waitUntilElementIsVisible(signInButton);
@@ -153,20 +148,11 @@ public class HomePage extends BasePage{
      * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
      * @return new HomePage
      */
-    public HomePage clickLogOutLink () {
+    public HomePage clickLogOutLink (){
         logOutLink.click();
         return new HomePage(driver);
     }
 
-    /**
-     * click saved search link to navigate to page with saved searches
-     * @return Saved Searches Page (navigate to new page)
-     */
-    public SavedSearchesPage clickSavedSearchLink(){
-        waitUntilElementIsClickable(savedSearchLink);
-        savedSearchLink.click();
-        return new SavedSearchesPage(driver);
-    }
     /**
      * click saved homes link to navigate to page with saved homes
      * @return Saved Homes Page (navigate to new page)
@@ -176,4 +162,15 @@ public class HomePage extends BasePage{
         savedHomesLink.click();
         return new SavedHomesPage(driver);
     }
+
+    /**
+     * click on user icon
+     * @return new SavedHomesPage
+     */
+    public SavedHomesPage clickUserIcon(){
+        waitUntilElementIsClickable(userIcon);
+        userIcon.click();
+        return new SavedHomesPage(driver);
+    }
+
 }
