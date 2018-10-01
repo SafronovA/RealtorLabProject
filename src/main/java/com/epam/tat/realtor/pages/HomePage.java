@@ -38,6 +38,10 @@ public class HomePage extends BasePage{
     private WebElement searchButton;
     @FindBy(xpath = "//*[text()='Just Sold']")
     private WebElement rentButton;
+    @FindBy(xpath = "//*[@id='img_mortgage']/a")
+    private WebElement mortgageLink;
+    @FindBy(linkText = "Mortgage Calculator")
+    private WebElement mortgageCalculatorLink;
 
     /**
      * click SignIn button
@@ -171,6 +175,16 @@ public class HomePage extends BasePage{
         waitUntilElementIsClickable(userIcon);
         userIcon.click();
         return new SavedHomesPage(driver);
+    }
+
+    public HomePage navigateCursorOnMartgageLink(){
+        new Actions(driver).moveToElement(mortgageLink).build().perform();
+        return this;
+    }
+
+    public MortgageCalculatorPage clickMortgageCalculatorLink(){
+        mortgageCalculatorLink.click();
+        return new MortgageCalculatorPage(driver);
     }
 
 }
