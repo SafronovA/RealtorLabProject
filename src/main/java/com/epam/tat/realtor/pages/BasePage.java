@@ -1,6 +1,7 @@
 package com.epam.tat.realtor.pages;
 
 import com.epam.tat.realtor.ConfigProperties;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,5 +32,22 @@ public class BasePage {
     public void waitUntilElementIsClickable(WebElement webElement){
         driverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
+    /**
+     * click element by Java Executor
+     * @param webElement web element to be clicked
+     * @param webDriver used webdriver
+     */
+    public static void clickByJEx (WebElement webElement, WebDriver webDriver){
+        JavascriptExecutor executor = (JavascriptExecutor) webDriver;
+        executor.executeScript("arguments[0].click();", webElement);
+    }
+    public static void scrollToElement(WebElement webElement, WebDriver webDriver){
+        JavascriptExecutor executor = (JavascriptExecutor) webDriver;
+        executor.executeScript("arguments[0].scrollIntoView(true);",webElement);
+    }
+    public void waitForPresenceOfAllElementsLocatedBy(By by){
+        driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+    }
+
 
 }

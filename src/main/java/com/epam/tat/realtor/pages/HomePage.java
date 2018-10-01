@@ -38,6 +38,8 @@ public class HomePage extends BasePage{
     private WebElement searchButton;
     @FindBy(xpath = "//*[text()='Just Sold']")
     private WebElement rentButton;
+    @FindBy(xpath = "//li[@id='img_far']/a")
+    private WebElement realtorButton;
 
     /**
      * click SignIn button
@@ -171,6 +173,11 @@ public class HomePage extends BasePage{
         waitUntilElementIsClickable(userIcon);
         userIcon.click();
         return new SavedHomesPage(driver);
+    }
+    public SearchRealtorPage clickRealtorButton(){
+        waitUntilElementIsClickable(realtorButton);
+        realtorButton.click();
+        return new SearchRealtorPage(driver);
     }
 
 }
