@@ -15,11 +15,21 @@ public class SearchRealtorPage extends BasePage {
     @FindBy(id = "far_search_button")
     private WebElement searchButton;
 
+    /**
+     * enter realtor name in the search input
+     * @param realtorName realtor name as search criteria
+     * @return this page
+     */
     public SearchRealtorPage enterRealtorName(String realtorName){
         searchInput.click();
         searchInput.sendKeys(realtorName);
         return this;
     }
+
+    /**
+     * click search button
+     * @return new FindRealtorPage
+     */
     public FindRealtorPage clickSearchButton(){
         waitUntilElementIsClickable(searchButton);
         searchButton.click();

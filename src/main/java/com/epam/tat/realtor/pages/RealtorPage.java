@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class RealtorPage extends BasePage{
     public RealtorPage(WebDriver driver){
@@ -24,30 +23,58 @@ public class RealtorPage extends BasePage{
     @FindBy(xpath = "//a[@class='leaflet-control-zoom-out']")
     private WebElement zoomOutButton;
 
-
+    /**
+     * click "Recently Sold" section above iframe map
+     * @return this page
+     */
     public RealtorPage clickSoldHousesSection(){
         waitUntilElementIsClickable(soldHousesSection);
         soldHousesSection.click();
         return this;
     }
+
+    /**
+     *
+     * @return list of sold houses map marks
+     */
     public List<WebElement> getSoldHousesMapMarkList(){
         return soldHousesMapMarkList;
     }
+
+    /**
+     *
+     * @return sold status of the house on the map mark
+     */
     public String getSaleHouseStatus(){
         waitUntilElementIsVisible(saleHouseStatus);
         return saleHouseStatus.getText();
     }
+
+    /**
+     * scroll to iframe map
+     * @return this page
+     */
     public RealtorPage scrollToIFrame(){
         waitForPresenceOfAllElementsLocatedBy(soldHouses);
         BasePage.scrollToElement(soldHousesSection,driver);
         return this;
     }
+
+    /**
+     * double click on zoom out button
+     * @return this page
+     */
     public RealtorPage doubleZoomOut(){
         waitUntilElementIsVisible(zoomOutButton);
         zoomOutButton.click();
         zoomOutButton.click();
         return this;
     }
+
+    /**
+     * wait for the presence of sold houses map marks on iframe map
+     * @return this page
+     */
     public RealtorPage waitForMapMarks(){
         waitForPresenceOfAllElementsLocatedBy(soldHouses);
         return this;

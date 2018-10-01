@@ -69,6 +69,11 @@ public class  HomePageStep extends BasePageStep{
         homePage.clickUserIcon();
         return new SavedHomesPageStep(driver);
     }
+
+    /**
+     * click Realtor button
+     * @return new SearchRealtorPageStep
+     */
     public SearchRealtorPageStep clickFindRealtorButton(){
         homePage.clickRealtorButton();
         return new SearchRealtorPageStep(driver);

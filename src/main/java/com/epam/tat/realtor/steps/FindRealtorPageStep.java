@@ -11,9 +11,19 @@ public class FindRealtorPageStep extends BasePageStep {
         super(driver);
         findRealtorPage = new FindRealtorPage(driver);
     }
+
+    /**
+     * get realtor sold houses number
+     * @return realtor sold houses number
+     */
     public int getRealtorSoldHoses(){
         return Parser.parse(findRealtorPage.getRealtorSoldHouses());
     }
+
+    /**
+     * click realtor icon
+     * @return new RealtorPageStep
+     */
     public RealtorPageStep clickRealtorIcon(){
         findRealtorPage.clickRealtorIcon();
         return new RealtorPageStep(driver);

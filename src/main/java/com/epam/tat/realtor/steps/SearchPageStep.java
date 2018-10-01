@@ -44,5 +44,4 @@ public class SearchPageStep extends BasePageStep{
                 .clickSavedSearches();
         return new SavedSearchesPageStep(driver);
     }
-
 }

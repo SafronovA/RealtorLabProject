@@ -174,6 +174,11 @@ public class HomePage extends BasePage{
         userIcon.click();
         return new SavedHomesPage(driver);
     }
+
+    /**
+     * click on the Realtor button
+     * @return new SearchRealtorPage
+     */
     public SearchRealtorPage clickRealtorButton(){
         waitUntilElementIsClickable(realtorButton);
         realtorButton.click();

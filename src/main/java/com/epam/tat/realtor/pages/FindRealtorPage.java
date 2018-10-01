@@ -16,9 +16,18 @@ public class FindRealtorPage extends BasePage {
     @FindBy(xpath = "//div[@class='agent-list-card-img']/img")
     private WebElement userIcon;
 
+    /**
+     * get number of realtor sold houses
+     * @return get number of realtor sold houses
+     */
     public String getRealtorSoldHouses(){
         return realtorSoldHouses.getText();
     }
+
+    /**
+     * click on the realtor icon
+     * @return new RealtorPage
+     */
     public RealtorPage clickRealtorIcon(){
         waitUntilElementIsClickable(userIcon);
         userIcon.click();
