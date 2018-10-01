@@ -31,12 +31,11 @@ public class SearchByConditionsTest extends BaseTest {
                 .createSearchRequest(MIN_PRICE_VALUE,MAX_PRICE_VALUE,BED_NUMBER,BATH_NUMBER,MIN_SQFT_VALUE,MAX_SQFT_VALUE)
                 .createHomesList();
         searchPageStep.printList(searchResult);
-        assertTrue(searchPageStep.checkSearchResult(searchResult,
-                                                    Parser.parsePrice(MIN_PRICE_VALUE),
-                                                    Parser.parsePrice(MAX_PRICE_VALUE),
-                                                    Parser.parse(BED_NUMBER),
-                                                    Parser.parse(BATH_NUMBER),
-                                                    Parser.parse(MIN_SQFT_VALUE),
-                                                    Parser.parse(MAX_SQFT_VALUE)));
+        assertTrue(searchPageStep.checkSearchResultPrice(searchResult, MIN_PRICE_VALUE, MAX_PRICE_VALUE),"price value mismatch search criteria");
+        assertTrue(searchPageStep.checkSearchResultBed(searchResult, BED_NUMBER),"bed quantity mismatch search criteria");
+        assertTrue(searchPageStep.checkSearchResultBath(searchResult, BATH_NUMBER), "bath quantity mismatch search criteria");
+        assertTrue(searchPageStep.checkSearchResultSqft(searchResult, MIN_SQFT_VALUE,MAX_SQFT_VALUE), "square feet house size mismatch search criteria");
+
+
     }
 }

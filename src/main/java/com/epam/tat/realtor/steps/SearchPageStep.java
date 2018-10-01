@@ -122,25 +122,80 @@ public class SearchPageStep extends BasePageStep{
     public void printList(List<House> homeList){
         homeList.forEach(x-> System.out.println(x.getPrice()+" "+x.getBedNumber()+" "+x.getBathNumber()+" "+x.getSquare()+" "));
     }
+//
+//    /**
+//     * check if parameters of houses in the list match search criteria
+//     * @param homeList list of house according search result
+//     * @param minPrice min price value
+//     * @param maxPrice max price value
+//     * @param bedNumber bed number
+//     * @param bathNumber bath number
+//     * @param minSqft min square feet house size
+//     * @param maxSqft max square feet house size
+//     * @return if true list match search criteria
+//     */
+//    public boolean checkSearchResult (List<House> homeList, String minPrice, String maxPrice, String bedNumber, String bathNumber, String minSqft, String maxSqft ){
+//        System.out.println(minPrice+" "+maxPrice+" "+bedNumber+" "+bathNumber+" "+minSqft+" "+maxSqft);
+//        return homeList.stream().allMatch(x->((x.getPrice()>=Parser.parsePrice(minPrice)) && (x.getPrice()<=Parser.parsePrice(maxPrice)) &&
+//                (x.getBedNumber()>=Parser.parse(bedNumber)) &&
+//                (x.getBathNumber()>=Parser.parse(bathNumber)) &&
+//                (x.getSquare()>=Parser.parse(minSqft)) && (x.getSquare()<=Parser.parse(maxSqft))));
+//    }
+
 
     /**
      * check if parameters of houses in the list match search criteria
      * @param homeList list of house according search result
      * @param minPrice min price value
      * @param maxPrice max price value
+     * @return if true list match search criteria
+     */
+    public boolean checkSearchResultPrice (List<House> homeList, String minPrice, String maxPrice ){
+        return homeList.stream().allMatch(x->((x.getPrice()>=Parser.parsePrice(minPrice)) && (x.getPrice()<=Parser.parsePrice(maxPrice))));
+    }
+
+    /**
+     * check if parameters of houses in the list match search criteria
+     * @param homeList list of house according search result
      * @param bedNumber bed number
+     * @return if true list match search criteria
+     */
+    public boolean checkSearchResultBed (List<House> homeList, String bedNumber ){
+        return homeList.stream().allMatch(x->(x.getBedNumber()>=Parser.parse(bedNumber)));
+    }
+    /**
+     * check if parameters of houses in the list match search criteria
+     * @param homeList list of house according search result
      * @param bathNumber bath number
+     * @return if true list match search criteria
+     */
+    public boolean checkSearchResultBath (List<House> homeList, String bathNumber ){
+        return homeList.stream().allMatch(x->(x.getBathNumber()>=Parser.parse(bathNumber)));
+    }
+    /**
+     * check if parameters of houses in the list match search criteria
+     * @param homeList list of house according search result
      * @param minSqft min square feet house size
      * @param maxSqft max square feet house size
      * @return if true list match search criteria
      */
-    public boolean checkSearchResult (List<House> homeList, int minPrice, int maxPrice, int bedNumber, int bathNumber, int minSqft, int maxSqft ){
-        System.out.println(minPrice+" "+maxPrice+" "+bedNumber+" "+bathNumber+" "+minSqft+" "+maxSqft);
-        return homeList.stream().allMatch(x->((x.getPrice()>=minPrice) && (x.getPrice()<=maxPrice) &&
-                (x.getBedNumber()>=bedNumber) &&
-                (x.getBathNumber()>=bathNumber) &&
-                (x.getSquare()>=minSqft) && (x.getSquare()<=maxSqft)));
+    public boolean checkSearchResultSqft (List<House> homeList, String minSqft, String maxSqft ){
+        return homeList.stream().allMatch(x->((x.getSquare()>=Parser.parse(minSqft)) && (x.getSquare()<=Parser.parse(maxSqft))));
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * set value in the max price dropdown list
      * @param maxValue value that is set in the dropdown list
@@ -196,19 +251,14 @@ public class SearchPageStep extends BasePageStep{
      * @param maxSqft max square feet house size
      * @return if true map marks match search criteria
      */
-    public boolean checkMapMarks(int minPrice, int maxPrice, int bedNumber, int bathNumber, int minSqft, int maxSqft ){
+    public boolean checkMapMarks(String minPrice, String maxPrice, String bedNumber, String bathNumber, String minSqft, String maxSqft ){
         searchPage.clickViewMapButton();
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         return searchPage.getMapMarks().stream().allMatch(x->{ searchPage.clickByJEx(x,driver);
-            return (minPrice<=Parser.parse(searchPage.getMapMarkPrice()))
-                    && (maxPrice>=Parser.parse(searchPage.getMapMarkPrice()))
-                    && (bedNumber<=Parser.parse(searchPage.getMapMarkBed()))
-                    && (bathNumber<=Parser.parse(searchPage.getMapMarkBath()))
-                    && (minSqft<=Parser.parse(searchPage.getMapMarkSqft()))
-                    && (maxSqft>=Parser.parse(searchPage.getMapMarkSqft()));});
+            return (Parser.parsePrice(minPrice)<=Parser.parse(searchPage.getMapMarkPrice()))
+                    && (Parser.parsePrice(maxPrice)>=Parser.parse(searchPage.getMapMarkPrice()))
+                    && (Parser.parse(bedNumber)<=Parser.parse(searchPage.getMapMarkBed()))
+                    && (Parser.parse(bathNumber)<=Parser.parse(searchPage.getMapMarkBath()))
+                    && (Parser.parse(minSqft)<=Parser.parse(searchPage.getMapMarkSqft()))
+                    && (Parser.parse(maxSqft)>=Parser.parse(searchPage.getMapMarkSqft()));});
     }
 }

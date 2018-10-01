@@ -24,15 +24,8 @@ public class MapMarksTest extends BaseTest {
     @Test
     public void checkMapMarks(){
         SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)
-                .clickSearchButton();
+                                                    .clickSearchButton();
        searchPageStep.createSearchRequest(MIN_PRICE_VALUE,MAX_PRICE_VALUE,BED_NUMBER,BATH_NUMBER,MIN_SQFT_VALUE,MAX_SQFT_VALUE);
-
-       assertTrue(searchPageStep.checkMapMarks(
-               Parser.parsePrice(MIN_PRICE_VALUE),
-               Parser.parsePrice(MAX_PRICE_VALUE),
-               Parser.parse(BED_NUMBER),
-               Parser.parse(BATH_NUMBER),
-               Parser.parse(MIN_SQFT_VALUE),
-               Parser.parse(MAX_SQFT_VALUE)));
+       assertTrue(searchPageStep.checkMapMarks(MIN_PRICE_VALUE, MAX_PRICE_VALUE, BED_NUMBER, BATH_NUMBER, MIN_SQFT_VALUE, MAX_SQFT_VALUE));
     }
 }
