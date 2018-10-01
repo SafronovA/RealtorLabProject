@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +14,7 @@ public class SearchPage extends BasePage {
         super(driver);
         PageFactory.initElements(driver,this);
     }
-
+    By priceList = By.xpath("//span[@class='data-price']");
     @FindBy (id = "desktop-price-div")
     private WebElement priceButton;
     @FindBy (id = "price-input-1-desktop")
@@ -319,6 +320,10 @@ public class SearchPage extends BasePage {
      */
     public SearchPage waitForHomeSizeFilter(){
         waitUntilElementIsVisible(homeSizeFilterIcon);
+        return this;
+    }
+    public SearchPage waitForHomeList(){
+        waitForElements(priceList);
         return this;
     }
 

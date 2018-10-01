@@ -105,7 +105,8 @@ public class SearchPageStep extends BasePageStep{
      * @return list of searched houses
      */
     public List<House> createHomesList(){
-        searchPage.waitForHomeSizeFilter();
+        searchPage.waitForHomeSizeFilter()
+                    .waitForHomeList();
         List<House> homesList = new ArrayList<>();
         for (int i = 0; i < searchPage.getSearchedHousePricesList().size() ; i++) {
             homesList.add(new House( Parser.parse(searchPage.getSearchedHouseBedList().get(i).getText()),
