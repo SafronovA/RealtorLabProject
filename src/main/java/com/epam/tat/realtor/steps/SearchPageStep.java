@@ -2,6 +2,7 @@ package com.epam.tat.realtor.steps;
 
 import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.bo.House;
+import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.SearchPage;
 import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
@@ -175,7 +176,8 @@ public class SearchPageStep extends BasePageStep{
      * @param minValue value that is set in the dropdown list
      */
     private void setMinPriceValue(String minValue){
-        searchPage.getMinPriceRange().stream().filter(x->minValue.equalsIgnoreCase(x.getText())).findFirst().get().click();
+       searchPage.getMinPriceRange().stream().filter(x->minValue.equalsIgnoreCase(x.getText())).findFirst().get().click();
+
     }
 
     /**
@@ -212,20 +214,43 @@ public class SearchPageStep extends BasePageStep{
      * check if information in map cards on the iframe map match search criteria
      * @param minPrice min price value
      * @param maxPrice max price value
+     * @return if true map marks match search criteria
+     */
+    public boolean checkPriceMapMarks(String minPrice, String maxPrice){
+        searchPage.clickViewMapButton();
+        return searchPage.getMapMarks().stream().allMatch(x->{ BasePage.clickByJEx(x,driver);
+            return (Parser.parsePrice(minPrice)<=Parser.parse(searchPage.getMapMarkPrice()))
+                    && (Parser.parsePrice(maxPrice)>=Parser.parse(searchPage.getMapMarkPrice()));});
+    }
+    /**
+     * check if information in map cards on the iframe map match search criteria
      * @param bedNumber bed number
-     * @param bathNumber bath number
+     * @return if true map marks match search criteria
+     */
+    public boolean checkBedMapMarks(String bedNumber){
+        return searchPage.getMapMarks().stream().allMatch(x->{ BasePage.clickByJEx(x,driver);
+            return Parser.parse(bedNumber)<=Parser.parse(searchPage.getMapMarkBed());});
+    }
+
+    /**
+     * check if information in map cards on the iframe map match search criteria
+     * @param bathNumber bed number
+     * @return if true map marks match search criteria
+     */
+    public boolean checkBathMapMarks(String bathNumber){
+        return searchPage.getMapMarks().stream().allMatch(x->{ BasePage.clickByJEx(x,driver);
+            return Parser.parse(bathNumber)<=Parser.parse(searchPage.getMapMarkBath());});
+    }
+    /**
+     * check if information in map cards on the iframe map match search criteria
      * @param minSqft min square feet house size
      * @param maxSqft max square feet house size
      * @return if true map marks match search criteria
      */
-    public boolean checkMapMarks(String minPrice, String maxPrice, String bedNumber, String bathNumber, String minSqft, String maxSqft ){
-        searchPage.clickViewMapButton();
-        return searchPage.getMapMarks().stream().allMatch(x->{ searchPage.clickByJEx(x,driver);
-            return (Parser.parsePrice(minPrice)<=Parser.parse(searchPage.getMapMarkPrice()))
-                    && (Parser.parsePrice(maxPrice)>=Parser.parse(searchPage.getMapMarkPrice()))
-                    && (Parser.parse(bedNumber)<=Parser.parse(searchPage.getMapMarkBed()))
-                    && (Parser.parse(bathNumber)<=Parser.parse(searchPage.getMapMarkBath()))
-                    && (Parser.parse(minSqft)<=Parser.parse(searchPage.getMapMarkSqft()))
+    public boolean checkSqftMapMarks(String minSqft, String maxSqft ){
+        return searchPage.getMapMarks().stream().allMatch(x->{ BasePage.clickByJEx(x,driver);
+            return (Parser.parse(minSqft)<=Parser.parse(searchPage.getMapMarkSqft()))
                     && (Parser.parse(maxSqft)>=Parser.parse(searchPage.getMapMarkSqft()));});
     }
+
 }

@@ -92,7 +92,7 @@ public class SearchPage extends BasePage {
      * @return this page
      */
     public SearchPage clickMinPriceInput() {
-        waitUntilElementIsClickable(minPriceInput);
+        waitUntilElementIsVisible(minPriceInput);
         minPriceInput.click();
         return this;
     }
