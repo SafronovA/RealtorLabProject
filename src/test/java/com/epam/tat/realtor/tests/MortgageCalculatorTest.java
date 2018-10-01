@@ -6,7 +6,8 @@ public class MortgageCalculatorTest extends BaseTest {
 
     @Test
     public void mortgageCalculatorTest(){
-        
+        homePageStep.navigateCursorToMortgageLink()
+                .clickMortgageCalculatorLink();
     }
 
 }

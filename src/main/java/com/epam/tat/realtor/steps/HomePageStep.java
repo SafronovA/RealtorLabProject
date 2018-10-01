@@ -70,5 +70,14 @@ public class  HomePageStep extends BasePageStep{
         return new SavedHomesPageStep(driver);
     }
 
+    public HomePageStep navigateCursorToMortgageLink(){
+        homePage.navigateCursorOnMartgageLink();
+        return this;
+    }
+
+    public MortgageCalculatorPageStep clickMortgageCalculatorLink(){
+        homePage.clickMortgageCalculatorLink();
+        return new MortgageCalculatorPageStep(driver);
+    }
 
 }
