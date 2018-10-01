@@ -3,7 +3,6 @@ package com.epam.tat.realtor.tests;
 
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.steps.SearchPageStep;
-import com.epam.tat.realtor.util.Parser;
 import org.testng.annotations.Test;
 
 import java.util.List;

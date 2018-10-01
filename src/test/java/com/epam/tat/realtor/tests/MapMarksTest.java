@@ -1,7 +1,6 @@
 package com.epam.tat.realtor.tests;
 
 import com.epam.tat.realtor.steps.SearchPageStep;
-import com.epam.tat.realtor.util.Parser;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
