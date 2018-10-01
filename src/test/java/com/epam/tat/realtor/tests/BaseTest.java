@@ -42,8 +42,8 @@ public class BaseTest {
      * maximize browser window
      * open the homepage URL in browser
      */
-    @AfterSuite
-    void closeResources() {
-        driver.quit();
-    }
+//    @AfterSuite
+//    void closeResources() {
+//        driver.quit();
+//    }
 }

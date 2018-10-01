@@ -66,6 +66,11 @@ public class SearchPageStep extends BasePageStep {
         return this;
     }
 
+    /**
+     * check that homes are displayed sorted by price
+     *
+     * @return true if they are displayed sorted by price, false if the are not
+     */
     public boolean isHomesDisplayedSortedByPrice() {
         List<Integer> homePrices = findAllHouses();
         boolean sortedDescending =

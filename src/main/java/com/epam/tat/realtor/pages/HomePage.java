@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class HomePage extends BasePage {
@@ -33,9 +34,13 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@id='my_search_div']/div/a")
     private WebElement savedSearchLink;
     @FindBy(xpath = "//*[@id='searchBox']")
-    private WebElement searchInput;
+    private List<WebElement> searchInput;
+    @FindBy(xpath = "//*[@id='downshift-0-input']")
+    private WebElement searchInputOnNewPage;
     @FindBy(xpath = "(//button[@class='btn btn-primary js-searchButton '])[1]")
-    private WebElement searchButton;
+    private List<WebElement> searchButton;
+    @FindBy(xpath = "(//button[contains(@class,'search-btn')])[1]")
+    private WebElement searchButtonOnNewPage;
     @FindBy(xpath = "//*[text()='Just Sold']")
     private WebElement rentButton;
 
@@ -85,11 +90,6 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage navigateToUserIcon() {
-        try {
-            TimeUnit.SECONDS.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         new Actions(driver).moveToElement(userIcon).perform();
         return this;
     }
@@ -100,7 +100,11 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage clearInputField() {
-        searchInput.clear();
+        if (searchInput.size() > 0) {
+            searchInput.get(0).clear();
+        } else {
+            searchInputOnNewPage.clear();
+        }
         return this;
     }
 
@@ -111,7 +115,11 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage enterCityInMainSearchInput(String city) {
-        searchInput.sendKeys(city);
+        if (searchInput.size() > 0) {
+            searchInput.get(0).sendKeys(city);
+        } else {
+            searchInputOnNewPage.sendKeys(city);
+        }
         return this;
     }
 
@@ -121,8 +129,13 @@ public class HomePage extends BasePage {
      * @return new search page
      */
     public SearchPage clickSearchButton() {
-        waitUntilElementIsClickable(searchButton);
-        searchButton.click();
+        if(searchButton.size()>0){
+            waitUntilElementIsClickable(searchButton.get(0));
+            searchButton.get(0).click();
+        } else {
+            waitUntilElementIsClickable(searchButtonOnNewPage);
+            searchButtonOnNewPage.click();
+        }
         return new SearchPage(driver);
     }
 
