@@ -14,16 +14,16 @@ import java.util.concurrent.TimeUnit;
 
 public class SearchPage extends BasePage {
 
-    public SearchPage(WebDriver driver){
+    public SearchPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(id = "desktop-price-div")
     private WebElement priceButton;
-    @FindBy (xpath = "(//*[@id='price-input-1-list'])[1]/li")
+    @FindBy(xpath = "(//*[@id='price-input-1-list'])[1]/li")
     private List<WebElement> minPriceRange;
-    @FindBy (xpath = "(//*[@id='price-input-2-list'])[1]/li")
+    @FindBy(xpath = "(//*[@id='price-input-2-list'])[1]/li")
     private List<WebElement> maxPriceRange;
     @FindBy(id = "facet-followbtn")
     private WebElement saveSearchButton;
@@ -33,9 +33,12 @@ public class SearchPage extends BasePage {
     private WebElement chosenCriteria;
     @FindBy(xpath = "(//*[@id='facet-followbtn'])[2]/span")
     private WebElement saveButtonText;
+    @FindBy(xpath = "//*[@id='searchBox']")
+    private WebElement searchInput;
 
     /**
      * get list of min prices
+     *
      * @return
      */
     public List<WebElement> getMinPriceRange() {
@@ -44,6 +47,7 @@ public class SearchPage extends BasePage {
 
     /**
      * get list of max prices
+     *
      * @return
      */
     public List<WebElement> getMaxPriceRange() {
@@ -52,36 +56,53 @@ public class SearchPage extends BasePage {
 
     /**
      * click price button
+     *
      * @return
      */
-    public SearchPage clickPriceButton(){
+    public SearchPage clickPriceButton() {
         priceButton.click();
         return this;
     }
 
     /**
      * click save search button
+     *
      * @return
      */
-    public SearchPage clickSaveSearchButton(){
+    public SearchPage clickSaveSearchButton() {
         waitUntilElementIsVisible(chosenCriteria);
         saveSearchButton.click();
         return this;
     }
 
-    public SearchPage waitUntilSaveButtonChangeState(){
+    /**
+     * wait until text in save button will be "Saved"
+     *
+     * @return
+     */
+    public SearchPage waitUntilSaveButtonChangeState() {
         waitUntilElementIsVisible(saveButtonText);
         return this;
     }
 
     /**
      * click on user icon
+     *
      * @return new SavedHomesPage
      */
-    public SavedHomesPage clickUserIcon(){
+    public SavedHomesPage clickUserIcon() {
         waitUntilElementIsClickable(userIcon);
         userIcon.click();
         return new SavedHomesPage(driver);
+    }
+
+    /**
+     * get city from input field
+     *
+     * @return string city name
+     */
+    public String getCityFromInputField() {
+        return searchInput.getAttribute("value");
     }
 
 }
