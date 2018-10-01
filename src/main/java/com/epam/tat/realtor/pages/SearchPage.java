@@ -32,8 +32,10 @@ public class SearchPage extends BasePage {
     private WebElement sortOptionsDropDown;
     @FindBy(xpath = "//*[@id='srp-sortby']/option")
     private List<WebElement> sortOptionsList;
-    @FindBy(xpath = "//*[@id='srp-list']/ul/li")
-    private List<WebElement> searchResultList;
+    @FindBy(xpath = "//*[contains(@class,'data-price')]")
+    private List<WebElement> homePricesList;
+    @FindBy(xpath = "//*[@id='ResultsPerPageBottom']//span[4]/a")
+    private List<WebElement> nextPageLink;
 
     /**
      * get list of min prices
@@ -67,12 +69,23 @@ public class SearchPage extends BasePage {
      *
      * @return list of homes
      */
-    public List<WebElement> getSearchResultList() {
-        return searchResultList;
+    public List<WebElement> getHomePricesList() {
+        waitForJQueryIsLoad();
+        return homePricesList;
     }
 
     /**
-     * click price button
+     * get list with one element (link on next page). Created list to avoid NullPointerException, because on the last
+     * page there are no link on the next page. In this case will be empty list, and not will be null element.
+     *
+     * @return list of next pages
+     */
+    public List<WebElement> getNextPageLink() {
+        return nextPageLink;
+    }
+
+    /**
+     * click price drop-down button
      *
      * @return this page
      */
@@ -119,9 +132,19 @@ public class SearchPage extends BasePage {
      * @return
      */
     public SearchPage clickSortOptionsDropDown() {
-        waitUntilElementIsClickable(sortOptionsDropDown);
+        waitUntilElementIsVisible(chosenCriteria);
         sortOptionsDropDown.click();
         return this;
+    }
+
+    /**
+     * get first(and single) element from nextPageLink list, and click on link to go on next page with homes
+     *
+     * @return new SearchPage to load new houses
+     */
+    public SearchPage clickNextLink() {
+        nextPageLink.get(0).click();
+        return new SearchPage(driver);
     }
 
 }

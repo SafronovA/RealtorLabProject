@@ -20,7 +20,7 @@ public class BaseTest {
      */
     @BeforeSuite
     void initResources() {
-        driver = DriverFactory.FIREFOXDRIVER.getDriver();
+        driver = DriverFactory.CHROMEDRIVER.getDriver();
         driver.manage().timeouts().implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
         homePageStep = new HomePageStep(driver);
     }

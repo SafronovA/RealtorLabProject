@@ -4,6 +4,7 @@ import com.epam.tat.realtor.ConfigProperties;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -33,6 +34,20 @@ public class BasePage {
      */
     public void waitUntilElementIsClickable(WebElement webElement) {
         driverWait.until(ExpectedConditions.elementToBeClickable(webElement));
+    }
+
+    /**
+     * wait until JQuery finish loading page
+     */
+    public void waitForJQueryIsLoad(){
+        driverWait.until((ExpectedCondition<Boolean>) driver -> {
+            try {
+                return ((Long)((JavascriptExecutor)driver).executeScript("return jQuery.active") == 0);
+            }
+            catch (Exception e) {
+                return true;
+            }
+        });
     }
 
 }
