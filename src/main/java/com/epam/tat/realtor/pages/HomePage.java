@@ -1,18 +1,11 @@
 package com.epam.tat.realtor.pages;
 
 import com.epam.tat.realtor.ConfigProperties;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
 
 public class HomePage extends BasePage{
 
@@ -90,52 +83,6 @@ public class HomePage extends BasePage{
     }
 
     /**
-     * clear city entered by default
-     * @return this page
-     */
-    public HomePage clearInputField(){
-        searchInput.clear();
-        return this;
-    }
-
-    /**
-     * enter city in input search field
-     * @param city
-     * @return this page
-     */
-    public HomePage enterCityInMainSearchInput(String city) {
-        searchInput.sendKeys(city);
-        return this;
-    }
-
-    /**
-     * click search button
-     * @return new search page
-     */
-    public SearchPage clickSearchButton(){
-        waitUntilElementIsClickable(searchButton);
-        searchButton.click();
-        return new SearchPage(driver);
-    }
-
-     /**
-      * wait for Saved Homes button to be visible
-      * @return this page
-     */
-    public HomePage waitForSaveddHomesLinkToAppear () {
-        waitUntilElementIsVisible(savedHomesLink);
-        return this;
-    }
-
-    /**
-     * wait for Saved Homes button to be visible
-     * @return this page
-     */
-    public HomePage waitForSavedSearchLinkToAppear () {
-        waitUntilElementIsVisible(savedSearchLink);
-        return this;
-    }
-    /**
      * wait for SignOut button to be visible
      * @return this page
      */
@@ -163,34 +110,16 @@ public class HomePage extends BasePage{
     }
 
     /**
-     * click saved search link to navigate to page with saved searches
-     * @return Saved Searches Page (navigate to new page)
-     */
-    public SavedSearchesPage clickSavedSearchLink(){
-        waitUntilElementIsClickable(savedSearchLink);
-        savedSearchLink.click();
-        return new SavedSearchesPage(driver);
-    }
-
-    /**
      * wait until user icon become clickable
      * click user icon
      * @return  new SavedHomesPage
      */
     public SavedHomesPage clickUserIcon(){
+        waitUntilElementIsVisible(userIcon);
         waitUntilElementIsClickable(userIcon);
         userIcon.click();
         return new SavedHomesPage(driver);
     }
 
-    /**
-     * click click 'Just Sold' button
-     * @return this page
-     */
-    public HomePage clickJustSoldButton(){
-        waitUntilElementIsClickable(justSoldButton);
-        justSoldButton.click();
-        return this;
-    }
 
 }

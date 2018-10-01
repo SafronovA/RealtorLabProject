@@ -19,29 +19,46 @@ public class MyProfilePageStep extends BasePageStep {
      * enter last name
      * click 'Save Changes' button
      * wait until the profile name changes to the desired one
-     * @param firstName  required first name
+     *
+     * @param firstName required first name
      * @param lastName  required last name
      * @return this page
      */
-    public MyProfilePageStep editProfileName(String firstName, String lastName){
+    public MyProfilePageStep editName(String firstName, String lastName) {
         myProfilePage.clickEditProfileButton()
-                     .enterFirstName(firstName)
-                     .enterLastName(lastName)
-                     .clickSaveChangesButton();
+                .enterFirstName(firstName)
+                .enterLastName(lastName)
+                .clickSaveChangesButton();
         myProfilePage.waitUntilAttributeInnerHTMLToBe(myProfilePage.getProfileNameWebElement(), firstName + " " + lastName);
         return this;
     }
 
     /**
      * perform operation of comparing required and current name
+     *
      * @param requiredName required profile name
      * @return this page
      */
-    public boolean nameIsCorrect(String requiredName){
+    public boolean nameIsCorrect(String requiredName) {
         boolean result = myProfilePage.getProfileName()
-                                      .replace(" ", "")
-                                      .equals(requiredName);
+                .replace(" ", "")
+                .equals(requiredName);
         return result;
     }
+
+    /**
+     * click 'Just Sold ' button
+     * navigate to user icon
+     * waiting for the 'Sign Out' link to appear
+     * click sign out button
+     *
+     * @return this step
+     */
+    public MyProfilePageStep logOut() {
+        myProfilePage.navigateToUserIcon()
+                .clickLogOutLink();
+        return this;
+    }
+
 
 }

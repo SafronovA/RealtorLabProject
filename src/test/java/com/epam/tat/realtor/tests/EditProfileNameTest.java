@@ -4,6 +4,7 @@ import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.steps.MyProfilePageStep;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class EditProfileNameTest extends BaseTest {
@@ -14,29 +15,30 @@ public class EditProfileNameTest extends BaseTest {
     private String firstNameNew = "New_Lo";
     private String lastNameNew = "New_ko";
 
+    @BeforeMethod
+    public void logIn() {
+        homePageStep.userLogIn();
+    }
+
     /**
      * testing the correctness of username changing
      */
     @Test
     public void editProfileName(){
-        myProfilePageStep = homePageStep.userLogIn()
-                                        .goToSavedHomesSection()
+        myProfilePageStep = homePageStep.clickUserIcon()
                                         .goToMyProfileSection()
-                                        .editProfileName(firstNameNew, lastNameNew);
-        Assert.assertTrue(myProfilePageStep.nameIsCorrect(firstNameNew+lastNameNew));
+                                        .editName(firstNameNew, lastNameNew);
+        Assert.assertTrue(myProfilePageStep.nameIsCorrect(firstNameNew+lastNameNew), "Profile name has not changed to the required");
     }
 
     /**
      * revert profile name and logout
      */
-    @AfterMethod(alwaysRun = true)
+    @AfterMethod
     public void revertProfileName(){
-        driver.navigate().to(ConfigProperties.getTestProperty("url"));
-        myProfilePageStep = homePageStep.goToSavedHomesSection()
-                                        .goToMyProfileSection()
-                                        .editProfileName(firstNameOrigin, lastNameOrigin);
-        driver.navigate().to(ConfigProperties.getTestProperty("url"));
-        homePageStep.logOut();
+
+        myProfilePageStep.editName(firstNameOrigin, lastNameOrigin)
+                .logOut();
     }
 
 }
