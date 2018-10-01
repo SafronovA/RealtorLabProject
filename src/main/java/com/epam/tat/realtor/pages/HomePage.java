@@ -150,17 +150,18 @@ public class HomePage extends BasePage{
      * click saved homes link to navigate to page with saved homes
      * @return Saved Homes Page (navigate to new page)
      */
-    public SavedHomesPage clickSavedHomesLink(){
+    public SavedHomesPage clickSavedHomesLink() {
         waitUntilElementIsClickable(savedHomesLink);
         savedHomesLink.click();
         return new SavedHomesPage(driver);
     }
-
     /**
-     * click on user icon
-     * @return new SavedHomesPage
+     * wait until user icon become clickable
+     * click user icon
+     * @return  new SavedHomesPage
      */
     public SavedHomesPage clickUserIcon(){
+        waitUntilElementIsVisible(userIcon);
         waitUntilElementIsClickable(userIcon);
         userIcon.click();
         return new SavedHomesPage(driver);
@@ -176,3 +177,4 @@ public class HomePage extends BasePage{
         return this;
     }
 }
+

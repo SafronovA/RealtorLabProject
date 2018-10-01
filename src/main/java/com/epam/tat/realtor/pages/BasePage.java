@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait driverWait;
+    private static final String INNER_HTML = "innerHTML";
 
     public BasePage(WebDriver driver){
         this.driver = driver;
@@ -31,6 +32,14 @@ public class BasePage {
         driverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
+    /**
+     * waiting for a specific attribute value in the Web element
+     * @param webElement checked webElement
+     * @param value      expected value
+     */
+    public void waitUntilAttributeInnerHTMLToBe(WebElement webElement, String value ){
+        driverWait.until(ExpectedConditions.attributeToBe(webElement, INNER_HTML, value));
+    }
 
     /**
      * click element by Java Executor

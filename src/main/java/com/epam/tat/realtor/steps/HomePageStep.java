@@ -4,7 +4,7 @@ import com.epam.tat.realtor.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 
 
-public class  HomePageStep extends BasePageStep{
+public class HomePageStep extends BasePageStep {
     private HomePage homePage;
 
     public HomePageStep(WebDriver driver){
@@ -52,11 +52,13 @@ public class  HomePageStep extends BasePageStep{
 
     /**
      * navigate to user icon
+     * waiting for the 'Sign Out' link to appear
      * click sign out button
+     *
+     * @return this page
      */
     public HomePageStep logOut(){
-        homePage
-                .navigateToUserIcon()
+        homePage.navigateToUserIcon()
                 .waitForSignOutLinkToAppear()
                 .clickLogOutLink();
         return this;
