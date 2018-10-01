@@ -15,7 +15,7 @@ public class SortByPriceTest extends BaseTest {
      * check that homes are displayed on page sorted by price
      */
     @Test
-    public void savedSearch() {
+    public void sortByPrice() {
         SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)
                 .clickSearchButton()
                 .selectMinMaxPrices(MIN_PRICE, MAX_PRICE)
