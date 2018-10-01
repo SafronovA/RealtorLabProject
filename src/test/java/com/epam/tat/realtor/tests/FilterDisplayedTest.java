@@ -12,7 +12,7 @@ public class FilterDisplayedTest extends BaseTest {
      * check that city is displayed in input field on home page are equals entered in input field city on search page
      */
     @Test
-    public void savedSearch() {
+    public void filterDisplayed() {
         SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)
                 .clickSearchButton();
         Assert.assertTrue(searchPageStep.isEnteredCityEqualsShownInInputFieldCity(CITY_NAME),
