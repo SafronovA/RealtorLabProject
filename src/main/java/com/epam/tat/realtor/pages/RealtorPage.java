@@ -22,6 +22,8 @@ public class RealtorPage extends BasePage{
     private WebElement saleHouseStatus;
     @FindBy(xpath = "//a[@class='leaflet-control-zoom-out']")
     private WebElement zoomOutButton;
+    @FindBy(xpath = "//p/a[@id='inquiry_cta']")
+    private WebElement askQuestionButton;
 
     /**
      * click "Recently Sold" section above iframe map
@@ -56,7 +58,7 @@ public class RealtorPage extends BasePage{
      */
     public RealtorPage scrollToIFrame(){
         waitForPresenceOfAllElementsLocatedBy(soldHouses);
-        BasePage.scrollToElement(soldHousesSection,driver);
+        BasePage.scrollToElement(askQuestionButton,driver);
         return this;
     }
 
