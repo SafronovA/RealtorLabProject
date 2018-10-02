@@ -24,6 +24,10 @@ public class RealtorPage extends BasePage{
     private WebElement zoomOutButton;
     @FindBy(xpath = "//p/a[@id='inquiry_cta']")
     private WebElement askQuestionButton;
+    @FindBy(xpath = "//a[@class='btn btn-plain load-more-button load-more-review-button']")
+    private WebElement loadMoreReviewsButton;
+    @FindBy (xpath = "//ul[@id='agent-review-list']/li[not(@style='display: none;')]")
+    private List<WebElement> realtorReviews;
 
     /**
      * click "Recently Sold" section above iframe map
@@ -81,4 +85,31 @@ public class RealtorPage extends BasePage{
         waitForPresenceOfAllElementsLocatedBy(soldHouses);
         return this;
     }
+
+    /**
+     * click Load More Reviews button
+     * @return this page
+     */
+    public RealtorPage clickLoadMoreReviewsButton(){
+        waitUntilElementIsClickable(loadMoreReviewsButton);
+        loadMoreReviewsButton.click();
+        return this;
+    }
+
+    /**
+     * check if LoadMoreReviews button is displayed
+     * @return if LoadMoreReviews button is displayed
+     */
+    public boolean isLoadMoreReviewsButtonDisplayed(){
+        return loadMoreReviewsButton.isDisplayed();
+    }
+
+    /**
+     * get realtor reviews list
+     * @return  realtor reviews
+     */
+    public List<WebElement> getRealtorReviews(){
+        return realtorReviews;
+    }
+
 }

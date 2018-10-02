@@ -28,4 +28,12 @@ public class FindRealtorPageStep extends BasePageStep {
         findRealtorPage.clickRealtorIcon();
         return new RealtorPageStep(driver);
     }
+
+    /**
+     * get value of realtor rating count
+     * @return reating count
+     */
+    public int getRatingCount(){
+        return Parser.parse(findRealtorPage.getRatingCount().getText());
+    }
 }

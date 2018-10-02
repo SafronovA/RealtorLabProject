@@ -41,13 +41,22 @@ public class BasePage {
         JavascriptExecutor executor = (JavascriptExecutor) webDriver;
         executor.executeScript("arguments[0].click();", webElement);
     }
+
+    /**
+     * scroll to element on the page
+     * @param webElement element to each page view to be scrolled
+     * @param webDriver session driver
+     */
     public static void scrollToElement(WebElement webElement, WebDriver webDriver){
         JavascriptExecutor executor = (JavascriptExecutor) webDriver;
         executor.executeScript("arguments[0].scrollIntoView(true);",webElement);
     }
+
+    /**
+     * wait for the presence of the elements by locator
+     * @param by locator of the elements
+     */
     public void waitForPresenceOfAllElementsLocatedBy(By by){
         driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
     }
-
-
 }

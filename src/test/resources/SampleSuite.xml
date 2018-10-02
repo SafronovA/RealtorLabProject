@@ -9,6 +9,7 @@
         <classes>
             <class name="com.epam.tat.realtor.tests.SavedSearchTest"/>
             <class name = "com.epam.tat.realtor.tests.RealtorSoldHousesTest"/>
+            <class name="com.epam.tat.realtor.tests.RealtorReviewsTest"/>
         </classes>
     </test>
 </suite>

@@ -15,6 +15,8 @@ public class FindRealtorPage extends BasePage {
     private WebElement realtorSoldHouses;
     @FindBy(xpath = "//div[@class='agent-list-card-img']/img")
     private WebElement userIcon;
+    @FindBy(xpath = "//div[@class='rating-count']")
+    private WebElement ratingCount;
 
     /**
      * get number of realtor sold houses
@@ -23,6 +25,12 @@ public class FindRealtorPage extends BasePage {
     public String getRealtorSoldHouses(){
         return realtorSoldHouses.getText();
     }
+
+    /**
+     * get rating count
+     * @return rating count
+     */
+    public WebElement getRatingCount(){return ratingCount;}
 
     /**
      * click on the realtor icon

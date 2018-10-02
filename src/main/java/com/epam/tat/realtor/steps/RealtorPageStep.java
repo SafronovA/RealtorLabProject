@@ -64,4 +64,24 @@ public class RealtorPageStep extends BasePageStep{
         return this;
     }
 
+    /**
+     * click load all reviews button untill all reviews won't be loaded
+     * @return this page
+     */
+    public RealtorPageStep loadAllReviews(){
+        while (realtorPage.isLoadMoreReviewsButtonDisplayed()){
+            realtorPage.clickLoadMoreReviewsButton();
+        }
+        return this;
+    }
+
+    /**
+     * get realtor reviews count
+     * @return realtor reviews count
+     */
+    public int getRealtorReviewsCount(){
+        return realtorPage.getRealtorReviews().size();
+    }
+
+
 }
