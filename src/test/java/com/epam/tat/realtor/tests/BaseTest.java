@@ -1,4 +1,3 @@
-
 package com.epam.tat.realtor.tests;
 
 import com.epam.tat.realtor.ConfigProperties;

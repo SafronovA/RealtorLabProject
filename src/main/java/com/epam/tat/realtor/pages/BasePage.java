@@ -59,4 +59,23 @@ public class BasePage {
     public void waitForPresenceOfAllElementsLocatedBy(By by){
         driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
     }
+    /**
+     * waiting for a specific attribute value in the Web element
+     * @param webElement checked webElement
+     * @param value      expected value
+     */
+    public void waitUntilAttributeInnerHTMLToBe(WebElement webElement, String value ){
+        driverWait.until(ExpectedConditions.attributeToBe(webElement, INNER_HTML, value));
+    }
+    /**
+     * wait for presence of all elements by locator
+     * @param by locator of the elements
+     */
+    public void waitForElements(By by){
+        driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+    }
+
+    public void waitUntilElementIsInvisible(WebElement webElement){
+        driverWait.until(ExpectedConditions.invisibilityOf(webElement));
+    }
 }

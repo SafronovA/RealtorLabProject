@@ -16,10 +16,10 @@ public class RealtorReviewsTest extends BaseTest {
     /**
      * click realtor button on homepage,
      * create search request (enter realtor name),
-     * submit search request, get number of sold houses in the realtor card,
+     * submit search request, get number of reviews in the realtor card,
      * click on realtor icon
-     * check that number of sold houses in the "Recently Sold" section match sold houses number in the realtor's card
-     * check if every hose on the iframe map has "Sold" status
+     * click Load More Reviews button until all reviews won't be loaded
+     * check that number of reviews on the page match reviews number in the realtor's card
      */
     @Test
     public void checkRealtorSoldHouses(){

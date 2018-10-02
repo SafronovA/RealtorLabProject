@@ -17,7 +17,7 @@ public class RealtorSoldHousesTest extends BaseTest {
      * submit search request, get number of sold houses in the realtor card,
      * click on realtor icon
      * check that number of sold houses in the "Recently Sold" section match sold houses number in the realtor's card
-     * check if every hose on the iframe map has "Sold" status
+     * check if every house on the iframe map has "Sold" status
      */
     @Test
     public void checkRealtorSoldHouses(){

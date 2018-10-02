@@ -1,15 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="TruliaSampleSuite" verbose="1" parallel="methods" thread-count="5">
+<suite name="RealtorSuite" verbose="1" parallel="classes" thread-count="6" >
 
     <listeners>
     </listeners>
 
-    <test name="SampleTest">
+    <test name="RealtorTest" >
         <classes>
             <class name="com.epam.tat.realtor.tests.SavedSearchTest"/>
             <class name = "com.epam.tat.realtor.tests.RealtorSoldHousesTest"/>
             <class name="com.epam.tat.realtor.tests.RealtorReviewsTest"/>
+            <class name="com.epam.tat.realtor.tests.EditProfileNameTest"/>
+            <class name="com.epam.tat.realtor.tests.MapMarksTest"/>
+            <class name = "com.epam.tat.realtor.tests.SearchByConditionsTest"/>
+
         </classes>
     </test>
 </suite>
