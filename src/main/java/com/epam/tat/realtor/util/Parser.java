@@ -4,11 +4,12 @@ public class Parser {
 
     /**
      * parse String value removing any non digit character
+     *
      * @param str string to be parsed
      * @return int value after parsing operation
      */
-    public static int parse(String str){
-        return Integer.valueOf(str.replaceAll("[^\\d]","").trim());
+    public static Integer parse(String str) {
+        return Integer.valueOf(str.replaceAll("[^\\d.]", "").trim());
     }
 
     /**

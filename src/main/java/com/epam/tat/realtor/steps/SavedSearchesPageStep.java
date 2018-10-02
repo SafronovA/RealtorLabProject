@@ -54,6 +54,16 @@ public class SavedSearchesPageStep extends BasePageStep {
     }
 
     /**
+     * go to home page
+     *
+     * @return
+     */
+    public HomePageStep goToHomePage(){
+        savedSearchesPage.clickHomePageLink();
+        return new HomePageStep(driver);
+    }
+
+    /**
      * check that saved search description min and max price corresponds to entered min and max price
      * @param minPrice
      * @param maxPrice

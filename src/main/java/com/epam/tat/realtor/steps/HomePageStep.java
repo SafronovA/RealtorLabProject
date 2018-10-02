@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 public class HomePageStep extends BasePageStep {
     private HomePage homePage;
 
-    public HomePageStep(WebDriver driver){
+    public HomePageStep(WebDriver driver) {
         super(driver);
         homePage = new HomePage(driver);
     }
@@ -18,9 +18,10 @@ public class HomePageStep extends BasePageStep {
      * enter user email
      * enter user password
      * submit credentials
+     *
      * @return HomePageStep
      */
-    public HomePageStep userLogIn(){
+    public HomePageStep userLogIn() {
         homePage.waitForSignInLinkToAppear()
                 .clickSignInButton()
                 .enterEmail()
@@ -31,6 +32,7 @@ public class HomePageStep extends BasePageStep {
 
     /**
      * clear entered by default city, enter city in input search field
+     *
      * @param city
      * @return search result page
      */
@@ -43,9 +45,10 @@ public class HomePageStep extends BasePageStep {
 
     /**
      * click search button
+     *
      * @return SearchPageStep
      */
-    public SearchPageStep clickSearchButton(){
+    public SearchPageStep clickSearchButton() {
         homePage.clickSearchButton();
         return new SearchPageStep(driver);
     }
@@ -66,9 +69,10 @@ public class HomePageStep extends BasePageStep {
 
     /**
      * click on user icon
+     *
      * @return new SavedHomesPageStep
      */
-    public SavedHomesPageStep clickUserIcon(){
+    public SavedHomesPageStep clickUserIcon() {
         homePage.clickUserIcon();
         return new SavedHomesPageStep(driver);
     }
