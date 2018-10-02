@@ -6,15 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import java.util.List;
 
+public class HomePage extends BasePage {
 
-public class HomePage extends BasePage{
-
-    public HomePage(WebDriver driver){
+    public HomePage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(linkText = "Log In")
@@ -53,50 +51,57 @@ public class HomePage extends BasePage{
     }
     /**
      * click SignIn button
+     *
      * @return this page
      */
-    public HomePage clickSignInButton(){
+    public HomePage clickSignInButton() {
         signInButton.click();
         return this;
     }
 
     /**
      * enter user login in the email input
+     *
      * @return this page
      */
-    public HomePage enterEmail(){
+    public HomePage enterEmail() {
         emailInput.sendKeys(ConfigProperties.getTestProperty("userLogin"));
         return this;
     }
+
     /**
      * enter user password in password input
+     *
      * @return this page
      */
-    public HomePage enterPassword(){
+    public HomePage enterPassword() {
         passwordInput.sendKeys(ConfigProperties.getTestProperty("userPassword"));
         return this;
     }
 
     /**
      * click LogInSubmitl button
+     *
      * @return this page
      */
-    public HomePage clickLoginSubmitButton(){
+    public HomePage clickLoginSubmitButton() {
         logInSubmitButton.click();
         return this;
     }
 
     /**
      * navigate to user icon
+     *
      * @return this page
      */
-    public HomePage navigateToUserIcon(){
+    public HomePage navigateToUserIcon() {
         new Actions(driver).moveToElement(userIcon).perform();
         return this;
     }
 
     /**
      * clear city entered by default
+     *
      * @return this page
      */
     public HomePage clearInputField(){
@@ -106,6 +111,7 @@ public class HomePage extends BasePage{
 
     /**
      * enter city in input search field
+     *
      * @param city
      * @return this page
      */
@@ -116,6 +122,7 @@ public class HomePage extends BasePage{
 
     /**
      * click search button
+     *
      * @return new search page
      */
     public SearchPage clickSearchButton(){
@@ -124,44 +131,49 @@ public class HomePage extends BasePage{
         return new SearchPage(driver);
     }
 
-     /**
-      * wait for Saved Homes button to be visible
-      *@return this page
+    /**
+     * wait for Saved Homes button to be visible
+     *
+     * @return this page
      */
-    public HomePage waitForSavedHomesLinkToAppear () {
+    public HomePage waitForSavedHomesLinkToAppear() {
         waitUntilElementIsVisible(savedHomesLink);
         return this;
     }
 
     /**
      * wait for SignOut button to be visible
+     *
      * @return this page
      */
-    public HomePage waitForSignOutLinkToAppear () {
+    public HomePage waitForSignOutLinkToAppear() {
         waitUntilElementIsVisible(logOutLink);
         return this;
     }
 
     /**
      * wait for SignIn button to be visible
+     *
      * @return this page
      */
-    public HomePage waitForSignInLinkToAppear () {
+    public HomePage waitForSignInLinkToAppear() {
         waitUntilElementIsVisible(signInButton);
         return this;
     }
 
     /**
      * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
+     *
      * @return new HomePage
      */
-    public HomePage clickLogOutLink(){
+    public HomePage clickLogOutLink() {
         logOutLink.click();
         return new HomePage(driver);
     }
 
     /**
      * click saved homes link to navigate to page with saved homes
+     *
      * @return Saved Homes Page (navigate to new page)
      */
     public SavedHomesPage clickSavedHomesLink() {
@@ -169,12 +181,14 @@ public class HomePage extends BasePage{
         savedHomesLink.click();
         return new SavedHomesPage(driver);
     }
+
     /**
      * wait until user icon become clickable
      * click user icon
+     *
      * @return  new SavedHomesPage
      */
-    public SavedHomesPage clickUserIcon(){
+    public SavedHomesPage clickUserIcon() {
         waitUntilElementIsVisible(userIcon);
         waitUntilElementIsClickable(userIcon);
         userIcon.click();
@@ -200,6 +214,4 @@ public class HomePage extends BasePage{
         waitUntilElementIsVisible(searchInput);
         return this;
     }
-
 }
-

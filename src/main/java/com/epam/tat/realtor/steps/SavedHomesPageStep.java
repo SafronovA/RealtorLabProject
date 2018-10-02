@@ -21,9 +21,10 @@ public class SavedHomesPageStep extends BasePageStep {
     }
     /**
      * click on Saved Searches link to open saved searches page
+     *
      * @return new SavedSearchesPageStep
      */
-    public SavedSearchesPageStep clickSavedSearchesLink(){
+    public SavedSearchesPageStep clickSavedSearchesLink() {
         savedHomesPage.clickSavedSearches();
         return new SavedSearchesPageStep(driver);
     }

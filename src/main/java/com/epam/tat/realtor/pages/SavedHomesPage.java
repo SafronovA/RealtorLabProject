@@ -12,9 +12,9 @@ import java.util.List;
 
 public class SavedHomesPage extends BasePage {
 
-    public SavedHomesPage (WebDriver driver){
+    public SavedHomesPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
     By pageLayer = By.xpath("//div[@class='modal fade modal-hero modal-mobile-fullscreen js-modal-lazyload-assets modalOverlayBase_after-open']");
     @FindBy(linkText = "Saved Searches")
@@ -47,9 +47,10 @@ public class SavedHomesPage extends BasePage {
     }
     /**
      * click on saved searches link and go in saved searches page
+     *
      * @return new SavedSearchesPage
      */
-    public SavedSearchesPage clickSavedSearches(){
+    public SavedSearchesPage clickSavedSearches() {
         waitUntilElementIsClickable(savedSearches);
         savedSearches.click();
         return new SavedSearchesPage(driver);

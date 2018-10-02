@@ -7,15 +7,15 @@
 
     <test name="RealtorTest" >
         <classes>
-            <class name = "com.epam.tat.realtor.tests.RealtorSoldHousesTest"/>
-            <class name="com.epam.tat.realtor.tests.RealtorReviewsTest"/>
-            <class name="com.epam.tat.realtor.tests.MapMarksTest"/>
-            <class name="com.epam.tat.realtor.tests.SavedHomesTest"/>
-            <class name = "com.epam.tat.realtor.tests.SearchByConditionsTest"/>
             <class name="com.epam.tat.realtor.tests.EditProfileNameTest"/>
             <class name="com.epam.tat.realtor.tests.SavedSearchTest"/>
-
-
+            <class name="com.epam.tat.realtor.tests.MapMarksTest"/>
+            <class name="com.epam.tat.realtor.tests.SearchByConditionsTest"/>
+            <class name="com.epam.tat.realtor.tests.SortByPriceTest"/>
+            <class name="com.epam.tat.realtor.tests.SavedHomesTest"/>
+            <class name="com.epam.tat.realtor.tests.RealtorReviewsTest"/>
+            <class name="com.epam.tat.realtor.tests.RealtorSoldHousesTest"/>
         </classes>
     </test>
+
 </suite>
