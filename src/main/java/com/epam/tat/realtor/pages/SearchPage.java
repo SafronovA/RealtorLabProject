@@ -420,7 +420,7 @@ public class SearchPage extends BasePage {
     }
 
     /**
-     * wait for home list
+     * wait for home list 
      *
      * @return this page
      */
