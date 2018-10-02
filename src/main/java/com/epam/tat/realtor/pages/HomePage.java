@@ -7,7 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.concurrent.TimeUnit;
+import java.util.List;
+
 
 public class HomePage extends BasePage{
 
@@ -40,6 +41,8 @@ public class HomePage extends BasePage{
     private WebElement rentButton;
     @FindBy(xpath = "//li[@id='img_far']/a")
     private WebElement realtorButton;
+    @FindBy(xpath = "//a[contains(@class,'js-save-listing btn-save-listing js-save-trigger ')]//i[2]")
+    List<WebElement> heartIconsList;
 
     /**
      * click SignIn button
@@ -189,6 +192,9 @@ public class HomePage extends BasePage{
     public HomePage waitForSearchInput(){
         waitUntilElementIsVisible(searchInput);
         return this;
+    }
+    public List<WebElement> getHeartIconsList(){
+        return heartIconsList;
     }
 }
 

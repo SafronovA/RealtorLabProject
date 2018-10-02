@@ -25,9 +25,8 @@ public class SavedHomesTest extends BaseTest {
     }
     @Test
     public void checkSavedHomes(){
-        SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME).clickSearchButton();
-        int savedHomes = searchPageStep.createMinSearchRequest(MIN_PRICE_VALUE,MAX_PRICE_VALUE).saveHomes();
-        SavedHomesPageStep savedHomesPageStep = searchPageStep.clickUserIcon();
+        int savedHomes = homePageStep.saveHomes();
+        SavedHomesPageStep savedHomesPageStep = homePageStep.clickUserIcon();
         assertEquals(savedHomes, savedHomesPageStep.checkSavedHomes(), "saved homes number in saved homes section mismatch number of saved homes on the search page");
     }
     @AfterMethod
