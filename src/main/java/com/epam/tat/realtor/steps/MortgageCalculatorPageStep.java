@@ -33,7 +33,7 @@ public class MortgageCalculatorPageStep extends BasePageStep {
         return this;
     }
 
-    public boolean isDisplyedPriceCorrect(){
+    public boolean isDisplayedPriceCorrect(){
         
     }
 

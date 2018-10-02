@@ -29,6 +29,10 @@ public class MortgageCalculatorPage extends BasePage {
         return loanTypeOptionList;
     }
 
+    public String getPricePerMonth(){
+        return pricePerMonth.getText();
+    }
+
     public MortgageCalculatorPage setHomePrice(String homePrice){
         homePriceInput.clear();
         homePriceInput.sendKeys(homePrice);
@@ -44,10 +48,6 @@ public class MortgageCalculatorPage extends BasePage {
     public MortgageCalculatorPage clickMortgageLoanTypeDropDown(){
         mortgageLoanTypeDropDown.click();
         return this;
-    }
-
-    public String getPricePerMonth(){
-        return pricePerMonth.getText();
     }
 
 }

@@ -28,9 +28,9 @@ import java.util.Properties;
      }
 
      /**
-      * get property from properties file by key
-      * @param key
-      * @return
+      * get property value from config.properties
+      * @param key key from config.properties
+      * @return value of key
       */
      public static String getTestProperty(String key) {
          return PROPERTIES.getProperty(key);
