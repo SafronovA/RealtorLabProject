@@ -25,4 +25,16 @@ public class SavedHomesPage extends BasePage {
         savedSearches.click();
         return new SavedSearchesPage(driver);
     }
+
+    @FindBy(xpath = "//*[text()='My Profile']")
+    private WebElement myProfileLink;
+
+    /**
+     * click 'My Profile' link
+     * @return new MyProfilePage
+     */
+    public MyProfilePage clickMyProfileLink(){
+        myProfileLink.click();
+        return new MyProfilePage(driver);
+    }
 }

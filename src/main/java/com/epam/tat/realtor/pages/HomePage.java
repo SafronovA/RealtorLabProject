@@ -7,9 +7,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 public class HomePage extends BasePage {
 
     public HomePage(WebDriver driver) {
@@ -34,13 +31,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@id='my_search_div']/div/a")
     private WebElement savedSearchLink;
     @FindBy(xpath = "//*[@id='searchBox']")
-    private List<WebElement> searchInput;
-    @FindBy(xpath = "//*[@id='downshift-0-input']")
-    private WebElement searchInputOnNewPage;
+    private WebElement searchInput;
     @FindBy(xpath = "(//button[@class='btn btn-primary js-searchButton '])[1]")
-    private List<WebElement> searchButton;
-    @FindBy(xpath = "(//button[contains(@class,'search-btn')])[1]")
-    private WebElement searchButtonOnNewPage;
+    private WebElement searchButton;
     @FindBy(xpath = "//*[text()='Just Sold']")
     private WebElement rentButton;
 
@@ -99,12 +92,8 @@ public class HomePage extends BasePage {
      *
      * @return this page
      */
-    public HomePage clearInputField() {
-        if (searchInput.size() > 0) {
-            searchInput.get(0).clear();
-        } else {
-            searchInputOnNewPage.clear();
-        }
+    public HomePage clearInputField(){
+        searchInput.clear();
         return this;
     }
 
@@ -115,11 +104,7 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage enterCityInMainSearchInput(String city) {
-        if (searchInput.size() > 0) {
-            searchInput.get(0).sendKeys(city);
-        } else {
-            searchInputOnNewPage.sendKeys(city);
-        }
+        searchInput.sendKeys(city);
         return this;
     }
 
@@ -128,14 +113,9 @@ public class HomePage extends BasePage {
      *
      * @return new search page
      */
-    public SearchPage clickSearchButton() {
-        if(searchButton.size()>0){
-            waitUntilElementIsClickable(searchButton.get(0));
-            searchButton.get(0).click();
-        } else {
-            waitUntilElementIsClickable(searchButtonOnNewPage);
-            searchButtonOnNewPage.click();
-        }
+    public SearchPage clickSearchButton(){
+        waitUntilElementIsClickable(searchButton);
+        searchButton.click();
         return new SearchPage(driver);
     }
 
@@ -191,14 +171,25 @@ public class HomePage extends BasePage {
     }
 
     /**
-     * click on user icon
+     * wait until user icon become clickable
+     * click user icon
      *
-     * @return new SavedHomesPage
+     * @return  new SavedHomesPage
      */
     public SavedHomesPage clickUserIcon() {
+        waitUntilElementIsVisible(userIcon);
         waitUntilElementIsClickable(userIcon);
         userIcon.click();
         return new SavedHomesPage(driver);
     }
 
+
+    /**
+     * wait for Search input to be visible
+     * @return this page
+     */
+    public HomePage waitForSearchInput(){
+        waitUntilElementIsVisible(searchInput);
+        return this;
+    }
 }

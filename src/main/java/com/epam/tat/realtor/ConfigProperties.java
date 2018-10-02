@@ -28,12 +28,12 @@ public class ConfigProperties {
     }
 
     /**
-     * get property from properties file by key
+     * get property value from config.properties
      *
-     * @param key
-     * @return
+     * @param key key from config.properties
+     * @return value of key
      */
-    public static String getTestProperty(String key) {
-        return PROPERTIES.getProperty(key);
-    }
-}
+     public static String getTestProperty(String key) {
+         return PROPERTIES.getProperty(key);
+     }
+ }
