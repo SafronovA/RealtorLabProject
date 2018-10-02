@@ -2,8 +2,8 @@ package com.epam.tat.realtor.tests;
 
 import com.epam.tat.realtor.steps.SavedSearchesPageStep;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SavedSearchTest extends BaseTest {
@@ -17,7 +17,7 @@ public class SavedSearchTest extends BaseTest {
      * login with valid credentials
      * go to saved searches page and delete all saved searches
      */
-    @BeforeTest
+    @BeforeMethod
     public void logIn() {
         homePageStep.userLogIn()
                 .clickUserIcon()
@@ -44,7 +44,7 @@ public class SavedSearchTest extends BaseTest {
     /**
      * delete created search and log out
      */
-    @AfterTest
+    @AfterMethod
     public void deleteCreatedSaveSearch() {
         savedSearchesPageStep.clearAllOldSavedSearches()
                 .logOut();
