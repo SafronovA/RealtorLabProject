@@ -34,6 +34,8 @@ public class SavedSearchesPage extends BasePage {
     private WebElement logOutLink;
     @FindBy(xpath = "//*[@id='header-rdc-logo']/svg")
     private WebElement logo;
+    @FindBy(xpath = "//*[@id='header-rdc-logo']")
+    private WebElement homePageLink;
 
     /**
      * get saved searches list
@@ -101,6 +103,16 @@ public class SavedSearchesPage extends BasePage {
     public HomePage clickLogOutLink() {
         waitUntilElementIsClickable(logOutLink);
         logOutLink.click();
+        return new HomePage(driver);
+    }
+
+    /**
+     * go to home page
+     *
+     * @return new HomePage(driver)
+     */
+    public HomePage clickHomePageLink(){
+        homePageLink.click();
         return new HomePage(driver);
     }
 

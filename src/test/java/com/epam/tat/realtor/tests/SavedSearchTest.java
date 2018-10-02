@@ -23,7 +23,7 @@ public class SavedSearchTest extends BaseTest {
                 .clickUserIcon()
                 .clickSavedSearchesLink()
                 .clearAllOldSavedSearches()
-                .moveToHomePage();
+                .goToHomePage();
     }
 
     /**

@@ -33,6 +33,7 @@ public class SearchPageStep extends BasePageStep {
      */
     public SearchPageStep selectMinMaxPrices(String minPrice, String maxPrice) {
         searchPage.clickPriceButton();
+        searchPage.clickMinPriceInput();
         searchPage.getMinPriceRange().stream().filter(WebElement -> WebElement.getText().equals(minPrice)).findFirst().get().click();
         searchPage.getMaxPriceRange().stream().filter(WebElement -> WebElement.getText().equals(maxPrice)).findFirst().get().click();
         return this;
