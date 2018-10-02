@@ -45,6 +45,13 @@ public class HomePage extends BasePage{
     List<WebElement> heartIconsList;
 
     /**
+     * get heart icons list on the homes for sale cards
+     * @return heart icons list
+     */
+    public List<WebElement> getHeartIconsList(){
+        return heartIconsList;
+    }
+    /**
      * click SignIn button
      * @return this page
      */
@@ -193,8 +200,6 @@ public class HomePage extends BasePage{
         waitUntilElementIsVisible(searchInput);
         return this;
     }
-    public List<WebElement> getHeartIconsList(){
-        return heartIconsList;
-    }
+
 }
 

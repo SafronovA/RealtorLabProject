@@ -1,12 +1,11 @@
 package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.SearchPage;
 import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,16 +49,6 @@ public class SearchPageStep extends BasePageStep{
                 .clickUserIcon()
                 .clickSavedSearches();
         return new SavedSearchesPageStep(driver);
-    }
-
-
-    /**
-     * navigate to home page
-     * @return new Home page
-     */
-    public HomePageStep goToHomePage(){
-        driver.navigate().to(ConfigProperties.getTestProperty("url"));
-        return new HomePageStep(driver);
     }
 
     /**
@@ -116,14 +105,6 @@ public class SearchPageStep extends BasePageStep{
                     Parser.parse(searchPage.getSearchedHouseSqftList().get(i).getText())));
         }
         return homesList;
-    }
-
-    /**
-     * print list of searched houses
-     * @param homeList list of houses to be printed to the console
-     */
-    public void printList(List<House> homeList){
-        homeList.forEach(x-> System.out.println(x.getPrice()+" "+x.getBedNumber()+" "+x.getBathNumber()+" "+x.getSquare()+" "));
     }
 
     /**
@@ -253,32 +234,5 @@ public class SearchPageStep extends BasePageStep{
         return searchPage.getMapMarks().stream().allMatch(x->{ BasePage.clickByJEx(x,driver);
             return (Parser.parse(minSqft)<=Parser.parse(searchPage.getMapMarkSqft()))
                     && (Parser.parse(maxSqft)>=Parser.parse(searchPage.getMapMarkSqft()));});
-    }
-
-    /**
-     *create search request with parameters:
-     * @param minValue min price value
-     * @param maxValue max price value
-     * @return this page
-     */
-    public SearchPageStep createMinSearchRequest(String minValue, String maxValue){
-        searchPage.clickPriceButton();
-        if(!minValue.equals("")){
-            searchPage.clickMinPriceInput();
-            setMinPriceValue(minValue);}
-        if(!maxValue.equals("")){
-            searchPage.clickMaxPriceInput();
-            setMaxPriceValue(maxValue);}
-        return this;
-    }
-
-    public int saveHomes() {
-        searchPage.getHeartIconsList().forEach(WebElement::click);
-        return searchPage.getHeartIconsList().size();
-    }
-
-    public SavedHomesPageStep clickUserIcon() {
-        searchPage.clickUserIcon();
-        return new SavedHomesPageStep(driver);
     }
 }

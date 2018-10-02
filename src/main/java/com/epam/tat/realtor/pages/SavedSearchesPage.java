@@ -96,5 +96,4 @@ public class SavedSearchesPage extends BasePage {
         logOutLink.click();
         return new HomePage(driver);
     }
-
 }

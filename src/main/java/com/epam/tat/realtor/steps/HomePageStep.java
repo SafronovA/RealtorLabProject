@@ -83,10 +83,12 @@ public class HomePageStep extends BasePageStep {
         return new SearchRealtorPageStep(driver);
     }
 
+    /**
+     * save all homes on the home page
+     * @return saved homes list size
+     */
     public int saveHomes() {
         homePage.getHeartIconsList().forEach(WebElement::click);
         return homePage.getHeartIconsList().size();
     }
-
-
 }

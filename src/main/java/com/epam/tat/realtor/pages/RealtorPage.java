@@ -29,14 +29,13 @@ public class RealtorPage extends BasePage{
     @FindBy (xpath = "//ul[@id='agent-review-list']/li[not(@style='display: none;')]")
     private List<WebElement> realtorReviews;
 
+
     /**
-     * click "Recently Sold" section above iframe map
-     * @return this page
+     * get realtor reviews list
+     * @return  realtor reviews
      */
-    public RealtorPage clickSoldHousesSection(){
-        waitUntilElementIsClickable(soldHousesSection);
-        soldHousesSection.click();
-        return this;
+    public List<WebElement> getRealtorReviews(){
+        return realtorReviews;
     }
 
     /**
@@ -54,6 +53,15 @@ public class RealtorPage extends BasePage{
     public String getSaleHouseStatus(){
         waitUntilElementIsVisible(saleHouseStatus);
         return saleHouseStatus.getText();
+    }
+    /**
+     * click "Recently Sold" section above iframe map
+     * @return this page
+     */
+    public RealtorPage clickSoldHousesSection(){
+        waitUntilElementIsClickable(soldHousesSection);
+        soldHousesSection.click();
+        return this;
     }
 
     /**
@@ -103,13 +111,4 @@ public class RealtorPage extends BasePage{
     public boolean isLoadMoreReviewsButtonDisplayed(){
         return loadMoreReviewsButton.isDisplayed();
     }
-
-    /**
-     * get realtor reviews list
-     * @return  realtor reviews
-     */
-    public List<WebElement> getRealtorReviews(){
-        return realtorReviews;
-    }
-
 }

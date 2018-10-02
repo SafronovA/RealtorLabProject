@@ -324,12 +324,14 @@ public class SearchPage extends BasePage {
         waitUntilElementIsVisible(homeSizeFilterIcon);
         return this;
     }
+
+    /**
+     * wait for home list to be loaded
+     * @return this page
+     */
     public SearchPage waitForHomeList(){
         waitForElements(priceList);
         return this;
-    }
-    public List<WebElement> getHeartIconsList(){
-        return heartIconsList;
     }
 
 }

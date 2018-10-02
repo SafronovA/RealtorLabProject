@@ -28,26 +28,26 @@ public class SavedHomesPageStep extends BasePageStep {
         return new SavedSearchesPageStep(driver);
     }
 
+    /**
+     * clear all saved homes in saved homes section
+     * return back on home page
+     * @return new HomePage
+     */
     public HomePageStep clearSavedHomes() {
-        if (savedHomesPage.getSaveHomesButtonList().size()>0) {
+        if (!savedHomesPage.getSaveHomesButtonList().isEmpty()) {
             savedHomesPage.getSaveHomesButtonList().forEach(x -> {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 x.click();
                 savedHomesPage.clickDeleteButton();
-//            try {
-//                while (savedHomesPage.getStrangeWindowLayer().isDisplayed()){}
-//            }
-//            catch (StaleElementReferenceException | NoSuchElementException e ){}
             });
         }
         savedHomesPage.clickRealtorIcon();
         return new HomePageStep(driver);
     }
 
+    /**
+     * check number of saved homes
+     * @return saved homes list size
+     */
     public int checkSavedHomes() {
         return savedHomesPage.getSaveHomesButtonList().size();
     }
