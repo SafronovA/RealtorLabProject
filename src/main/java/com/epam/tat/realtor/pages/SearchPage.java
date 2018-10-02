@@ -93,6 +93,7 @@ public class SearchPage extends BasePage {
      * @return list of the min price constants
      */
     public List<WebElement> getMinPriceRange() {
+        waitUntilElementIsVisible(minPriceRange.get(0));
         return minPriceRange;
     }
 
@@ -102,6 +103,7 @@ public class SearchPage extends BasePage {
      * @return list of the max price constants
      */
     public List<WebElement> getMaxPriceRange() {
+        waitUntilElementIsVisible(maxPriceRange.get(0));
         return maxPriceRange;
     }
 
