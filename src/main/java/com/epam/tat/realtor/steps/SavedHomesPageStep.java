@@ -13,17 +13,20 @@ public class SavedHomesPageStep extends BasePageStep {
 
     /**
      * performing the operation of the transition to the 'My Profile' page
+     *
      * @return new MyProfilePageStep
      */
-    public MyProfilePageStep goToMyProfileSection(){
+    public MyProfilePageStep goToMyProfileSection() {
         savedHomesPage.clickMyProfileLink();
         return new MyProfilePageStep(driver);
     }
+
     /**
      * click on Saved Searches link to open saved searches page
+     *
      * @return new SavedSearchesPageStep
      */
-    public SavedSearchesPageStep clickSavedSearchesLink(){
+    public SavedSearchesPageStep clickSavedSearchesLink() {
         savedHomesPage.clickSavedSearches();
         return new SavedSearchesPageStep(driver);
     }

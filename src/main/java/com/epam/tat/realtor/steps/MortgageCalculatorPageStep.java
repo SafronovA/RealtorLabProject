@@ -16,20 +16,17 @@ public class MortgageCalculatorPageStep extends BasePageStep {
     }
 
     public MortgageCalculatorPageStep setHomePrice(String homePrice) {
-        mortgageCalculatorPage.clearHomePriceInput()
-                .setHomePrice(homePrice);
+        mortgageCalculatorPage.setHomePrice(homePrice);
         return this;
     }
 
     public MortgageCalculatorPageStep setDownPayment(String downPayment) {
-        mortgageCalculatorPage.clearDownPaymentInput()
-                .setDownPayment(downPayment);
+        mortgageCalculatorPage.setDownPayment(downPayment);
         return this;
     }
 
     public MortgageCalculatorPageStep setRate(String downPayment) {
-        mortgageCalculatorPage.clearRateInput()
-                .setRateInput(downPayment);
+        mortgageCalculatorPage.setRateInput(downPayment);
         return this;
     }
 
@@ -47,18 +44,20 @@ public class MortgageCalculatorPageStep extends BasePageStep {
                                            String rate,
                                            String loanType) {
         boolean result = Parser.parse(mortgageCalculatorPage.getPricePerMonth())
-                == calculateMortgagePricePerMonth(homePrice,downPayment, rate, loanType);
+                == calculateMortgagePricePerMonth(homePrice, downPayment, rate, loanType);
         return result;
     }
 
-    private int calculateMortgagePricePerMonth(String homePrice,
+    private static int calculateMortgagePricePerMonth(String homePrice,
                                                String downPayment,
                                                String rate,
                                                String loanType) {
+        int monthInYear = 12;
+        int percent = 100;
         int moneyLeftToPay = Integer.valueOf(homePrice) - Integer.valueOf(downPayment);
-        int allPaymentCount = Integer.valueOf(rate)*Parser.parse(loanType);
-        int rateInt = Integer.valueOf(rate);
-        double paymentPerMonth = moneyLeftToPay*((rateInt*Math.pow(1+rateInt,allPaymentCount))/(Math.pow((1+rateInt),allPaymentCount))-1);
-        return (int)paymentPerMonth;
+        double rateInt = (Double.valueOf(rate)/percent)/monthInYear;
+        int allPaymentCount = monthInYear * Parser.parse(loanType);
+        double paymentPerMonth = moneyLeftToPay * (rateInt * Math.pow(1 + rateInt, allPaymentCount)) / (Math.pow((1 + rateInt), allPaymentCount) - 1);
+        return (int)Math.round(paymentPerMonth);
     }
 }

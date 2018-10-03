@@ -33,21 +33,25 @@ public class MortgageCalculatorPage extends BasePage {
     }
 
     public String getPricePerMonth() {
+        waitForJQueryIsLoad();
         return pricePerMonth.getText();
     }
 
     public MortgageCalculatorPage setHomePrice(String homePrice) {
+        clearField(homePriceInput);
         homePriceInput.sendKeys(homePrice);
         return this;
     }
 
     public MortgageCalculatorPage setDownPayment(String downPayment) {
+        clearField(downPaymentInput);
         downPaymentInput.sendKeys(downPayment);
         downPaymentInput.sendKeys(Keys.ENTER);
         return this;
     }
 
     public MortgageCalculatorPage setRateInput(String rate) {
+        clearField(rateInput);
         rateInput.sendKeys(rate);
         return this;
     }
@@ -57,18 +61,9 @@ public class MortgageCalculatorPage extends BasePage {
         return this;
     }
 
-    public MortgageCalculatorPage clearHomePriceInput() {
-        homePriceInput.clear();
-        return this;
-    }
-
-    public MortgageCalculatorPage clearDownPaymentInput() {
-        downPaymentInput.clear();
-        return this;
-    }
-
-    public MortgageCalculatorPage clearRateInput() {
-        rateInput.clear();
+    private MortgageCalculatorPage clearField(WebElement field){
+        field.sendKeys(Keys.CONTROL+"a");
+        field.sendKeys(Keys.DELETE);
         return this;
     }
 

@@ -12,7 +12,7 @@ public class MortgageCalculatorTest extends BaseTest {
     private static String DOWN_PAYMENT = "10000";
 
     @Test
-    public void mortgageCalculatorTest(){
+    public void mortgageCalculatorTest() {
         MortgageCalculatorPageStep mortgageCalculatorPageStep = homePageStep.navigateCursorToMortgageLink()
                 .clickMortgageCalculatorLink()
                 .selectLoanType(LOAN_TYPE)

@@ -6,16 +6,18 @@ import org.testng.annotations.Test;
 
 public class LogInTest extends BaseTest {
     @BeforeTest
-    public void logIn(){
+    public void logIn() {
         homePageStep.userLogIn();
     }
+
     @Test
-    public void sampleSearch(){
+    public void sampleSearch() {
 
 
     }
+
     @AfterTest
-    public void logOut(){
+    public void logOut() {
         homePageStep.logOut();
     }
 }
