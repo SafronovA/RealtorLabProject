@@ -23,9 +23,11 @@ public class RealtorReviewsTest extends BaseTest {
      */
     @Test
     public void checkRealtorSoldHouses() {
-        FindRealtorPageStep findRealtorPageStep = homePageStep.clickFindRealtorButton().findRealtor(REALTOR_NAME);
+        FindRealtorPageStep findRealtorPageStep = homePageStep.clickFindRealtorButton()
+                .findRealtor(REALTOR_NAME);
         int realtorReviews = findRealtorPageStep.getRatingCount();
-        RealtorPageStep realtorPageStep = findRealtorPageStep.clickRealtorIcon().loadAllReviews();
+        RealtorPageStep realtorPageStep = findRealtorPageStep.clickRealtorIcon()
+                .loadAllReviews();
         assertEquals(realtorReviews, realtorPageStep.getRealtorReviewsCount(),
                 "number of realtor reviews in the realtor card mismatch reviews number on the realtor page ");
     }

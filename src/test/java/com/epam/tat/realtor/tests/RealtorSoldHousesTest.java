@@ -21,9 +21,11 @@ public class RealtorSoldHousesTest extends BaseTest {
      */
     @Test
     public void checkRealtorSoldHouses() {
-        FindRealtorPageStep findRealtorPageStep = homePageStep.clickFindRealtorButton().findRealtor(REALTOR_NAME);
+        FindRealtorPageStep findRealtorPageStep = homePageStep.clickFindRealtorButton()
+                .findRealtor(REALTOR_NAME);
         int realtorSoldHouses = findRealtorPageStep.getRealtorSoldHoses();
-        RealtorPageStep realtorPageStep = findRealtorPageStep.clickRealtorIcon().prepareIFrameMap();
+        RealtorPageStep realtorPageStep = findRealtorPageStep.clickRealtorIcon()
+                .prepareIFrameMap();
         assertEquals(realtorSoldHouses, realtorPageStep.getSoldHousesQuantity(),
                 "number of sold houses in the realtor card mismatch number on the iframe map ");
         assertTrue(realtorPageStep.checkSoldHousesMapMarks(),
