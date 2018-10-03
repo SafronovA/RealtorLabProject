@@ -13,12 +13,14 @@ public class SavedHomesPageStep extends BasePageStep {
 
     /**
      * performing the operation of the transition to the 'My Profile' page
+     *
      * @return new MyProfilePageStep
      */
-    public MyProfilePageStep goToMyProfileSection(){
+    public MyProfilePageStep goToMyProfileSection() {
         savedHomesPage.clickMyProfileLink();
         return new MyProfilePageStep(driver);
     }
+
     /**
      * click on Saved Searches link to open saved searches page
      *
@@ -32,6 +34,7 @@ public class SavedHomesPageStep extends BasePageStep {
     /**
      * clear all saved homes in saved homes section
      * return back on home page
+     *
      * @return new HomePage
      */
     public HomePageStep clearSavedHomes() {
@@ -47,6 +50,7 @@ public class SavedHomesPageStep extends BasePageStep {
 
     /**
      * check number of saved homes
+     *
      * @return saved homes list size
      */
     public int checkSavedHomes() {

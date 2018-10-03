@@ -16,6 +16,7 @@ public class SavedHomesPage extends BasePage {
         super(driver);
         PageFactory.initElements(driver, this);
     }
+
     By pageLayer = By.xpath("//div[@class='modal fade modal-hero modal-mobile-fullscreen js-modal-lazyload-assets modalOverlayBase_after-open']");
     @FindBy(linkText = "Saved Searches")
     private WebElement savedSearches;
@@ -32,19 +33,13 @@ public class SavedHomesPage extends BasePage {
 
     /**
      * get saved homes button list
+     *
      * @return saved homes button list
      */
-    public List<WebElement> getSaveHomesButtonList(){
+    public List<WebElement> getSaveHomesButtonList() {
         return saveHomesButtonList;
     }
 
-    /**
-     * no comments =)
-     * @return
-     */
-    public WebElement getStrangeWindowLayer(){
-        return strangeWindowLayer;
-    }
     /**
      * click on saved searches link and go in saved searches page
      *
@@ -55,33 +50,36 @@ public class SavedHomesPage extends BasePage {
         savedSearches.click();
         return new SavedSearchesPage(driver);
     }
+
     /**
      * click 'My Profile' link
+     *
      * @return new MyProfilePage
      */
-    public MyProfilePage clickMyProfileLink(){
+    public MyProfilePage clickMyProfileLink() {
         myProfileLink.click();
         return new MyProfilePage(driver);
     }
 
     /**
      * click delete button on the delete saved home alert window
+     *
      * @return this page
      */
-    public SavedHomesPage clickDeleteButton(){
+    public SavedHomesPage clickDeleteButton() {
         waitUntilElementIsClickable(deleteButton);
-        deleteButton.click();
-        new Actions(driver).click().click().click().perform();
+        new Actions(driver).click(deleteButton).perform();
         driverWait.until(ExpectedConditions.invisibilityOfElementLocated(pageLayer));
         return this;
     }
 
     /**
      * navigate to home page
+     *
      * @return new home page
      */
 
-    public HomePage clickRealtorIcon(){
+    public HomePage clickRealtorIcon() {
         realtorIcon.click();
         return new HomePage(driver);
     }

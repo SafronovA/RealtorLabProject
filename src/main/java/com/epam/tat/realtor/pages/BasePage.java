@@ -39,59 +39,71 @@ public class BasePage {
 
     /**
      * click element by Java Executor
+     *
      * @param webElement web element to be clicked
-     * @param webDriver used webdriver
+     * @param webDriver  used webdriver
      */
-    public static void clickByJEx (WebElement webElement, WebDriver webDriver){
+    public static void clickByJEx(WebElement webElement, WebDriver webDriver) {
         JavascriptExecutor executor = (JavascriptExecutor) webDriver;
         executor.executeScript("arguments[0].click();", webElement);
     }
 
     /**
      * scroll to element on the page
+     *
      * @param webElement element to each page view to be scrolled
-     * @param webDriver session driver
+     * @param webDriver  session driver
      */
-    public static void scrollToElement(WebElement webElement, WebDriver webDriver){
+    public static void scrollToElement(WebElement webElement, WebDriver webDriver) {
         JavascriptExecutor executor = (JavascriptExecutor) webDriver;
-        executor.executeScript("arguments[0].scrollIntoView(true);",webElement);
+        executor.executeScript("arguments[0].scrollIntoView(true);", webElement);
     }
 
     /**
      * wait for the presence of the elements by locator
+     *
      * @param by locator of the elements
      */
-    public void waitForPresenceOfAllElementsLocatedBy(By by){
-        driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
-    }
-    /**
-     * waiting for a specific attribute value in the Web element
-     * @param webElement checked webElement
-     * @param value      expected value
-     */
-    public void waitUntilAttributeInnerHTMLToBe(WebElement webElement, String value ){
-        driverWait.until(ExpectedConditions.attributeToBe(webElement, INNER_HTML, value));
-    }
-    /**
-     * wait for presence of all elements by locator
-     * @param by locator of the elements
-     */
-    public void waitForElements(By by){
+    public void waitForPresenceOfAllElementsLocatedBy(By by) {
         driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
     }
 
-    public void waitUntilElementIsInvisible(WebElement webElement){
+    /**
+     * waiting for a specific attribute value in the Web element
+     *
+     * @param webElement checked webElement
+     * @param value      expected value
+     */
+    public void waitUntilAttributeInnerHTMLToBe(WebElement webElement, String value) {
+        driverWait.until(ExpectedConditions.attributeToBe(webElement, INNER_HTML, value));
+    }
+
+    /**
+     * wait for presence of all elements by locator
+     *
+     * @param by locator of the elements
+     */
+    public void waitForElements(By by) {
+        driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+    }
+
+    /**
+     * wait until element is invisible
+     *
+     * @param webElement element to be invisible
+     */
+    public void waitUntilElementIsInvisible(WebElement webElement) {
         driverWait.until(ExpectedConditions.invisibilityOf(webElement));
     }
+
     /**
      * wait until JQuery finish loading page
      */
-    public void waitForJQueryIsLoad(){
+    public void waitForJQueryIsLoad() {
         driverWait.until((ExpectedCondition<Boolean>) driver -> {
             try {
-                return ((Long)((JavascriptExecutor)driver).executeScript("return jQuery.active") == 0);
-            }
-            catch (Exception e) {
+                return ((Long) ((JavascriptExecutor) driver).executeScript("return jQuery.active") == 0);
+            } catch (Exception e) {
                 return true;
             }
         });

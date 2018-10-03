@@ -91,6 +91,7 @@ public class SearchPage extends BasePage {
 
     /**
      * click Price button
+     *
      * @return this page
      */
     public SearchPage clickPriceButton() {
@@ -101,6 +102,7 @@ public class SearchPage extends BasePage {
 
     /**
      * click No Min input in the Price section
+     *
      * @return this page
      */
     public SearchPage clickMinPriceInput() {
@@ -108,8 +110,10 @@ public class SearchPage extends BasePage {
         minPriceInput.click();
         return this;
     }
+
     /**
      * click No Max input in the Price section
+     *
      * @return this page
      */
     public SearchPage clickMaxPriceInput() {

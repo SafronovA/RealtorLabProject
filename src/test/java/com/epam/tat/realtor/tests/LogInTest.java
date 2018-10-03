@@ -12,8 +12,6 @@ public class LogInTest extends BaseTest {
 
     @Test
     public void sampleSearch() {
-
-
     }
 
     @AfterTest

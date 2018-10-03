@@ -265,42 +265,56 @@ public class SearchPageStep extends BasePageStep {
      *
      * @return list integer prices from all pages
      */
-    public boolean checkPriceMapMarks(String minPrice, String maxPrice){
+    public boolean checkPriceMapMarks(String minPrice, String maxPrice) {
         searchPage.clickViewMapButton();
-        return searchPage.getMapMarks().stream().allMatch(x->{ BasePage.clickByJEx(x,driver);
-            return (Parser.parsePrice(minPrice)<=Parser.parse(searchPage.getMapMarkPrice()))
-                    && (Parser.parsePrice(maxPrice)>=Parser.parse(searchPage.getMapMarkPrice()));});
-    }
-    /**
-     * check if information in map cards on the iframe map match search criteria
-     * @param bedNumber bed number
-     * @return if true map marks match search criteria
-     */
-    public boolean checkBedMapMarks(String bedNumber){
-        return searchPage.getMapMarks().stream().allMatch(x->{ BasePage.clickByJEx(x,driver);
-            return Parser.parse(bedNumber)<=Parser.parse(searchPage.getMapMarkBed());});
+        return searchPage.getMapMarks().stream().allMatch(x -> {
+            BasePage.clickByJEx(x, driver);
+            return (Parser.parsePrice(minPrice) <= Parser.parse(searchPage.getMapMarkPrice()))
+                    && (Parser.parsePrice(maxPrice) >= Parser.parse(searchPage.getMapMarkPrice()));
+        });
     }
 
     /**
      * check if information in map cards on the iframe map match search criteria
+     *
+     * @param bedNumber bed number
+     * @return if true map marks match search criteria
+     */
+    public boolean checkBedMapMarks(String bedNumber) {
+        return searchPage.getMapMarks().stream().allMatch(x -> {
+            BasePage.clickByJEx(x, driver);
+            return Parser.parse(bedNumber) <= Parser.parse(searchPage.getMapMarkBed());
+        });
+    }
+
+    /**
+     * check if information in map cards on the iframe map match search criteria
+     *
      * @param bathNumber bed number
      * @return if true map marks match search criteria
      */
-    public boolean checkBathMapMarks(String bathNumber){
-        return searchPage.getMapMarks().stream().allMatch(x->{ BasePage.clickByJEx(x,driver);
-            return Parser.parse(bathNumber)<=Parser.parse(searchPage.getMapMarkBath());});
+    public boolean checkBathMapMarks(String bathNumber) {
+        return searchPage.getMapMarks().stream().allMatch(x -> {
+            BasePage.clickByJEx(x, driver);
+            return Parser.parse(bathNumber) <= Parser.parse(searchPage.getMapMarkBath());
+        });
     }
+
     /**
      * check if information in map cards on the iframe map match search criteria
+     *
      * @param minSqft min square feet house size
      * @param maxSqft max square feet house size
      * @return if true map marks match search criteria
      */
-    public boolean checkSqftMapMarks(String minSqft, String maxSqft ){
-        return searchPage.getMapMarks().stream().allMatch(x->{ BasePage.clickByJEx(x,driver);
-            return (Parser.parse(minSqft)<=Parser.parse(searchPage.getMapMarkSqft()))
-                    && (Parser.parse(maxSqft)>=Parser.parse(searchPage.getMapMarkSqft()));});
+    public boolean checkSqftMapMarks(String minSqft, String maxSqft) {
+        return searchPage.getMapMarks().stream().allMatch(x -> {
+            BasePage.clickByJEx(x, driver);
+            return (Parser.parse(minSqft) <= Parser.parse(searchPage.getMapMarkSqft()))
+                    && (Parser.parse(maxSqft) >= Parser.parse(searchPage.getMapMarkSqft()));
+        });
     }
+
     /**
      * add homes from all pages to integer list. Add homes from first page, while exist next page, click next link
      * and add home prices from this page.

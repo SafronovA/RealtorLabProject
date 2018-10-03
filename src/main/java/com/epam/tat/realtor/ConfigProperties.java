@@ -33,7 +33,7 @@ public class ConfigProperties {
      * @param key key from config.properties
      * @return value of key
      */
-     public static String getTestProperty(String key) {
-         return PROPERTIES.getProperty(key);
-     }
- }
+    public static String getTestProperty(String key) {
+        return PROPERTIES.getProperty(key);
+    }
+}

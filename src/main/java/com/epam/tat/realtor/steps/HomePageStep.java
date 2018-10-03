@@ -37,7 +37,7 @@ public class HomePageStep extends BasePageStep {
      * @param city
      * @return search result page
      */
-    public HomePageStep enterCityName(String city){
+    public HomePageStep enterCityName(String city) {
         homePage.waitForSearchInput()
                 .clearInputField()
                 .enterCityInMainSearchInput(city);
@@ -61,7 +61,7 @@ public class HomePageStep extends BasePageStep {
      *
      * @return this page
      */
-    public HomePageStep logOut(){
+    public HomePageStep logOut() {
         homePage.navigateToUserIcon()
                 .waitForSignOutLinkToAppear()
                 .clickLogOutLink();
@@ -80,15 +80,17 @@ public class HomePageStep extends BasePageStep {
 
     /**
      * click Realtor button
+     *
      * @return new SearchRealtorPageStep
      */
-    public SearchRealtorPageStep clickFindRealtorButton(){
+    public SearchRealtorPageStep clickFindRealtorButton() {
         homePage.clickRealtorButton();
         return new SearchRealtorPageStep(driver);
     }
 
     /**
      * save all homes on the home page
+     *
      * @return saved homes list size
      */
     public int saveHomes() {

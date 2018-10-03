@@ -111,7 +111,7 @@ public class SavedSearchesPage extends BasePage {
      *
      * @return new HomePage(driver)
      */
-    public HomePage clickHomePageLink(){
+    public HomePage clickHomePageLink() {
         homePageLink.click();
         return new HomePage(driver);
     }

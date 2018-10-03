@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import java.util.List;
 
 public class HomePage extends BasePage {
@@ -44,11 +45,13 @@ public class HomePage extends BasePage {
 
     /**
      * get heart icons list on the homes for sale cards
+     *
      * @return heart icons list
      */
-    public List<WebElement> getHeartIconsList(){
+    public List<WebElement> getHeartIconsList() {
         return heartIconsList;
     }
+
     /**
      * click SignIn button
      *
@@ -104,7 +107,7 @@ public class HomePage extends BasePage {
      *
      * @return this page
      */
-    public HomePage clearInputField(){
+    public HomePage clearInputField() {
         searchInput.clear();
         return this;
     }
@@ -125,20 +128,10 @@ public class HomePage extends BasePage {
      *
      * @return new search page
      */
-    public SearchPage clickSearchButton(){
+    public SearchPage clickSearchButton() {
         waitUntilElementIsClickable(searchButton);
         searchButton.click();
         return new SearchPage(driver);
-    }
-
-    /**
-     * wait for Saved Homes button to be visible
-     *
-     * @return this page
-     */
-    public HomePage waitForSavedHomesLinkToAppear() {
-        waitUntilElementIsVisible(savedHomesLink);
-        return this;
     }
 
     /**
@@ -172,21 +165,10 @@ public class HomePage extends BasePage {
     }
 
     /**
-     * click saved homes link to navigate to page with saved homes
-     *
-     * @return Saved Homes Page (navigate to new page)
-     */
-    public SavedHomesPage clickSavedHomesLink() {
-        waitUntilElementIsClickable(savedHomesLink);
-        savedHomesLink.click();
-        return new SavedHomesPage(driver);
-    }
-
-    /**
      * wait until user icon become clickable
      * click user icon
      *
-     * @return  new SavedHomesPage
+     * @return new SavedHomesPage
      */
     public SavedHomesPage clickUserIcon() {
         waitUntilElementIsVisible(userIcon);
@@ -197,9 +179,10 @@ public class HomePage extends BasePage {
 
     /**
      * click on the Realtor button
+     *
      * @return new SearchRealtorPage
      */
-    public SearchRealtorPage clickRealtorButton(){
+    public SearchRealtorPage clickRealtorButton() {
         waitUntilElementIsClickable(realtorButton);
         realtorButton.click();
         return new SearchRealtorPage(driver);
@@ -208,9 +191,10 @@ public class HomePage extends BasePage {
 
     /**
      * wait for Search input to be visible
+     *
      * @return this page
      */
-    public HomePage waitForSearchInput(){
+    public HomePage waitForSearchInput() {
         waitUntilElementIsVisible(searchInput);
         return this;
     }

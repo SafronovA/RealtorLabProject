@@ -43,11 +43,10 @@ public class BaseTest {
             }
         }
     }
-
     /**
      * close browser
      */
-    @AfterTest
+    @AfterClass
     void closeResources() {
         driver.quit();
     }

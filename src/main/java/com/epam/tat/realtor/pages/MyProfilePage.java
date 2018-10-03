@@ -8,9 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MyProfilePage extends BasePage {
 
-    public MyProfilePage(WebDriver driver){
+    public MyProfilePage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//*[@id='header-login-menu']/li[1]")
@@ -51,9 +51,10 @@ public class MyProfilePage extends BasePage {
 
     /**
      * click 'Edit Profile' button
+     *
      * @return this page
      */
-    public MyProfilePage clickEditProfileButton(){
+    public MyProfilePage clickEditProfileButton() {
         waitUntilElementIsVisible(editProfileButton);
         waitUntilElementIsClickable(editProfileButton);
         editProfileButton.click();
@@ -62,10 +63,11 @@ public class MyProfilePage extends BasePage {
 
     /**
      * enter first name in (@code firstNameInput)
+     *
      * @param firstName required first name
      * @return this page
      */
-    public MyProfilePage enterFirstName(String firstName){
+    public MyProfilePage enterFirstName(String firstName) {
         firstNameInput.clear();
         firstNameInput.sendKeys(firstName);
         return this;
@@ -73,10 +75,11 @@ public class MyProfilePage extends BasePage {
 
     /**
      * enter last name in (@code lastNameInput)
+     *
      * @param lastName required last name
      * @return this page
      */
-    public MyProfilePage enterLastName(String lastName){
+    public MyProfilePage enterLastName(String lastName) {
         lastNameInput.clear();
         lastNameInput.sendKeys(lastName);
         return this;
@@ -84,9 +87,10 @@ public class MyProfilePage extends BasePage {
 
     /**
      * click 'Save Changes' button
+     *
      * @return this page
      */
-    public MyProfilePage clickSaveChangesButton(){
+    public MyProfilePage clickSaveChangesButton() {
         saveChangesButton.click();
         return this;
     }
@@ -94,7 +98,7 @@ public class MyProfilePage extends BasePage {
     /**
      * @return current profile name
      */
-    public String getProfileName(){
+    public String getProfileName() {
         String name = profileName.getAttribute("innerHTML");
         return name;
     }
@@ -102,7 +106,7 @@ public class MyProfilePage extends BasePage {
     /**
      * @return WebElement (@code profileName)
      */
-    public WebElement getProfileNameWebElement(){
+    public WebElement getProfileNameWebElement() {
         return profileName;
     }
 }

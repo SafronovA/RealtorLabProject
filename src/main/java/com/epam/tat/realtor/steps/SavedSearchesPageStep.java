@@ -16,10 +16,11 @@ public class SavedSearchesPageStep extends BasePageStep {
 
     /**
      * delete saved searches
+     *
      * @return this page
      */
-    public SavedSearchesPageStep clearAllOldSavedSearches(){
-        if(!savedSearchesPage.getSavedSearchesList().isEmpty()) {
+    public SavedSearchesPageStep clearAllOldSavedSearches() {
+        if (!savedSearchesPage.getSavedSearchesList().isEmpty()) {
             savedSearchesPage.getSavedSearchesList().stream().forEach(WebElement -> {
                 savedSearchesPage.clickDeleteButton();
                 savedSearchesPage.clickConfirmDeleteButton();
@@ -30,12 +31,13 @@ public class SavedSearchesPageStep extends BasePageStep {
 
     /**
      * check that saved search description contains entered parameters
-     * @param city entered city
+     *
+     * @param city     entered city
      * @param minPrice selected min price
      * @param maxPrice selected max price
      * @return true if saved search description contains selected min and max prices, entered town, false if does not contain
      */
-    public boolean checkSavedSearchDescriptionContainsInputText(String city, String minPrice, String maxPrice){
+    public boolean checkSavedSearchDescriptionContainsInputText(String city, String minPrice, String maxPrice) {
         int min = Parser.parse(minPrice);
         int max = Parser.parse(maxPrice);
         boolean containingInputTextInDescription = savedSearchesPage.getCity().contains(city)
@@ -47,7 +49,7 @@ public class SavedSearchesPageStep extends BasePageStep {
      * navigate to user icon
      * click sign out button
      */
-    public HomePageStep logOut(){
+    public HomePageStep logOut() {
         savedSearchesPage.navigateToUserIcon()
                 .clickLogOutLink();
         return new HomePageStep(driver);
@@ -58,18 +60,19 @@ public class SavedSearchesPageStep extends BasePageStep {
      *
      * @return
      */
-    public HomePageStep goToHomePage(){
+    public HomePageStep goToHomePage() {
         savedSearchesPage.clickHomePageLink();
         return new HomePageStep(driver);
     }
 
     /**
      * check that saved search description min and max price corresponds to entered min and max price
+     *
      * @param minPrice
      * @param maxPrice
      * @return true if description contains input prices, false if if does not
      */
-    private boolean doesSavedSearchDescriptionContainPrice(int minPrice, int maxPrice){
+    private boolean doesSavedSearchDescriptionContainPrice(int minPrice, int maxPrice) {
         String[] minMaxPrices = savedSearchesPage.getPrice().split(DASH);
         return minPrice == Parser.parse(minMaxPrices[0]) && maxPrice == Parser.parse(minMaxPrices[1]);
     }

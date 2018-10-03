@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
  * Created by volchek on 02.10.2018.
  */
 public class RealtorReviewsTest extends BaseTest {
-    private static final String REALTOR_NAME="Adora Lazaro";
+    private static final String REALTOR_NAME = "Adora Lazaro";
 
     /**
      * click realtor button on homepage,
@@ -22,12 +22,12 @@ public class RealtorReviewsTest extends BaseTest {
      * check that number of reviews on the page match reviews number in the realtor's card
      */
     @Test
-    public void checkRealtorSoldHouses(){
+    public void checkRealtorSoldHouses() {
         SearchRealtorPageStep searchRealtorPageStep = homePageStep.clickFindRealtorButton();
         FindRealtorPageStep findRealtorPageStep = searchRealtorPageStep.findRealtor(REALTOR_NAME);
         int realtorReviews = findRealtorPageStep.getRatingCount();
         RealtorPageStep realtorPageStep = findRealtorPageStep.clickRealtorIcon();
         realtorPageStep.loadAllReviews();
-        assertEquals(realtorReviews,realtorPageStep.getRealtorReviewsCount(), "number of realtor reviews in the realtor card mismatch reviews number on the realtor page ");
+        assertEquals(realtorReviews, realtorPageStep.getRealtorReviewsCount(), "number of realtor reviews in the realtor card mismatch reviews number on the realtor page ");
     }
 }
