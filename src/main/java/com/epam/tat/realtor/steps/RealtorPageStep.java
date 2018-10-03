@@ -21,11 +21,12 @@ public class RealtorPageStep extends BasePageStep {
      * @return if every mark contains information that house is sold
      */
     public boolean checkSoldHousesMapMarks() {
-        realtorPage.waitForMapMarks();
-        return realtorPage.getSoldHousesMapMarkList().stream().allMatch(x -> {
-            BasePage.clickByJEx(x, driver);
-            return isSold(realtorPage.getSaleHouseStatus());
-        });
+        return realtorPage.getSoldHousesMapMarkList()
+                .stream()
+                .allMatch(x -> {
+                    BasePage.clickByJEx(x, driver);
+                    return isSold(realtorPage.getSaleHouseStatus());
+                });
     }
 
     /**
@@ -56,7 +57,9 @@ public class RealtorPageStep extends BasePageStep {
      * @return this page
      */
     public RealtorPageStep prepareIFrameMap() {
-        realtorPage.scrollToIFrame().clickSoldHousesSection().doubleZoomOut();
+        realtorPage.scrollToIFrame()
+                .clickSoldHousesSection()
+                .doubleZoomOut();
         dragDownIFrame();
         return this;
     }

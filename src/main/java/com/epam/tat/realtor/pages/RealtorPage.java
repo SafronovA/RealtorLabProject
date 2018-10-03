@@ -41,13 +41,18 @@ public class RealtorPage extends BasePage {
     }
 
     /**
+     * get sold houses map marks
+     *
      * @return list of sold houses map marks
      */
     public List<WebElement> getSoldHousesMapMarkList() {
+        waitForPresenceOfAllElementsLocatedBy(soldHouses);
         return soldHousesMapMarkList;
     }
 
     /**
+     * get status of the house on the map mark
+     *
      * @return sold status of the house on the map mark
      */
     public String getSaleHouseStatus() {
@@ -86,16 +91,6 @@ public class RealtorPage extends BasePage {
         waitUntilElementIsVisible(zoomOutButton);
         zoomOutButton.click();
         zoomOutButton.click();
-        return this;
-    }
-
-    /**
-     * wait for the presence of sold houses map marks on iframe map
-     *
-     * @return this page
-     */
-    public RealtorPage waitForMapMarks() {
-        waitForPresenceOfAllElementsLocatedBy(soldHouses);
         return this;
     }
 

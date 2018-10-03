@@ -28,5 +28,4 @@ public class Parser {
             return price * 1000;
         }
     }
-
 }

@@ -90,39 +90,6 @@ public class SearchPage extends BasePage {
     private List<WebElement> nextPageLink;
 
     /**
-     * click Price button
-     *
-     * @return this page
-     */
-    public SearchPage clickPriceButton() {
-        waitUntilElementIsClickable(priceButton);
-        priceButton.click();
-        return this;
-    }
-
-    /**
-     * click No Min input in the Price section
-     *
-     * @return this page
-     */
-    public SearchPage clickMinPriceInput() {
-        waitUntilElementIsClickable(minPriceInput);
-        minPriceInput.click();
-        return this;
-    }
-
-    /**
-     * click No Max input in the Price section
-     *
-     * @return this page
-     */
-    public SearchPage clickMaxPriceInput() {
-        waitUntilElementIsClickable(maxPriceInput);
-        maxPriceInput.click();
-        return this;
-    }
-
-    /**
      * get list of available min prices in the dropdown menu
      *
      * @return list of the min price constants
@@ -288,6 +255,38 @@ public class SearchPage extends BasePage {
         return maxHomeSizeList;
     }
 
+    /**
+     * click Price button
+     *
+     * @return this page
+     */
+    public SearchPage clickPriceButton() {
+        waitUntilElementIsClickable(priceButton);
+        priceButton.click();
+        return this;
+    }
+
+    /**
+     * click No Min input in the Price section
+     *
+     * @return this page
+     */
+    public SearchPage clickMinPriceInput() {
+        waitUntilElementIsClickable(minPriceInput);
+        minPriceInput.click();
+        return this;
+    }
+
+    /**
+     * click No Max input in the Price section
+     *
+     * @return this page
+     */
+    public SearchPage clickMaxPriceInput() {
+        waitUntilElementIsClickable(maxPriceInput);
+        maxPriceInput.click();
+        return this;
+    }
 
     /**
      * click More Filters button
@@ -401,6 +400,8 @@ public class SearchPage extends BasePage {
      */
     public SearchPage clickViewListingsButton() {
         viewListinsButton.click();
+        waitUntilElementIsVisible(homeSizeFilterIcon);
+        waitForElements(priceList);
         return this;
     }
 
@@ -412,27 +413,6 @@ public class SearchPage extends BasePage {
     public SearchPage clickViewMapButton() {
         waitUntilElementIsClickable(viewMapButton);
         viewMapButton.click();
-        return this;
-    }
-
-
-    /**
-     * wait for home size filter to appear in order to download search results
-     *
-     * @return this page
-     */
-    public SearchPage waitForHomeSizeFilter() {
-        waitUntilElementIsVisible(homeSizeFilterIcon);
-        return this;
-    }
-
-    /**
-     * wait for home list
-     *
-     * @return this page
-     */
-    public SearchPage waitForHomeList() {
-        waitForElements(priceList);
         return this;
     }
 

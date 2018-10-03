@@ -9,7 +9,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class RealtorSoldHousesTest extends BaseTest {
-    private static final String REALTOR_NAME="Amanda Hurtt";
+    private static final String REALTOR_NAME = "Amanda Hurtt";
 
     /**
      * click realtor button on homepage,
@@ -20,13 +20,13 @@ public class RealtorSoldHousesTest extends BaseTest {
      * check if every house on the iframe map has "Sold" status
      */
     @Test
-    public void checkRealtorSoldHouses(){
-        SearchRealtorPageStep searchRealtorPageStep = homePageStep.clickFindRealtorButton();
-        FindRealtorPageStep findRealtorPageStep = searchRealtorPageStep.findRealtor(REALTOR_NAME);
+    public void checkRealtorSoldHouses() {
+        FindRealtorPageStep findRealtorPageStep = homePageStep.clickFindRealtorButton().findRealtor(REALTOR_NAME);
         int realtorSoldHouses = findRealtorPageStep.getRealtorSoldHoses();
-        RealtorPageStep realtorPageStep = findRealtorPageStep.clickRealtorIcon();
-        realtorPageStep.prepareIFrameMap();
-        assertEquals(realtorSoldHouses,realtorPageStep.getSoldHousesQuantity(), "number of sold houses in the realtor card mismatch number on the iframe map ");
-        assertTrue(realtorPageStep.checkSoldHousesMapMarks(),"wrong status of sold houses on the iframe map");
+        RealtorPageStep realtorPageStep = findRealtorPageStep.clickRealtorIcon().prepareIFrameMap();
+        assertEquals(realtorSoldHouses, realtorPageStep.getSoldHousesQuantity(),
+                "number of sold houses in the realtor card mismatch number on the iframe map ");
+        assertTrue(realtorPageStep.checkSoldHousesMapMarks(),
+                "wrong status of sold houses on the iframe map");
     }
 }

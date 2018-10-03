@@ -38,6 +38,24 @@ public class SavedSearchesPage extends BasePage {
     private WebElement homePageLink;
 
     /**
+     * get city from saved search description
+     *
+     * @return city from saved search description
+     */
+    public String getCity() {
+        return cardTextCity.getText();
+    }
+
+    /**
+     * get prices from saved search description
+     *
+     * @return prices from saved search description
+     */
+    public String getPrice() {
+        return cardTextPrice.getText();
+    }
+
+    /**
      * get saved searches list
      *
      * @return list of searches
@@ -65,24 +83,6 @@ public class SavedSearchesPage extends BasePage {
         confirmDeleteButton.click();
         driverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(XPATH_CONFIRM_DELETE_BUTTON)));
         return this;
-    }
-
-    /**
-     * get city from saved search description
-     *
-     * @return
-     */
-    public String getCity() {
-        return cardTextCity.getText();
-    }
-
-    /**
-     * get prices from saved search description
-     *
-     * @return
-     */
-    public String getPrice() {
-        return cardTextPrice.getText();
     }
 
     /**

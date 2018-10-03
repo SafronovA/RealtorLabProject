@@ -20,7 +20,8 @@ public class SortByPriceTest extends BaseTest {
                 .clickSearchButton()
                 .selectMinMaxPrices(MIN_PRICE, MAX_PRICE)
                 .selectSortOption(SORT_OPTION);
-        Assert.assertTrue(searchPageStep.isHomesDisplayedSortedByPrice(), "Homes are not displayed on the page sorted by price");
+        Assert.assertTrue(searchPageStep.isHomesDisplayedSortedByPrice(),
+                "Homes are not displayed on the page sorted by price");
     }
 
 }

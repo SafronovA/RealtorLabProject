@@ -4,7 +4,6 @@ import com.epam.tat.realtor.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
 public class HomePageStep extends BasePageStep {
     private HomePage homePage;
 
@@ -23,8 +22,7 @@ public class HomePageStep extends BasePageStep {
      * @return HomePageStep
      */
     public HomePageStep userLogIn() {
-        homePage.waitForSignInLinkToAppear()
-                .clickSignInButton()
+        homePage.clickSignInButton()
                 .enterEmail()
                 .enterPassword()
                 .clickLoginSubmitButton();
@@ -38,8 +36,7 @@ public class HomePageStep extends BasePageStep {
      * @return search result page
      */
     public HomePageStep enterCityName(String city) {
-        homePage.waitForSearchInput()
-                .clearInputField()
+        homePage.clearInputField()
                 .enterCityInMainSearchInput(city);
         return this;
     }
@@ -63,7 +60,6 @@ public class HomePageStep extends BasePageStep {
      */
     public HomePageStep logOut() {
         homePage.navigateToUserIcon()
-                .waitForSignOutLinkToAppear()
                 .clickLogOutLink();
         return this;
     }

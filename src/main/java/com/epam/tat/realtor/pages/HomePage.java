@@ -58,6 +58,7 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage clickSignInButton() {
+        waitUntilElementIsVisible(signInButton);
         signInButton.click();
         return this;
     }
@@ -108,6 +109,7 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage clearInputField() {
+        waitUntilElementIsVisible(searchInput);
         searchInput.clear();
         return this;
     }
@@ -135,31 +137,12 @@ public class HomePage extends BasePage {
     }
 
     /**
-     * wait for SignOut button to be visible
-     *
-     * @return this page
-     */
-    public HomePage waitForSignOutLinkToAppear() {
-        waitUntilElementIsVisible(logOutLink);
-        return this;
-    }
-
-    /**
-     * wait for SignIn button to be visible
-     *
-     * @return this page
-     */
-    public HomePage waitForSignInLinkToAppear() {
-        waitUntilElementIsVisible(signInButton);
-        return this;
-    }
-
-    /**
      * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
      *
      * @return new HomePage
      */
     public HomePage clickLogOutLink() {
+        waitUntilElementIsVisible(logOutLink);
         logOutLink.click();
         return new HomePage(driver);
     }
@@ -186,16 +169,5 @@ public class HomePage extends BasePage {
         waitUntilElementIsClickable(realtorButton);
         realtorButton.click();
         return new SearchRealtorPage(driver);
-    }
-
-
-    /**
-     * wait for Search input to be visible
-     *
-     * @return this page
-     */
-    public HomePage waitForSearchInput() {
-        waitUntilElementIsVisible(searchInput);
-        return this;
     }
 }

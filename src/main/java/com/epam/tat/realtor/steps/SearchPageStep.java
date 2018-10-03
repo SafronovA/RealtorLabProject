@@ -35,8 +35,14 @@ public class SearchPageStep extends BasePageStep {
     public SearchPageStep selectMinMaxPrices(String minPrice, String maxPrice) {
         searchPage.clickPriceButton();
         searchPage.clickMinPriceInput();
-        searchPage.getMinPriceRange().stream().filter(WebElement -> WebElement.getText().equals(minPrice)).findFirst().get().click();
-        searchPage.getMaxPriceRange().stream().filter(WebElement -> WebElement.getText().equals(maxPrice)).findFirst().get().click();
+        searchPage.getMinPriceRange().stream()
+                .filter(WebElement -> WebElement.getText().equals(minPrice))
+                .findFirst()
+                .get().click();
+        searchPage.getMaxPriceRange().stream()
+                .filter(WebElement -> WebElement.getText().equals(maxPrice))
+                .findFirst()
+                .get().click();
         return this;
     }
 
@@ -70,7 +76,10 @@ public class SearchPageStep extends BasePageStep {
      */
     public SearchPageStep selectSortOption(String sortOption) {
         searchPage.clickSortOptionsDropDown();
-        searchPage.getSortOptionsList().stream().filter(WebElement -> sortOption.equals(WebElement.getText())).findFirst().get().click();
+        searchPage.getSortOptionsList().stream()
+                .filter(WebElement -> sortOption.equals(WebElement.getText()))
+                .findFirst()
+                .get().click();
         return this;
     }
 
@@ -146,8 +155,6 @@ public class SearchPageStep extends BasePageStep {
      * @return list of searched houses
      */
     public List<House> createHomesList() {
-        searchPage.waitForHomeSizeFilter()
-                .waitForHomeList();
         List<House> homesList = new ArrayList<>();
         for (int i = 0; i < searchPage.getSearchedHousePricesList().size(); i++) {
             homesList.add(new House(Parser.parse(searchPage.getSearchedHouseBedList().get(i).getText()),
@@ -167,7 +174,8 @@ public class SearchPageStep extends BasePageStep {
      * @return if true list match search criteria
      */
     public boolean checkSearchResultPrice(List<House> homeList, String minPrice, String maxPrice) {
-        return homeList.stream().allMatch(x -> ((x.getPrice() >= Parser.parsePrice(minPrice)) && (x.getPrice() <= Parser.parsePrice(maxPrice))));
+        return homeList.stream()
+                .allMatch(x -> ((x.getPrice() >= Parser.parsePrice(minPrice)) && (x.getPrice() <= Parser.parsePrice(maxPrice))));
     }
 
     /**
@@ -178,7 +186,8 @@ public class SearchPageStep extends BasePageStep {
      * @return if true list match search criteria
      */
     public boolean checkSearchResultBed(List<House> homeList, String bedNumber) {
-        return homeList.stream().allMatch(x -> (x.getBedNumber() >= Parser.parse(bedNumber)));
+        return homeList.stream()
+                .allMatch(x -> (x.getBedNumber() >= Parser.parse(bedNumber)));
     }
 
     /**
@@ -189,7 +198,8 @@ public class SearchPageStep extends BasePageStep {
      * @return if true list match search criteria
      */
     public boolean checkSearchResultBath(List<House> homeList, String bathNumber) {
-        return homeList.stream().allMatch(x -> (x.getBathNumber() >= Parser.parse(bathNumber)));
+        return homeList.stream()
+                .allMatch(x -> (x.getBathNumber() >= Parser.parse(bathNumber)));
     }
 
     /**
@@ -201,7 +211,8 @@ public class SearchPageStep extends BasePageStep {
      * @return if true list match search criteria
      */
     public boolean checkSearchResultSqft(List<House> homeList, String minSqft, String maxSqft) {
-        return homeList.stream().allMatch(x -> ((x.getSquare() >= Parser.parse(minSqft)) && (x.getSquare() <= Parser.parse(maxSqft))));
+        return homeList.stream()
+                .allMatch(x -> ((x.getSquare() >= Parser.parse(minSqft)) && (x.getSquare() <= Parser.parse(maxSqft))));
     }
 
     /**
@@ -210,7 +221,10 @@ public class SearchPageStep extends BasePageStep {
      * @param maxValue value that is set in the dropdown list
      */
     private void setMaxPriceValue(String maxValue) {
-        searchPage.getMaxPriceRange().stream().filter(x -> maxValue.equalsIgnoreCase(x.getText())).findFirst().get().click();
+        searchPage.getMaxPriceRange().stream()
+                .filter(x -> maxValue.equalsIgnoreCase(x.getText()))
+                .findFirst()
+                .get().click();
     }
 
     /**
@@ -219,7 +233,9 @@ public class SearchPageStep extends BasePageStep {
      * @param minValue value that is set in the dropdown list
      */
     private void setMinPriceValue(String minValue) {
-        searchPage.getMinPriceRange().stream().filter(x -> minValue.equalsIgnoreCase(x.getText())).findFirst().get().click();
+        searchPage.getMinPriceRange().stream()
+                .filter(x -> minValue.equalsIgnoreCase(x.getText())).findFirst()
+                .get().click();
 
     }
 
@@ -229,7 +245,10 @@ public class SearchPageStep extends BasePageStep {
      * @param bedNumber bed number to be set
      */
     private void selectBedNumber(String bedNumber) {
-        searchPage.getBedQuantityList().stream().filter(x -> bedNumber.equals(x.getText().trim())).findFirst().get().click();
+        searchPage.getBedQuantityList().stream()
+                .filter(x -> bedNumber.equals(x.getText().trim()))
+                .findFirst()
+                .get().click();
     }
 
     /**
@@ -238,7 +257,10 @@ public class SearchPageStep extends BasePageStep {
      * @param bathNumber bath number to be set
      */
     private void selectBathNumber(String bathNumber) {
-        searchPage.getBathQuantity().stream().filter(x -> bathNumber.equals(x.getText().trim())).findFirst().get().click();
+        searchPage.getBathQuantity().stream()
+                .filter(x -> bathNumber.equals(x.getText().trim()))
+                .findFirst()
+                .get().click();
     }
 
     /**
@@ -247,7 +269,10 @@ public class SearchPageStep extends BasePageStep {
      * @param minSqft min square feet to be set
      */
     private void selectMinHomeSquare(String minSqft) {
-        searchPage.getMinHomeSizeList().stream().filter(x -> minSqft.equals(x.getText().trim())).findFirst().get().click();
+        searchPage.getMinHomeSizeList().stream()
+                .filter(x -> minSqft.equals(x.getText().trim()))
+                .findFirst()
+                .get().click();
     }
 
     /**
@@ -256,7 +281,10 @@ public class SearchPageStep extends BasePageStep {
      * @param maxSqft max square feet to be set
      */
     private void selectMaxHomeSquare(String maxSqft) {
-        searchPage.getMaxHomeSizeList().stream().filter(x -> maxSqft.equals(x.getText().trim())).findFirst().get().click();
+        searchPage.getMaxHomeSizeList().stream()
+                .filter(x -> maxSqft.equals(x.getText().trim()))
+                .findFirst()
+                .get().click();
     }
 
     /**
@@ -267,8 +295,8 @@ public class SearchPageStep extends BasePageStep {
      */
     public boolean checkPriceMapMarks(String minPrice, String maxPrice) {
         searchPage.clickViewMapButton();
-        return searchPage.getMapMarks().stream().allMatch(x -> {
-            BasePage.clickByJEx(x, driver);
+        return searchPage.getMapMarks().stream()
+                .allMatch(x -> { BasePage.clickByJEx(x, driver);
             return (Parser.parsePrice(minPrice) <= Parser.parse(searchPage.getMapMarkPrice()))
                     && (Parser.parsePrice(maxPrice) >= Parser.parse(searchPage.getMapMarkPrice()));
         });
@@ -294,8 +322,8 @@ public class SearchPageStep extends BasePageStep {
      * @return if true map marks match search criteria
      */
     public boolean checkBathMapMarks(String bathNumber) {
-        return searchPage.getMapMarks().stream().allMatch(x -> {
-            BasePage.clickByJEx(x, driver);
+        return searchPage.getMapMarks().stream()
+                .allMatch(x -> { BasePage.clickByJEx(x, driver);
             return Parser.parse(bathNumber) <= Parser.parse(searchPage.getMapMarkBath());
         });
     }
@@ -308,8 +336,8 @@ public class SearchPageStep extends BasePageStep {
      * @return if true map marks match search criteria
      */
     public boolean checkSqftMapMarks(String minSqft, String maxSqft) {
-        return searchPage.getMapMarks().stream().allMatch(x -> {
-            BasePage.clickByJEx(x, driver);
+        return searchPage.getMapMarks().stream()
+                .allMatch(x -> { BasePage.clickByJEx(x, driver);
             return (Parser.parse(minSqft) <= Parser.parse(searchPage.getMapMarkSqft()))
                     && (Parser.parse(maxSqft) >= Parser.parse(searchPage.getMapMarkSqft()));
         });

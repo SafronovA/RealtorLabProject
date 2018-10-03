@@ -29,6 +29,21 @@ public class MyProfilePage extends BasePage {
     private WebElement profileName;
 
     /**
+     * @return current profile name
+     */
+    public String getProfileName() {
+        String name = profileName.getAttribute("innerHTML");
+        return name;
+    }
+
+    /**
+     * @return WebElement (@code profileName)
+     */
+    public WebElement getProfileNameWebElement() {
+        return profileName;
+    }
+
+    /**
      * navigate to user icon
      *
      * @return this page
@@ -93,20 +108,5 @@ public class MyProfilePage extends BasePage {
     public MyProfilePage clickSaveChangesButton() {
         saveChangesButton.click();
         return this;
-    }
-
-    /**
-     * @return current profile name
-     */
-    public String getProfileName() {
-        String name = profileName.getAttribute("innerHTML");
-        return name;
-    }
-
-    /**
-     * @return WebElement (@code profileName)
-     */
-    public WebElement getProfileNameWebElement() {
-        return profileName;
     }
 }

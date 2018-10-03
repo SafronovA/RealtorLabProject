@@ -27,7 +27,8 @@ public class EditProfileNameTest extends BaseTest {
         myProfilePageStep = homePageStep.clickUserIcon()
                 .goToMyProfileSection()
                 .editName(firstNameNew, lastNameNew);
-        Assert.assertTrue(myProfilePageStep.nameIsCorrect(firstNameNew + lastNameNew), "Profile name has not changed to the required");
+        Assert.assertTrue(myProfilePageStep.nameIsCorrect(firstNameNew + lastNameNew),
+                "Profile name has not changed to the required");
     }
 
     /**
