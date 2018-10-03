@@ -1,6 +1,5 @@
 package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.SearchPage;
@@ -49,16 +48,6 @@ public class SearchPageStep extends BasePageStep{
                 .clickUserIcon()
                 .clickSavedSearches();
         return new SavedSearchesPageStep(driver);
-    }
-
-
-    /**
-     * navigate to home page
-     * @return new Home page
-     */
-    public HomePageStep goToHomePage(){
-        driver.navigate().to(ConfigProperties.getTestProperty("url"));
-        return new HomePageStep(driver);
     }
 
     /**
@@ -115,14 +104,6 @@ public class SearchPageStep extends BasePageStep{
                     Parser.parse(searchPage.getSearchedHouseSqftList().get(i).getText())));
         }
         return homesList;
-    }
-
-    /**
-     * print list of searched houses
-     * @param homeList list of houses to be printed to the console
-     */
-    public void printList(List<House> homeList){
-        homeList.forEach(x-> System.out.println(x.getPrice()+" "+x.getBedNumber()+" "+x.getBathNumber()+" "+x.getSquare()+" "));
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,31 +23,52 @@ public class MortgageCalculatorPage extends BasePage {
     private WebElement mortgageLoanTypeDropDown;
     @FindBy(xpath = "//a[@tabindex='0'][position()<8]")
     private List<WebElement> loanTypeOptionList;
-    @FindBy(xpath = "//*[@id='mrtg-calc-monthly-payment']")
+    @FindBy(xpath = "//*[@id='mc-mortgage-rate']")
+    private WebElement rateInput;
+    @FindBy(xpath = "//*[@id='principal_interest']")
     private WebElement pricePerMonth;
 
     public List<WebElement> getLoanTypeOptionList() {
         return loanTypeOptionList;
     }
 
-    public String getPricePerMonth(){
+    public String getPricePerMonth() {
         return pricePerMonth.getText();
     }
 
-    public MortgageCalculatorPage setHomePrice(String homePrice){
-        homePriceInput.clear();
+    public MortgageCalculatorPage setHomePrice(String homePrice) {
         homePriceInput.sendKeys(homePrice);
         return this;
     }
 
-    public MortgageCalculatorPage setDownPayment(String downPayment){
-        downPaymentInput.clear();
+    public MortgageCalculatorPage setDownPayment(String downPayment) {
         downPaymentInput.sendKeys(downPayment);
+        downPaymentInput.sendKeys(Keys.ENTER);
         return this;
     }
 
-    public MortgageCalculatorPage clickMortgageLoanTypeDropDown(){
+    public MortgageCalculatorPage setRateInput(String rate) {
+        rateInput.sendKeys(rate);
+        return this;
+    }
+
+    public MortgageCalculatorPage clickMortgageLoanTypeDropDown() {
         mortgageLoanTypeDropDown.click();
+        return this;
+    }
+
+    public MortgageCalculatorPage clearHomePriceInput() {
+        homePriceInput.clear();
+        return this;
+    }
+
+    public MortgageCalculatorPage clearDownPaymentInput() {
+        downPaymentInput.clear();
+        return this;
+    }
+
+    public MortgageCalculatorPage clearRateInput() {
+        rateInput.clear();
         return this;
     }
 
