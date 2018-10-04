@@ -21,13 +21,19 @@ public class MapMarksTest extends BaseTest {
      * check if all map marks contain values that match search parameters
      */
     @Test
-    public void checkMapMarks(){
+    public void checkMapMarks() {
         SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)
-                                                    .clickSearchButton();
-       searchPageStep.createSearchRequest(MIN_PRICE_VALUE,MAX_PRICE_VALUE,BED_NUMBER,BATH_NUMBER,MIN_SQFT_VALUE,MAX_SQFT_VALUE);
-       assertTrue(searchPageStep.checkPriceMapMarks(MIN_PRICE_VALUE, MAX_PRICE_VALUE),"price value on the map mark mismatch search criteria");
-       assertTrue(searchPageStep.checkBedMapMarks(BED_NUMBER),"bed quantity on the map mark mismatch search criteria");
-       assertTrue(searchPageStep.checkBathMapMarks(BATH_NUMBER), "bath quantity on the map mark mismatch search criteria");
-       assertTrue(searchPageStep.checkSqftMapMarks(MIN_SQFT_VALUE, MAX_SQFT_VALUE), "square feet house size on the map mark mismatch search criteria");
+                .clickSearchButton()
+                .createSearchRequest(MIN_PRICE_VALUE, MAX_PRICE_VALUE,
+                        BED_NUMBER, BATH_NUMBER,
+                        MIN_SQFT_VALUE, MAX_SQFT_VALUE);
+        assertTrue(searchPageStep.checkPriceMapMarks(MIN_PRICE_VALUE, MAX_PRICE_VALUE),
+                "price value on the map mark mismatch search criteria");
+        assertTrue(searchPageStep.checkBedMapMarks(BED_NUMBER),
+                "bed quantity on the map mark mismatch search criteria");
+        assertTrue(searchPageStep.checkBathMapMarks(BATH_NUMBER),
+                "bath quantity on the map mark mismatch search criteria");
+        assertTrue(searchPageStep.checkSqftMapMarks(MIN_SQFT_VALUE, MAX_SQFT_VALUE),
+                "square feet house size on the map mark mismatch search criteria");
     }
 }

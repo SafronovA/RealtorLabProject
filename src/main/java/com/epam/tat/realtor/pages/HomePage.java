@@ -7,6 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class HomePage extends BasePage {
 
     public HomePage(WebDriver driver) {
@@ -36,6 +38,19 @@ public class HomePage extends BasePage {
     private WebElement searchButton;
     @FindBy(xpath = "//*[text()='Just Sold']")
     private WebElement rentButton;
+    @FindBy(xpath = "//li[@id='img_far']/a")
+    private WebElement realtorButton;
+    @FindBy(xpath = "//a[contains(@class,'js-save-listing btn-save-listing js-save-trigger ')]//i[2]")
+    List<WebElement> heartIconsList;
+
+    /**
+     * get heart icons list on the homes for sale cards
+     *
+     * @return heart icons list
+     */
+    public List<WebElement> getHeartIconsList() {
+        return heartIconsList;
+    }
 
     /**
      * click SignIn button
@@ -43,6 +58,7 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage clickSignInButton() {
+        waitUntilElementIsVisible(signInButton);
         signInButton.click();
         return this;
     }
@@ -92,7 +108,8 @@ public class HomePage extends BasePage {
      *
      * @return this page
      */
-    public HomePage clearInputField(){
+    public HomePage clearInputField() {
+        waitUntilElementIsVisible(searchInput);
         searchInput.clear();
         return this;
     }
@@ -113,40 +130,10 @@ public class HomePage extends BasePage {
      *
      * @return new search page
      */
-    public SearchPage clickSearchButton(){
+    public SearchPage clickSearchButton() {
         waitUntilElementIsClickable(searchButton);
         searchButton.click();
         return new SearchPage(driver);
-    }
-
-    /**
-     * wait for Saved Homes button to be visible
-     *
-     * @return this page
-     */
-    public HomePage waitForSavedHomesLinkToAppear() {
-        waitUntilElementIsVisible(savedHomesLink);
-        return this;
-    }
-
-    /**
-     * wait for SignOut button to be visible
-     *
-     * @return this page
-     */
-    public HomePage waitForSignOutLinkToAppear() {
-        waitUntilElementIsVisible(logOutLink);
-        return this;
-    }
-
-    /**
-     * wait for SignIn button to be visible
-     *
-     * @return this page
-     */
-    public HomePage waitForSignInLinkToAppear() {
-        waitUntilElementIsVisible(signInButton);
-        return this;
     }
 
     /**
@@ -155,26 +142,16 @@ public class HomePage extends BasePage {
      * @return new HomePage
      */
     public HomePage clickLogOutLink() {
+        waitUntilElementIsVisible(logOutLink);
         logOutLink.click();
         return new HomePage(driver);
-    }
-
-    /**
-     * click saved homes link to navigate to page with saved homes
-     *
-     * @return Saved Homes Page (navigate to new page)
-     */
-    public SavedHomesPage clickSavedHomesLink() {
-        waitUntilElementIsClickable(savedHomesLink);
-        savedHomesLink.click();
-        return new SavedHomesPage(driver);
     }
 
     /**
      * wait until user icon become clickable
      * click user icon
      *
-     * @return  new SavedHomesPage
+     * @return new SavedHomesPage
      */
     public SavedHomesPage clickUserIcon() {
         waitUntilElementIsVisible(userIcon);
@@ -183,13 +160,14 @@ public class HomePage extends BasePage {
         return new SavedHomesPage(driver);
     }
 
-
     /**
-     * wait for Search input to be visible
-     * @return this page
+     * click on the Realtor button
+     *
+     * @return new SearchRealtorPage
      */
-    public HomePage waitForSearchInput(){
-        waitUntilElementIsVisible(searchInput);
-        return this;
+    public SearchRealtorPage clickRealtorButton() {
+        waitUntilElementIsClickable(realtorButton);
+        realtorButton.click();
+        return new SearchRealtorPage(driver);
     }
 }

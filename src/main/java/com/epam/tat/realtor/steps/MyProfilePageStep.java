@@ -7,7 +7,7 @@ public class MyProfilePageStep extends BasePageStep {
 
     private MyProfilePage myProfilePage;
 
-    public MyProfilePageStep(WebDriver driver){
+    public MyProfilePageStep(WebDriver driver) {
         super(driver);
         myProfilePage = new MyProfilePage(driver);
     }

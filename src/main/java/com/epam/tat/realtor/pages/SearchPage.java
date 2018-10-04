@@ -78,6 +78,8 @@ public class SearchPage extends BasePage {
     private WebElement chosenCriteria;
     @FindBy(xpath = "(//*[@id='facet-followbtn'])[2]/span")
     private WebElement saveButtonText;
+    @FindBy(xpath = "//a[@class='js-save-listing btn-save-listing js-save-trigger ']//i[2]")
+    private List<WebElement> heartIconsList;
     @FindBy(xpath = "//select[@id='srp-sortby']")
     private WebElement sortOptionsDropDown;
     @FindBy(xpath = "//*[@id='srp-sortby']/option")
@@ -254,13 +256,35 @@ public class SearchPage extends BasePage {
     }
 
     /**
-     * click price drop-down button
+     * click Price button
      *
      * @return this page
      */
     public SearchPage clickPriceButton() {
         waitUntilElementIsClickable(priceButton);
         priceButton.click();
+        return this;
+    }
+
+    /**
+     * click No Min input in the Price section
+     *
+     * @return this page
+     */
+    public SearchPage clickMinPriceInput() {
+        waitUntilElementIsClickable(minPriceInput);
+        minPriceInput.click();
+        return this;
+    }
+
+    /**
+     * click No Max input in the Price section
+     *
+     * @return this page
+     */
+    public SearchPage clickMaxPriceInput() {
+        waitUntilElementIsClickable(maxPriceInput);
+        maxPriceInput.click();
         return this;
     }
 
@@ -304,27 +328,6 @@ public class SearchPage extends BasePage {
         return this;
     }
 
-    /**
-     * click No Min input in the Price section
-     *
-     * @return this page
-     */
-    public SearchPage clickMinPriceInput() {
-        waitUntilElementIsVisible(minPriceInput);
-        minPriceInput.click();
-        return this;
-    }
-
-    /**
-     * click No Max input in the Price section
-     *
-     * @return this page
-     */
-    public SearchPage clickMaxPriceInput() {
-        waitUntilElementIsClickable(maxPriceInput);
-        maxPriceInput.click();
-        return this;
-    }
 
     /**
      * click save search button
@@ -397,6 +400,8 @@ public class SearchPage extends BasePage {
      */
     public SearchPage clickViewListingsButton() {
         viewListinsButton.click();
+        waitUntilElementIsVisible(homeSizeFilterIcon);
+        waitForElements(priceList);
         return this;
     }
 
@@ -408,26 +413,6 @@ public class SearchPage extends BasePage {
     public SearchPage clickViewMapButton() {
         waitUntilElementIsClickable(viewMapButton);
         viewMapButton.click();
-        return this;
-    }
-
-    /**
-     * wait for home size filter to appear in order to download search results
-     *
-     * @return this page
-     */
-    public SearchPage waitForHomeSizeFilter() {
-        waitUntilElementIsVisible(homeSizeFilterIcon);
-        return this;
-    }
-
-    /**
-     * wait for home list 
-     *
-     * @return this page
-     */
-    public SearchPage waitForHomeList() {
-        waitForElements(priceList);
         return this;
     }
 

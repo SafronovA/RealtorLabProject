@@ -1,6 +1,5 @@
 package com.epam.tat.realtor.tests;
 
-import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.steps.MyProfilePageStep;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -24,18 +23,19 @@ public class EditProfileNameTest extends BaseTest {
      * testing the correctness of username changing
      */
     @Test
-    public void editProfileName(){
+    public void editProfileName() {
         myProfilePageStep = homePageStep.clickUserIcon()
-                                        .goToMyProfileSection()
-                                        .editName(firstNameNew, lastNameNew);
-        Assert.assertTrue(myProfilePageStep.nameIsCorrect(firstNameNew+lastNameNew), "Profile name has not changed to the required");
+                .goToMyProfileSection()
+                .editName(firstNameNew, lastNameNew);
+        Assert.assertTrue(myProfilePageStep.nameIsCorrect(firstNameNew + lastNameNew),
+                "Profile name has not changed to the required");
     }
 
     /**
      * revert profile name and logout
      */
     @AfterMethod
-    public void revertProfileName(){
+    public void revertProfileName() {
 
         myProfilePageStep.editName(firstNameOrigin, lastNameOrigin)
                 .logOut();
