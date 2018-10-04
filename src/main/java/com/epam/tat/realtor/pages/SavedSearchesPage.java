@@ -47,6 +47,24 @@ public class SavedSearchesPage extends BasePage {
     }
 
     /**
+     * get city from saved search description
+     *
+     * @return
+     */
+    public String getCity() {
+        return cardTextCity.getText();
+    }
+
+    /**
+     * get prices from saved search description
+     *
+     * @return
+     */
+    public String getPrice() {
+        return cardTextPrice.getText();
+    }
+
+    /**
      * click delete button
      *
      * @return this page
@@ -65,24 +83,6 @@ public class SavedSearchesPage extends BasePage {
         confirmDeleteButton.click();
         driverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(XPATH_CONFIRM_DELETE_BUTTON)));
         return this;
-    }
-
-    /**
-     * get city from saved search description
-     *
-     * @return
-     */
-    public String getCity() {
-        return cardTextCity.getText();
-    }
-
-    /**
-     * get prices from saved search description
-     *
-     * @return
-     */
-    public String getPrice() {
-        return cardTextPrice.getText();
     }
 
     /**
