@@ -2,11 +2,11 @@ package com.epam.tat.realtor.tests;
 
 import com.epam.tat.realtor.steps.SavedSearchesPageStep;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class SavedSearchTest extends BaseTest{
+public class SavedSearchTest extends BaseTest {
 
     private static final String CITY_NAME = "San Francisco, CA";
     private static final String MIN_PRICE = "$350k";
@@ -17,20 +17,20 @@ public class SavedSearchTest extends BaseTest{
      * login with valid credentials
      * go to saved searches page and delete all saved searches
      */
-    @BeforeTest
-    public void logIn(){
+    @BeforeMethod
+    public void logIn() {
         homePageStep.userLogIn()
                 .clickUserIcon()
                 .clickSavedSearchesLink()
                 .clearAllOldSavedSearches()
-                .moveToHomePage();
+                .goToHomePage();
     }
 
     /**
      * test that search saved with selected parameters
      */
     @Test
-    public void savedSearch(){
+    public void savedSearch() {
         homePageStep.enterCityName(CITY_NAME)
                 .clickSearchButton()
                 .selectMinMaxPrices(MIN_PRICE, MAX_PRICE)
@@ -44,8 +44,8 @@ public class SavedSearchTest extends BaseTest{
     /**
      * delete created search and log out
      */
-    @AfterTest
-    public void deleteCreatedSaveSearch(){
+    @AfterMethod
+    public void deleteCreatedSaveSearch() {
         savedSearchesPageStep.clearAllOldSavedSearches()
                 .logOut();
     }
