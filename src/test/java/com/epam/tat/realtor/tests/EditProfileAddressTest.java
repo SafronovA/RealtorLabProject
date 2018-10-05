@@ -1,6 +1,5 @@
 package com.epam.tat.realtor.tests;
 
-import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.steps.MyProfilePageStep;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -49,7 +48,6 @@ public class EditProfileAddressTest extends BaseTest {
     public void revertProfileName() {
         myProfilePageStep.editAddressRevert(ADDRESS_ORIGIN, CITY_ORIGIN, STATE_ORIGIN, COUNTRY_ORIGIN)
                 .logOut();
-        driver.navigate().to(ConfigProperties.getTestProperty("url"));
     }
 
 }
