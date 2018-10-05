@@ -24,18 +24,13 @@ public class RestaurantsFilterTest extends BaseTest {
                 .clickViewMapButton()
                 .clickLifestyleButton()
                 .selectRestaurants();
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        List<WebElement> element = driver.findElements(By.xpath("//div[contains(@class,'pin-restaurants')]"));
-        System.out.println(element.size());
-        for (int i = 1; i <element.size()+1 ; i++) {
-            BasePage.clickByJEx(driver.findElement(By.xpath("//div[contains(@class,'pin-restaurants')]["+i+"]")), driver);
-        }
+//        List<WebElement> element = driver.findElements(By.xpath("//div[contains(@class,'pin-restaurants')]"));
+//        for (int i = 1; i <element.size()+1 ; i++) {
+//            BasePage.clickByJEx(driver.findElement(By.xpath("//div[contains(@class,'pin-restaurants')]["+i+"]")), driver);
+//
+//        }
 
-//        Assert.assertTrue(searchPageStep.areAllFoundLifestyleRestaurants(),
-//                "One of found lifestyle is not a restaurant");
+        Assert.assertTrue(searchPageStep.areAllFoundLifestyleRestaurants(),
+                "One of found lifestyle is not a restaurant");
     }
 }

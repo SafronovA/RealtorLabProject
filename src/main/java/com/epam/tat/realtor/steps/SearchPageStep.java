@@ -382,11 +382,12 @@ public class SearchPageStep extends BasePageStep {
      * @return true, if all found lifestyles are restaurants, false, if they are not
      */
     public boolean areAllFoundLifestyleRestaurants() {
-        List<WebElement> l = searchPage.getAllFoundRestaurantsList();
-        return searchPage.getAllFoundRestaurantsList().stream().allMatch(webElement -> {
-            webElement.click();
-            return searchPage.getLifestyleType().equalsIgnoreCase("restaurants");
-        });
+        boolean isRestaurant = true;
+        for(int i = 1; i< searchPage.getRestaurantsCount()+1; i++){
+            BasePage.clickByJEx(searchPage.getRestaurant(i), driver);
+            isRestaurant &= searchPage.getLifestyleType().equalsIgnoreCase("restaurants");
+        }
+        return isRestaurant;
     }
 
     /**

@@ -16,6 +16,7 @@ public class SearchPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    private final String XPATH_FOR_RESTAURANT = "//div[contains(@class,'pin-restaurants')]";
     By priceList = By.xpath("//span[@class='data-price']");
     @FindBy(id = "desktop-price-div")
     private WebElement priceButton;
@@ -170,14 +171,18 @@ public class SearchPage extends BasePage {
      *
      * @return list of all found restaurants
      */
-    public List<WebElement> getAllFoundRestaurantsList() {
-        waitForElements(By.xpath("//div[contains(@class,'restaurants')]"));
-        return driver.findElements(By.cssSelector("div.map-overlay-pin.map-overlay-pin-restaurants.map-overlay-pin-no-text:after"));
+    public int getRestaurantsCount() {
+        return allFoundRestaurantsList.size();
     }
 
-    public void clickOnCss(WebElement webElement) {
-        ((JavascriptExecutor) driver)
-                .executeScript("window.getComputedStyle(arguments[0], ':after').click();", webElement);
+    /**
+     * get restaurants in turn
+     *
+     * @param number restaurant in turn
+     * @return get restaurants in turn
+     */
+    public WebElement getRestaurant(int number){
+        return driver.findElement(By.xpath(XPATH_FOR_RESTAURANT+"["+number+"]"));
     }
 
     /**
