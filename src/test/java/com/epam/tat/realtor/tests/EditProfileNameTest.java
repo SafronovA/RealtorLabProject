@@ -36,7 +36,6 @@ public class EditProfileNameTest extends BaseTest {
      */
     @AfterMethod
     public void revertProfileName() {
-
         myProfilePageStep.editName(firstNameOrigin, lastNameOrigin)
                 .logOut();
     }
