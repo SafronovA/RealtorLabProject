@@ -14,6 +14,9 @@ public class EditProfileNameTest extends BaseTest {
     private String firstNameNew = "New_Lo";
     private String lastNameNew = "New_ko";
 
+    /**
+     * perform login operation
+     */
     @BeforeMethod
     public void logIn() {
         homePageStep.userLogIn();
@@ -36,7 +39,6 @@ public class EditProfileNameTest extends BaseTest {
      */
     @AfterMethod
     public void revertProfileName() {
-
         myProfilePageStep.editName(firstNameOrigin, lastNameOrigin)
                 .logOut();
     }

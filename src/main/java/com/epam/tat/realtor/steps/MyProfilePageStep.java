@@ -34,6 +34,64 @@ public class MyProfilePageStep extends BasePageStep {
     }
 
     /**
+     * performs the operation of changing the profile name
+     * click 'Edit Profile' button
+     * enter country
+     * enter address
+     * enter city
+     * enter state
+     * click 'Save Changes' button
+     * wait until the changed fields changes to the desired one
+     *
+     * @param address required address
+     * @param city    required city
+     * @param state   required state
+     * @param country required country
+     * @return this step
+     */
+    public MyProfilePageStep editAddress(String address, String city, String state, String country) {
+        myProfilePage.clickEditProfileButton()
+                .enterCountry(country)
+                .enterAddress(address)
+                .enterCity(city)
+                .enterState(state)
+                .clickSaveChangesButton();
+        myProfilePage.waitUntilAttributeInnerHTMLToBe(myProfilePage.getProfileAddressWebElement(), address);
+        myProfilePage.waitUntilAttributeInnerHTMLToBe(myProfilePage.getProfileCityAndStateWebElement(), (city + ", " + state + " "));
+        myProfilePage.waitUntilAttributeInnerHTMLToBe(myProfilePage.getProfileCountryWebElement(), country);
+        return this;
+    }
+
+    /**
+     * performs the operation of changing the profile name
+     * click 'Edit Profile' button
+     * enter state
+     * enter address
+     * enter city
+     * enter country
+     * click 'Save Changes' button
+     * wait until the changed fields changes to the desired one
+     *
+     * @param address required address
+     * @param city    required city
+     * @param state   required state
+     * @param country required country
+     * @return this step
+     */
+    public MyProfilePageStep editAddressRevert(String address, String city, String state, String country) {
+        myProfilePage.clickEditProfileButton()
+                .enterState(state)
+                .enterAddress(address)
+                .enterCity(city)
+                .enterCountry(country)
+                .clickSaveChangesButton();
+        myProfilePage.waitUntilAttributeInnerHTMLToBe(myProfilePage.getProfileAddressWebElement(), address);
+        myProfilePage.waitUntilAttributeInnerHTMLToBe(myProfilePage.getProfileCityAndStateWebElement(), (city + ", " + state + " "));
+        myProfilePage.waitUntilAttributeInnerHTMLToBe(myProfilePage.getProfileCountryWebElement(), country);
+        return this;
+    }
+
+    /**
      * perform operation of comparing required and current name
      *
      * @param requiredName required profile name
@@ -43,6 +101,50 @@ public class MyProfilePageStep extends BasePageStep {
         boolean result = myProfilePage.getProfileName()
                 .replace(" ", "")
                 .equals(requiredName);
+        return result;
+    }
+
+    /**
+     * perform operation of comparing required and current address
+     *
+     * @param requiredAddress required profile address
+     * @return boolean
+     */
+    public boolean addressIsCorrect(String requiredAddress) {
+        boolean result = myProfilePage.getProfileAddress().equals(requiredAddress);
+        return result;
+    }
+
+    /**
+     * perform operation of comparing required and current city
+     *
+     * @param requiredCity required profile city
+     * @return boolean
+     */
+    public boolean cityIsCorrect(String requiredCity) {
+        boolean result = myProfilePage.getProfileCityAndState().replaceAll(",.*$", "").trim().equals(requiredCity);
+        return result;
+    }
+
+    /**
+     * perform operation of comparing required and current state
+     *
+     * @param requiredState required profile state
+     * @return boolean
+     */
+    public boolean stateIsCorrect(String requiredState) {
+        boolean result = myProfilePage.getProfileCityAndState().replaceAll(".*, $*", "").trim().equals(requiredState);
+        return result;
+    }
+
+    /**
+     * perform operation of comparing required and current country
+     *
+     * @param requiredCountry required profile country
+     * @return boolean
+     */
+    public boolean countryIsCorrect(String requiredCountry) {
+        boolean result = myProfilePage.getProfileCountry().equals(requiredCountry);
         return result;
     }
 
