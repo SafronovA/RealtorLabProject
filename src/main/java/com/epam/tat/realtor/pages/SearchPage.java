@@ -56,7 +56,7 @@ public class SearchPage extends BasePage {
     private List<WebElement> searchedHouseBathList;
     @FindBy(xpath = "//li[@data-label='property-meta-sqft']/span")
     private List<WebElement> searchedHouseSqftList;
-    @FindBy(xpath = "//div[@class='srp-view-toggle btn-group']/a[@class='btn btn-default srp-view-map-toggle ']")
+    @FindBy(xpath = "//a[contains(@class,'view-map')]")
     private WebElement viewMapButton;
     @FindBy(xpath = "//div[contains(@class,'map-property-pin for_sale')]")
     private List<WebElement> mapMarksList;
@@ -88,6 +88,16 @@ public class SearchPage extends BasePage {
     private List<WebElement> homePricesList;
     @FindBy(xpath = "//*[@id='ResultsPerPageBottom']//span[4]/a")
     private List<WebElement> nextPageLink;
+    @FindBy(xpath = "//*[@id='mapCompControls']//li[3]/a")
+    private WebElement lifestyleButton;
+    @FindBy(xpath = "//a[contains(@data-omtag,'schools')]")
+    private WebElement schoolsButton;
+    @FindBy(xpath = "//input[contains(@data-omtag,'elementary')]")
+    private WebElement elementarySchool;
+    @FindBy(xpath = "//input[contains(@data-omtag,'secondary')]")
+    private WebElement middleSchool;
+    @FindBy(xpath = "//input[contains(@data-omtag,'private')]")
+    private WebElement privateSchool;
 
     /**
      * get list of available min prices in the dropdown menu
@@ -417,6 +427,50 @@ public class SearchPage extends BasePage {
     }
 
     /**
+     * click school button
+     *
+     * @return this page
+     */
+    public SearchPage clickSchoolButton() {
+        waitUntilElementIsClickable(schoolsButton);
+        schoolsButton.click();
+        return this;
+    }
+
+    /**
+     * click elementary school checkbox
+     *
+     * @return this page
+     */
+    public SearchPage clickElementarySchool() {
+        waitUntilElementIsClickable(elementarySchool);
+        elementarySchool.click();
+        return this;
+    }
+
+    /**
+     * click elementary school checkbox
+     *
+     * @return this page
+     */
+    public SearchPage clickMiddleSchool() {
+        waitUntilElementIsClickable(middleSchool);
+        middleSchool.click();
+        return this;
+    }
+
+    /**
+     * click elementary school checkbox
+     *
+     * @return this page
+     */
+    public SearchPage clickPrivateSchool() {
+        waitUntilElementIsClickable(privateSchool);
+        privateSchool.click();
+        return this;
+    }
+
+    /**
      * wait until save button will be saved
      *
      * @return this page
@@ -425,6 +479,5 @@ public class SearchPage extends BasePage {
         waitUntilElementIsVisible(saveButtonText);
         return this;
     }
-
 
 }

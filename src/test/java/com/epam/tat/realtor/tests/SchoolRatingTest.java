@@ -13,7 +13,10 @@ public class SchoolRatingTest extends BaseTest {
     @Test
     public void schoolRating() {
         homePageStep.enterCityName(CITY_NAME)
-                .clickSearchButton();
+                .clickSearchButton()
+                .clickViewMapButton()
+                .clickSchoolButton()
+                .selectHighSchool();
     }
 
 }
