@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class MyProfilePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    private By interferingLayer = By.xpath("//div[@class='modal fade modal-hero modal-mobile-fullscreen js-modal-lazyload-assets modalOverlayBase_after-open']");
+    private By strangeLayer = By.xpath("//div[@class='modal fade modal-hero modal-mobile-fullscreen js-modal-lazyload-assets modalOverlayBase_after-open']");
     @FindBy(xpath = "//*[@id='header-login-menu']/li[1]")
     private WebElement userIcon;
     @FindBy(linkText = "Sign Out")
@@ -205,7 +204,7 @@ public class MyProfilePage extends BasePage {
      * @return this page
      */
     public MyProfilePage clickEditProfileButton() {
-        driverWait.until(ExpectedConditions.invisibilityOfElementLocated(interferingLayer));
+        waitInvisibilityOfElementLocated(strangeLayer);
         editProfileButton.click();
         return this;
     }
