@@ -42,6 +42,8 @@ public class HomePage extends BasePage {
     private WebElement realtorButton;
     @FindBy(xpath = "//a[contains(@class,'js-save-listing btn-save-listing js-save-trigger ')]//i[2]")
     List<WebElement> heartIconsList;
+    @FindBy (xpath = "//label[@for='property_records']")
+    private WebElement homeEstimate;
 
     /**
      * get heart icons list on the homes for sale cards
@@ -169,5 +171,14 @@ public class HomePage extends BasePage {
         waitUntilElementIsClickable(realtorButton);
         realtorButton.click();
         return new SearchRealtorPage(driver);
+    }
+
+    /**
+     * click HomeEstimate section
+     */
+    public HomePage clickHomeEstimate() {
+        waitUntilElementIsClickable(homeEstimate);
+        homeEstimate.click();
+        return this;
     }
 }

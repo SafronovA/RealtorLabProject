@@ -93,4 +93,14 @@ public class HomePageStep extends BasePageStep {
         homePage.getHeartIconsList().forEach(WebElement::click);
         return homePage.getHeartIconsList().size();
     }
+
+    /**
+     * create search request in the home estimate section
+     * @return this page
+     */
+    public PropertyRecordsPageStep goToHomeEstimate() {
+        homePage.clickHomeEstimate()
+                .clickSearchButton();
+        return new PropertyRecordsPageStep(driver);
+    }
 }
