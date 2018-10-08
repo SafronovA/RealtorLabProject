@@ -17,6 +17,8 @@ public class FindRealtorPage extends BasePage {
     private WebElement userIcon;
     @FindBy(xpath = "//div[@class='rating-count']")
     private WebElement ratingCount;
+    @FindBy(xpath = "//div[contains(@class,'agent-recommendation')]//strong")
+    private WebElement recommendationsCount;
 
     /**
      * get number of realtor sold houses
@@ -47,4 +49,12 @@ public class FindRealtorPage extends BasePage {
         return new RealtorPage(driver);
     }
 
+    /**
+     * get recommendations count
+     *
+     * @return recommendations count
+     */
+    public WebElement getRecommendations() {
+        return recommendationsCount;
+    }
 }
