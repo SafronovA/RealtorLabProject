@@ -98,16 +98,6 @@ public class SearchPageStep extends BasePageStep {
     }
 
     /**
-     * navigate to home page
-     *
-     * @return new Home page
-     */
-    public HomePageStep goToHomePage() {
-        driver.navigate().to(ConfigProperties.getTestProperty("url"));
-        return new HomePageStep(driver);
-    }
-
-    /**
      * create search request with parameters:
      *
      * @param minValue   min price value
@@ -357,6 +347,40 @@ public class SearchPageStep extends BasePageStep {
     }
 
     /**
+     * click lifestyle button on map
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep clickLifestyleButton() {
+        searchPage.clickLifestyleButton();
+        return this;
+    }
+
+    /**
+     * click on restaurants
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep selectRestaurants() {
+        searchPage.selectRestaurants();
+        return this;
+    }
+
+    /**
+     * check that all found lifestyles are restaurants
+     *
+     * @return true, if all found lifestyles are restaurants, false, if they are not
+     */
+    public boolean areAllFoundLifestyleRestaurants() {
+        boolean isRestaurant = true;
+        for (int i = 1; i < searchPage.getRestaurantsCount() + 1; i++) {
+            BasePage.clickByJEx(searchPage.getRestaurant(i), driver);
+            isRestaurant &= searchPage.getLifestyleType().equalsIgnoreCase("restaurants");
+        }
+        return isRestaurant;
+    }
+
+    /**
      * click school button on map
      *
      * @return SearchPageStep
@@ -376,6 +400,44 @@ public class SearchPageStep extends BasePageStep {
                 .clickMiddleSchool()
                 .clickPrivateSchool();
         return this;
+    }
+
+    /**
+     * set school rating on 10
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep selectEightRating() {
+        searchPage.selectEightRating();
+        return this;
+    }
+
+    /**
+     * check that all displayed on map school have rating mare than 8
+     *
+     * @return true, if all displayed on map school have rating mare than 8, false, if have not
+     */
+    public boolean doesAllSchoolHaveRatingMoreThanEight() {
+        boolean isRatingMoreThanEight = true;
+        for (int i = 1; i < searchPage.getSchoolOnMapListCount() + 1; i++) {
+            BasePage.clickByJEx(searchPage.getSchool(i), driver);
+            isRatingMoreThanEight &= Integer.valueOf(searchPage.getSchoolRating()) >= 8;
+        }
+        return isRatingMoreThanEight;
+    }
+
+    /**
+     * check that all displayed on map school are high
+     *
+     * @return true, if all displayed on map school are high, false, if are not
+     */
+    public boolean areAllSchoolsHigh(){
+        boolean areAllSchoolsHigh = true;
+        for (int i = 1; i < searchPage.getSchoolOnMapListCount() + 1; i++) {
+            BasePage.clickByJEx(searchPage.getSchool(i), driver);
+            areAllSchoolsHigh &= searchPage.getSchoolName().contains("High");
+        }
+        return areAllSchoolsHigh;
     }
 
     /**

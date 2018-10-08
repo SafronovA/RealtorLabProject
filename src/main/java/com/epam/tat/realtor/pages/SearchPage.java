@@ -3,6 +3,7 @@ package com.epam.tat.realtor.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -15,6 +16,8 @@ public class SearchPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    private final String XPATH_FOR_RESTAURANT = "//div[contains(@class,'pin-restaurants')]";
+    private final String XPATH_FOR_SCHOOL = "//div[contains(@class,'pin-school')]";
     By priceList = By.xpath("//span[@class='data-price']");
     @FindBy(id = "desktop-price-div")
     private WebElement priceButton;
@@ -88,9 +91,15 @@ public class SearchPage extends BasePage {
     private List<WebElement> homePricesList;
     @FindBy(xpath = "//*[@id='ResultsPerPageBottom']//span[4]/a")
     private List<WebElement> nextPageLink;
-    @FindBy(xpath = "//*[@id='mapCompControls']//li[3]/a")
+    @FindBy(xpath = "//a[contains(@data-omtag,'amenities')]")
     private WebElement lifestyleButton;
-    @FindBy(xpath = "//a[contains(@data-omtag,'schools')]")
+    @FindBy(xpath = "//input[contains(@data-omtag,'restaurants')]")
+    private WebElement restaurantsRadioButton;
+    @FindBy(xpath = "//div[contains(@class,'restaurants')]")
+    private List<WebElement> allFoundRestaurantsList;
+    @FindBy(xpath = "//div[@class='amenity-card-label']")
+    private WebElement lifestyleType;
+    @FindBy(xpath = "//i[contains(@class,\"ra-ml-cap ra\")]")
     private WebElement schoolsButton;
     @FindBy(xpath = "//input[contains(@data-omtag,'elementary')]")
     private WebElement elementarySchool;
@@ -98,6 +107,16 @@ public class SearchPage extends BasePage {
     private WebElement middleSchool;
     @FindBy(xpath = "//input[contains(@data-omtag,'private')]")
     private WebElement privateSchool;
+    @FindBy(xpath = "//div[contains(@class,'min-slider-handle')]")
+    private WebElement schoolRatingSlider;
+    @FindBy(xpath = "//div[contains(@class,'slider-tick-label')][8]")
+    private WebElement eightRating;
+    @FindBy(xpath = "//div[contains(@class,'pin-school')]")
+    private List<WebElement> schoolOnMapList;
+    @FindBy(xpath = "//div[@class='rating']")
+    private WebElement schoolRating;
+    @FindBy(xpath = "//a[@class='card-title']")
+    private WebElement schoolName;
 
     /**
      * get list of available min prices in the dropdown menu
@@ -167,6 +186,44 @@ public class SearchPage extends BasePage {
     }
 
     /**
+     * get list of all found restaurants
+     *
+     * @return list of all found restaurants
+     */
+    public int getRestaurantsCount() {
+        return allFoundRestaurantsList.size();
+    }
+
+    /**
+     * get school name
+     *
+     * @return school name
+     */
+    public String getSchoolName(){
+        return schoolName.getText();
+    }
+
+    /**
+     * get restaurants in turn
+     *
+     * @param number restaurant in turn
+     * @return get restaurants in turn
+     */
+    public WebElement getRestaurant(int number){
+        return driver.findElement(By.xpath(XPATH_FOR_RESTAURANT+"["+number+"]"));
+    }
+
+    /**
+     * get lifestyle type
+     *
+     * @return lifestyle type
+     */
+    public String getLifestyleType() {
+        waitUntilElementIsVisible(lifestyleType);
+        return lifestyleType.getText();
+    }
+
+    /**
      * get price from map mark photo
      *
      * @return map mark price
@@ -200,6 +257,15 @@ public class SearchPage extends BasePage {
      */
     public String getMapMarkSqft() {
         return mapMarkSqft.getText();
+    }
+
+    /**
+     * get school rating
+     *
+     * @return school rating
+     */
+    public String getSchoolRating(){
+        return schoolRating.getText();
     }
 
     /**
@@ -263,6 +329,25 @@ public class SearchPage extends BasePage {
      */
     public List<WebElement> getMaxHomeSizeList() {
         return maxHomeSizeList;
+    }
+
+    /**
+     * get count of schools on map
+     *
+     * @return count schools are displayed on map
+     */
+    public int getSchoolOnMapListCount() {
+        return schoolOnMapList.size();
+    }
+
+    /**
+     * get schools in turn
+     *
+     * @param number school in turn
+     * @return get school in turn
+     */
+    public WebElement getSchool(int number){
+        return driver.findElement(By.xpath(XPATH_FOR_SCHOOL+"["+number+"]"));
     }
 
     /**
@@ -337,7 +422,6 @@ public class SearchPage extends BasePage {
         bathButton.click();
         return this;
     }
-
 
     /**
      * click save search button
@@ -427,12 +511,34 @@ public class SearchPage extends BasePage {
     }
 
     /**
+     * click in lifestyle button
+     *
+     * @return this page
+     */
+    public SearchPage clickLifestyleButton() {
+        waitUntilElementIsVisible(lifestyleButton);
+        lifestyleButton.click();
+        return this;
+    }
+
+    /**
+     * click on restaurants radio button
+     *
+     * @return this page
+     */
+    public SearchPage selectRestaurants() {
+        waitUntilElementIsVisible(restaurantsRadioButton);
+        restaurantsRadioButton.click();
+        return this;
+    }
+
+    /**
      * click school button
      *
      * @return this page
      */
     public SearchPage clickSchoolButton() {
-        waitUntilElementIsClickable(schoolsButton);
+        waitUntilElementIsVisible(schoolsButton);
         schoolsButton.click();
         return this;
     }
@@ -467,6 +573,16 @@ public class SearchPage extends BasePage {
     public SearchPage clickPrivateSchool() {
         waitUntilElementIsClickable(privateSchool);
         privateSchool.click();
+        return this;
+    }
+
+    /**
+     * click on school rating slider and select ten rating
+     *
+     * @return this page
+     */
+    public SearchPage selectEightRating(){
+        new Actions(driver).dragAndDrop(schoolRatingSlider, eightRating).perform();
         return this;
     }
 
