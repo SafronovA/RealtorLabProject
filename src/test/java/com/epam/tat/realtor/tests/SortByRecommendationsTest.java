@@ -11,15 +11,16 @@ public class SortByRecommendationsTest extends BaseTest {
     private FindRealtorPageStep findRealtorPageStep;
 
     /**
-     * check that homes are displayed on page sorted by price
+     * check that realtors are displayed on page sorted by recommendations
      */
     @Test
-    public void sortByPrice() {
+    public void sortByRecommendations() {
         findRealtorPageStep = homePageStep.clickFindRealtorButton()
                 .findRealtorsByLocation(CITY_NAME)
                 .choseRecommendation(RECOMMENDATION_VALUE)
                 .choseSortOption(SORT_OPTION);
-        Assert.assertTrue(findRealtorPageStep.isRealtorsDisplayedSortedByRecommendations(), "Realtors are not sorted by descending number of reviews");
+        Assert.assertTrue(findRealtorPageStep.isRealtorsDisplayedSortedByRecommendations(),
+                "Realtors are not sorted by descending number of reviews");
     }
 
 }
