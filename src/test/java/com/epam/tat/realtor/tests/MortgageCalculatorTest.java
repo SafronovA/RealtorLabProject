@@ -11,6 +11,9 @@ public class MortgageCalculatorTest extends BaseTest {
     private static String HOME_PRICE = "110000";
     private static String DOWN_PAYMENT = "10000";
 
+    /**
+     * check that calculated and displayed price is correct
+     */
     @Test
     public void mortgageCalculatorTest() {
         MortgageCalculatorPageStep mortgageCalculatorPageStep = homePageStep.navigateCursorToMortgageLink()

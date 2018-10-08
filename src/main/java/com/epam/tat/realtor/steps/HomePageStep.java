@@ -77,11 +77,21 @@ public class HomePageStep extends BasePageStep {
         return new SavedHomesPageStep(driver);
     }
 
+    /**
+     * navigate cursor on mortgage calculator to show drop-down menu
+     *
+     * @return HomePageStep
+     */
     public HomePageStep navigateCursorToMortgageLink() {
-        homePage.navigateCursorOnMartgageLink();
+        homePage.navigateCursorOnMortgageLink();
         return this;
     }
 
+    /**
+     * click on mortgage calculator link
+     *
+     * @return new MortgageCalculatorPageStep
+     */
     public MortgageCalculatorPageStep clickMortgageCalculatorLink() {
         homePage.clickMortgageCalculatorLink();
         return new MortgageCalculatorPageStep(driver);

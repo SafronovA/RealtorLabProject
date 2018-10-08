@@ -197,11 +197,21 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public HomePage navigateCursorOnMartgageLink() {
+    /**
+     * navigate cursor on mortgage calculator to show drop-down menu
+     *
+     * @return this page
+     */
+    public HomePage navigateCursorOnMortgageLink() {
         new Actions(driver).moveToElement(mortgageLink).build().perform();
         return this;
     }
 
+    /**
+     * click on mortgage calculator link
+     *
+     * @return new MortgageCalculatorPage
+     */
     public MortgageCalculatorPage clickMortgageCalculatorLink() {
         mortgageCalculatorLink.click();
         return new MortgageCalculatorPage(driver);
