@@ -1,10 +1,12 @@
 package com.epam.tat.realtor.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -15,6 +17,7 @@ public class MyProfilePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    private By interferingLayer = By.xpath("//div[@class='modal fade modal-hero modal-mobile-fullscreen js-modal-lazyload-assets modalOverlayBase_after-open']");
     @FindBy(xpath = "//*[@id='header-login-menu']/li[1]")
     private WebElement userIcon;
     @FindBy(linkText = "Sign Out")
@@ -82,12 +85,14 @@ public class MyProfilePage extends BasePage {
         String country = profileCountry.getAttribute("innerHTML");
         return country;
     }
+
     /**
      * @return WebElement (@code profileAddress)
      */
     public WebElement getProfileAddressWebElement() {
         return profileAddress;
     }
+
 
     /**
      * @return WebElement (@code profileCityAndState)
@@ -200,8 +205,7 @@ public class MyProfilePage extends BasePage {
      * @return this page
      */
     public MyProfilePage clickEditProfileButton() {
-        waitUntilElementIsVisible(editProfileButton);
-        waitUntilElementIsClickable(editProfileButton);
+        driverWait.until(ExpectedConditions.invisibilityOfElementLocated(interferingLayer));
         editProfileButton.click();
         return this;
     }

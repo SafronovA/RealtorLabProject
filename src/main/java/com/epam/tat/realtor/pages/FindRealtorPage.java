@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class FindRealtorPage extends BasePage {
     public FindRealtorPage(WebDriver driver) {
         super(driver);
@@ -17,6 +19,18 @@ public class FindRealtorPage extends BasePage {
     private WebElement userIcon;
     @FindBy(xpath = "//div[@class='rating-count']")
     private WebElement ratingCount;
+    @FindBy(xpath = "//*[@id='filter_5']")
+    private WebElement recommendationFilterButton;
+    @FindBy(xpath = "//*[@id='recommendation_container']//span")
+    private List<WebElement> recommendationContainer;
+    @FindBy(xpath = "//*[@class='dropdown-menu list-sort-dropdown']//a")
+    private List<WebElement> sortByOptions;
+    @FindBy(id = "list_sort")
+    private WebElement sortByButton;
+    @FindBy(xpath = "//*[@class='agent-recommendation ellipsis']//strong")
+    private List<WebElement> numberOfRecommendationsList;
+    @FindBy(xpath = "//a[@class='next']")
+    private List<WebElement> nextPageButton;
 
     /**
      * get number of realtor sold houses
@@ -37,6 +51,42 @@ public class FindRealtorPage extends BasePage {
     }
 
     /**
+     * get recommendation container
+     *
+     * @return recommendation container
+     */
+    public List<WebElement> getRecommendationContainer() {
+        return recommendationContainer;
+    }
+
+    /**
+     * get realtor rating
+     *
+     * @return realtor rating
+     */
+    public List<WebElement> getSortByOptions() {
+        return sortByOptions;
+    }
+
+    /**
+     * get numberOfRecommendations list
+     *
+     * @return number of recommendations list
+     */
+    public List<WebElement> getNumberOfRecommendationsList() {
+        waitForJQueryIsLoad();
+        return numberOfRecommendationsList;
+    }
+
+    /**
+     * get next button
+     * @return nextButton
+     */
+    public List<WebElement> getNextPageButton(){
+        return nextPageButton;
+    }
+
+    /**
      * click on the realtor icon
      *
      * @return new RealtorPage
@@ -45,6 +95,39 @@ public class FindRealtorPage extends BasePage {
         waitUntilElementIsClickable(userIcon);
         userIcon.click();
         return new RealtorPage(driver);
+    }
+
+    /**
+     * click sortBy button
+     *
+     * @return this page
+     */
+    public FindRealtorPage clickSortByButton() {
+        waitForJQueryIsLoad();
+        sortByButton.click();
+        return this;
+    }
+
+    /**
+     * click sortBy button
+     *
+     * @return this page
+     */
+    public FindRealtorPage clickRecommendationFilterButton() {
+        waitForJQueryIsLoad();
+        recommendationFilterButton.click();
+        return this;
+    }
+
+    /**
+     * click sortBy button
+     *
+     * @return this page
+     */
+    public FindRealtorPage clickNextPageButton() {
+        waitForJQueryIsLoad();
+        nextPageButton.get(0).click();
+        return this;
     }
 
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="RealtorSuite" verbose="1" parallel="classes" thread-count="10" >
+<suite name="RealtorSuite" verbose="1" parallel="classes" thread-count="11" >
 
     <listeners>
     </listeners>
@@ -12,11 +12,12 @@
             <class name="com.epam.tat.realtor.tests.MapMarksTest"/>
             <class name="com.epam.tat.realtor.tests.RealtorReviewsTest"/>
             <class name="com.epam.tat.realtor.tests.RealtorSoldHousesTest"/>
+            <class name="com.epam.tat.realtor.tests.RestaurantsFilterTest"/>
             <class name="com.epam.tat.realtor.tests.SavedHomesTest"/>
             <class name="com.epam.tat.realtor.tests.SavedSearchTest"/>
             <class name="com.epam.tat.realtor.tests.SearchByConditionsTest"/>
             <class name="com.epam.tat.realtor.tests.SortByPriceTest"/>
-            <class name="com.epam.tat.realtor.tests.RestaurantsFilterTest"/>
+            <class name="com.epam.tat.realtor.tests.SortByRecommendationsTest"/>
         </classes>
     </test>
 
