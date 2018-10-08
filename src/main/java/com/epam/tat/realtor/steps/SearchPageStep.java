@@ -296,10 +296,11 @@ public class SearchPageStep extends BasePageStep {
     public boolean checkPriceMapMarks(String minPrice, String maxPrice) {
         searchPage.clickViewMapButton();
         return searchPage.getMapMarks().stream()
-                .allMatch(x -> { BasePage.clickByJEx(x, driver);
-            return (Parser.parsePrice(minPrice) <= Parser.parse(searchPage.getMapMarkPrice()))
-                    && (Parser.parsePrice(maxPrice) >= Parser.parse(searchPage.getMapMarkPrice()));
-        });
+                .allMatch(x -> {
+                    BasePage.clickByJEx(x, driver);
+                    return (Parser.parsePrice(minPrice) <= Parser.parse(searchPage.getMapMarkPrice()))
+                            && (Parser.parsePrice(maxPrice) >= Parser.parse(searchPage.getMapMarkPrice()));
+                });
     }
 
     /**
@@ -323,9 +324,10 @@ public class SearchPageStep extends BasePageStep {
      */
     public boolean checkBathMapMarks(String bathNumber) {
         return searchPage.getMapMarks().stream()
-                .allMatch(x -> { BasePage.clickByJEx(x, driver);
-            return Parser.parse(bathNumber) <= Parser.parse(searchPage.getMapMarkBath());
-        });
+                .allMatch(x -> {
+                    BasePage.clickByJEx(x, driver);
+                    return Parser.parse(bathNumber) <= Parser.parse(searchPage.getMapMarkBath());
+                });
     }
 
     /**
@@ -337,10 +339,55 @@ public class SearchPageStep extends BasePageStep {
      */
     public boolean checkSqftMapMarks(String minSqft, String maxSqft) {
         return searchPage.getMapMarks().stream()
-                .allMatch(x -> { BasePage.clickByJEx(x, driver);
-            return (Parser.parse(minSqft) <= Parser.parse(searchPage.getMapMarkSqft()))
-                    && (Parser.parse(maxSqft) >= Parser.parse(searchPage.getMapMarkSqft()));
-        });
+                .allMatch(x -> {
+                    BasePage.clickByJEx(x, driver);
+                    return (Parser.parse(minSqft) <= Parser.parse(searchPage.getMapMarkSqft()))
+                            && (Parser.parse(maxSqft) >= Parser.parse(searchPage.getMapMarkSqft()));
+                });
+    }
+
+    /**
+     * click on view map button to open map
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep clickViewMapButton() {
+        searchPage.clickViewMapButton();
+        return this;
+    }
+
+    /**
+     * click lifestyle button on map
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep clickLifestyleButton() {
+        searchPage.clickLifestyleButton();
+        return this;
+    }
+
+    /**
+     * click on restaurants
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep selectRestaurants() {
+        searchPage.selectRestaurants();
+        return this;
+    }
+
+    /**
+     * check that all found lifestyles are restaurants
+     *
+     * @return true, if all found lifestyles are restaurants, false, if they are not
+     */
+    public boolean areAllFoundLifestyleRestaurants() {
+        boolean isRestaurant = true;
+        for(int i = 1; i< searchPage.getRestaurantsCount()+1; i++){
+            BasePage.clickByJEx(searchPage.getRestaurant(i), driver);
+            isRestaurant &= searchPage.getLifestyleType().equalsIgnoreCase("restaurants");
+        }
+        return isRestaurant;
     }
 
     /**
