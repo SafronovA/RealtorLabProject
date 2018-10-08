@@ -58,7 +58,7 @@ public class SearchPage extends BasePage {
     private List<WebElement> searchedHouseBathList;
     @FindBy(xpath = "//li[@data-label='property-meta-sqft']/span")
     private List<WebElement> searchedHouseSqftList;
-    @FindBy(xpath = "//div[@class='srp-view-toggle btn-group']/a[@class='btn btn-default srp-view-map-toggle ']")
+    @FindBy(xpath = "//a[contains(@class,'view-map')]")
     private WebElement viewMapButton;
     @FindBy(xpath = "//div[contains(@class,'map-property-pin for_sale')]")
     private List<WebElement> mapMarksList;
