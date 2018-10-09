@@ -28,7 +28,10 @@ public class EditProfileAddressTest extends BaseTest {
     }
 
     /**
-     * testing the correctness of username changing
+     * click user icon on home page
+     * go to my profile section
+     * edit address fields
+     * check that the profile address has changed correctly
      */
     @Test
     public void editProfileName() {

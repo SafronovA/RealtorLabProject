@@ -95,6 +95,8 @@ public class SearchPage extends BasePage {
     private List<WebElement> allFoundRestaurantsList;
     @FindBy(xpath = "//div[@class='amenity-card-label']")
     private WebElement lifestyleType;
+    @FindBy(id = "search-result-count")
+    private WebElement searchResultCount;
 
     /**
      * get list of available min prices in the dropdown menu
@@ -181,6 +183,16 @@ public class SearchPage extends BasePage {
     public WebElement getRestaurant(int number){
         return driver.findElement(By.xpath(XPATH_FOR_RESTAURANT+"["+number+"]"));
     }
+
+    /**
+     * get search result count of find houses from title
+     *
+     * @return search result count element
+     */
+    public WebElement getSearchResultCountElement() {
+        return searchResultCount;
+    }
+
 
     /**
      * get lifestyle type

@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -197,6 +198,25 @@ public class SearchPageStep extends BasePageStep {
     public boolean checkSearchResultSqft(List<House> homeList, String minSqft, String maxSqft) {
         return homeList.stream()
                 .allMatch(x -> ((x.getSquare() >= Parser.parse(minSqft)) && (x.getSquare() <= Parser.parse(maxSqft))));
+    }
+
+    /**
+     * compares the declared number of found houses with the actual number of houses on the pages
+     *
+     * @return true, if the declared and actual number of houses matches, otherwise returns false
+     */
+    public boolean checkFindHomesCount() {
+        return Objects.equals(getFindHomesCountFromSearchResult(), findAllHouses().size());
+    }
+
+    /**
+     * counting the total number of found houses displayed on all pages
+     *
+     * @return total amount of houses
+     */
+    public int getFindHomesCountFromSearchResult() {
+        int searchResultCount = Parser.parse(searchPage.getSearchResultCountElement().getAttribute("innerHTML"));
+        return searchResultCount;
     }
 
     /**
