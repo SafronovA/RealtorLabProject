@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SearchRealtorPage extends BasePage {
-    public SearchRealtorPage(WebDriver driver) {
+public class FindRealtorPage extends BasePage {
+    public FindRealtorPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
@@ -24,7 +24,7 @@ public class SearchRealtorPage extends BasePage {
      * @param city which realtors work in
      * @return this page
      */
-    public SearchRealtorPage setCity(String city) {
+    public FindRealtorPage setCity(String city) {
         realtorCityInput.sendKeys(city);
         return this;
     }
@@ -36,7 +36,7 @@ public class SearchRealtorPage extends BasePage {
      * @param realtorName realtor name as search criteria
      * @return this page
      */
-    public SearchRealtorPage enterRealtorName(String realtorName) {
+    public FindRealtorPage enterRealtorName(String realtorName) {
         searchInput.click();
         searchInput.sendKeys(realtorName);
         return this;

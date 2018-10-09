@@ -2,7 +2,6 @@ package com.epam.tat.realtor.tests;
 
 import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import com.epam.tat.realtor.steps.RealtorPageStep;
-import com.epam.tat.realtor.steps.SearchRealtorPageStep;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;

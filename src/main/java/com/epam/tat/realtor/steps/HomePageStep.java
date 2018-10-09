@@ -79,9 +79,9 @@ public class HomePageStep extends BasePageStep {
      *
      * @return new SearchRealtorPageStep
      */
-    public SearchRealtorPageStep clickFindRealtorButton() {
+    public FindRealtorPageStep clickFindRealtorButton() {
         homePage.clickRealtorButton();
-        return new SearchRealtorPageStep(driver);
+        return new FindRealtorPageStep(driver);
     }
 
     /**

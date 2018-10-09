@@ -1,15 +1,15 @@
 package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.pages.SearchRealtorPage;
+import com.epam.tat.realtor.pages.FindRealtorPage;
 import org.openqa.selenium.WebDriver;
 
-public class SearchRealtorPageStep extends BasePageStep {
+public class FindRealtorPageStep extends BasePageStep {
 
-    private SearchRealtorPage searchRealtorPage;
+    private FindRealtorPage searchRealtorPage;
 
-    public SearchRealtorPageStep(WebDriver driver) {
+    public FindRealtorPageStep(WebDriver driver) {
         super(driver);
-        searchRealtorPage = new SearchRealtorPage(driver);
+        searchRealtorPage = new FindRealtorPage(driver);
     }
 
     /**
@@ -18,7 +18,7 @@ public class SearchRealtorPageStep extends BasePageStep {
      * @param city which realtors work in
      * @return RealtorPageStep
      */
-    public SearchRealtorPageStep setCity(String city) {
+    public FindRealtorPageStep setCity(String city) {
         searchRealtorPage.setCity(city);
         return this;
     }
