@@ -164,12 +164,12 @@ public class HomePage extends BasePage {
     /**
      * click on the Realtor button
      *
-     * @return new SearchRealtorPage
+     * @return new FindRealtorPage
      */
-    public SearchRealtorPage clickRealtorButton() {
+    public FindRealtorPage clickRealtorButton() {
         waitUntilElementIsClickable(realtorButton);
         realtorButton.click();
-        return new SearchRealtorPage(driver);
+        return new FindRealtorPage(driver);
     }
 
 }
