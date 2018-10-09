@@ -192,8 +192,7 @@ public class SearchPage extends BasePage {
     public WebElement getSearchResultCountElement() {
         return searchResultCount;
     }
-
-
+    
     /**
      * get lifestyle type
      *
