@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.steps;
 
+import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.RealtorSearchResultPage;
 import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
@@ -41,7 +42,7 @@ public class RealtorSearchResultPageStep extends BasePageStep {
      *
      * @return RealtorSearchResultPageStep
      */
-    public RealtorSearchResultPageStep clickActivityMapButton(){
+    public RealtorSearchResultPageStep clickActivityMapButton() {
         realtorSearchResultPage.clickActivityMapButton();
         return this;
     }
@@ -54,6 +55,11 @@ public class RealtorSearchResultPageStep extends BasePageStep {
     public RealtorPageStep clickRealtorIcon() {
         realtorSearchResultPage.clickRealtorIcon();
         return new RealtorPageStep(driver);
+    }
+
+    public RealtorSearchResultPageStep clickGetStartedConfirmButton() {
+        realtorSearchResultPage.clickGetStartedConfirmButton();
+        return this;
     }
 
     /**
@@ -82,6 +88,22 @@ public class RealtorSearchResultPageStep extends BasePageStep {
                 .filter(x -> x.getAttribute("innerHTML").trim().equalsIgnoreCase(sortBy))
                 .findFirst().get().click();
         return this;
+    }
+
+    /**
+     * check that all photos shown on map match with selected realtor photo
+     *
+     * @return true, if match, false, if do not match
+     */
+    public boolean arePhotosOnMapMatchSelectedRealtorPhoto() {
+        boolean arePhotosTheSame = true;
+        String selectedRealtorPhoto = realtorSearchResultPage.getRealtorPhotoLink();
+        for (int i = 1; i < realtorSearchResultPage.getPhotosOnMapCount() + 1; i++) {
+            WebElement photoOnMap = realtorSearchResultPage.getPhotosOnMap(i);
+            BasePage.clickByJEx(photoOnMap, driver);
+            arePhotosTheSame = photoOnMap.getAttribute("src").equals(selectedRealtorPhoto);
+        }
+        return arePhotosTheSame;
     }
 
     /**

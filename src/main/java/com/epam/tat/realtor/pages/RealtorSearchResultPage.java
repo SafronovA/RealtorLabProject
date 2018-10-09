@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +14,8 @@ public class RealtorSearchResultPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    private final String XPATH_FOR_PHOTOS_ON_MAP = "(//div[contains(@class,'map-agent-pin-image')])";
+    private final String XPATH_IMG = "/img";
     @FindBy(xpath = "(//div[@class='agent-detail-item ellipsis']/a/strong)[2]")
     private WebElement realtorSoldHouses;
     @FindBy(xpath = "//div[@class='agent-list-card-img']/img")
@@ -35,9 +38,14 @@ public class RealtorSearchResultPage extends BasePage {
     private WebElement activityMapButton;
     @FindBy(xpath = "//div[@class='agent-map-card-img']/img")
     private WebElement realtorPhoto;
+    @FindBy(xpath = "//*[@id='map_notification_modal']/div[2]//div[4]/button")
+    private WebElement getStartedButton;
     @FindBy(xpath = "//div[contains(@class,'map-agent-pin-image')]/img")
     private List<WebElement> photosOnMap;
 
+    public int getPhotosOnMapCount(){
+        return photosOnMap.size();
+    }
     /**
      * get number of realtor sold houses
      *
@@ -86,13 +94,29 @@ public class RealtorSearchResultPage extends BasePage {
 
     /**
      * get next button
+     *
      * @return nextButton
      */
-    public List<WebElement> getNextPageButton(){
+    public List<WebElement> getNextPageButton() {
         return nextPageButton;
     }
 
-    public String getRealtorPhotoLink(){
+    /**
+     * get all realtors photo on map
+     *
+     * @return all photos on map
+     */
+    public WebElement getPhotosOnMap(int index) {
+        return driver.findElement(By.xpath(XPATH_FOR_PHOTOS_ON_MAP + "["+index+"]" + XPATH_IMG));
+    }
+
+    /**
+     * get link on realtor photo
+     *
+     * @return link on realtor photo
+     */
+    public String getRealtorPhotoLink() {
+        waitForJQueryIsLoad();
         return realtorPhoto.getAttribute("src");
     }
 
@@ -101,8 +125,14 @@ public class RealtorSearchResultPage extends BasePage {
      *
      * @return this page
      */
-    public RealtorSearchResultPage clickActivityMapButton(){
+    public RealtorSearchResultPage clickActivityMapButton() {
         activityMapButton.click();
+        return this;
+    }
+
+    public RealtorSearchResultPage clickGetStartedConfirmButton(){
+        waitUntilElementIsVisible(getStartedButton);
+        clickByJEx(getStartedButton, driver);
         return this;
     }
 
