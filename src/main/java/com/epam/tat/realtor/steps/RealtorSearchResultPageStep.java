@@ -1,15 +1,15 @@
 package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.pages.FindRealtorPage;
+import com.epam.tat.realtor.pages.RealtorSearchResultPage;
 import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
 
-public class FindRealtorPageStep extends BasePageStep {
-    private FindRealtorPage findRealtorPage;
+public class RealtorSearchResultPageStep extends BasePageStep {
+    private RealtorSearchResultPage findRealtorPage;
 
-    public FindRealtorPageStep(WebDriver driver) {
+    public RealtorSearchResultPageStep(WebDriver driver) {
         super(driver);
-        findRealtorPage = new FindRealtorPage(driver);
+        findRealtorPage = new RealtorSearchResultPage(driver);
     }
 
     /**
@@ -39,4 +39,5 @@ public class FindRealtorPageStep extends BasePageStep {
         findRealtorPage.clickRealtorIcon();
         return new RealtorPageStep(driver);
     }
+
 }

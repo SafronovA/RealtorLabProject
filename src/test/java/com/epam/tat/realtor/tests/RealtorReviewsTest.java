@@ -1,6 +1,6 @@
 package com.epam.tat.realtor.tests;
 
-import com.epam.tat.realtor.steps.FindRealtorPageStep;
+import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import com.epam.tat.realtor.steps.RealtorPageStep;
 import com.epam.tat.realtor.steps.SearchRealtorPageStep;
 import org.testng.annotations.Test;
@@ -23,10 +23,10 @@ public class RealtorReviewsTest extends BaseTest {
      */
     @Test
     public void checkRealtorSoldHouses() {
-        FindRealtorPageStep findRealtorPageStep = homePageStep.clickFindRealtorButton()
+        RealtorSearchResultPageStep realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
                 .findRealtor(REALTOR_NAME);
-        int realtorReviews = findRealtorPageStep.getRatingCount();
-        RealtorPageStep realtorPageStep = findRealtorPageStep.clickRealtorIcon()
+        int realtorReviews = realtorSearchResultPageStep.getRatingCount();
+        RealtorPageStep realtorPageStep = realtorSearchResultPageStep.clickRealtorIcon()
                 .loadAllReviews();
         assertEquals(realtorReviews, realtorPageStep.getRealtorReviewsCount(),
                 "number of realtor reviews in the realtor card mismatch reviews number on the realtor page ");

@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class FindRealtorPage extends BasePage {
-    public FindRealtorPage(WebDriver driver) {
+public class RealtorSearchResultPage extends BasePage {
+    public RealtorSearchResultPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
@@ -15,6 +15,8 @@ public class FindRealtorPage extends BasePage {
     private WebElement realtorSoldHouses;
     @FindBy(xpath = "//div[@class='agent-list-card-img']/img")
     private WebElement userIcon;
+    @FindBy(xpath = "(//div[@class='agent-list-card-img'])[2]/img")
+    private WebElement secondRealtor;
     @FindBy(xpath = "//div[@class='rating-count']")
     private WebElement ratingCount;
 
