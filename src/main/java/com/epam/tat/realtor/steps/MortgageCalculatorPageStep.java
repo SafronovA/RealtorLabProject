@@ -94,11 +94,11 @@ public class MortgageCalculatorPageStep extends BasePageStep {
                                                       String downPayment,
                                                       String rate,
                                                       String loanType) {
-        int monthInYear = 12;
-        int percent = 100;
+        final int MONTH_IN_YEAR = 12;
+        final int PERCENT = 100;
         int moneyLeftToPay = Integer.valueOf(homePrice) - Integer.valueOf(downPayment);
-        double rateInt = (Double.valueOf(rate)/percent)/monthInYear;
-        int allPaymentCount = monthInYear * Parser.parse(loanType);
+        double rateInt = (Double.valueOf(rate)/PERCENT)/MONTH_IN_YEAR;
+        int allPaymentCount = MONTH_IN_YEAR * Parser.parse(loanType);
         double paymentPerMonth = moneyLeftToPay * (rateInt * Math.pow(1 + rateInt, allPaymentCount)) / (Math.pow((1 + rateInt), allPaymentCount) - 1);
         return (int)Math.round(paymentPerMonth);
     }
