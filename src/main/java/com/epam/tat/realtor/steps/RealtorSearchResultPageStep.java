@@ -37,6 +37,16 @@ public class RealtorSearchResultPageStep extends BasePageStep {
     }
 
     /**
+     * click on activity map button
+     *
+     * @return RealtorSearchResultPageStep
+     */
+    public RealtorSearchResultPageStep clickActivityMapButton(){
+        realtorSearchResultPage.clickActivityMapButton();
+        return this;
+    }
+
+    /**
      * click realtor icon
      *
      * @return new RealtorPageStep

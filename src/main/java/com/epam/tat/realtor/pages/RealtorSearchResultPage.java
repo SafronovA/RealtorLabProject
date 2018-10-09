@@ -31,6 +31,8 @@ public class RealtorSearchResultPage extends BasePage {
     private List<WebElement> numberOfRecommendationsList;
     @FindBy(xpath = "//a[@class='next']")
     private List<WebElement> nextPageButton;
+    @FindBy(xpath = "//div[@id='map_link']")
+    private WebElement activityMapButton;
 
     /**
      * get number of realtor sold houses
@@ -84,6 +86,16 @@ public class RealtorSearchResultPage extends BasePage {
      */
     public List<WebElement> getNextPageButton(){
         return nextPageButton;
+    }
+
+    /**
+     * click on activity map button
+     *
+     * @return this page
+     */
+    public RealtorSearchResultPage clickActivityMapButton(){
+        activityMapButton.click();
+        return this;
     }
 
     /**
