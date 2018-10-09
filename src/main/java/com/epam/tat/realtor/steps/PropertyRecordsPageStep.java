@@ -2,6 +2,7 @@ package com.epam.tat.realtor.steps;
 
 import com.epam.tat.realtor.pages.PropertyRecordsPage;
 import org.omg.CORBA.TIMEOUT;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -19,10 +20,12 @@ public class PropertyRecordsPageStep extends BasePageStep {
         List<WebElement> charList = propertyRecordsPage.getCharList();
         charList.stream().filter(x->!x.getText().equalsIgnoreCase("All"))
                 .forEach(x->{
-                    propertyRecordsPage.waitUntilElementIsClickable(x);
-                    x.click();
+                    System.out.println(x.getText());
+                    driver.findElement(By.xpath("//ul[@class='list-horizontal street-pagination']/li/a[text()='"+x.getText()+"']")).click();
+//                    propertyRecordsPage.waitUntilElementIsClickable(x);
+//                    x.click();
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(5000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
