@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PropertyRecordsPageStep extends BasePageStep {
@@ -16,26 +17,22 @@ public class PropertyRecordsPageStep extends BasePageStep {
         propertyRecordsPage = new PropertyRecordsPage(driver);
     }
 
-    public void checkPropertyRecords(){
-        List<WebElement> charList = propertyRecordsPage.getCharList();
-        charList.stream().filter(x->!x.getText().equalsIgnoreCase("All"))
-                .forEach(x->{
-                    System.out.println(x.getText());
-                    driver.findElement(By.xpath("//ul[@class='list-horizontal street-pagination']/li/a[text()='"+x.getText()+"']")).click();
-//                    propertyRecordsPage.waitUntilElementIsClickable(x);
-//                    x.click();
-                    try {
-                        Thread.sleep(5000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-//                   propertyRecordsPage.waitForJQueryIsLoad();
-//
-//                    propertyRecordsPage.getPropertyRecordsList().forEach(k-> System.out.println(k.getText()));
-//                    propertyRecordsPage.waitForJQueryIsLoad();
-                   // if (!propertyRecordsPage.getCharList().stream().allMatch(o->o.getText().startsWith(x.getText().substring(0,1))));
-        });
 
+    public boolean checkPropertyRecords() {
+        return getCharsList().stream().allMatch(x -> {
+            driver.findElement(By.xpath("//ul[@class='list-horizontal street-pagination']/li/a[text()='" + x + "']"))
+                    .click();
+            return propertyRecordsPage.getPropertyRecordsList().stream()
+                    .allMatch(o -> o.getText().substring(0, 1).equals(x));
+        });
+    }
+
+    private List<String> getCharsList() {
+        List<String> charList = new ArrayList<>();
+        propertyRecordsPage.getCharList().stream()
+                .filter(x -> !x.getText().equalsIgnoreCase("All"))
+                .forEach(x -> charList.add(x.getText()));
+        return charList;
     }
 
 }
