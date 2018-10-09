@@ -45,11 +45,11 @@ public class SearchRealtorPage extends BasePage {
     /**
      * click search button
      *
-     * @return new FindRealtorPage
+     * @return new RealtorSearchResultPage
      */
-    public FindRealtorPage clickSearchButton() {
+    public RealtorSearchResultPage clickSearchButton() {
         waitUntilElementIsClickable(searchButton);
         searchButton.click();
-        return new FindRealtorPage(driver);
+        return new RealtorSearchResultPage(driver);
     }
 }

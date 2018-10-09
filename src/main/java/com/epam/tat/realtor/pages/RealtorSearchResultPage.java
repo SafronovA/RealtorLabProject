@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class FindRealtorPage extends BasePage {
-    public FindRealtorPage(WebDriver driver) {
+public class RealtorSearchResultPage extends BasePage {
+    public RealtorSearchResultPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
@@ -102,7 +102,7 @@ public class FindRealtorPage extends BasePage {
      *
      * @return this page
      */
-    public FindRealtorPage clickSortByButton() {
+    public RealtorSearchResultPage clickSortByButton() {
         waitForJQueryIsLoad();
         sortByButton.click();
         return this;
@@ -113,7 +113,7 @@ public class FindRealtorPage extends BasePage {
      *
      * @return this page
      */
-    public FindRealtorPage clickRecommendationFilterButton() {
+    public RealtorSearchResultPage clickRecommendationFilterButton() {
         waitForJQueryIsLoad();
         recommendationFilterButton.click();
         return this;
@@ -124,7 +124,7 @@ public class FindRealtorPage extends BasePage {
      *
      * @return this page
      */
-    public FindRealtorPage clickNextPageButton() {
+    public RealtorSearchResultPage clickNextPageButton() {
         waitForJQueryIsLoad();
         nextPageButton.get(0).click();
         return this;

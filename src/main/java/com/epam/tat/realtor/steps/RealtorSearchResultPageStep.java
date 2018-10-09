@@ -1,6 +1,6 @@
 package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.pages.FindRealtorPage;
+import com.epam.tat.realtor.pages.RealtorSearchResultPage;
 import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,12 +10,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class FindRealtorPageStep extends BasePageStep {
-    private FindRealtorPage findRealtorPage;
+public class RealtorSearchResultPageStep extends BasePageStep {
+    private RealtorSearchResultPage realtorSearchResultPage;
 
-    public FindRealtorPageStep(WebDriver driver) {
+    public RealtorSearchResultPageStep(WebDriver driver) {
         super(driver);
-        findRealtorPage = new FindRealtorPage(driver);
+        realtorSearchResultPage = new RealtorSearchResultPage(driver);
     }
 
     /**
@@ -24,7 +24,7 @@ public class FindRealtorPageStep extends BasePageStep {
      * @return realtor sold houses number
      */
     public int getRealtorSoldHoses() {
-        return Parser.parse(findRealtorPage.getRealtorSoldHouses());
+        return Parser.parse(realtorSearchResultPage.getRealtorSoldHouses());
     }
 
     /**
@@ -33,7 +33,7 @@ public class FindRealtorPageStep extends BasePageStep {
      * @return reating count
      */
     public int getRatingCount() {
-        return Parser.parse(findRealtorPage.getRatingCount().getText());
+        return Parser.parse(realtorSearchResultPage.getRatingCount().getText());
     }
 
     /**
@@ -42,7 +42,7 @@ public class FindRealtorPageStep extends BasePageStep {
      * @return new RealtorPageStep
      */
     public RealtorPageStep clickRealtorIcon() {
-        findRealtorPage.clickRealtorIcon();
+        realtorSearchResultPage.clickRealtorIcon();
         return new RealtorPageStep(driver);
     }
 
@@ -52,8 +52,8 @@ public class FindRealtorPageStep extends BasePageStep {
      * @param recommendation required value
      * @return this page
      */
-    public FindRealtorPageStep choseRecommendation(String recommendation) {
-        findRealtorPage.clickRecommendationFilterButton()
+    public RealtorSearchResultPageStep choseRecommendation(String recommendation) {
+        realtorSearchResultPage.clickRecommendationFilterButton()
                 .getRecommendationContainer().stream()
                 .filter(x -> x.getAttribute("innerHTML").equals(recommendation))
                 .findFirst().get().click();
@@ -66,8 +66,8 @@ public class FindRealtorPageStep extends BasePageStep {
      * @param sortBy required value
      * @return this page
      */
-    public FindRealtorPageStep choseSortOption(String sortBy) {
-        findRealtorPage.clickSortByButton()
+    public RealtorSearchResultPageStep choseSortOption(String sortBy) {
+        realtorSearchResultPage.clickSortByButton()
                 .getSortByOptions().stream()
                 .filter(x -> x.getAttribute("innerHTML").trim().equalsIgnoreCase(sortBy))
                 .findFirst().get().click();
@@ -96,10 +96,10 @@ public class FindRealtorPageStep extends BasePageStep {
      */
     private List<Integer> findAllRecommendations() {
         List<Integer> recommendationsNumber = new ArrayList<>();
-        recommendationsNumber.addAll(receiveRecommendationsListFromWebElementList(findRealtorPage.getNumberOfRecommendationsList()));
-        while (!findRealtorPage.getNextPageButton().isEmpty()) {
-            findRealtorPage.clickNextPageButton();
-            recommendationsNumber.addAll(receiveRecommendationsListFromWebElementList(findRealtorPage.getNumberOfRecommendationsList()));
+        recommendationsNumber.addAll(receiveRecommendationsListFromWebElementList(realtorSearchResultPage.getNumberOfRecommendationsList()));
+        while (!realtorSearchResultPage.getNextPageButton().isEmpty()) {
+            realtorSearchResultPage.clickNextPageButton();
+            recommendationsNumber.addAll(receiveRecommendationsListFromWebElementList(realtorSearchResultPage.getNumberOfRecommendationsList()));
         }
         return recommendationsNumber;
     }
