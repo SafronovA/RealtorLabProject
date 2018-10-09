@@ -2,7 +2,7 @@ package com.epam.tat.realtor.steps;
 
 import com.epam.tat.realtor.pages.HomePage;
 import org.openqa.selenium.WebDriver;
-
+import org.openqa.selenium.WebElement;
 
 public class HomePageStep extends BasePageStep {
     private HomePage homePage;
@@ -22,8 +22,7 @@ public class HomePageStep extends BasePageStep {
      * @return HomePageStep
      */
     public HomePageStep userLogIn() {
-        homePage.waitForSignInLinkToAppear()
-                .clickSignInButton()
+        homePage.clickSignInButton()
                 .enterEmail()
                 .enterPassword()
                 .clickLoginSubmitButton();
@@ -37,8 +36,7 @@ public class HomePageStep extends BasePageStep {
      * @return search result page
      */
     public HomePageStep enterCityName(String city) {
-        homePage.waitForSearchInput()
-                .clearInputField()
+        homePage.clearInputField()
                 .enterCityInMainSearchInput(city);
         return this;
     }
@@ -62,7 +60,6 @@ public class HomePageStep extends BasePageStep {
      */
     public HomePageStep logOut() {
         homePage.navigateToUserIcon()
-                .waitForSignOutLinkToAppear()
                 .clickLogOutLink();
         return this;
     }
@@ -97,4 +94,23 @@ public class HomePageStep extends BasePageStep {
         return new MortgageCalculatorPageStep(driver);
     }
 
+    /**
+     * click Realtor button
+     *
+     * @return new FindRealtorPageStep
+     */
+    public FindRealtorPageStep clickFindRealtorButton() {
+        homePage.clickRealtorButton();
+        return new FindRealtorPageStep(driver);
+    }
+
+    /**
+     * save all homes on the home page
+     *
+     * @return saved homes list size
+     */
+    public int saveHomes() {
+        homePage.getHeartIconsList().forEach(WebElement::click);
+        return homePage.getHeartIconsList().size();
+    }
 }

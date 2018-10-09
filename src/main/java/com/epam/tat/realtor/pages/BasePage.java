@@ -38,6 +38,37 @@ public class BasePage {
     }
 
     /**
+     * click element by Java Executor
+     *
+     * @param webElement web element to be clicked
+     * @param webDriver used webdriver
+     */
+    public static void clickByJEx(WebElement webElement, WebDriver webDriver) {
+        JavascriptExecutor executor = (JavascriptExecutor) webDriver;
+        executor.executeScript("arguments[0].click();", webElement);
+    }
+
+    /**
+     * scroll to element on the page
+     *
+     * @param webElement element to each page view to be scrolled
+     * @param webDriver  session driver
+     */
+    public static void scrollToElement(WebElement webElement, WebDriver webDriver) {
+        JavascriptExecutor executor = (JavascriptExecutor) webDriver;
+        executor.executeScript("arguments[0].scrollIntoView(true);", webElement);
+    }
+
+    /**
+     * wait for the presence of the elements by locator
+     *
+     * @param by locator of the elements
+     */
+    public void waitForPresenceOfAllElementsLocatedBy(By by) {
+        driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+    }
+
+    /**
      * waiting for a specific attribute value in the Web element
      *
      * @param webElement checked webElement
@@ -48,23 +79,30 @@ public class BasePage {
     }
 
     /**
-     * click element by Java Executor
-     *
-     * @param webElement web element to be clicked
-     * @param webDriver  used webdriver
-     */
-    public static void clickByJEx(WebElement webElement, WebDriver webDriver) {
-        JavascriptExecutor executor = (JavascriptExecutor) webDriver;
-        executor.executeScript("arguments[0].click();", webElement);
-    }
-
-    /**
      * wait for presence of all elements by locator
      *
      * @param by locator of the elements
      */
     public void waitForElements(By by) {
         driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+    }
+
+    /**
+     * wait until element is invisible
+     *
+     * @param webElement element to be invisible
+     */
+    public void waitUntilElementIsInvisible(WebElement webElement) {
+        driverWait.until(ExpectedConditions.invisibilityOf(webElement));
+    }
+
+    /**
+     * wait until element become invisible
+     *
+     * @param location WebElement with such location should become invisible
+     */
+    public void waitInvisibilityOfElementLocated(By location) {
+        driverWait.until(ExpectedConditions.invisibilityOfElementLocated(location));
     }
 
     /**

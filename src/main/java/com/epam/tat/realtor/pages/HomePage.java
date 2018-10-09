@@ -1,11 +1,14 @@
 package com.epam.tat.realtor.pages;
 
 import com.epam.tat.realtor.ConfigProperties;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class HomePage extends BasePage {
 
@@ -14,6 +17,7 @@ public class HomePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    private By strangeLayer = By.id("loginModal");
     @FindBy(linkText = "Log In")
     private WebElement signInButton;
     @FindBy(id = "email_address")
@@ -40,6 +44,19 @@ public class HomePage extends BasePage {
     private WebElement mortgageLink;
     @FindBy(linkText = "Mortgage Calculator")
     private WebElement mortgageCalculatorLink;
+    @FindBy(xpath = "//li[@id='img_far']/a")
+    private WebElement realtorButton;
+    @FindBy(xpath = "//a[contains(@class,'js-save-listing btn-save-listing js-save-trigger ')]//i[2]")
+    private List<WebElement> heartIconsList;
+
+    /**
+     * get heart icons list on the homes for sale cards
+     *
+     * @return heart icons list
+     */
+    public List<WebElement> getHeartIconsList() {
+        return heartIconsList;
+    }
 
     /**
      * click SignIn button
@@ -47,6 +64,7 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage clickSignInButton() {
+        waitUntilElementIsVisible(signInButton);
         signInButton.click();
         return this;
     }
@@ -97,6 +115,7 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage clearInputField() {
+        waitUntilElementIsVisible(searchInput);
         searchInput.clear();
         return this;
     }
@@ -124,54 +143,14 @@ public class HomePage extends BasePage {
     }
 
     /**
-     * wait for Saved Homes button to be visible
-     *
-     * @return this page
-     */
-    public HomePage waitForSavedHomesLinkToAppear() {
-        waitUntilElementIsVisible(savedHomesLink);
-        return this;
-    }
-
-    /**
-     * wait for SignOut button to be visible
-     *
-     * @return this page
-     */
-    public HomePage waitForSignOutLinkToAppear() {
-        waitUntilElementIsVisible(logOutLink);
-        return this;
-    }
-
-    /**
-     * wait for SignIn button to be visible
-     *
-     * @return this page
-     */
-    public HomePage waitForSignInLinkToAppear() {
-        waitUntilElementIsVisible(signInButton);
-        return this;
-    }
-
-    /**
      * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
      *
      * @return new HomePage
      */
     public HomePage clickLogOutLink() {
+        waitUntilElementIsVisible(logOutLink);
         logOutLink.click();
-        return new HomePage(driver);
-    }
-
-    /**
-     * click saved homes link to navigate to page with saved homes
-     *
-     * @return Saved Homes Page (navigate to new page)
-     */
-    public SavedHomesPage clickSavedHomesLink() {
-        waitUntilElementIsClickable(savedHomesLink);
-        savedHomesLink.click();
-        return new SavedHomesPage(driver);
+        return this;
     }
 
     /**
@@ -181,20 +160,20 @@ public class HomePage extends BasePage {
      * @return new SavedHomesPage
      */
     public SavedHomesPage clickUserIcon() {
-        waitUntilElementIsVisible(userIcon);
-        waitUntilElementIsClickable(userIcon);
+        waitInvisibilityOfElementLocated(strangeLayer);
         userIcon.click();
         return new SavedHomesPage(driver);
     }
 
     /**
-     * wait for Search input to be visible
+     * click on the Realtor button
      *
-     * @return this page
+     * @return new FindRealtorPage
      */
-    public HomePage waitForSearchInput() {
-        waitUntilElementIsVisible(searchInput);
-        return this;
+    public FindRealtorPage clickRealtorButton() {
+        waitUntilElementIsClickable(realtorButton);
+        realtorButton.click();
+        return new FindRealtorPage(driver);
     }
 
     /**

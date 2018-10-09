@@ -30,10 +30,14 @@ public class SearchByConditionsTest extends BaseTest {
         List<House> searchResult = searchPageStep
                 .createSearchRequest(MIN_PRICE_VALUE, MAX_PRICE_VALUE, BED_NUMBER, BATH_NUMBER, MIN_SQFT_VALUE, MAX_SQFT_VALUE)
                 .createHomesList();
-        assertTrue(searchPageStep.checkSearchResultPrice(searchResult, MIN_PRICE_VALUE, MAX_PRICE_VALUE), "price value mismatch search criteria");
-        assertTrue(searchPageStep.checkSearchResultBed(searchResult, BED_NUMBER), "bed quantity mismatch search criteria");
-        assertTrue(searchPageStep.checkSearchResultBath(searchResult, BATH_NUMBER), "bath quantity mismatch search criteria");
-        assertTrue(searchPageStep.checkSearchResultSqft(searchResult, MIN_SQFT_VALUE, MAX_SQFT_VALUE), "square feet house size mismatch search criteria");
+        assertTrue(searchPageStep.checkSearchResultPrice(searchResult, MIN_PRICE_VALUE, MAX_PRICE_VALUE),
+                "price value mismatch search criteria");
+        assertTrue(searchPageStep.checkSearchResultBed(searchResult, BED_NUMBER),
+                "bed quantity mismatch search criteria");
+        assertTrue(searchPageStep.checkSearchResultBath(searchResult, BATH_NUMBER),
+                "bath quantity mismatch search criteria");
+        assertTrue(searchPageStep.checkSearchResultSqft(searchResult, MIN_SQFT_VALUE, MAX_SQFT_VALUE),
+                "square feet house size mismatch search criteria");
 
 
     }

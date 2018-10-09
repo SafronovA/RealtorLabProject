@@ -31,4 +31,29 @@ public class SavedHomesPageStep extends BasePageStep {
         return new SavedSearchesPageStep(driver);
     }
 
+    /**
+     * clear all saved homes in saved homes section
+     * return back on home page
+     *
+     * @return new HomePage
+     */
+    public HomePageStep clearSavedHomes() {
+        if (!savedHomesPage.getSaveHomesButtonList().isEmpty()) {
+            savedHomesPage.getSaveHomesButtonList().forEach(x -> {
+                x.click();
+                savedHomesPage.clickDeleteButton();
+            });
+        }
+        savedHomesPage.clickRealtorIcon();
+        return new HomePageStep(driver);
+    }
+
+    /**
+     * check number of saved homes
+     *
+     * @return saved homes list size
+     */
+    public int checkSavedHomes() {
+        return savedHomesPage.getSaveHomesButtonList().size();
+    }
 }

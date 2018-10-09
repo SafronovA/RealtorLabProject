@@ -15,6 +15,7 @@ public class SearchPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    private final String XPATH_FOR_RESTAURANT = "//div[contains(@class,'pin-restaurants')]";
     By priceList = By.xpath("//span[@class='data-price']");
     @FindBy(id = "desktop-price-div")
     private WebElement priceButton;
@@ -56,7 +57,7 @@ public class SearchPage extends BasePage {
     private List<WebElement> searchedHouseBathList;
     @FindBy(xpath = "//li[@data-label='property-meta-sqft']/span")
     private List<WebElement> searchedHouseSqftList;
-    @FindBy(xpath = "//div[@class='srp-view-toggle btn-group']/a[@class='btn btn-default srp-view-map-toggle ']")
+    @FindBy(xpath = "//a[contains(@class,'view-map')]")
     private WebElement viewMapButton;
     @FindBy(xpath = "//div[contains(@class,'map-property-pin for_sale')]")
     private List<WebElement> mapMarksList;
@@ -84,8 +85,16 @@ public class SearchPage extends BasePage {
     private List<WebElement> sortOptionsList;
     @FindBy(xpath = "//*[contains(@class,'data-price')]")
     private List<WebElement> homePricesList;
-    @FindBy(xpath = "//*[@id='ResultsPerPageBottom']//span[4]/a")
+    @FindBy(xpath = "//*[@class='next ']")
     private List<WebElement> nextPageLink;
+    @FindBy(xpath = "//*[@id='mapCompControls']//li[3]/a")
+    private WebElement lifestyleButton;
+    @FindBy(xpath = "//input[contains(@data-omtag,'restaurants')]")
+    private WebElement restaurantsRadioButton;
+    @FindBy(xpath = "//div[contains(@class,'restaurants')]")
+    private List<WebElement> allFoundRestaurantsList;
+    @FindBy(xpath = "//div[@class='amenity-card-label']")
+    private WebElement lifestyleType;
 
     /**
      * get list of available min prices in the dropdown menu
@@ -152,6 +161,35 @@ public class SearchPage extends BasePage {
      */
     public List<WebElement> getBathQuantity() {
         return bathQuantityList;
+    }
+
+    /**
+     * get list of all found restaurants
+     *
+     * @return list of all found restaurants
+     */
+    public int getRestaurantsCount() {
+        return allFoundRestaurantsList.size();
+    }
+
+    /**
+     * get restaurants in turn
+     *
+     * @param number restaurant in turn
+     * @return get restaurants in turn
+     */
+    public WebElement getRestaurant(int number){
+        return driver.findElement(By.xpath(XPATH_FOR_RESTAURANT+"["+number+"]"));
+    }
+
+    /**
+     * get lifestyle type
+     *
+     * @return lifestyle type
+     */
+    public String getLifestyleType() {
+        waitUntilElementIsVisible(lifestyleType);
+        return lifestyleType.getText();
     }
 
     /**
@@ -254,13 +292,35 @@ public class SearchPage extends BasePage {
     }
 
     /**
-     * click price drop-down button
+     * click Price button
      *
      * @return this page
      */
     public SearchPage clickPriceButton() {
         waitUntilElementIsClickable(priceButton);
         priceButton.click();
+        return this;
+    }
+
+    /**
+     * click No Min input in the Price section
+     *
+     * @return this page
+     */
+    public SearchPage clickMinPriceInput() {
+        waitUntilElementIsClickable(minPriceInput);
+        minPriceInput.click();
+        return this;
+    }
+
+    /**
+     * click No Max input in the Price section
+     *
+     * @return this page
+     */
+    public SearchPage clickMaxPriceInput() {
+        waitUntilElementIsClickable(maxPriceInput);
+        maxPriceInput.click();
         return this;
     }
 
@@ -301,28 +361,6 @@ public class SearchPage extends BasePage {
      */
     public SearchPage clickBathButton() {
         bathButton.click();
-        return this;
-    }
-
-    /**
-     * click No Min input in the Price section
-     *
-     * @return this page
-     */
-    public SearchPage clickMinPriceInput() {
-        waitUntilElementIsVisible(minPriceInput);
-        minPriceInput.click();
-        return this;
-    }
-
-    /**
-     * click No Max input in the Price section
-     *
-     * @return this page
-     */
-    public SearchPage clickMaxPriceInput() {
-        waitUntilElementIsClickable(maxPriceInput);
-        maxPriceInput.click();
         return this;
     }
 
@@ -397,6 +435,8 @@ public class SearchPage extends BasePage {
      */
     public SearchPage clickViewListingsButton() {
         viewListinsButton.click();
+        waitUntilElementIsVisible(homeSizeFilterIcon);
+        waitForElements(priceList);
         return this;
     }
 
@@ -412,22 +452,24 @@ public class SearchPage extends BasePage {
     }
 
     /**
-     * wait for home size filter to appear in order to download search results
+     * click in lifestyle button
      *
      * @return this page
      */
-    public SearchPage waitForHomeSizeFilter() {
-        waitUntilElementIsVisible(homeSizeFilterIcon);
+    public SearchPage clickLifestyleButton() {
+        waitUntilElementIsVisible(lifestyleButton);
+        lifestyleButton.click();
         return this;
     }
 
     /**
-     * wait for home list
+     * click on restaurants radio button
      *
      * @return this page
      */
-    public SearchPage waitForHomeList() {
-        waitForElements(priceList);
+    public SearchPage selectRestaurants() {
+        waitUntilElementIsVisible(restaurantsRadioButton);
+        restaurantsRadioButton.click();
         return this;
     }
 
@@ -440,6 +482,5 @@ public class SearchPage extends BasePage {
         waitUntilElementIsVisible(saveButtonText);
         return this;
     }
-
 
 }

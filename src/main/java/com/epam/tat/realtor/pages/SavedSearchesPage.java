@@ -38,18 +38,9 @@ public class SavedSearchesPage extends BasePage {
     private WebElement homePageLink;
 
     /**
-     * get saved searches list
-     *
-     * @return list of searches
-     */
-    public List<WebElement> getSavedSearchesList() {
-        return savedSearchesList;
-    }
-
-    /**
      * get city from saved search description
      *
-     * @return
+     * @return city from saved search description
      */
     public String getCity() {
         return cardTextCity.getText();
@@ -58,10 +49,19 @@ public class SavedSearchesPage extends BasePage {
     /**
      * get prices from saved search description
      *
-     * @return
+     * @return prices from saved search description
      */
     public String getPrice() {
         return cardTextPrice.getText();
+    }
+
+    /**
+     * get saved searches list
+     *
+     * @return list of searches
+     */
+    public List<WebElement> getSavedSearchesList() {
+        return savedSearchesList;
     }
 
     /**

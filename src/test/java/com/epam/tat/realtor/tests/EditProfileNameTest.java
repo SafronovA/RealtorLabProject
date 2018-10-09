@@ -7,13 +7,16 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class EditProfileNameTest extends BaseTest {
+
+    private final String FIRST_NAME_ORIGIN = "Loko";
+    private final String LAST_NAME_ORIGIN = "ko";
+    private final String FIRST_NAME_NEW = "New_Lo";
+    private final String LAST_NAME_NEW = "New_ko";
     private MyProfilePageStep myProfilePageStep;
 
-    private String firstNameOrigin = "Loko";
-    private String lastNameOrigin = "ko";
-    private String firstNameNew = "New_Lo";
-    private String lastNameNew = "New_ko";
-
+    /**
+     * perform login operation
+     */
     @BeforeMethod
     public void logIn() {
         homePageStep.userLogIn();
@@ -26,8 +29,9 @@ public class EditProfileNameTest extends BaseTest {
     public void editProfileName() {
         myProfilePageStep = homePageStep.clickUserIcon()
                 .goToMyProfileSection()
-                .editName(firstNameNew, lastNameNew);
-        Assert.assertTrue(myProfilePageStep.nameIsCorrect(firstNameNew + lastNameNew), "Profile name has not changed to the required");
+                .editName(FIRST_NAME_NEW, LAST_NAME_NEW);
+        Assert.assertTrue(myProfilePageStep.nameIsCorrect(FIRST_NAME_NEW + LAST_NAME_NEW),
+                "Profile name has not changed to the required");
     }
 
     /**
@@ -35,8 +39,7 @@ public class EditProfileNameTest extends BaseTest {
      */
     @AfterMethod
     public void revertProfileName() {
-
-        myProfilePageStep.editName(firstNameOrigin, lastNameOrigin)
+        myProfilePageStep.editName(FIRST_NAME_ORIGIN, LAST_NAME_ORIGIN)
                 .logOut();
     }
 
