@@ -54,8 +54,7 @@ public class MortgageCalculatorPageStep extends BasePageStep {
     public MortgageCalculatorPageStep selectLoanType(String loanType) {
         mortgageCalculatorPage.clickMortgageLoanTypeDropDown();
         mortgageCalculatorPage.getLoanTypeOptionList().stream()
-                .filter(element -> !element.getText().equals(""))
-                .filter(element -> loanType.equals(element.getText()))
+                .filter(element -> !element.getText().equals("") && loanType.equals(element.getText()))
                 .findFirst().get().click();
         return this;
     }

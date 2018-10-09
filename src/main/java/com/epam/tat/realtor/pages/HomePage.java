@@ -182,7 +182,7 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage navigateCursorOnMortgageLink() {
-        new Actions(driver).moveToElement(mortgageLink).build().perform();
+        new Actions(driver).moveToElement(mortgageLink).perform();
         return this;
     }
 
