@@ -1,16 +1,11 @@
 package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.SearchPage;
 import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-
-import java.util.ArrayList;
-import java.util.List;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,17 +89,6 @@ public class SearchPageStep extends BasePageStep {
                 IntStream.range(0, homePrices.size() - 1)
                         .allMatch(i -> homePrices.get(i).compareTo(homePrices.get(i + 1)) >= 0);
         return sortedDescending;
-
-    }
-
-    /**
-     * navigate to home page
-     *
-     * @return new Home page
-     */
-    public HomePageStep goToHomePage() {
-        driver.navigate().to(ConfigProperties.getTestProperty("url"));
-        return new HomePageStep(driver);
     }
 
     /**

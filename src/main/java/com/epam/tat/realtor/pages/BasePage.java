@@ -97,6 +97,15 @@ public class BasePage {
     }
 
     /**
+     * wait until element become invisible
+     *
+     * @param location WebElement with such location should become invisible
+     */
+    public void waitInvisibilityOfElementLocated(By location) {
+        driverWait.until(ExpectedConditions.invisibilityOfElementLocated(location));
+    }
+
+    /**
      * wait until JQuery finish loading page
      */
     public void waitForJQueryIsLoad() {

@@ -79,15 +79,13 @@ public class SearchPage extends BasePage {
     private WebElement chosenCriteria;
     @FindBy(xpath = "(//*[@id='facet-followbtn'])[2]/span")
     private WebElement saveButtonText;
-    @FindBy(xpath = "//a[@class='js-save-listing btn-save-listing js-save-trigger ']//i[2]")
-    private List<WebElement> heartIconsList;
     @FindBy(xpath = "//select[@id='srp-sortby']")
     private WebElement sortOptionsDropDown;
     @FindBy(xpath = "//*[@id='srp-sortby']/option")
     private List<WebElement> sortOptionsList;
     @FindBy(xpath = "//*[contains(@class,'data-price')]")
     private List<WebElement> homePricesList;
-    @FindBy(xpath = "//*[@id='ResultsPerPageBottom']//span[4]/a")
+    @FindBy(xpath = "//*[@class='next ']")
     private List<WebElement> nextPageLink;
     @FindBy(xpath = "//*[@id='mapCompControls']//li[3]/a")
     private WebElement lifestyleButton;
@@ -485,6 +483,4 @@ public class SearchPage extends BasePage {
         waitUntilElementIsVisible(saveButtonText);
         return this;
     }
-
-
 }

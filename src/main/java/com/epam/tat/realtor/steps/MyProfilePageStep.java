@@ -149,9 +149,7 @@ public class MyProfilePageStep extends BasePageStep {
     }
 
     /**
-     * click 'Just Sold ' button
      * navigate to user icon
-     * waiting for the 'Sign Out' link to appear
      * click sign out button
      *
      * @return this step
@@ -161,6 +159,5 @@ public class MyProfilePageStep extends BasePageStep {
                 .clickLogOutLink();
         return this;
     }
-
 
 }
