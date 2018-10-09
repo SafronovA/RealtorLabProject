@@ -12,8 +12,7 @@ public class PhotosOnMapTest extends BaseTest {
         homePageStep.clickFindRealtorButton()
                 .setCity(CITY_NAME)
                 .findRealtor(REALTOR_NAME)
-                
-
+                .clickActivityMapButton();
     }
 
 }

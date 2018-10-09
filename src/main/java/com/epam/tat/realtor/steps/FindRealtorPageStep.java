@@ -13,6 +13,17 @@ public class FindRealtorPageStep extends BasePageStep {
     }
 
     /**
+     * set city for realtor
+     *
+     * @param city which realtors work in
+     * @return RealtorPageStep
+     */
+    public FindRealtorPageStep setCity(String city) {
+        findRealtorPage.setCity(city);
+        return this;
+    }
+
+    /**
      * create realtor search request
      *
      * @param realtorName realtor name to be searched
