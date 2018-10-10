@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class SchoolRatingAndTypeTest extends BaseTest {
 
     private static final String CITY_NAME = "Santa Rosa, CA";
-    private static final String RATING = "8";
+    private static final String RATING = "7";
 
     /**
      * select high and rating 8
