@@ -3,6 +3,7 @@
 <suite name="RealtorSuite" verbose="1" parallel="classes" thread-count="10" >
 
     <listeners>
+        <listener class-name="com.epam.tat.realtor.listeners.RealtorListener"/>
     </listeners>
 
     <test name="RealtorTest" >
