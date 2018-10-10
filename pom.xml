@@ -47,7 +47,6 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${basedir}\src\test\resources\SampleSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <suitename>RealtorSuite</suitename>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
