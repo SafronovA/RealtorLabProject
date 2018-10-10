@@ -206,7 +206,7 @@ public class SearchPageStep extends BasePageStep {
      * @return true, if the declared and actual number of houses matches, otherwise returns false
      */
     public boolean checkFindHomesCount() {
-        return Objects.equals(getFindHomesCountFromSearchResult(), findAllHouses().size());
+        return getFindHomesCountFromSearchResult()==findAllHouses().size();
     }
 
     /**
@@ -215,7 +215,7 @@ public class SearchPageStep extends BasePageStep {
      * @return total amount of houses
      */
     public int getFindHomesCountFromSearchResult() {
-        int searchResultCount = Parser.parse(searchPage.getSearchResultCountElement().getAttribute("innerHTML"));
+        int searchResultCount = Parser.parse(searchPage.getSearchResultCountElement().getText());
         return searchResultCount;
     }
 
