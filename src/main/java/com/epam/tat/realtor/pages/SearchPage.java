@@ -18,6 +18,7 @@ public class SearchPage extends BasePage {
 
     private final String XPATH_FOR_RESTAURANT = "//div[contains(@class,'pin-restaurants')]";
     private final String XPATH_FOR_SCHOOL = "//div[contains(@class,'pin-school')]";
+    private final String XPATH_FOR_SCHOOL_RATING = "//div[contains(@class,'slider-tick-label')]";
     By priceList = By.xpath("//span[@class='data-price']");
     @FindBy(id = "desktop-price-div")
     private WebElement priceButton;
@@ -109,8 +110,8 @@ public class SearchPage extends BasePage {
     private WebElement privateSchool;
     @FindBy(xpath = "//div[contains(@class,'min-slider-handle')]")
     private WebElement schoolRatingSlider;
-    @FindBy(xpath = "//div[contains(@class,'slider-tick-label')][8]")
-    private WebElement eightRating;
+//    @FindBy(xpath = "//div[contains(@class,'slider-tick-label')][8]")
+//    private WebElement eightRating;
     @FindBy(xpath = "//div[contains(@class,'pin-school')]")
     private List<WebElement> schoolOnMapList;
     @FindBy(xpath = "//div[@class='rating']")
@@ -590,8 +591,9 @@ public class SearchPage extends BasePage {
      *
      * @return this page
      */
-    public SearchPage selectEightRating(){
-        new Actions(driver).dragAndDrop(schoolRatingSlider, eightRating).perform();
+    public SearchPage selectSchoolRating(String raiting){
+        WebElement schoolRating = driver.findElement(By.xpath(XPATH_FOR_SCHOOL_RATING + "[" + raiting + "]"));
+        new Actions(driver).dragAndDrop(schoolRatingSlider, schoolRating).perform();
         return this;
     }
 

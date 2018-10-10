@@ -421,8 +421,8 @@ public class SearchPageStep extends BasePageStep {
      *
      * @return SearchPageStep
      */
-    public SearchPageStep selectEightRating() {
-        searchPage.selectEightRating();
+    public SearchPageStep selectSchoolRating(String rating) {
+        searchPage.selectSchoolRating(rating);
         return this;
     }
 
@@ -431,11 +431,11 @@ public class SearchPageStep extends BasePageStep {
      *
      * @return true, if all displayed on map school have rating mare than 8, false, if have not
      */
-    public boolean doesAllSchoolHaveRatingMoreThanEight() {
+    public boolean doesAllSchoolHaveSelectedRating(String rating) {
         boolean isRatingMoreThanEight = true;
         for (int i = 1; i < searchPage.getSchoolOnMapListCount() + 1; i++) {
             BasePage.clickByJEx(searchPage.getSchool(i), driver);
-            isRatingMoreThanEight &= Integer.valueOf(searchPage.getSchoolRating()) >= 8;
+            isRatingMoreThanEight &= Integer.valueOf(searchPage.getSchoolRating()) >= Integer.valueOf(rating);
         }
         return isRatingMoreThanEight;
     }
