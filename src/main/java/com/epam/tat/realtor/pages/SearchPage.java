@@ -110,8 +110,6 @@ public class SearchPage extends BasePage {
     private WebElement privateSchool;
     @FindBy(xpath = "//div[contains(@class,'min-slider-handle')]")
     private WebElement schoolRatingSlider;
-//    @FindBy(xpath = "//div[contains(@class,'slider-tick-label')][8]")
-//    private WebElement eightRating;
     @FindBy(xpath = "//div[contains(@class,'pin-school')]")
     private List<WebElement> schoolOnMapList;
     @FindBy(xpath = "//div[@class='rating']")
