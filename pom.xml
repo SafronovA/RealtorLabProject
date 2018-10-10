@@ -43,13 +43,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.16</version>
                 <configuration>
-                    <!-- <suiteXmlFiles> <suiteXmlFile>${basedir}/testng.xml</suiteXmlFile> </suiteXmlFiles> -->
-                    <!-- c:\Temp>java org.testng.TestNG -groups regressiontest - testname AllTests-->
-                    <!--<groups>regressiontest</groups> -->
-                    <!-- <trimStackTrace>false</trimStackT;race> -->
-                    <!--<suitename>AllTests</suitename>-->
+
                     <suiteXmlFiles>
-                        <suiteXmlFile>${basedir}/resources/SampleSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>${basedir}\src\test\resources\SampleSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <suitename>RealtorSuite</suitename>
                     <testFailureIgnore>true</testFailureIgnore>
