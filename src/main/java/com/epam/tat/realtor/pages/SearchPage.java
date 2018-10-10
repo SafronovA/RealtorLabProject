@@ -99,7 +99,7 @@ public class SearchPage extends BasePage {
     private WebElement lifestyleType;
     @FindBy(id = "search-result-count")
     private WebElement searchResultCount;
-    @FindBy(xpath = "//i[contains(@class,\"ra-ml-cap ra\")]")
+    @FindBy(xpath = "//i[contains(@class,'ra-ml-cap ra')]")
     private WebElement schoolsButton;
     @FindBy(xpath = "//input[contains(@data-omtag,'elementary')]")
     private WebElement elementarySchool;
