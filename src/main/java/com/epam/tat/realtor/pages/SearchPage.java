@@ -81,15 +81,13 @@ public class SearchPage extends BasePage {
     private WebElement chosenCriteria;
     @FindBy(xpath = "(//*[@id='facet-followbtn'])[2]/span")
     private WebElement saveButtonText;
-    @FindBy(xpath = "//a[@class='js-save-listing btn-save-listing js-save-trigger ']//i[2]")
-    private List<WebElement> heartIconsList;
     @FindBy(xpath = "//select[@id='srp-sortby']")
     private WebElement sortOptionsDropDown;
     @FindBy(xpath = "//*[@id='srp-sortby']/option")
     private List<WebElement> sortOptionsList;
     @FindBy(xpath = "//*[contains(@class,'data-price')]")
     private List<WebElement> homePricesList;
-    @FindBy(xpath = "//*[@id='ResultsPerPageBottom']//span[4]/a")
+    @FindBy(xpath = "//*[@class='next ']")
     private List<WebElement> nextPageLink;
     @FindBy(xpath = "//a[contains(@data-omtag,'amenities')]")
     private WebElement lifestyleButton;
@@ -99,6 +97,8 @@ public class SearchPage extends BasePage {
     private List<WebElement> allFoundRestaurantsList;
     @FindBy(xpath = "//div[@class='amenity-card-label']")
     private WebElement lifestyleType;
+    @FindBy(id = "search-result-count")
+    private WebElement searchResultCount;
     @FindBy(xpath = "//i[contains(@class,\"ra-ml-cap ra\")]")
     private WebElement schoolsButton;
     @FindBy(xpath = "//input[contains(@data-omtag,'elementary')]")
@@ -211,6 +211,15 @@ public class SearchPage extends BasePage {
      */
     public WebElement getRestaurant(int number){
         return driver.findElement(By.xpath(XPATH_FOR_RESTAURANT+"["+number+"]"));
+    }
+
+    /**
+     * get search result count of find houses from title
+     *
+     * @return search result count element
+     */
+    public WebElement getSearchResultCountElement() {
+        return searchResultCount;
     }
 
     /**

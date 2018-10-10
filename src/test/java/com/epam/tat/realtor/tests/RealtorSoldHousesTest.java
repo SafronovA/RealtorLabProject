@@ -1,8 +1,7 @@
 package com.epam.tat.realtor.tests;
 
-import com.epam.tat.realtor.steps.FindRealtorPageStep;
+import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import com.epam.tat.realtor.steps.RealtorPageStep;
-import com.epam.tat.realtor.steps.SearchRealtorPageStep;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -21,10 +20,10 @@ public class RealtorSoldHousesTest extends BaseTest {
      */
     @Test
     public void checkRealtorSoldHouses() {
-        FindRealtorPageStep findRealtorPageStep = homePageStep.clickFindRealtorButton()
+        RealtorSearchResultPageStep realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
                 .findRealtor(REALTOR_NAME);
-        int realtorSoldHouses = findRealtorPageStep.getRealtorSoldHoses();
-        RealtorPageStep realtorPageStep = findRealtorPageStep.clickRealtorIcon()
+        int realtorSoldHouses = realtorSearchResultPageStep.getRealtorSoldHoses();
+        RealtorPageStep realtorPageStep = realtorSearchResultPageStep.clickRealtorIcon()
                 .prepareIFrameMap();
         assertEquals(realtorSoldHouses, realtorPageStep.getSoldHousesQuantity(),
                 "number of sold houses in the realtor card mismatch number on the iframe map ");

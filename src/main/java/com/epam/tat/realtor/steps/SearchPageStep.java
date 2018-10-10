@@ -1,6 +1,5 @@
 package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.SearchPage;
@@ -8,12 +7,9 @@ import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
 import java.util.ArrayList;
 import java.util.List;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -94,7 +90,6 @@ public class SearchPageStep extends BasePageStep {
                 IntStream.range(0, homePrices.size() - 1)
                         .allMatch(i -> homePrices.get(i).compareTo(homePrices.get(i + 1)) >= 0);
         return sortedDescending;
-
     }
 
     /**
@@ -203,6 +198,25 @@ public class SearchPageStep extends BasePageStep {
     public boolean checkSearchResultSqft(List<House> homeList, String minSqft, String maxSqft) {
         return homeList.stream()
                 .allMatch(x -> ((x.getSquare() >= Parser.parse(minSqft)) && (x.getSquare() <= Parser.parse(maxSqft))));
+    }
+
+    /**
+     * compares the declared number of found houses with the actual number of houses on the pages
+     *
+     * @return true, if the declared and actual number of houses matches, otherwise returns false
+     */
+    public boolean checkFindHomesCount() {
+        return getFindHomesCountFromSearchResult()==findAllHouses().size();
+    }
+
+    /**
+     * counting the total number of found houses displayed on all pages
+     *
+     * @return total amount of houses
+     */
+    public int getFindHomesCountFromSearchResult() {
+        int searchResultCount = Parser.parse(searchPage.getSearchResultCountElement().getText());
+        return searchResultCount;
     }
 
     /**

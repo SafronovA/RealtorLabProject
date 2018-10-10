@@ -1,6 +1,7 @@
 package com.epam.tat.realtor.pages;
 
 import com.epam.tat.realtor.ConfigProperties;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -16,6 +17,7 @@ public class HomePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    private By strangeLayer = By.id("loginModal");
     @FindBy(linkText = "Log In")
     private WebElement signInButton;
     @FindBy(id = "email_address")
@@ -41,7 +43,11 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//li[@id='img_far']/a")
     private WebElement realtorButton;
     @FindBy(xpath = "//a[contains(@class,'js-save-listing btn-save-listing js-save-trigger ')]//i[2]")
-    List<WebElement> heartIconsList;
+    private List<WebElement> heartIconsList;
+    @FindBy(xpath = "//*[@id='img_mortgage']/a")
+    private WebElement mortgageLink;
+    @FindBy(linkText = "Mortgage Calculator")
+    private WebElement mortgageCalculatorLink;
 
     /**
      * get heart icons list on the homes for sale cards
@@ -144,7 +150,7 @@ public class HomePage extends BasePage {
     public HomePage clickLogOutLink() {
         waitUntilElementIsVisible(logOutLink);
         logOutLink.click();
-        return new HomePage(driver);
+        return this;
     }
 
     /**
@@ -154,8 +160,7 @@ public class HomePage extends BasePage {
      * @return new SavedHomesPage
      */
     public SavedHomesPage clickUserIcon() {
-        waitUntilElementIsVisible(userIcon);
-        waitUntilElementIsClickable(userIcon);
+        waitInvisibilityOfElementLocated(strangeLayer);
         userIcon.click();
         return new SavedHomesPage(driver);
     }
@@ -163,11 +168,32 @@ public class HomePage extends BasePage {
     /**
      * click on the Realtor button
      *
-     * @return new SearchRealtorPage
+     * @return new FindRealtorPage
      */
-    public SearchRealtorPage clickRealtorButton() {
+    public FindRealtorPage clickRealtorButton() {
         waitUntilElementIsClickable(realtorButton);
         realtorButton.click();
-        return new SearchRealtorPage(driver);
+        return new FindRealtorPage(driver);
     }
+
+    /**
+     * navigate cursor on mortgage calculator to show drop-down menu
+     *
+     * @return this page
+     */
+    public HomePage navigateCursorOnMortgageLink() {
+        new Actions(driver).moveToElement(mortgageLink).perform();
+        return this;
+    }
+
+    /**
+     * click on mortgage calculator link
+     *
+     * @return new MortgageCalculatorPage
+     */
+    public MortgageCalculatorPage clickMortgageCalculatorLink() {
+        mortgageCalculatorLink.click();
+        return new MortgageCalculatorPage(driver);
+    }
+
 }

@@ -11,40 +11,45 @@ public class FindRealtorPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "(//div[@class='agent-detail-item ellipsis']/a/strong)[2]")
-    private WebElement realtorSoldHouses;
-    @FindBy(xpath = "//div[@class='agent-list-card-img']/img")
-    private WebElement userIcon;
-    @FindBy(xpath = "//div[@class='rating-count']")
-    private WebElement ratingCount;
+    @FindBy(id = "srchHomeAgent")
+    private WebElement searchInput;
+    @FindBy(id = "far_search_button")
+    private WebElement searchButton;
+    @FindBy(id = "srchHomeLocation")
+    private WebElement locationInput;
 
     /**
-     * get number of realtor sold houses
+     * enter realtor name in the search input
      *
-     * @return get number of realtor sold houses
+     * @param realtorName realtor name as search criteria
+     * @return this page
      */
-    public String getRealtorSoldHouses() {
-        return realtorSoldHouses.getText();
+    public FindRealtorPage enterRealtorName(String realtorName) {
+        searchInput.click();
+        searchInput.sendKeys(realtorName);
+        return this;
     }
 
     /**
-     * get rating count
+     * enter realtor location in the location input
      *
-     * @return rating count
+     * @param realtorLocation realtor name as search criteria
+     * @return this page
      */
-    public WebElement getRatingCount() {
-        return ratingCount;
+    public FindRealtorPage enterLocation(String realtorLocation) {
+        locationInput.clear();
+        locationInput.sendKeys(realtorLocation);
+        return this;
     }
 
     /**
-     * click on the realtor icon
+     * click search button
      *
-     * @return new RealtorPage
+     * @return new RealtorSearchResultPage
      */
-    public RealtorPage clickRealtorIcon() {
-        waitUntilElementIsClickable(userIcon);
-        userIcon.click();
-        return new RealtorPage(driver);
+    public RealtorSearchResultPage clickSearchButton() {
+        waitUntilElementIsClickable(searchButton);
+        searchButton.click();
+        return new RealtorSearchResultPage(driver);
     }
-
 }
