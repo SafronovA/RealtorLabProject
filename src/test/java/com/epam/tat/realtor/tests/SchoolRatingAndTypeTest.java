@@ -22,7 +22,7 @@ public class SchoolRatingAndTypeTest extends BaseTest {
                 .selectHighSchool()
                 .selectSchoolRating(RATING);
         Assert.assertTrue(searchPageStep.doesAllSchoolHaveSelectedRating(RATING),
-                "One of the schools shown on the map does not have a rating of ten");
+                "One of the schools shown on the map does not have a rating more that" + RATING);
         Assert.assertTrue(searchPageStep.areAllSchoolsHigh(),
                 "One of the schools shown on the map are not high");
     }
