@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class SchoolRatingAndTypeTest extends BaseTest {
 
     private static final String CITY_NAME = "Santa Rosa, CA";
-    private static final String RATING = "7";
+    private static final String RATING = "8";
 
     /**
      * select high and rating 8
@@ -22,7 +22,7 @@ public class SchoolRatingAndTypeTest extends BaseTest {
                 .selectHighSchool()
                 .selectSchoolRating(RATING);
         Assert.assertTrue(searchPageStep.doesAllSchoolHaveSelectedRating(RATING),
-                "One of the schools shown on the map does not have a rating more that" + RATING);
+                "One of the schools shown on the map does not have a rating more that " + RATING);
         Assert.assertTrue(searchPageStep.areAllSchoolsHigh(),
                 "One of the schools shown on the map are not high");
     }
