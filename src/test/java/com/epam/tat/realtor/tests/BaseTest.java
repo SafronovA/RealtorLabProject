@@ -49,8 +49,8 @@ public class BaseTest {
     /**
      * close browser
      */
-//    @AfterClass
-//    void closeResources() {
-//        driver.close();
-//    }
+    @AfterClass
+    void closeResources() {
+        driver.close();
+    }
 }
