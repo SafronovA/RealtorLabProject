@@ -28,24 +28,22 @@ public class BaseTest {
         driver.navigate().to(ConfigProperties.getTestProperty("url"));
         homePageStep = new HomePageStep(driver);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
-
-        boolean isNewPage = true;
-//        while (isNewPage) {
-//            try {
-//                isNewPage = false;
-//                driver.findElement(By.xpath("//*[@id='searchBox']"));
-//            } catch (NoSuchElementException e) {
-//                System.out.println("New version of the home page. Page has to be  reloaded...");
-//                isNewPage = true;
-//                driver.manage().deleteAllCookies();
-//                driver.navigate().to(ConfigProperties.getTestProperty("url"));
-//            } finally {
-//                driver.manage()
-//                        .timeouts()
-//                        .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
-//            }
-//        }
+        boolean isOldPage = true;
+        while (isOldPage) {
+            try {
+                isOldPage = false;
+                driver.findElement(By.xpath("//*[@id='downshift-0-input']"));
+            } catch (NoSuchElementException e) {
+                System.out.println("New version of the home page. Page has to be  reloaded...");
+                isOldPage = true;
+                driver.manage().deleteAllCookies();
+                driver.navigate().to(ConfigProperties.getTestProperty("url"));
+            } finally {
+                driver.manage()
+                        .timeouts()
+                        .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
+            }
+        }
     }
 
     /**

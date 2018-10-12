@@ -36,7 +36,7 @@ public class HomePage extends BasePage {
     private WebElement searchButton;
     @FindBy(xpath = "//a[@title='Find a realtor']")
     private WebElement findRealtorButton;
-    @FindBy(xpath = "//a[contains(@class,'js-save-listing btn-save-listing js-save-trigger ')]//i[2]")
+    @FindBy(xpath = "//button[@data-label='pc-save-cta']")
     private List<WebElement> heartIconsList;
     @FindBy(linkText = "Mortgage")
     private WebElement mortgageLink;
