@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.steps;
 
+import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.SavedHomesPage;
 import org.openqa.selenium.WebDriver;
 
@@ -40,7 +41,7 @@ public class SavedHomesPageStep extends BasePageStep {
     public HomePageStep clearSavedHomes() {
         if (!savedHomesPage.getSaveHomesButtonList().isEmpty()) {
             savedHomesPage.getSaveHomesButtonList().forEach(x -> {
-                x.click();
+                BasePage.clickByJEx(x,driver);
                 savedHomesPage.clickDeleteButton();
             });
         }

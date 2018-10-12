@@ -14,6 +14,33 @@ public class RealtorPageStep extends BasePageStep {
     }
 
     /**
+     * get number of sold houses
+     *
+     * @return number of sold houses
+     */
+    public int getSoldHousesQuantity() {
+        return realtorPage.getSoldHousesMapMarkList().size();
+    }
+
+    /**
+     * get realtor reviews count
+     *
+     * @return realtor reviews count
+     */
+    public int getRealtorReviewsCount() {
+        return realtorPage.getRealtorReviews().size();
+    }
+
+    /**
+     * get realtor recommendations count
+     *
+     * @return realtor recommendations count
+     */
+    public int getRealtorRecommendationsCount() {
+        return realtorPage.getRealtorRecommendations().size();
+    }
+
+    /**
      * get sold houses map marks,
      * click on each mark in the list,
      * check status of every mark
@@ -27,15 +54,6 @@ public class RealtorPageStep extends BasePageStep {
                     BasePage.clickByJEx(x, driver);
                     return isSold(realtorPage.getSaleHouseStatus());
                 });
-    }
-
-    /**
-     * get number of sold houses
-     *
-     * @return number of sold houses
-     */
-    public int getSoldHousesQuantity() {
-        return realtorPage.getSoldHousesMapMarkList().size();
     }
 
     /**
@@ -75,7 +93,7 @@ public class RealtorPageStep extends BasePageStep {
     }
 
     /**
-     * click load all reviews button untill all reviews won't be loaded
+     * click load all reviews button until all reviews won't be loaded
      *
      * @return this page
      */
@@ -87,13 +105,15 @@ public class RealtorPageStep extends BasePageStep {
     }
 
     /**
-     * get realtor reviews count
+     * click load all recommendations button until all recommendations won't be loaded
      *
-     * @return realtor reviews count
+     * @return this page
      */
-    public int getRealtorReviewsCount() {
-        return realtorPage.getRealtorReviews().size();
+    public RealtorPageStep loadAllRecommendations() {
+        realtorPage.scrollDown();
+        while (realtorPage.isLoadMoreRecommendationsButtonDisplayed()) {
+            realtorPage.clickLoadMoreRecommendationsButton();
+        }
+        return this;
     }
-
-
 }

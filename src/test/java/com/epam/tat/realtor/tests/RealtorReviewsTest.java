@@ -21,8 +21,13 @@ public class RealtorReviewsTest extends BaseTest {
      * check that number of reviews on the page match reviews number in the realtor's card
      */
     @Test
+<<<<<<< HEAD
     public void checkRealtorSoldHouses() {
         RealtorSearchResultPageStep realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
+=======
+    public void checkRealtorReviews() {
+        FindRealtorPageStep findRealtorPageStep = homePageStep.clickFindRealtorButton()
+>>>>>>> Jenkins_TEST
                 .findRealtor(REALTOR_NAME);
         int realtorReviews = realtorSearchResultPageStep.getRatingCount();
         RealtorPageStep realtorPageStep = realtorSearchResultPageStep.clickRealtorIcon()

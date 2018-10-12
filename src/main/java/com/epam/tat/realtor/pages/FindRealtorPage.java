@@ -11,12 +11,22 @@ public class FindRealtorPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+
     @FindBy(id = "srchHomeAgent")
     private WebElement searchInput;
     @FindBy(id = "far_search_button")
     private WebElement searchButton;
     @FindBy(id = "srchHomeLocation")
     private WebElement locationInput;
+    @FindBy(xpath = "(//div[@class='agent-detail-item ellipsis']/a/strong)[2]")
+    private WebElement realtorSoldHouses;
+    @FindBy(xpath = "//div[@class='agent-list-card-img']/img")
+    private WebElement userIcon;
+    @FindBy(xpath = "//div[@class='rating-count']")
+    private WebElement ratingCount;
+    @FindBy(xpath = "//div[contains(@class,'agent-recommendation')]//strong")
+    private WebElement recommendationsCount;
+
 
     /**
      * enter realtor name in the search input
@@ -52,4 +62,15 @@ public class FindRealtorPage extends BasePage {
         searchButton.click();
         return new RealtorSearchResultPage(driver);
     }
+
+
+    /**
+     * get recommendations count
+     *
+     * @return recommendations count
+     */
+    public WebElement getRecommendations() {
+        return recommendationsCount;
+    }
+
 }

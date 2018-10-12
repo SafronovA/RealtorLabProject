@@ -3,7 +3,11 @@
 <suite name="RealtorSuite" verbose="1" parallel="classes" thread-count="1" >
 
     <listeners>
+<<<<<<< HEAD
         <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+=======
+        <listener class-name="com.epam.tat.realtor.listeners.RealtorListener"/>
+>>>>>>> Jenkins_TEST
     </listeners>
 
     <test name="RealtorTest" >

@@ -49,8 +49,15 @@ public class BaseTest {
     /**
      * close browser
      */
+<<<<<<< HEAD
 //    @AfterClass
 //    void closeResources() {
 //        driver.close();
 //    }
+=======
+    @AfterTest
+    void closeResources() {
+        driver.quit();
+    }
+>>>>>>> Jenkins_TEST
 }

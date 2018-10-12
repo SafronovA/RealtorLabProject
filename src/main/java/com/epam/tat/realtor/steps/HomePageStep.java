@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.steps;
 
+import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -90,7 +91,7 @@ public class HomePageStep extends BasePageStep {
      * @return saved homes list size
      */
     public int saveHomes() {
-        homePage.getHeartIconsList().forEach(WebElement::click);
+        homePage.getHeartIconsList().stream().forEach(x->{BasePage.scrollToElement(x,driver);x.click();});
         return homePage.getHeartIconsList().size();
     }
 

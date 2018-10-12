@@ -34,4 +34,23 @@ public class FindRealtorPageStep extends BasePageStep {
         return new RealtorSearchResultPageStep(driver);
     }
 
+
+    /**
+     * click realtor icon
+     *
+     * @return new RealtorPageStep
+     */
+    public RealtorPageStep clickRealtorIcon() {
+        return new RealtorPageStep(driver);
+    }
+
+    /**
+     * get value of realtor recommendations count
+     *
+     * @return recommendations count
+     */
+    public int getRecommendationsCount() {
+        return Integer.valueOf(findRealtorPage.getRecommendations().getText());
+    }
+
 }

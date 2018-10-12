@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import java.util.List;
 
 public class RealtorPage extends BasePage {
@@ -29,6 +28,12 @@ public class RealtorPage extends BasePage {
     private WebElement loadMoreReviewsButton;
     @FindBy(xpath = "//ul[@id='agent-review-list']/li[not(@style='display: none;')]")
     private List<WebElement> realtorReviews;
+    @FindBy(xpath = "//button[@class='btn btn-plain load-more-button' and contains(text(),'mm')]")
+    private WebElement loadMoreRecommendationsButton;
+    @FindBy(xpath = "//div[@class='recommendation-card']")
+    private List<WebElement> realtorRecommendations;
+    @FindBy(xpath = "//*[@id='footer-links-secondary']")
+    private WebElement bottomElement;
 
 
     /**
@@ -38,6 +43,15 @@ public class RealtorPage extends BasePage {
      */
     public List<WebElement> getRealtorReviews() {
         return realtorReviews;
+    }
+
+    /**
+     * get realtor recommendations list
+     *
+     * @return realtor recommendations
+     */
+    public List<WebElement> getRealtorRecommendations() {
+        return realtorRecommendations;
     }
 
     /**
@@ -101,6 +115,7 @@ public class RealtorPage extends BasePage {
      */
     public RealtorPage clickLoadMoreReviewsButton() {
         waitUntilElementIsClickable(loadMoreReviewsButton);
+        BasePage.scrollToElement(loadMoreReviewsButton, driver);
         loadMoreReviewsButton.click();
         return this;
     }
@@ -111,6 +126,35 @@ public class RealtorPage extends BasePage {
      * @return if LoadMoreReviews button is displayed
      */
     public boolean isLoadMoreReviewsButtonDisplayed() {
+        scrollToElement(loadMoreRecommendationsButton, driver);
         return loadMoreReviewsButton.isDisplayed();
+    }
+
+    /**
+     * check if LoadMoreRecommendations button is displayed
+     *
+     * @return if LoadMoreRecommendations button is displayed
+     */
+    public boolean isLoadMoreRecommendationsButtonDisplayed() {
+        return loadMoreRecommendationsButton.isDisplayed();
+    }
+
+    /**
+     * click Load More Recommendations button
+     *
+     * @return this page
+     */
+    public RealtorPage clickLoadMoreRecommendationsButton() {
+        scrollToElement(loadMoreRecommendationsButton, driver);
+        waitForJQueryIsLoad();
+        loadMoreRecommendationsButton.click();
+        return this;
+    }
+
+    /**
+     * scroll down the page
+     */
+    public void scrollDown() {
+        scrollToElement(bottomElement, driver);
     }
 }
