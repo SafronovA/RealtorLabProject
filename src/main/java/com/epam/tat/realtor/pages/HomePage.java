@@ -26,25 +26,19 @@ public class HomePage extends BasePage {
     private WebElement passwordInput;
     @FindBy(id = "global_login_btn")
     private WebElement logInSubmitButton;
-    @FindBy(xpath = "//*[@id='my-account-url']/following-sibling::span[1]")
+    @FindBy(xpath = "//span[contains(@class,'global-account-')]")
     private WebElement userIcon;
-    @FindBy(xpath = "//*[@id='logout']")
+    @FindBy(linkText = "Sign Out")
     private WebElement logOutLink;
-    @FindBy(xpath = "//a[contains(text(),'Saved Homes')]")
-    private WebElement savedHomesLink;
-    @FindBy(xpath = "//*[@id='my_search_div']/div/a")
-    private WebElement savedSearchLink;
-    @FindBy(xpath = "//*[@id='searchBox']")
+    @FindBy(xpath = "//*[@id='downshift-0-input']")
     private WebElement searchInput;
-    @FindBy(xpath = "(//button[@class='btn btn-primary js-searchButton '])[1]")
+    @FindBy(xpath = "//button[contains(@class,'search-btn')]")
     private WebElement searchButton;
-    @FindBy(xpath = "//*[text()='Just Sold']")
-    private WebElement rentButton;
-    @FindBy(xpath = "//li[@id='img_far']/a")
-    private WebElement realtorButton;
+    @FindBy(xpath = "//a[@title='Find a realtor']")
+    private WebElement findRealtorButton;
     @FindBy(xpath = "//a[contains(@class,'js-save-listing btn-save-listing js-save-trigger ')]//i[2]")
     private List<WebElement> heartIconsList;
-    @FindBy(xpath = "//*[@id='img_mortgage']/a")
+    @FindBy(linkText = "Mortgage")
     private WebElement mortgageLink;
     @FindBy(linkText = "Mortgage Calculator")
     private WebElement mortgageCalculatorLink;
@@ -171,8 +165,8 @@ public class HomePage extends BasePage {
      * @return new FindRealtorPage
      */
     public FindRealtorPage clickRealtorButton() {
-        waitUntilElementIsClickable(realtorButton);
-        realtorButton.click();
+        waitUntilElementIsClickable(findRealtorButton);
+        findRealtorButton.click();
         return new FindRealtorPage(driver);
     }
 
