@@ -99,9 +99,8 @@ public class HomePageStep extends BasePageStep {
      *
      * @return HomePageStep
      */
-    public HomePageStep navigateCursorToMortgageLink() {
+    public void navigateCursorToMortgageLink() {
         homePage.navigateCursorOnMortgageLink();
-        return this;
     }
 
     /**
@@ -109,9 +108,8 @@ public class HomePageStep extends BasePageStep {
      *
      * @return new MortgageCalculatorPageStep
      */
-    public MortgageCalculatorPageStep clickMortgageCalculatorLink() {
+    public void clickMortgageCalculatorLink() {
         homePage.clickMortgageCalculatorLink();
-        return new MortgageCalculatorPageStep(driver);
     }
 
 }

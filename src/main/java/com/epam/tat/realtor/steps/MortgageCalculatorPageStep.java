@@ -18,9 +18,8 @@ public class MortgageCalculatorPageStep extends BasePageStep {
      * @param homePrice that will be set
      * @return MortgageCalculatorPageStep
      */
-    public MortgageCalculatorPageStep setHomePrice(String homePrice) {
+    public void setHomePrice(String homePrice) {
         mortgageCalculatorPage.setHomePrice(homePrice);
-        return this;
     }
 
     /**
@@ -29,9 +28,8 @@ public class MortgageCalculatorPageStep extends BasePageStep {
      * @param downPayment that will be set
      * @return MortgageCalculatorPageStep
      */
-    public MortgageCalculatorPageStep setDownPayment(String downPayment) {
+    public void setDownPayment(String downPayment) {
         mortgageCalculatorPage.setDownPayment(downPayment);
-        return this;
     }
 
     /**
@@ -40,9 +38,8 @@ public class MortgageCalculatorPageStep extends BasePageStep {
      * @param rate that will be set
      * @return MortgageCalculatorPageStep
      */
-    public MortgageCalculatorPageStep setRate(String rate) {
+    public void setRate(String rate) {
         mortgageCalculatorPage.setRateInput(rate);
-        return this;
     }
 
     /**
@@ -51,12 +48,11 @@ public class MortgageCalculatorPageStep extends BasePageStep {
      * @param loanType will be set
      * @return MortgageCalculatorPageStep
      */
-    public MortgageCalculatorPageStep selectLoanType(String loanType) {
+    public void selectLoanType(String loanType) {
         mortgageCalculatorPage.clickMortgageLoanTypeDropDown();
         mortgageCalculatorPage.getLoanTypeOptionList().stream()
                 .filter(element -> !element.getText().equals("") && loanType.equals(element.getText()))
                 .findFirst().get().click();
-        return this;
     }
 
     /**

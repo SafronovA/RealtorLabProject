@@ -12,12 +12,13 @@ public class MortgageCalculatorTest extends BaseTest {
      */
     @Test(dataProvider = "mortgageData")
     public void mortgageCalculatorTest(String loanType, String rate, String homePrice, String downPayment) {
-        MortgageCalculatorPageStep mortgageCalculatorPageStep = homePageStep.navigateCursorToMortgageLink()
-                .clickMortgageCalculatorLink()
-                .selectLoanType(loanType)
-                .setRate(rate)
-                .setHomePrice(homePrice)
-                .setDownPayment(downPayment);
+        MortgageCalculatorPageStep mortgageCalculatorPageStep = new MortgageCalculatorPageStep(driver);
+        homePageStep.navigateCursorToMortgageLink();
+        homePageStep.clickMortgageCalculatorLink();
+        mortgageCalculatorPageStep.selectLoanType(loanType);
+        mortgageCalculatorPageStep.setRate(rate);
+        mortgageCalculatorPageStep.setHomePrice(homePrice);
+        mortgageCalculatorPageStep.setDownPayment(downPayment);
         Assert.assertTrue(mortgageCalculatorPageStep.isDisplayedPriceCorrect(homePrice, downPayment, rate, loanType),
                 "Mortgage calculator calculated incorrect monthly payment");
     }
