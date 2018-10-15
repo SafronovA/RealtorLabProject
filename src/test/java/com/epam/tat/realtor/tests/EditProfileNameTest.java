@@ -23,7 +23,10 @@ public class EditProfileNameTest extends BaseTest {
     }
 
     /**
-     * testing the correctness of username changing
+     * click user icon on home page
+     * go to my profile section
+     * edit address name
+     * check that the profile name has changed correctly
      */
     @Test
     public void editProfileName() {

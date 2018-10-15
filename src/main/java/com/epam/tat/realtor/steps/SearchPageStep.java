@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -200,6 +201,25 @@ public class SearchPageStep extends BasePageStep {
     }
 
     /**
+     * compares the declared number of found houses with the actual number of houses on the pages
+     *
+     * @return true, if the declared and actual number of houses matches, otherwise returns false
+     */
+    public boolean checkFindHomesCount() {
+        return getFindHomesCountFromSearchResult()==findAllHouses().size();
+    }
+
+    /**
+     * counting the total number of found houses displayed on all pages
+     *
+     * @return total amount of houses
+     */
+    public int getFindHomesCountFromSearchResult() {
+        int searchResultCount = Parser.parse(searchPage.getSearchResultCountElement().getText());
+        return searchResultCount;
+    }
+
+    /**
      * set value in the max price dropdown list
      *
      * @param maxValue value that is set in the dropdown list
@@ -367,11 +387,71 @@ public class SearchPageStep extends BasePageStep {
      */
     public boolean areAllFoundLifestyleRestaurants() {
         boolean isRestaurant = true;
-        for(int i = 1; i< searchPage.getRestaurantsCount()+1; i++){
+        for (int i = 1; i < searchPage.getRestaurantsCount() + 1; i++) {
             BasePage.clickByJEx(searchPage.getRestaurant(i), driver);
             isRestaurant &= searchPage.getLifestyleType().equalsIgnoreCase("restaurants");
         }
         return isRestaurant;
+    }
+
+    /**
+     * click school button on map
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep clickSchoolButton() {
+        searchPage.clickSchoolButton();
+        return this;
+    }
+
+    /**
+     * select high school, remove ticks from other schools
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep selectHighSchool() {
+        searchPage.clickElementarySchool()
+                .clickMiddleSchool()
+                .clickPrivateSchool();
+        return this;
+    }
+
+    /**
+     * set school rating on 10
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep selectSchoolRating(String rating) {
+        searchPage.selectSchoolRating(rating);
+        return this;
+    }
+
+    /**
+     * check that all displayed on map school have rating mare than 8
+     *
+     * @return true, if all displayed on map school have rating mare than 8, false, if have not
+     */
+    public boolean doesAllSchoolHaveSelectedRating(String rating) {
+        boolean isRatingMoreThanEight = true;
+        for (int i = 1; i < searchPage.getSchoolOnMapListCount() + 1; i++) {
+            BasePage.clickByJEx(searchPage.getSchool(i), driver);
+            isRatingMoreThanEight &= Integer.valueOf(searchPage.getSchoolRating()) >= Integer.valueOf(rating);
+        }
+        return isRatingMoreThanEight;
+    }
+
+    /**
+     * check that all displayed on map school are high
+     *
+     * @return true, if all displayed on map school are high, false, if are not
+     */
+    public boolean areAllSchoolsHigh(){
+        boolean areAllSchoolsHigh = true;
+        for (int i = 1; i < searchPage.getSchoolOnMapListCount() + 1; i++) {
+            BasePage.clickByJEx(searchPage.getSchool(i), driver);
+            areAllSchoolsHigh &= searchPage.getSchoolName().contains("High");
+        }
+        return areAllSchoolsHigh;
     }
 
     /**
