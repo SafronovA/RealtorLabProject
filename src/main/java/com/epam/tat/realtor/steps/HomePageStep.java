@@ -1,6 +1,8 @@
 package com.epam.tat.realtor.steps;
 
 import com.epam.tat.realtor.pages.HomePage;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -35,6 +37,7 @@ public class HomePageStep extends BasePageStep {
      * @param city
      * @return search result page
      */
+    @When("^the user enter city to search input$")
     public HomePageStep enterCityName(String city) {
         homePage.clearInputField()
                 .enterCityInMainSearchInput(city);
@@ -46,6 +49,7 @@ public class HomePageStep extends BasePageStep {
      *
      * @return SearchPageStep
      */
+    @And("^click search button$")
     public SearchPageStep clickSearchButton() {
         homePage.clickSearchButton();
         return new SearchPageStep(driver);

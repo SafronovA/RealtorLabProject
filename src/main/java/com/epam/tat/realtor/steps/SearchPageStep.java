@@ -4,6 +4,7 @@ import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.SearchPage;
 import com.epam.tat.realtor.util.Parser;
+import cucumber.api.java.en.And;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -355,6 +356,7 @@ public class SearchPageStep extends BasePageStep {
      *
      * @return SearchPageStep
      */
+    @And("^click view map button$")
     public SearchPageStep clickViewMapButton() {
         searchPage.clickViewMapButton();
         return this;
@@ -399,6 +401,7 @@ public class SearchPageStep extends BasePageStep {
      *
      * @return SearchPageStep
      */
+    @And("^click school button$")
     public SearchPageStep clickSchoolButton() {
         searchPage.clickSchoolButton();
         return this;
