@@ -8,3 +8,7 @@ Feature: school rating and type test, select schools with entered rating and typ
     And click search button
     And click view map button
     And click school button
+    And select high school
+    And select school rating "8"
+    Then is school rating match "8"
+    And is school type match high

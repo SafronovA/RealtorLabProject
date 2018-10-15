@@ -15,12 +15,13 @@ public class SchoolRatingAndTypeTest extends BaseTest {
      */
     @Test
     public void schoolRating() {
-        SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)
-                .clickSearchButton()
-                .clickViewMapButton()
-                .clickSchoolButton()
-                .selectHighSchool()
-                .selectSchoolRating(RATING);
+        homePageStep.enterCityName(CITY_NAME);
+        homePageStep.clickSearchButton();
+        SearchPageStep searchPageStep = new SearchPageStep(driver);
+        searchPageStep.clickViewMapButton();
+        searchPageStep.clickSchoolButton();
+        searchPageStep.selectHighSchool();
+        searchPageStep.selectSchoolRating(RATING);
         Assert.assertTrue(searchPageStep.doesAllSchoolHaveSelectedRating(RATING),
                 "One of the schools shown on the map does not have a rating more that " + RATING);
         Assert.assertTrue(searchPageStep.areAllSchoolsHigh(),

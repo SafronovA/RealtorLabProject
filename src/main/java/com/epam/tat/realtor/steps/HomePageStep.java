@@ -38,10 +38,9 @@ public class HomePageStep extends BasePageStep {
      * @return search result page
      */
     @When("^the user enter city to search input$")
-    public HomePageStep enterCityName(String city) {
+    public void enterCityName(String city) {
         homePage.clearInputField()
                 .enterCityInMainSearchInput(city);
-        return this;
     }
 
     /**
@@ -50,9 +49,8 @@ public class HomePageStep extends BasePageStep {
      * @return SearchPageStep
      */
     @And("^click search button$")
-    public SearchPageStep clickSearchButton() {
+    public void clickSearchButton() {
         homePage.clickSearchButton();
-        return new SearchPageStep(driver);
     }
 
     /**

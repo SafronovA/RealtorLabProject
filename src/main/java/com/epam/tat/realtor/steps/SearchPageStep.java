@@ -5,6 +5,7 @@ import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.SearchPage;
 import com.epam.tat.realtor.util.Parser;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -357,9 +358,8 @@ public class SearchPageStep extends BasePageStep {
      * @return SearchPageStep
      */
     @And("^click view map button$")
-    public SearchPageStep clickViewMapButton() {
+    public void clickViewMapButton() {
         searchPage.clickViewMapButton();
-        return this;
     }
 
     /**
@@ -402,9 +402,8 @@ public class SearchPageStep extends BasePageStep {
      * @return SearchPageStep
      */
     @And("^click school button$")
-    public SearchPageStep clickSchoolButton() {
+    public void clickSchoolButton() {
         searchPage.clickSchoolButton();
-        return this;
     }
 
     /**
@@ -412,11 +411,11 @@ public class SearchPageStep extends BasePageStep {
      *
      * @return SearchPageStep
      */
-    public SearchPageStep selectHighSchool() {
+    @And("^select high school$")
+    public void selectHighSchool() {
         searchPage.clickElementarySchool()
                 .clickMiddleSchool()
                 .clickPrivateSchool();
-        return this;
     }
 
     /**
@@ -424,9 +423,9 @@ public class SearchPageStep extends BasePageStep {
      *
      * @return SearchPageStep
      */
-    public SearchPageStep selectSchoolRating(String rating) {
+    @And("^select school rating \"([^\"]*)\"$")
+    public void selectSchoolRating(String rating) {
         searchPage.selectSchoolRating(rating);
-        return this;
     }
 
     /**
@@ -434,6 +433,7 @@ public class SearchPageStep extends BasePageStep {
      *
      * @return true, if all displayed on map school have rating mare than 8, false, if have not
      */
+    @Then("^is school rating match \"([^\"]*)\"$")
     public boolean doesAllSchoolHaveSelectedRating(String rating) {
         boolean isRatingMoreThanEight = true;
         for (int i = 1; i < searchPage.getSchoolOnMapListCount() + 1; i++) {
@@ -448,6 +448,7 @@ public class SearchPageStep extends BasePageStep {
      *
      * @return true, if all displayed on map school are high, false, if are not
      */
+    @And("^is school type match high$")
     public boolean areAllSchoolsHigh(){
         boolean areAllSchoolsHigh = true;
         for (int i = 1; i < searchPage.getSchoolOnMapListCount() + 1; i++) {
