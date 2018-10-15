@@ -28,14 +28,14 @@ public class BaseTest {
         driver.navigate().to(ConfigProperties.getTestProperty("url"));
         homePageStep = new HomePageStep(driver);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        boolean isNewPage = true;
-        while (isNewPage) {
+        boolean isOldPage = true;
+        while (isOldPage) {
             try {
-                isNewPage = false;
-                driver.findElement(By.xpath("//*[@id='searchBox']"));
+                isOldPage = false;
+                driver.findElement(By.xpath("//*[@id='downshift-0-input']"));
             } catch (NoSuchElementException e) {
                 System.out.println("New version of the home page. Page has to be  reloaded...");
-                isNewPage = true;
+                isOldPage = true;
                 driver.manage().deleteAllCookies();
                 driver.navigate().to(ConfigProperties.getTestProperty("url"));
             } finally {
@@ -49,8 +49,8 @@ public class BaseTest {
     /**
      * close browser
      */
-//    @AfterClass
-//    void closeResources() {
-//        driver.close();
-//    }
+    @AfterClass
+    void closeResources() {
+        driver.close();
+    }
 }
