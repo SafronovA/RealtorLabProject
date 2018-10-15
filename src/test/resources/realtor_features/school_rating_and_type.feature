@@ -1,3 +1,7 @@
 Feature: school rating and type test, select schools with entered rating and type
-    Scenario: school rating
-        Given user go to realtor.com home page
+
+    Background:
+    Given user go to realtor.com home page
+
+    Scenario: [5231-school-rating]
+

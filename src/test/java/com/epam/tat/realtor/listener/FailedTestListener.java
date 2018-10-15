@@ -28,7 +28,7 @@ public class FailedTestListener implements ITestListener {
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-        
+
     }
 
     @Override
