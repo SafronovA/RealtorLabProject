@@ -335,9 +335,8 @@ public class SearchPageStep extends BasePageStep {
      *
      * @return SearchPageStep
      */
-    public SearchPageStep clickViewMapButton() {
+    public void clickViewMapButton() {
         searchPage.clickViewMapButton();
-        return this;
     }
 
     /**
@@ -345,9 +344,8 @@ public class SearchPageStep extends BasePageStep {
      *
      * @return SearchPageStep
      */
-    public SearchPageStep clickLifestyleButton() {
+    public void clickLifestyleButton() {
         searchPage.clickLifestyleButton();
-        return this;
     }
 
     /**
@@ -355,9 +353,8 @@ public class SearchPageStep extends BasePageStep {
      *
      * @return SearchPageStep
      */
-    public SearchPageStep selectRestaurants() {
+    public void selectRestaurants() {
         searchPage.selectRestaurants();
-        return this;
     }
 
     /**

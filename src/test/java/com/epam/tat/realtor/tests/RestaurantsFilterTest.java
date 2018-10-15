@@ -13,11 +13,12 @@ public class RestaurantsFilterTest extends BaseTest {
      */
     @Test
     public void restaurantsFilter() {
-        SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)
-                .clickSearchButton()
-                .clickViewMapButton()
-                .clickLifestyleButton()
-                .selectRestaurants();
+        SearchPageStep searchPageStep = new SearchPageStep(driver);
+        homePageStep.enterCityName(CITY_NAME);
+        homePageStep.clickSearchButton();
+        searchPageStep.clickViewMapButton();
+        searchPageStep.clickLifestyleButton();
+        searchPageStep.selectRestaurants();
         Assert.assertTrue(searchPageStep.areAllFoundLifestyleRestaurants(),
                 "One of found lifestyle is not a restaurant");
     }
