@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.tests;
 
+import com.epam.tat.realtor.steps.FindRealtorPageStep;
 import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import com.epam.tat.realtor.steps.RealtorPageStep;
 import org.testng.annotations.Test;
@@ -21,13 +22,9 @@ public class RealtorReviewsTest extends BaseTest {
      * check that number of reviews on the page match reviews number in the realtor's card
      */
     @Test
-<<<<<<< HEAD
-    public void checkRealtorSoldHouses() {
-        RealtorSearchResultPageStep realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
-=======
+
     public void checkRealtorReviews() {
-        FindRealtorPageStep findRealtorPageStep = homePageStep.clickFindRealtorButton()
->>>>>>> Jenkins_TEST
+        RealtorSearchResultPageStep realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
                 .findRealtor(REALTOR_NAME);
         int realtorReviews = realtorSearchResultPageStep.getRatingCount();
         RealtorPageStep realtorPageStep = realtorSearchResultPageStep.clickRealtorIcon()

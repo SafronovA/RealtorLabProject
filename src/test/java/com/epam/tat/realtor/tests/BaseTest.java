@@ -22,7 +22,7 @@ public class BaseTest {
      */
     @BeforeClass(alwaysRun = true)
     void initPage() {
-        driver = DriverFactory.CHROMEDRIVER.getDriver();
+        driver = DriverFactory.CHROMEDRIVER;
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.navigate().to(ConfigProperties.getTestProperty("url"));

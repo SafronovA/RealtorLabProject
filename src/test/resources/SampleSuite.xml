@@ -1,13 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="RealtorSuite" verbose="1" parallel="classes" thread-count="1" >
+<suite name="RealtorSuite" verbose="1" parallel="classes" thread-count="5" >
 
     <listeners>
-<<<<<<< HEAD
+
         <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
-=======
         <listener class-name="com.epam.tat.realtor.listeners.RealtorListener"/>
->>>>>>> Jenkins_TEST
+
     </listeners>
 
     <test name="RealtorTest" >

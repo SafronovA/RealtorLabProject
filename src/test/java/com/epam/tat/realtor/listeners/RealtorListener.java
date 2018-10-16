@@ -17,19 +17,19 @@ import java.util.Calendar;
 public class RealtorListener extends TestListenerAdapter {
     @Override
     public void onTestFailure(ITestResult result) {
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat formater = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
-        String methodName = result.getName();
-        if(!result.isSuccess()){
-            File scrFile = ((TakesScreenshot)DriverFactory.CHROMEDRIVER.getDriver()).getScreenshotAs(OutputType.FILE);
-            try {
-                String reportDirectory = new File(System.getProperty("user.dir")).getAbsolutePath() + "/src/test/resources";
-                File destFile = new File( reportDirectory+"/failure_screenshots/"+methodName+"_"+formater.format(calendar.getTime())+".png");
-                FileUtils.copyFile(scrFile, destFile);
-                Reporter.log("<a href='"+ destFile.getAbsolutePath() + "'> <img src='"+ destFile.getAbsolutePath() + "' height='100' width='100'/> </a>");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+//        Calendar calendar = Calendar.getInstance();
+//        SimpleDateFormat formater = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
+//        String methodName = result.getName();
+//        if(!result.isSuccess()){
+//            File scrFile = ((TakesScreenshot)(DriverFactory.CHROMEDRIVER.getDriver())).getScreenshotAs(OutputType.FILE);
+//            try {
+//                String reportDirectory = new File(System.getProperty("user.dir")).getAbsolutePath() + "/src/test/resources";
+//                File destFile = new File( reportDirectory+"/failure_screenshots/"+methodName+"_"+formater.format(calendar.getTime())+".png");
+//                FileUtils.copyFile(scrFile, destFile);
+//                Reporter.log("<a href='"+ destFile.getAbsolutePath() + "'> <img src='"+ destFile.getAbsolutePath() + "' height='100' width='100'/> </a>");
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 }
