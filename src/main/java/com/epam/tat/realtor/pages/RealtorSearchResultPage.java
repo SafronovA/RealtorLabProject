@@ -125,8 +125,14 @@ public class RealtorSearchResultPage extends BasePage {
     /**
      * @return locator of icons from map
      */
-    public String getIconsFromMapLocator() {
+    public String getIconsLocator() {
         return ICONS_ON_MAP_LOCATOR;
+    }
+
+    public WebElement getIconByIndex(int index){
+        By currentElement = By.xpath("(" + ICONS_ON_MAP_LOCATOR + ")[" + index + "]");
+        WebElement icon = driver.findElement(currentElement);
+        return icon;
     }
 
     /**
@@ -190,6 +196,11 @@ public class RealtorSearchResultPage extends BasePage {
      * @return this page
      */
     public RealtorSearchResultPage clickGetStartedButton() {
+        try {                            //another ways don't give 100% result
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         waitUntilElementIsVisible(driver.findElement(getStartedButton));
         waitUntilElementIsClickable(driver.findElement(getStartedButton));
         driver.findElement(getStartedButton).click();

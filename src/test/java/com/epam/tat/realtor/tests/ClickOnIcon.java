@@ -29,7 +29,7 @@ public class ClickOnIcon extends BaseTest {
                 .clickGetStartedButton()
                 .selectFirstRealtorCard();
 
-        Assert.assertTrue(realtorSearchResultPageStep.iconsReactCorrectly(),
+        Assert.assertTrue(realtorSearchResultPageStep.iconsBecomeSelected(),
                 "Found at least one icon on the map, which did not change status / did not increase after clicking on it");
     }
 }

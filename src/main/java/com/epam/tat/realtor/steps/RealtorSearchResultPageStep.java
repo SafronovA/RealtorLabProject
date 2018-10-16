@@ -8,8 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -143,10 +143,23 @@ public class RealtorSearchResultPageStep extends BasePageStep {
     }
 
     /**
-     * @return true, if all icons react correctly on clicking on them
+     * icons must become selected after clicking on them
+     *
+     * @return true, if all icons become selected after clicking on them
      */
-    public boolean iconsReactCorrectly() {
-        return iconsBecomeSelected(realtorSearchResultPage.getIconsFromMapLocator());
+    public boolean iconsBecomeSelected() {
+        int numberOfIconsOnMap = realtorSearchResultPage.getIconsFromMap().size();
+        boolean result = true;
+        for (int i = 1; i < numberOfIconsOnMap + 1; i++) {
+            WebElement icon = realtorSearchResultPage.getIconByIndex(i);
+            if (!iconIsSelected(icon)) {
+                BasePage.clickByJEx(icon, driver);
+                result &= iconIsSelected(icon);
+            } else {
+                result = false;
+            }
+        }
+        return result;
     }
 
     /**
@@ -172,64 +185,41 @@ public class RealtorSearchResultPageStep extends BasePageStep {
      * @return List<Integer> int recommendations received from WebElement list
      */
     private List<Integer> receiveRecommendationsListFromWebElementList(List<WebElement> recommendations) {
-        List<Integer> recommendationsList = recommendations.stream().map(WebElement -> Integer.valueOf(WebElement.getText())).collect(Collectors.toList());
+        List<Integer> recommendationsList = recommendations.stream()
+                .map(WebElement -> Integer.valueOf(WebElement.getText())).collect(Collectors.toList());
         return recommendationsList;
-    }
-
-    /**
-     * icons must become selected after clicking on them
-     *
-     * @param locator that is used to search for all icons on the map
-     * @return true, if all icons become selected after clicking on them
-     */
-    private boolean iconsBecomeSelected(String locator) {
-        int numberOfIconsOnMap = realtorSearchResultPage.getIconsFromMap().size();
-        boolean result = true;
-        for (int i = 1; i < numberOfIconsOnMap + 1; i++) {
-            By currentElement = By.xpath("(" + locator + ")[" + i + "]");
-            WebElement element = driver.findElement(currentElement);
-            if (!iconIsSelected(element)) {
-                BasePage.clickByJEx(element, driver);
-                result &= iconIsSelected(element);
-            } else {
-                result = false;
-            }
-        }
-        return result;
     }
 
     /**
      * get id and status of icons from map
      *
-     * @return HashMap with id and status of icons
+     * @return Map with id and status of icons
      */
-    private HashMap<String, Status> getIconsData() {
-        HashMap<String, Status> iconsData = new HashMap<>();
-        realtorSearchResultPage.getIconsFromMap().forEach(x -> iconsData.put(x.getAttribute("data-id"), getIconStatus(x)));
-        return iconsData;
+    private Map<String, Status> getIconsData() {
+        return realtorSearchResultPage.getIconsFromMap().stream()
+                .collect(Collectors.toMap(x -> x.getAttribute("data-id"), this::getIconStatus));
     }
 
     /**
      * get id and status of home cards
      *
-     * @return HashMap with id and status of home cards
+     * @return Map with id and status of home cards
      */
-    private HashMap<String, Status> getHomesData() {
-        HashMap<String, Status> homesData = new HashMap<>();
-        realtorSearchResultPage.getHomeCards().forEach(x -> homesData.put(x.getAttribute("data-mpr-id"), getHomeStatus(x)));
-        return homesData;
+    private Map<String, Status> getHomesData() {
+        return realtorSearchResultPage.getHomeCards().stream()
+                .collect(Collectors.toMap(x -> x.getAttribute("data-mpr-id"), this::getHomeStatus));
     }
 
     /**
      * get icon status
      *
-     * @param element icon to be checked
+     * @param iconElement icon to be checked
      * @return status passed element
      */
-    private Status getIconStatus(WebElement element) {
+    private Status getIconStatus(WebElement iconElement) {
         Status status;
-        String classValue = Parser.getLastWord(element.getAttribute("class"));
-        switch (classValue) {
+        String statusFromClassAttribute = Parser.getLastWord(iconElement.getAttribute("class"));
+        switch (statusFromClassAttribute) {
             case "for_sale":
                 status = Status.FOR_SALE;
                 break;
@@ -246,14 +236,14 @@ public class RealtorSearchResultPageStep extends BasePageStep {
     /**
      * get home status
      *
-     * @param element home to be checked
+     * @param homeElement home to be checked
      * @return status passed element
      */
-    private Status getHomeStatus(WebElement element) {
+    private Status getHomeStatus(WebElement homeElement) {
         Status status;
-        By passToHomeStatus = By.xpath("div/div");
-        String classValue = Parser.getLastWord(element.findElement(passToHomeStatus).getAttribute("class"));
-        switch (classValue) {
+        By passToAttributeWithStatus = By.xpath("div/div");
+        String statusFromClassAttribute = Parser.getLastWord(homeElement.findElement(passToAttributeWithStatus).getAttribute("class"));
+        switch (statusFromClassAttribute) {
             case "for_sale":
                 status = Status.FOR_SALE;
                 break;
@@ -274,9 +264,8 @@ public class RealtorSearchResultPageStep extends BasePageStep {
      * @return true, if attribute class contains 'selected' in the end
      */
     private boolean iconIsSelected(WebElement webElement) {
-        String selected = "selected";
         String classValue = webElement.getAttribute("class");
-        return Parser.getLastWord(classValue).equals(selected);
+        return Parser.getLastWord(classValue).equals("selected");
     }
 
     /**

@@ -1,5 +1,8 @@
 package com.epam.tat.realtor.pages;
 
+import com.epam.tat.realtor.bo.House;
+import com.epam.tat.realtor.util.Parser;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,17 +24,17 @@ public class MyHomePage extends BasePage {
     private WebElement saveButton;
     @FindBy(className = "owner-verification-data-form__close-container")
     private WebElement closeAlertWindowButton;
-    @FindBy(xpath = "(//*[@class='enhanced-input__field'])[4]")
+    @FindBy(xpath = "//*[@name='beds']")
     private WebElement bedroomsInput;
-    @FindBy(xpath = "(//*[@class='enhanced-input__field'])[5]")
+    @FindBy(xpath = "//*[@name='baths']")
     private WebElement bathroomsInput;
-    @FindBy(xpath = "(//*[@class='enhanced-input__field'])[6]")
+    @FindBy(xpath = "//*[@name='garage']")
     private WebElement carSpacesInput;
-    @FindBy(xpath = "(//*[@class='enhanced-input__field'])[7]")
-    private WebElement sqFootInput;
-    @FindBy(xpath = "(//*[@class='enhanced-input__field'])[8]")
+    @FindBy(xpath = "//*[@name='buildingSize']")
+    private WebElement squareInput;
+    @FindBy(xpath = "//*[@name='lotSize']")
     private WebElement lotSizeInput;
-    @FindBy(xpath = "//*[@data-reactid='134']//div")
+    @FindBy(xpath = "//*[@class='homefacts-item']")
     private List<WebElement> homeInfoList;
 
     /**
@@ -105,15 +108,15 @@ public class MyHomePage extends BasePage {
     }
 
     /**
-     * clear sqFoot input field
-     * enter sqFoot value
+     * clear square input field
+     * enter square value
      *
-     * @param sqFoot sqFoot value
+     * @param square value
      * @return this page
      */
-    public MyHomePage enterSqFoot(String sqFoot) {
-        clearField(sqFootInput);
-        sqFootInput.sendKeys(sqFoot);
+    public MyHomePage enterSquare(String square) {
+        clearField(squareInput);
+        squareInput.sendKeys(square);
         return this;
     }
 
@@ -131,18 +134,43 @@ public class MyHomePage extends BasePage {
     }
 
     /**
-     * get list of web elements, that contains home info
+     * create an business object of the house based on the data on the page
      *
-     * @return homeInfoList web element
+     * @return new House()
      */
-    public List<WebElement> getHomeInfoList() {
+    public House getHouse() {
         try {                        //no other way of waiting gives 100% result
             Thread.sleep(2000);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return homeInfoList;
+        int bedNumber = getHouseParameterByName("Bedrooms");
+        int bathNumber = getHouseParameterByName("Bathrooms");
+        int square = getHouseParameterByName("Sq. Ft.");
+        int lotSize = getHouseParameterByName("Lot Size");
+        int carSpaces = getHouseParameterByName("Car Spaces");
+        return new House(bedNumber, bathNumber, square, lotSize, carSpaces);
+    }
+
+    /**
+     * finds the required element by its name and returns its value
+     *
+     * @param name find elemetn with such name
+     * @return some house parameter by parameter's name
+     */
+    private int getHouseParameterByName(String name) {
+        int value = -1;
+        By elementWithParameterName = By.xpath("span");
+        By elementWithParameterValue = By.xpath("div");
+        for (int i = 0; i < homeInfoList.size(); i++) {
+            WebElement parameterElement = homeInfoList.get(i);
+            String parameterName = parameterElement.findElement(elementWithParameterName).getText();
+            if (parameterName.equals(name)) {
+                value = Parser.parse(parameterElement.findElement(elementWithParameterValue).getText());
+                break;
+            }
+        }
+        return value;
     }
 
     /**

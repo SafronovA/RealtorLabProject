@@ -1,11 +1,12 @@
 package com.epam.tat.realtor.steps;
 
+import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.pages.MyHomePage;
-import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
 
 public class MyHomePageStep extends BasePageStep {
     private MyHomePage myHomePage;
+    private House house;
 
     public MyHomePageStep(WebDriver driver) {
         super(driver);
@@ -35,11 +36,15 @@ public class MyHomePageStep extends BasePageStep {
                 .enterBedrooms(bedrooms)
                 .enterBathrooms(bathrooms)
                 .enterCarSpaces(carSpaces)
-                .enterSqFoot(sqFoot)
+                .enterSquare(sqFoot)
                 .enterLotSize(lotSize)
                 .clickSaveButton()
                 .closeAlertWindow();
         return this;
+    }
+
+    public void getHouse(){
+        house = myHomePage.getHouse();
     }
 
     /**
@@ -49,12 +54,9 @@ public class MyHomePageStep extends BasePageStep {
      * @return boolean
      */
     public boolean bedroomsValueIsCorrect(String bedrooms) {
-        String bedroomsValue = myHomePage
-                .getHomeInfoList()
-                .get(0)
-                .getText();
-        boolean result = Parser.parseToString(bedroomsValue).equals(bedrooms);
-        return result;
+        getHouse();
+        String houseBedrooms = String.valueOf(house.getBedNumber());
+        return houseBedrooms.equals(bedrooms);
     }
 
     /**
@@ -64,12 +66,8 @@ public class MyHomePageStep extends BasePageStep {
      * @return boolean
      */
     public boolean bathroomsValueIsCorrect(String bathrooms) {
-        String bathroomsValue = myHomePage
-                .getHomeInfoList()
-                .get(1)
-                .getText();
-        boolean result = Parser.parseToString(bathroomsValue).equals(bathrooms);
-        return result;
+        String houseBathrooms = String.valueOf(house.getBathNumber());
+        return houseBathrooms.equals(bathrooms);
     }
 
     /**
@@ -79,27 +77,19 @@ public class MyHomePageStep extends BasePageStep {
      * @return boolean
      */
     public boolean carSpacesValueIsCorrect(String carSpaces) {
-        String carSpacesValue = myHomePage
-                .getHomeInfoList()
-                .get(4)
-                .getText();
-        boolean result = Parser.parseToString(carSpacesValue).equals(carSpaces);
-        return result;
+        String houseCarSpaces = String.valueOf(house.getCarSpaces());
+        return houseCarSpaces.equals(carSpaces);
     }
 
     /**
      * perform operation of comparing required and current sqFoot value
      *
-     * @param sqFoot required sqFoot value
+     * @param square required square value
      * @return boolean
      */
-    public boolean sqFootValueIsCorrect(String sqFoot) {
-        String sqFootValue = myHomePage
-                .getHomeInfoList()
-                .get(2)
-                .getText();
-        boolean result = Parser.parseToString(sqFootValue).equals(sqFoot);
-        return result;
+    public boolean sqFootValueIsCorrect(String square) {
+        String houseSquare = String.valueOf(house.getSquare());
+        return houseSquare.equals(square);
     }
 
     /**
@@ -109,12 +99,8 @@ public class MyHomePageStep extends BasePageStep {
      * @return boolean
      */
     public boolean lotSizeIsCorrect(String lotSize) {
-        String lotSizeValue = myHomePage
-                .getHomeInfoList()
-                .get(3)
-                .getText();
-        boolean result = Parser.parseToString(lotSizeValue).equals(lotSize);
-        return result;
+        String houseLotSize = String.valueOf(house.getLotSize());
+        return houseLotSize.equals(lotSize);
     }
 
 }
