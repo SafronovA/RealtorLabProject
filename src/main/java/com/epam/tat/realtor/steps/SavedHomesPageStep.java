@@ -1,6 +1,5 @@
 package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.SavedHomesPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;

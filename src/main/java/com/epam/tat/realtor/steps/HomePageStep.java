@@ -114,4 +114,14 @@ public class HomePageStep extends BasePageStep {
         return new MortgageCalculatorPageStep(driver);
     }
 
+    /**
+     * click on the My Home button
+     *
+     * @return new MyHomePageStep
+     */
+    public MyHomePageStep clickMyHomeButton() {
+        homePage.clickMyHomeButton();
+        return new MyHomePageStep(driver);
+    }
+
 }

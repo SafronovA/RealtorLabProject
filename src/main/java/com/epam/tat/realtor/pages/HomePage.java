@@ -2,6 +2,7 @@ package com.epam.tat.realtor.pages;
 
 import com.epam.tat.realtor.ConfigProperties;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,8 +25,6 @@ public class HomePage extends BasePage {
     private WebElement emailInput;
     @FindBy(id = "password")
     private WebElement passwordInput;
-    @FindBy(id = "global_login_btn")
-    private WebElement logInSubmitButton;
     @FindBy(xpath = "//span[contains(@class,'global-account-')]")
     private WebElement userIcon;
     @FindBy(linkText = "Sign Out")
@@ -42,6 +41,9 @@ public class HomePage extends BasePage {
     private WebElement mortgageLink;
     @FindBy(linkText = "Mortgage Calculator")
     private WebElement mortgageCalculatorLink;
+    @FindBy(linkText = "My Home")
+    private WebElement myHomeButton;
+
 
     /**
      * get heart icons list on the homes for sale cards
@@ -69,6 +71,7 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage enterEmail() {
+        emailInput.click();
         emailInput.sendKeys(ConfigProperties.getTestProperty("userLogin"));
         return this;
     }
@@ -79,17 +82,18 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage enterPassword() {
+        passwordInput.click();
         passwordInput.sendKeys(ConfigProperties.getTestProperty("userPassword"));
         return this;
     }
 
     /**
-     * click LogInSubmitl button
+     * perform logIn operation
      *
      * @return this page
      */
     public HomePage clickLoginSubmitButton() {
-        logInSubmitButton.click();
+        new Actions(driver).sendKeys(Keys.ENTER).perform();
         return this;
     }
 
@@ -188,6 +192,17 @@ public class HomePage extends BasePage {
     public MortgageCalculatorPage clickMortgageCalculatorLink() {
         mortgageCalculatorLink.click();
         return new MortgageCalculatorPage(driver);
+    }
+
+    /**
+     * click on the My Home button
+     *
+     * @return new MyHomePage
+     */
+    public MyHomePage clickMyHomeButton() {
+        waitInvisibilityOfElementLocated(strangeLayer);
+        myHomeButton.click();
+        return new MyHomePage(driver);
     }
 
 }

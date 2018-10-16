@@ -38,7 +38,5 @@ public class SearchByConditionsTest extends BaseTest {
                 "bath quantity mismatch search criteria");
         assertTrue(searchPageStep.checkSearchResultSqft(searchResult, MIN_SQFT_VALUE, MAX_SQFT_VALUE),
                 "square feet house size mismatch search criteria");
-
-
     }
 }

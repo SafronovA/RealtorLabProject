@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class BasePageStep {
     protected WebDriver driver;
-    private BasePage basePage;
+    protected BasePage basePage;
 
     public BasePageStep(WebDriver driver) {
         this.driver = driver;
