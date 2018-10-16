@@ -21,9 +21,10 @@ public class SchoolRatingAndTypeTest extends BaseTest {
                 .clickSchoolButton()
                 .selectHighSchool()
                 .selectSchoolRating(RATING);
-        Assert.assertTrue(searchPageStep.doesAllSchoolHaveSelectedRating(RATING),
+        boolean[] ratingAndTypeComparingResult = searchPageStep.doesAllSchoolHaveSelectedRatingAndType(RATING);
+        Assert.assertTrue(ratingAndTypeComparingResult[0],
                 "One of the schools shown on the map does not have a rating more that " + RATING);
-        Assert.assertTrue(searchPageStep.areAllSchoolsHigh(),
+        Assert.assertTrue(ratingAndTypeComparingResult[1],
                 "One of the schools shown on the map are not high");
     }
 
