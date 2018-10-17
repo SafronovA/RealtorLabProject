@@ -87,6 +87,28 @@ public class RealtorPageStep extends BasePageStep {
     }
 
     /**
+     * click load all recommendations button until all recommendations won't be loaded
+     *
+     * @return this page
+     */
+    public RealtorPageStep loadAllRecommendations() {
+        realtorPage.scrollDown();
+        while (realtorPage.isLoadMoreRecommendationsButtonDisplayed()) {
+            realtorPage.clickLoadMoreRecommendationsButton();
+        }
+        return this;
+    }
+
+    /**
+     * get realtor recommendations count
+     *
+     * @return realtor recommendations count
+     */
+    public int getRealtorRecommendationsCount() {
+        return realtorPage.getRealtorRecommendations().size();
+    }
+
+    /**
      * get realtor reviews count
      *
      * @return realtor reviews count
