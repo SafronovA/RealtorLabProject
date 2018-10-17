@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="RealtorSuite" verbose="1" parallel="classes" thread-count="17" >
+<suite name="RealtorSuite" verbose="1" parallel="classes" thread-count="18" >
 
     <listeners>
         <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
