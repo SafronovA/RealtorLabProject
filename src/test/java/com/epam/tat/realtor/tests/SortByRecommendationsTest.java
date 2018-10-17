@@ -11,6 +11,10 @@ public class SortByRecommendationsTest extends BaseTest {
     private RealtorSearchResultPageStep realtorSearchResultPageStep;
 
     /**
+     * click find realtor button on home page
+     * find realtors on some location
+     * edit recommendation filter
+     * chose sort option
      * check that realtors are displayed on page sorted by recommendations
      */
     @Test

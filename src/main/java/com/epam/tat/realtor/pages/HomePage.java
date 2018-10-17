@@ -26,24 +26,22 @@ public class HomePage extends BasePage {
     private WebElement passwordInput;
     @FindBy(id = "global_login_btn")
     private WebElement logInSubmitButton;
-    @FindBy(xpath = "//*[@id='my-account-url']/following-sibling::span[1]")
+    @FindBy(xpath = "//span[contains(@class,'global-account-')]")
     private WebElement userIcon;
-    @FindBy(xpath = "//*[@id='logout']")
+    @FindBy(linkText = "Sign Out")
     private WebElement logOutLink;
-    @FindBy(xpath = "//a[contains(text(),'Saved Homes')]")
-    private WebElement savedHomesLink;
-    @FindBy(xpath = "//*[@id='my_search_div']/div/a")
-    private WebElement savedSearchLink;
-    @FindBy(xpath = "//*[@id='searchBox']")
+    @FindBy(xpath = "//input[contains(@id,'downshift')]")
     private WebElement searchInput;
-    @FindBy(xpath = "(//button[@class='btn btn-primary js-searchButton '])[1]")
+    @FindBy(xpath = "//button[contains(@class,'search-btn')]")
     private WebElement searchButton;
-    @FindBy(xpath = "//*[text()='Just Sold']")
-    private WebElement rentButton;
-    @FindBy(xpath = "//li[@id='img_far']/a")
-    private WebElement realtorButton;
-    @FindBy(xpath = "//a[contains(@class,'js-save-listing btn-save-listing js-save-trigger ')]//i[2]")
+    @FindBy(xpath = "//a[@title='Find a realtor']")
+    private WebElement findRealtorButton;
+    @FindBy(xpath = "//button[@data-label='pc-save-cta']")
     private List<WebElement> heartIconsList;
+    @FindBy(linkText = "Mortgage")
+    private WebElement mortgageLink;
+    @FindBy(linkText = "Mortgage Calculator")
+    private WebElement mortgageCalculatorLink;
 
     /**
      * get heart icons list on the homes for sale cards
@@ -71,6 +69,7 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage enterEmail() {
+        emailInput.click();
         emailInput.sendKeys(ConfigProperties.getTestProperty("userLogin"));
         return this;
     }
@@ -81,6 +80,7 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage enterPassword() {
+        passwordInput.click();
         passwordInput.sendKeys(ConfigProperties.getTestProperty("userPassword"));
         return this;
     }
@@ -123,7 +123,9 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage enterCityInMainSearchInput(String city) {
+        searchInput.click();
         searchInput.sendKeys(city);
+        searchInput.click();
         return this;
     }
 
@@ -167,9 +169,29 @@ public class HomePage extends BasePage {
      * @return new FindRealtorPage
      */
     public FindRealtorPage clickRealtorButton() {
-        waitUntilElementIsClickable(realtorButton);
-        realtorButton.click();
+        waitUntilElementIsClickable(findRealtorButton);
+        findRealtorButton.click();
         return new FindRealtorPage(driver);
+    }
+
+    /**
+     * navigate cursor on mortgage calculator to show drop-down menu
+     *
+     * @return this page
+     */
+    public HomePage navigateCursorOnMortgageLink() {
+        new Actions(driver).moveToElement(mortgageLink).perform();
+        return this;
+    }
+
+    /**
+     * click on mortgage calculator link
+     *
+     * @return new MortgageCalculatorPage
+     */
+    public MortgageCalculatorPage clickMortgageCalculatorLink() {
+        mortgageCalculatorLink.click();
+        return new MortgageCalculatorPage(driver);
     }
 
 }
