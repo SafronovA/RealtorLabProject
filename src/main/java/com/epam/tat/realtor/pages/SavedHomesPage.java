@@ -30,6 +30,8 @@ public class SavedHomesPage extends BasePage {
     private WebElement realtorIcon;
     @FindBy(xpath = "//*[text()='My Profile']")
     private WebElement myProfileLink;
+    @FindBy(xpath = "(//div[@class='myaccount container']/div)[2]")
+    private WebElement deleteLayer;
 
     /**
      * get saved homes button list
@@ -82,5 +84,14 @@ public class SavedHomesPage extends BasePage {
     public HomePage clickRealtorIcon() {
         realtorIcon.click();
         return new HomePage(driver);
+    }
+
+    /**
+     * click delete layer to start deleting saved homes elements
+     * @return this page
+     */
+    public SavedHomesPage clickLayerToStartDelete(){
+        new Actions(driver).moveToElement(deleteLayer,10,10).click().perform();
+        return this;
     }
 }
