@@ -1,7 +1,6 @@
 package com.epam.tat.realtor.tests;
 
 import com.epam.tat.realtor.steps.SavedHomesPageStep;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -39,11 +38,4 @@ public class SavedHomesTest extends BaseTest {
                 "saved homes number in saved homes section mismatch number of saved homes on the search page");
     }
 
-    /**
-     * clear saved homes in the saved homes section
-     */
-    @AfterMethod
-    public void clearResources() {
-        new SavedHomesPageStep(driver).clearSavedHomes();
-    }
 }

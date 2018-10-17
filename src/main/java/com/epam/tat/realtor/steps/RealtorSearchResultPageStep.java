@@ -1,12 +1,15 @@
 package com.epam.tat.realtor.steps;
 
+import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.RealtorSearchResultPage;
 import com.epam.tat.realtor.util.Parser;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -44,6 +47,26 @@ public class RealtorSearchResultPageStep extends BasePageStep {
     public RealtorPageStep clickRealtorIcon() {
         realtorSearchResultPage.clickRealtorIcon();
         return new RealtorPageStep(driver);
+    }
+
+    /**
+     * click activity map button
+     *
+     * @return this step
+     */
+    public RealtorSearchResultPageStep clickActivityMapButton() {
+        realtorSearchResultPage.clickActivityMapButton();
+        return this;
+    }
+
+    /**
+     * click get started button
+     *
+     * @return this step
+     */
+    public RealtorSearchResultPageStep clickGetStartedButton() {
+        realtorSearchResultPage.clickGetStartedButton();
+        return this;
     }
 
     /**
@@ -89,6 +112,55 @@ public class RealtorSearchResultPageStep extends BasePageStep {
     }
 
     /**
+     * click on first realtor card
+     *
+     * @return this step
+     */
+    public RealtorSearchResultPageStep selectFirstRealtorCard() {
+        realtorSearchResultPage.getFirstRealtorCard().click();
+        return this;
+    }
+
+    /**
+     * click see agent's nearby properties button
+     *
+     * @return this step
+     */
+    public RealtorSearchResultPageStep clickSeeAgentsNearbyProperties() {
+        realtorSearchResultPage.clickSeeAgentsNearbyProperties();
+        return this;
+    }
+
+    /**
+     * compare homes data with icons data
+     *
+     * @return true, if house statuses correspond to the status of icons on the map
+     */
+    public boolean colorIsCorrect() {
+        return getHomesData().equals(getIconsData());
+    }
+
+    /**
+     * icons must become selected after clicking on them
+     *
+     * @return true, if all icons become selected after clicking on them
+     */
+    public boolean iconsBecomeSelected() {
+        int numberOfIconsOnMap = realtorSearchResultPage.getIconsFromMap().size();
+        boolean result = true;
+        for (int i = 1; i < numberOfIconsOnMap + 1; i++) {
+            WebElement icon = realtorSearchResultPage.getIconByIndex(i);
+            if (!iconIsSelected(icon)) {
+                BasePage.clickByJEx(icon, driver);
+                result &= iconIsSelected(icon);
+            } else {
+                return false;
+            }
+        }
+        return result;
+    }
+
+    /**
      * add homes from all pages to integer list. Add homes from first page, while exist next page, click next link
      * and add home prices from this page.
      *
@@ -111,8 +183,61 @@ public class RealtorSearchResultPageStep extends BasePageStep {
      * @return List<Integer> int recommendations received from WebElement list
      */
     private List<Integer> receiveRecommendationsListFromWebElementList(List<WebElement> recommendations) {
-        List<Integer> recommendationsList = recommendations.stream().map(WebElement -> Integer.valueOf(WebElement.getText())).collect(Collectors.toList());
-        return recommendationsList;
+        return recommendations.stream().map(WebElement -> Integer.valueOf(WebElement.getText())).collect(Collectors.toList());
+    }
+
+    /**
+     * get id and status of icons from map
+     *
+     * @return Map with id and status of icons
+     */
+    private Map<String, String> getIconsData() {
+        return realtorSearchResultPage.getIconsFromMap().stream()
+                .collect(Collectors.toMap(x -> x.getAttribute("data-id"), this::getIconStatus));
+    }
+
+    /**
+     * get id and status of home cards
+     *
+     * @return Map with id and status of home cards
+     */
+    private Map<String, String> getHomesData() {
+        return realtorSearchResultPage.getHomeCards().stream()
+                .collect(Collectors.toMap(x -> x.getAttribute("data-mpr-id"), this::getHomeStatus));
+    }
+
+    /**
+     * get icon status
+     *
+     * @param iconElement icon to be checked
+     * @return status passed element
+     */
+    private String getIconStatus(WebElement iconElement) {
+        String statusFromClassAttribute = Parser.getLastWord(iconElement.getAttribute("class"));
+        return statusFromClassAttribute;
+    }
+
+    /**
+     * get home status
+     *
+     * @param homeElement home to be checked
+     * @return status passed element
+     */
+    private String getHomeStatus(WebElement homeElement) {
+        By passToAttributeWithStatus = By.xpath("div/div");
+        String statusFromClassAttribute = Parser.getLastWord(homeElement.findElement(passToAttributeWithStatus).getAttribute("class"));
+        return statusFromClassAttribute;
+    }
+    
+    /**
+     * checks is web element selected or not
+     *
+     * @param webElement checked element
+     * @return true, if attribute class contains 'selected' in the end
+     */
+    private boolean iconIsSelected(WebElement webElement) {
+        String classValue = webElement.getAttribute("class");
+        return Parser.getLastWord(classValue).equals("selected");
     }
 
 }

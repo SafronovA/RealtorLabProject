@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +14,10 @@ public class RealtorSearchResultPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    private final String ICONS_ON_MAP_LOCATOR = "//*[@id='agent_pin']/div";
+    private By getStartedWindow = By.className("modal-header");
+    @FindBy(xpath = "//*[@class='btn btn-secondary block-center']")
+    private WebElement getStartedButton;
     @FindBy(xpath = "(//div[@class='agent-detail-item ellipsis']/a/strong)[2]")
     private WebElement realtorSoldHouses;
     @FindBy(xpath = "//div[@class='agent-list-card-img']/img")
@@ -31,6 +36,14 @@ public class RealtorSearchResultPage extends BasePage {
     private List<WebElement> numberOfRecommendationsList;
     @FindBy(xpath = "//a[@class='next']")
     private List<WebElement> nextPageButton;
+    @FindBy(id = "map_view_link")
+    private WebElement activityMapButton;
+    @FindBy(xpath = "(//*[@id='agent_map_card'])[1]")
+    private WebElement firstRealtorCard;
+    @FindBy(xpath = "//div[@id='agent_search_detail_more_properties_container']/div")
+    private List<WebElement> homeCards;
+    @FindBy(id = "btn_show_more_property")
+    private WebElement seeAgentsNearbyPropertiesButton;
 
     /**
      * get number of realtor sold houses
@@ -80,10 +93,46 @@ public class RealtorSearchResultPage extends BasePage {
 
     /**
      * get next button
+     *
      * @return nextButton
      */
-    public List<WebElement> getNextPageButton(){
+    public List<WebElement> getNextPageButton() {
         return nextPageButton;
+    }
+
+    /**
+     * @return list of realtor cards
+     */
+    public WebElement getFirstRealtorCard() {
+        waitForJQueryIsLoad();
+        return firstRealtorCard;
+    }
+
+    /**
+     * @return list of home cards
+     */
+    public List<WebElement> getHomeCards() {
+        waitForJQueryIsLoad();
+        return homeCards;
+    }
+
+    /**
+     * @return list of icons on the map
+     */
+    public List<WebElement> getIconsFromMap() {
+        waitForJQueryIsLoad();
+        return driver.findElements(By.xpath(ICONS_ON_MAP_LOCATOR));
+    }
+
+    /**
+     * find icon on map by index and return it
+     * @param index by which the icon will be searched
+     * @return icon web element
+     */
+    public WebElement getIconByIndex(int index){
+        By currentElement = By.xpath("(" + ICONS_ON_MAP_LOCATOR + ")[" + index + "]");
+        WebElement icon = driver.findElement(currentElement);
+        return icon;
     }
 
     /**
@@ -127,6 +176,41 @@ public class RealtorSearchResultPage extends BasePage {
     public RealtorSearchResultPage clickNextPageButton() {
         waitForJQueryIsLoad();
         nextPageButton.get(0).click();
+        return this;
+    }
+
+    /**
+     * click activity map button
+     *
+     * @return this page
+     */
+    public RealtorSearchResultPage clickActivityMapButton() {
+        waitUntilElementIsClickable(activityMapButton);
+        activityMapButton.click();
+        return this;
+    }
+
+    /**
+     * click get started button
+     *
+     * @return this page
+     */
+    public RealtorSearchResultPage clickGetStartedButton() {
+        waitUntilElementIsVisible(getStartedButton);
+        getStartedButton.click();
+        waitInvisibilityOfElementLocated(getStartedWindow);
+        return this;
+    }
+
+    /**
+     * click see agent's nearby properties button, if it presents on the page
+     *
+     * @return this page
+     */
+    public RealtorSearchResultPage clickSeeAgentsNearbyProperties() {
+        if (seeAgentsNearbyPropertiesButton.isDisplayed()) {
+            seeAgentsNearbyPropertiesButton.click();
+        }
         return this;
     }
 

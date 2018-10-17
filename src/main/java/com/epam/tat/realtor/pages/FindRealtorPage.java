@@ -1,7 +1,9 @@
 package com.epam.tat.realtor.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -13,8 +15,6 @@ public class FindRealtorPage extends BasePage {
 
     @FindBy(id = "srchHomeAgent")
     private WebElement searchInput;
-    @FindBy(id = "far_search_button")
-    private WebElement searchButton;
     @FindBy(id = "srchHomeLocation")
     private WebElement locationInput;
 
@@ -25,7 +25,7 @@ public class FindRealtorPage extends BasePage {
      * @return this page
      */
     public FindRealtorPage enterRealtorName(String realtorName) {
-        searchInput.click();
+        searchInput.clear();
         searchInput.sendKeys(realtorName);
         return this;
     }
@@ -43,13 +43,12 @@ public class FindRealtorPage extends BasePage {
     }
 
     /**
-     * click search button
+     * perform submit operation
      *
      * @return new RealtorSearchResultPage
      */
     public RealtorSearchResultPage clickSearchButton() {
-        waitUntilElementIsClickable(searchButton);
-        searchButton.click();
+        new Actions(driver).sendKeys(Keys.ENTER).perform();
         return new RealtorSearchResultPage(driver);
     }
 }

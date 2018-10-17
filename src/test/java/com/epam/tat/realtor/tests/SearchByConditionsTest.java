@@ -1,6 +1,5 @@
 package com.epam.tat.realtor.tests;
 
-
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.steps.SearchPageStep;
 import org.testng.annotations.Test;
@@ -38,7 +37,5 @@ public class SearchByConditionsTest extends BaseTest {
                 "bath quantity mismatch search criteria");
         assertTrue(searchPageStep.checkSearchResultSqft(searchResult, MIN_SQFT_VALUE, MAX_SQFT_VALUE),
                 "square feet house size mismatch search criteria");
-
-
     }
 }
