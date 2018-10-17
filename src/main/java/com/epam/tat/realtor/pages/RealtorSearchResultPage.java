@@ -210,7 +210,7 @@ public class RealtorSearchResultPage extends BasePage {
      */
     public RealtorSearchResultPage clickGetStartedButton() {
         waitUntilElementIsVisible(getStartedButton);
-        getStartedButton.click();
+        BasePage.clickByJEx(getStartedButton, driver);
         waitInvisibilityOfElementLocated(getStartedWindow);
         return this;
     }

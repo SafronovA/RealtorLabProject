@@ -98,16 +98,6 @@ public class HomePage extends BasePage {
     }
 
     /**
-     * navigate to user icon
-     *
-     * @return this page
-     */
-    public HomePage navigateToUserIcon() {
-        new Actions(driver).moveToElement(userIcon).perform();
-        return this;
-    }
-
-    /**
      * clear city entered by default
      *
      * @return this page
@@ -141,17 +131,6 @@ public class HomePage extends BasePage {
     }
 
     /**
-     * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
-     *
-     * @return new HomePage
-     */
-    public HomePage clickLogOutLink() {
-        waitUntilElementIsVisible(logOutLink);
-        logOutLink.click();
-        return this;
-    }
-
-    /**
      * wait until user icon become clickable
      * click user icon
      *
@@ -170,7 +149,7 @@ public class HomePage extends BasePage {
      */
     public FindRealtorPage clickRealtorButton() {
         waitUntilElementIsClickable(findRealtorButton);
-        findRealtorButton.click();
+        BasePage.clickByJEx(findRealtorButton, driver);
         return new FindRealtorPage(driver);
     }
 
