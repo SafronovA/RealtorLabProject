@@ -44,6 +44,18 @@ public class RealtorSearchResultPage extends BasePage {
     private List<WebElement> homeCards;
     @FindBy(id = "btn_show_more_property")
     private WebElement seeAgentsNearbyPropertiesButton;
+    @FindBy(xpath = "//div[contains(@class,'agent-recommendation')]//strong")
+    private WebElement recommendationsCount;
+
+
+    /**
+     * get recommendations count
+     *
+     * @return recommendations count
+     */
+    public WebElement getRecommendations() {
+        return recommendationsCount;
+    }
 
     /**
      * get number of realtor sold houses
@@ -126,10 +138,11 @@ public class RealtorSearchResultPage extends BasePage {
 
     /**
      * find icon on map by index and return it
+     *
      * @param index by which the icon will be searched
      * @return icon web element
      */
-    public WebElement getIconByIndex(int index){
+    public WebElement getIconByIndex(int index) {
         By currentElement = By.xpath("(" + ICONS_ON_MAP_LOCATOR + ")[" + index + "]");
         WebElement icon = driver.findElement(currentElement);
         return icon;
@@ -197,7 +210,7 @@ public class RealtorSearchResultPage extends BasePage {
      */
     public RealtorSearchResultPage clickGetStartedButton() {
         waitUntilElementIsVisible(getStartedButton);
-        getStartedButton.click();
+        BasePage.clickByJEx(getStartedButton, driver);
         waitInvisibilityOfElementLocated(getStartedWindow);
         return this;
     }
