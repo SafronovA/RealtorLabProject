@@ -25,7 +25,7 @@ public class RealtorPage extends BasePage {
     private WebElement zoomOutButton;
     @FindBy(xpath = "//p/a[@id='inquiry_cta']")
     private WebElement askQuestionButton;
-    @FindBy(xpath = "//a[@class='btn btn-plain load-more-button load-more-review-button']")
+    @FindBy(xpath = "//a[contains(@class,'btn btn-plain load-more-button load-more-review-button')]")
     private WebElement loadMoreReviewsButton;
     @FindBy(xpath = "//*[@id='footer-links-secondary']")
     private WebElement bottomElement;
@@ -35,8 +35,7 @@ public class RealtorPage extends BasePage {
     private WebElement loadMoreRecommendationsButton;
     @FindBy(xpath = "//div[@class='recommendation-card']")
     private List<WebElement> realtorRecommendations;
-
-
+    
     /**
      * get realtor reviews list
      *
