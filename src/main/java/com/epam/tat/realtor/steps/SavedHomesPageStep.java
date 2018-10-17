@@ -1,7 +1,6 @@
 package com.epam.tat.realtor.steps;
 
 import com.epam.tat.realtor.pages.SavedHomesPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class SavedHomesPageStep extends BasePageStep {
@@ -42,8 +41,7 @@ public class SavedHomesPageStep extends BasePageStep {
         if (!savedHomesPage.getSaveHomesButtonList().isEmpty()) {
             savedHomesPage.clickLayerToStartDelete();
             for (int j = savedHomesPage.getSaveHomesButtonList().size(); j >0; j--) {
-                driver.findElement(By.xpath("(//button[@data-label='pc-save-cta']/span/i[2])[" + j + "]")).click();
-                savedHomesPage.clickDeleteButton();
+                savedHomesPage.clickDeleteButtonByIndex(j).clickDeleteButton();
             }
         }
         savedHomesPage.clickRealtorIcon();

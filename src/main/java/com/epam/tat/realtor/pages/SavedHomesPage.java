@@ -24,8 +24,6 @@ public class SavedHomesPage extends BasePage {
     private List<WebElement> saveHomesButtonList;
     @FindBy(xpath = "(//div[contains(@class,'ReactModalPortal')])//div[2]//button")
     private WebElement deleteButton;
-    @FindBy(xpath = "//div[@class='modal fade modal-hero modal-mobile-fullscreen js-modal-lazyload-assets modalOverlayBase_after-open']")
-    private WebElement strangeWindowLayer;
     @FindBy(xpath = "//a[@id='header-rdc-logo']/*")
     private WebElement realtorIcon;
     @FindBy(xpath = "//*[text()='My Profile']")
@@ -92,6 +90,16 @@ public class SavedHomesPage extends BasePage {
      */
     public SavedHomesPage clickLayerToStartDelete(){
         new Actions(driver).moveToElement(deleteLayer,10,10).click().perform();
+        return this;
+    }
+
+    /**
+     * click Delete button by index
+     * @param index of block which has to be deleted
+     * @return this page
+     */
+    public SavedHomesPage clickDeleteButtonByIndex(int index){
+        driver.findElement(By.xpath("(//button[@data-label='pc-save-cta']/span/i[2])[" + index + "]")).click();
         return this;
     }
 }
