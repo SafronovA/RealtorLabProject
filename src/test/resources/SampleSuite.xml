@@ -3,6 +3,7 @@
 <suite name="RealtorSuite" verbose="1" parallel="classes" thread-count="18" >
 
     <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
     </listeners>
 
     <test name="RealtorTest" >
