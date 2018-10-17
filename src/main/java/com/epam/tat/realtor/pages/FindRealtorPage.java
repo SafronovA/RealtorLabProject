@@ -15,20 +15,8 @@ public class FindRealtorPage extends BasePage {
     private WebElement searchInput;
     @FindBy(id = "far_search_button")
     private WebElement searchButton;
-    @FindBy(xpath = "//input[@id='srchHomeLocation']")
-    private WebElement realtorCityInput;
-
-    /**
-     * set city for realtor
-     *
-     * @param city which realtors work in
-     * @return this page
-     */
-    public FindRealtorPage setCity(String city) {
-        realtorCityInput.sendKeys(city);
-        return this;
-    }
-
+    @FindBy(id = "srchHomeLocation")
+    private WebElement locationInput;
 
     /**
      * enter realtor name in the search input
@@ -43,9 +31,21 @@ public class FindRealtorPage extends BasePage {
     }
 
     /**
+     * enter realtor location in the location input
+     *
+     * @param realtorLocation realtor name as search criteria
+     * @return this page
+     */
+    public FindRealtorPage enterLocation(String realtorLocation) {
+        locationInput.clear();
+        locationInput.sendKeys(realtorLocation);
+        return this;
+    }
+
+    /**
      * click search button
      *
-     * @return new FindRealtorPage
+     * @return new RealtorSearchResultPage
      */
     public RealtorSearchResultPage clickSearchButton() {
         waitUntilElementIsClickable(searchButton);

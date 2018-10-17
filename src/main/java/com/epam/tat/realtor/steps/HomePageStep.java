@@ -77,7 +77,7 @@ public class HomePageStep extends BasePageStep {
     /**
      * click Realtor button
      *
-     * @return new SearchRealtorPageStep
+     * @return new FindRealtorPageStep
      */
     public FindRealtorPageStep clickFindRealtorButton() {
         homePage.clickRealtorButton();
@@ -93,4 +93,25 @@ public class HomePageStep extends BasePageStep {
         homePage.getHeartIconsList().forEach(WebElement::click);
         return homePage.getHeartIconsList().size();
     }
+
+    /**
+     * navigate cursor on mortgage calculator to show drop-down menu
+     *
+     * @return HomePageStep
+     */
+    public HomePageStep navigateCursorToMortgageLink() {
+        homePage.navigateCursorOnMortgageLink();
+        return this;
+    }
+
+    /**
+     * click on mortgage calculator link
+     *
+     * @return new MortgageCalculatorPageStep
+     */
+    public MortgageCalculatorPageStep clickMortgageCalculatorLink() {
+        homePage.clickMortgageCalculatorLink();
+        return new MortgageCalculatorPageStep(driver);
+    }
+
 }

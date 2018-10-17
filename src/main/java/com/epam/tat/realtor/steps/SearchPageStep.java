@@ -1,6 +1,5 @@
 package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.SearchPage;
@@ -8,12 +7,9 @@ import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
 import java.util.ArrayList;
 import java.util.List;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -94,17 +90,6 @@ public class SearchPageStep extends BasePageStep {
                 IntStream.range(0, homePrices.size() - 1)
                         .allMatch(i -> homePrices.get(i).compareTo(homePrices.get(i + 1)) >= 0);
         return sortedDescending;
-
-    }
-
-    /**
-     * navigate to home page
-     *
-     * @return new Home page
-     */
-    public HomePageStep goToHomePage() {
-        driver.navigate().to(ConfigProperties.getTestProperty("url"));
-        return new HomePageStep(driver);
     }
 
     /**
@@ -216,6 +201,25 @@ public class SearchPageStep extends BasePageStep {
     }
 
     /**
+     * compares the declared number of found houses with the actual number of houses on the pages
+     *
+     * @return true, if the declared and actual number of houses matches, otherwise returns false
+     */
+    public boolean checkFindHomesCount() {
+        return getFindHomesCountFromSearchResult()==findAllHouses().size();
+    }
+
+    /**
+     * counting the total number of found houses displayed on all pages
+     *
+     * @return total amount of houses
+     */
+    public int getFindHomesCountFromSearchResult() {
+        int searchResultCount = Parser.parse(searchPage.getSearchResultCountElement().getText());
+        return searchResultCount;
+    }
+
+    /**
      * set value in the max price dropdown list
      *
      * @param maxValue value that is set in the dropdown list
@@ -296,10 +300,11 @@ public class SearchPageStep extends BasePageStep {
     public boolean checkPriceMapMarks(String minPrice, String maxPrice) {
         searchPage.clickViewMapButton();
         return searchPage.getMapMarks().stream()
-                .allMatch(x -> { BasePage.clickByJEx(x, driver);
-            return (Parser.parsePrice(minPrice) <= Parser.parse(searchPage.getMapMarkPrice()))
-                    && (Parser.parsePrice(maxPrice) >= Parser.parse(searchPage.getMapMarkPrice()));
-        });
+                .allMatch(x -> {
+                    BasePage.clickByJEx(x, driver);
+                    return (Parser.parsePrice(minPrice) <= Parser.parse(searchPage.getMapMarkPrice()))
+                            && (Parser.parsePrice(maxPrice) >= Parser.parse(searchPage.getMapMarkPrice()));
+                });
     }
 
     /**
@@ -323,9 +328,10 @@ public class SearchPageStep extends BasePageStep {
      */
     public boolean checkBathMapMarks(String bathNumber) {
         return searchPage.getMapMarks().stream()
-                .allMatch(x -> { BasePage.clickByJEx(x, driver);
-            return Parser.parse(bathNumber) <= Parser.parse(searchPage.getMapMarkBath());
-        });
+                .allMatch(x -> {
+                    BasePage.clickByJEx(x, driver);
+                    return Parser.parse(bathNumber) <= Parser.parse(searchPage.getMapMarkBath());
+                });
     }
 
     /**
@@ -337,10 +343,102 @@ public class SearchPageStep extends BasePageStep {
      */
     public boolean checkSqftMapMarks(String minSqft, String maxSqft) {
         return searchPage.getMapMarks().stream()
-                .allMatch(x -> { BasePage.clickByJEx(x, driver);
-            return (Parser.parse(minSqft) <= Parser.parse(searchPage.getMapMarkSqft()))
-                    && (Parser.parse(maxSqft) >= Parser.parse(searchPage.getMapMarkSqft()));
-        });
+                .allMatch(x -> {
+                    BasePage.clickByJEx(x, driver);
+                    return (Parser.parse(minSqft) <= Parser.parse(searchPage.getMapMarkSqft()))
+                            && (Parser.parse(maxSqft) >= Parser.parse(searchPage.getMapMarkSqft()));
+                });
+    }
+
+    /**
+     * click on view map button to open map
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep clickViewMapButton() {
+        searchPage.clickViewMapButton();
+        return this;
+    }
+
+    /**
+     * click lifestyle button on map
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep clickLifestyleButton() {
+        searchPage.clickLifestyleButton();
+        return this;
+    }
+
+    /**
+     * click on restaurants
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep selectRestaurants() {
+        searchPage.selectRestaurants();
+        return this;
+    }
+
+    /**
+     * check that all found lifestyles are restaurants
+     *
+     * @return true, if all found lifestyles are restaurants, false, if they are not
+     */
+    public boolean areAllFoundLifestyleRestaurants() {
+        boolean isRestaurant = true;
+        for (int i = 1; i < searchPage.getRestaurantsCount() + 1; i++) {
+            BasePage.clickByJEx(searchPage.getRestaurant(i), driver);
+            isRestaurant &= searchPage.getLifestyleType().equalsIgnoreCase("restaurants");
+        }
+        return isRestaurant;
+    }
+
+    /**
+     * click school button on map
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep clickSchoolButton() {
+        searchPage.clickSchoolButton();
+        return this;
+    }
+
+    /**
+     * select high school, remove ticks from other schools
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep selectHighSchool() {
+        searchPage.clickElementarySchool()
+                .clickMiddleSchool()
+                .clickPrivateSchool();
+        return this;
+    }
+
+    /**
+     * set school rating on 10
+     *
+     * @return SearchPageStep
+     */
+    public SearchPageStep selectSchoolRating(String rating) {
+        searchPage.selectSchoolRating(rating);
+        return this;
+    }
+
+    /**
+     * check that all displayed on map school have rating mare than 8 and check that all displayed on map school are high
+     *
+     * @return boolean array, the first elem true, if all displayed on map school have rating mare than 8, false, if have not
+     *  the second elem is true, if all displayed on map school are high, false, if are not
+     */
+    public boolean doesAllSchoolHaveSelectedRating(String rating) {
+        boolean isRatingMoreThanEight = true;
+        for (int i = 1; i < searchPage.getSchoolOnMapListCount() + 1; i++) {
+            BasePage.clickByJEx(searchPage.getSchool(i), driver);
+            isRatingMoreThanEight &= Integer.valueOf(searchPage.getSchoolRating()) >= Integer.valueOf(rating);
+        }
+        return isRatingMoreThanEight;
     }
 
     /**

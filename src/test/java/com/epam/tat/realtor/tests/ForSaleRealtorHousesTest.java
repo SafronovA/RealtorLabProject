@@ -13,10 +13,11 @@ public class ForSaleRealtorHousesTest extends BaseTest {
      * check that for sale houses on realtor page have status for sale
      */
     @Test
-    public void forSaleRealtorHouses(){
+    public void forSaleRealtorHouses() {
         RealtorPageStep realtorPageStep = homePageStep.clickFindRealtorButton()
-                .setCity(CITY_NAME)
-                .findRealtor(REALTOR_NAME)
+                .enterRealtorsLocation(CITY_NAME)
+                .enterRealtorName(REALTOR_NAME)
+                .clickSearchButton()
                 .clickRealtorIcon();
         Assert.assertTrue(realtorPageStep.areHousesHaveStatusForSale(),
                 "One of houses do not have 'For Sale' status");

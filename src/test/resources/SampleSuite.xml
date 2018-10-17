@@ -1,8 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="RealtorSuite" verbose="1" parallel="classes" thread-count="9" >
+<suite name="RealtorSuite" verbose="1" parallel="methods" thread-count="14">
 
     <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
     </listeners>
 
     <test name="RealtorTest" >
@@ -10,12 +11,17 @@
             <class name="com.epam.tat.realtor.tests.EditProfileNameTest"/>
             <class name="com.epam.tat.realtor.tests.EditProfileAddressTest"/>
             <class name="com.epam.tat.realtor.tests.MapMarksTest"/>
+            <class name="com.epam.tat.realtor.tests.MortgageCalculatorTest"/>
+            <class name="com.epam.tat.realtor.tests.NumberOfHousesFoundTest"/>
             <class name="com.epam.tat.realtor.tests.RealtorReviewsTest"/>
             <class name="com.epam.tat.realtor.tests.RealtorSoldHousesTest"/>
+            <class name="com.epam.tat.realtor.tests.RestaurantsFilterTest"/>
             <class name="com.epam.tat.realtor.tests.SavedHomesTest"/>
             <class name="com.epam.tat.realtor.tests.SavedSearchTest"/>
+            <class name="com.epam.tat.realtor.tests.SchoolRatingTest"/>
             <class name="com.epam.tat.realtor.tests.SearchByConditionsTest"/>
             <class name="com.epam.tat.realtor.tests.SortByPriceTest"/>
+            <class name="com.epam.tat.realtor.tests.SortByRecommendationsTest"/>
         </classes>
     </test>
 
