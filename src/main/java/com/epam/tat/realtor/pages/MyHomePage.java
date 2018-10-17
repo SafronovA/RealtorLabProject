@@ -17,18 +17,14 @@ public class MyHomePage extends BasePage {
         super(driver);
         PageFactory.initElements(driver, this);
     }
-    By layer = By.className("ReactModal__Overlay ReactModal__Overlay--after-open modal-overlay");
-    By editingWindow = By.className("ReactModal__Content ReactModal__Content--after-open modal--financial-data");
-    By verificationWindow = By.className("thinking-loader invisible neighborhood-whatif loader-full-screen");
-    By addressElement = By.className("home-address");
+
+    private By verificationButton = By.xpath("//*[@class='owner-verification-data-form__action-button call-to-action__button centered col-xxxs-12 margin-top-lg']");
     @FindBy(className = "edit-facts")
     private WebElement editHomeFactsButton;
     @FindBy(xpath = "//*[text()='Save']")
     private WebElement saveButton;
     @FindBy(className = "owner-verification-data-form__close-container")
     private WebElement closeVerificationWindowButton;
-    @FindBy(className = "container_12hj5f")
-    private WebElement closeEnterPhoneWindowButton;
     @FindBy(xpath = "//*[@name='beds']")
     private WebElement bedroomsInput;
     @FindBy(xpath = "//*[@name='baths']")
@@ -68,16 +64,10 @@ public class MyHomePage extends BasePage {
      *
      * @return this page
      */
-    public MyHomePage closeAlertWindows() {
+    public MyHomePage closeVerificationWindows() {
+        waitUntilElementIsVisible(verificationButton);
         closeVerificationWindowButton.click();
-        closeEnterPhoneWindowButton.click();
-//        waitInvisibilityOfElementLocated(verificationWindow);
-//        waitForPresenceOfAllElementsLocatedBy(addressElement);
-//        waitForJQueryIsLoad();
-//        waitForElements(addressElement);
-//
-//        waitUntilElementIsClickable(editHomeFactsButton);
-//        waitUntilElementIsVisible(editHomeFactsButton);
+        waitInvisibilityOfElementLocated(verificationButton);
         return this;
     }
 
@@ -152,12 +142,6 @@ public class MyHomePage extends BasePage {
      * @return new House()
      */
     public House getHouse() {
-        try { //Ok, you can call me stupid, but I have not found another way of waiting, that gives 100% result
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         int bedNumber = getHouseParameterByName("Bedrooms");
         int bathNumber = getHouseParameterByName("Bathrooms");
         int square = getHouseParameterByName("Sq. Ft.");
@@ -174,10 +158,7 @@ public class MyHomePage extends BasePage {
      */
     private int getHouseParameterByName(String name) {
         return Parser.parse(homeInfoList.stream()
-                .filter(x -> x
-                        .findElement(By.xpath("span"))
-                        .getText()
-                        .equals(name))
+                .filter(x -> x.findElement(By.xpath("span")).getText().equals(name))
                 .findFirst().get()
                 .findElement(By.xpath("div"))
                 .getText());
