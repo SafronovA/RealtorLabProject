@@ -36,8 +36,8 @@ public class RealtorSearchResultPage extends BasePage {
     private List<WebElement> nextPageButton;
     @FindBy(id = "map_view_link")
     private WebElement activityMapButton;
-    @FindBy(id = "agent_map_card")
-    private List<WebElement> realtorCards;
+    @FindBy(xpath = "(//*[@id='agent_map_card'])[1]")
+    private WebElement firstRealtorCard;
     @FindBy(xpath = "//div[@id='agent_search_detail_more_properties_container']/div")
     private List<WebElement> homeCards;
     @FindBy(id = "btn_show_more_property")
@@ -101,9 +101,9 @@ public class RealtorSearchResultPage extends BasePage {
     /**
      * @return list of realtor cards
      */
-    public List<WebElement> getRealtorCards() {
+    public WebElement getFirstRealtorCard() {
         waitForJQueryIsLoad();
-        return realtorCards;
+        return firstRealtorCard;
     }
 
     /**
@@ -122,12 +122,12 @@ public class RealtorSearchResultPage extends BasePage {
         return driver.findElements(By.xpath(ICONS_ON_MAP_LOCATOR));
     }
 
-    /**
-     * @return locator of icons from map
-     */
-    public String getIconsLocator() {
-        return ICONS_ON_MAP_LOCATOR;
-    }
+//    /**
+//     * @return locator of icons from map
+//     */
+//    public String getIconsLocator() {
+//        return ICONS_ON_MAP_LOCATOR;
+//    }
 
     public WebElement getIconByIndex(int index){
         By currentElement = By.xpath("(" + ICONS_ON_MAP_LOCATOR + ")[" + index + "]");

@@ -43,6 +43,9 @@ public class MyHomePageStep extends BasePageStep {
         return this;
     }
 
+    /**
+     * getting a house business object
+     */
     public void getHouse(){
         house = myHomePage.getHouse();
     }

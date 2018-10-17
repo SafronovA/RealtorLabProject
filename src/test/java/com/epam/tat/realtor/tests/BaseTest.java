@@ -32,7 +32,7 @@ public class BaseTest {
         while (isOldPage) {
             try {
                 isOldPage = false;
-                driver.findElement(By.xpath("//*[@id='downshift-0-input']"));
+                driver.findElement(By.xpath("//*[@id='downshift-2-input']"));
             } catch (NoSuchElementException e) {
                 System.out.println("New version of the home page. Page has to be  reloaded...");
                 isOldPage = true;
@@ -49,7 +49,7 @@ public class BaseTest {
     /**
      * close browser
      */
-    @AfterClass
+    @AfterClass (enabled = false)
     void closeResources() {
         driver.close();
     }

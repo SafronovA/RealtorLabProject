@@ -117,9 +117,7 @@ public class RealtorSearchResultPageStep extends BasePageStep {
      * @return this step
      */
     public RealtorSearchResultPageStep selectFirstRealtorCard() {
-        realtorSearchResultPage.getRealtorCards()
-                .get(0)
-                .click();
+        realtorSearchResultPage.getFirstRealtorCard().click();
         return this;
     }
 
@@ -156,7 +154,7 @@ public class RealtorSearchResultPageStep extends BasePageStep {
                 BasePage.clickByJEx(icon, driver);
                 result &= iconIsSelected(icon);
             } else {
-                result = false;
+                return false;
             }
         }
         return result;
@@ -185,9 +183,7 @@ public class RealtorSearchResultPageStep extends BasePageStep {
      * @return List<Integer> int recommendations received from WebElement list
      */
     private List<Integer> receiveRecommendationsListFromWebElementList(List<WebElement> recommendations) {
-        List<Integer> recommendationsList = recommendations.stream()
-                .map(WebElement -> Integer.valueOf(WebElement.getText())).collect(Collectors.toList());
-        return recommendationsList;
+        return recommendations.stream().map(WebElement -> Integer.valueOf(WebElement.getText())).collect(Collectors.toList());
     }
 
     /**
@@ -195,7 +191,7 @@ public class RealtorSearchResultPageStep extends BasePageStep {
      *
      * @return Map with id and status of icons
      */
-    private Map<String, Status> getIconsData() {
+    private Map<String, String> getIconsData() {
         return realtorSearchResultPage.getIconsFromMap().stream()
                 .collect(Collectors.toMap(x -> x.getAttribute("data-id"), this::getIconStatus));
     }
@@ -205,7 +201,7 @@ public class RealtorSearchResultPageStep extends BasePageStep {
      *
      * @return Map with id and status of home cards
      */
-    private Map<String, Status> getHomesData() {
+    private Map<String, String> getHomesData() {
         return realtorSearchResultPage.getHomeCards().stream()
                 .collect(Collectors.toMap(x -> x.getAttribute("data-mpr-id"), this::getHomeStatus));
     }
@@ -216,21 +212,9 @@ public class RealtorSearchResultPageStep extends BasePageStep {
      * @param iconElement icon to be checked
      * @return status passed element
      */
-    private Status getIconStatus(WebElement iconElement) {
-        Status status;
+    private String getIconStatus(WebElement iconElement) {
         String statusFromClassAttribute = Parser.getLastWord(iconElement.getAttribute("class"));
-        switch (statusFromClassAttribute) {
-            case "for_sale":
-                status = Status.FOR_SALE;
-                break;
-            case "recently_sold":
-                status = Status.JUST_SOLD;
-                break;
-            default:
-                status = Status.UNKNOWN;
-                break;
-        }
-        return status;
+        return statusFromClassAttribute;
     }
 
     /**
@@ -239,24 +223,12 @@ public class RealtorSearchResultPageStep extends BasePageStep {
      * @param homeElement home to be checked
      * @return status passed element
      */
-    private Status getHomeStatus(WebElement homeElement) {
-        Status status;
+    private String getHomeStatus(WebElement homeElement) {
         By passToAttributeWithStatus = By.xpath("div/div");
         String statusFromClassAttribute = Parser.getLastWord(homeElement.findElement(passToAttributeWithStatus).getAttribute("class"));
-        switch (statusFromClassAttribute) {
-            case "for_sale":
-                status = Status.FOR_SALE;
-                break;
-            case "recently_sold":
-                status = Status.JUST_SOLD;
-                break;
-            default:
-                status = Status.UNKNOWN;
-                break;
-        }
-        return status;
+        return statusFromClassAttribute;
     }
-
+    
     /**
      * checks is web element selected or not
      *
@@ -268,10 +240,4 @@ public class RealtorSearchResultPageStep extends BasePageStep {
         return Parser.getLastWord(classValue).equals("selected");
     }
 
-    /**
-     * possible web element statuses
-     */
-    private enum Status {
-        FOR_SALE, JUST_SOLD, UNKNOWN
-    }
 }
