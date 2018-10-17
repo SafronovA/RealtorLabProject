@@ -3,7 +3,6 @@ package com.epam.tat.realtor.steps;
 import com.epam.tat.realtor.pages.SavedHomesPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 
 public class SavedHomesPageStep extends BasePageStep {
     private SavedHomesPage savedHomesPage;

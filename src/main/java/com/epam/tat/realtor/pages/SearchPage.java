@@ -592,7 +592,7 @@ public class SearchPage extends BasePage {
     public SearchPage selectSchoolRating(String raiting){
         WebElement schoolRating = driver.findElement(By.xpath(XPATH_FOR_SCHOOL_RATING + "[" + raiting + "]"));
         new Actions(driver).dragAndDrop(schoolRatingSlider, schoolRating).perform();
-        waitForJQueryIsLoad();//waitUntilElementIsVisible(schoolOnMapList.get(0));
+        waitForJQueryIsLoad();
         return this;
     }
 

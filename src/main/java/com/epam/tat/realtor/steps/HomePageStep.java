@@ -52,19 +52,6 @@ public class HomePageStep extends BasePageStep {
     }
 
     /**
-     * navigate to user icon
-     * waiting for the 'Sign Out' link to appear
-     * click sign out button
-     *
-     * @return this page
-     */
-    public HomePageStep logOut() {
-        homePage.navigateToUserIcon()
-                .clickLogOutLink();
-        return this;
-    }
-
-    /**
      * click on user icon
      *
      * @return new SavedHomesPageStep
