@@ -4,10 +4,10 @@ import com.epam.tat.realtor.steps.SearchPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SchoolRatingAndTypeTest extends BaseTest {
+public class SchoolRatingTest extends BaseTest {
 
-    private static final String CITY_NAME = "Santa Rosa, CA";
-    private static final String RATING = "8";
+    private static final String CITY_NAME = "Anchorage, AK";
+    private static final String RATING = "9";
 
     /**
      * select high and rating 8
@@ -21,11 +21,9 @@ public class SchoolRatingAndTypeTest extends BaseTest {
                 .clickSchoolButton()
                 .selectHighSchool()
                 .selectSchoolRating(RATING);
-        boolean[] ratingAndTypeComparingResult = searchPageStep.doesAllSchoolHaveSelectedRatingAndType(RATING);
-        Assert.assertTrue(ratingAndTypeComparingResult[0],
+        Assert.assertTrue(searchPageStep.doesAllSchoolHaveSelectedRating(RATING),
                 "One of the schools shown on the map does not have a rating more that " + RATING);
-        Assert.assertTrue(ratingAndTypeComparingResult[1],
-                "One of the schools shown on the map are not high");
+
     }
 
 }
