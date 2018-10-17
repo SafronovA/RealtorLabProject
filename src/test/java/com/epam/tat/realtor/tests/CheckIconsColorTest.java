@@ -23,8 +23,8 @@ public class CheckIconsColorTest extends BaseTest {
     @Test
     public void checkIconsColor() {
         realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
-                .setLocation(LOCATION)
-                .setName(NAME)
+                .enterRealtorsLocation(LOCATION)
+                .enterRealtorName(NAME)
                 .clickSearchButton()
                 .clickActivityMapButton()
                 .clickGetStartedButton()
