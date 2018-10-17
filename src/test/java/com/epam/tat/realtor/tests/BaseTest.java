@@ -40,10 +40,10 @@ public class BaseTest {
     /**
      * close browser
      */
-//    @AfterSuite
-//    void closeResources() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+    @AfterSuite
+    void closeResources() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }
