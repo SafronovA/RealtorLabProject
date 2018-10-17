@@ -49,8 +49,10 @@ public class BaseTest {
     /**
      * close browser
      */
-    @AfterClass
+    @AfterSuite
     void closeResources() {
-        driver.close();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
