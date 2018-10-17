@@ -35,7 +35,7 @@ public class RealtorPage extends BasePage {
     private WebElement loadMoreRecommendationsButton;
     @FindBy(xpath = "//div[@class='recommendation-card']")
     private List<WebElement> realtorRecommendations;
-    
+
     /**
      * get realtor reviews list
      *
