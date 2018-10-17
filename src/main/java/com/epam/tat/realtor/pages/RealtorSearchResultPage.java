@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -15,7 +16,9 @@ public class RealtorSearchResultPage extends BasePage {
     }
 
     private final String ICONS_ON_MAP_LOCATOR = "//*[@id='agent_pin']/div";
-    private By getStartedButton = By.xpath("//*[@class='btn btn-secondary block-center']");
+    private By getStartedWindow = By.className("modal-header");
+    @FindBy(xpath = "//*[@class='btn btn-secondary block-center']")
+    private WebElement getStartedButton;
     @FindBy(xpath = "(//div[@class='agent-detail-item ellipsis']/a/strong)[2]")
     private WebElement realtorSoldHouses;
     @FindBy(xpath = "//div[@class='agent-list-card-img']/img")
@@ -122,6 +125,11 @@ public class RealtorSearchResultPage extends BasePage {
         return driver.findElements(By.xpath(ICONS_ON_MAP_LOCATOR));
     }
 
+    /**
+     * find icon on map by index and return it
+     * @param index by which the icon will be searched
+     * @return icon web element
+     */
     public WebElement getIconByIndex(int index){
         By currentElement = By.xpath("(" + ICONS_ON_MAP_LOCATOR + ")[" + index + "]");
         WebElement icon = driver.findElement(currentElement);
@@ -189,15 +197,9 @@ public class RealtorSearchResultPage extends BasePage {
      * @return this page
      */
     public RealtorSearchResultPage clickGetStartedButton() {
-        try {                            //another ways don't give 100% result
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        waitUntilElementIsVisible(driver.findElement(getStartedButton));
-        waitUntilElementIsClickable(driver.findElement(getStartedButton));
-        driver.findElement(getStartedButton).click();
-        waitUntilElementIsInvisible(driver.findElement(By.className("modal-header")));
+        waitUntilElementIsVisible(getStartedButton);
+        getStartedButton.click();
+        waitInvisibilityOfElementLocated(getStartedWindow);
         return this;
     }
 

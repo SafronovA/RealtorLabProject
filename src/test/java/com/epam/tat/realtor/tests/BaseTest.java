@@ -49,7 +49,7 @@ public class BaseTest {
     /**
      * close browser
      */
-    @AfterClass (enabled = false)
+    @AfterClass
     void closeResources() {
         driver.close();
     }

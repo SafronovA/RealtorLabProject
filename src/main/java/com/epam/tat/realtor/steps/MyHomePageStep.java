@@ -39,7 +39,7 @@ public class MyHomePageStep extends BasePageStep {
                 .enterSquare(sqFoot)
                 .enterLotSize(lotSize)
                 .clickSaveButton()
-                .closeAlertWindow();
+                .closeAlertWindows();
         return this;
     }
 
