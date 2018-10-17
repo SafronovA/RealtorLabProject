@@ -18,6 +18,7 @@ public class SavedHomesPage extends BasePage {
     }
 
     By pageLayer = By.xpath("//div[@class='modal fade modal-hero modal-mobile-fullscreen js-modal-lazyload-assets modalOverlayBase_after-open']");
+    //div[@class="modal fade modal-hero modal-mobile-fullscreen js-modal-lazyload-assets modalOverlayBase_after-open"]
     @FindBy(linkText = "Saved Searches")
     private WebElement savedSearches;
     @FindBy(xpath = "//button[@data-label='pc-save-cta']/span/i[2]")
@@ -30,6 +31,8 @@ public class SavedHomesPage extends BasePage {
     private WebElement realtorIcon;
     @FindBy(xpath = "//*[text()='My Profile']")
     private WebElement myProfileLink;
+    @FindBy(xpath = "(//div[@class='myaccount container']/div)[2]")
+    private WebElement deleteLayer;
 
     /**
      * get saved homes button list
@@ -68,8 +71,11 @@ public class SavedHomesPage extends BasePage {
      */
     public SavedHomesPage clickDeleteButton() {
         waitUntilElementIsClickable(deleteButton);
+  //
         new Actions(driver).click(deleteButton).perform();
+
         driverWait.until(ExpectedConditions.invisibilityOfElementLocated(pageLayer));
+
         return this;
     }
 
@@ -82,5 +88,14 @@ public class SavedHomesPage extends BasePage {
     public HomePage clickRealtorIcon() {
         realtorIcon.click();
         return new HomePage(driver);
+    }
+
+    /**
+     * click delete layer to start deleting saved homes elements
+     * @return this page
+     */
+    public SavedHomesPage clickLayerToStartDelete(){
+        new Actions(driver).moveToElement(deleteLayer,10,10).click().perform();
+        return this;
     }
 }

@@ -39,11 +39,4 @@ public class SavedHomesTest extends BaseTest {
                 "saved homes number in saved homes section mismatch number of saved homes on the search page");
     }
 
-    /**
-     * clear saved homes in the saved homes section
-     */
-    @AfterMethod
-    public void clearResources() {
-        new SavedHomesPageStep(driver).clearSavedHomes();
-    }
 }

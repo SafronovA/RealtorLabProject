@@ -1,10 +1,13 @@
 package com.epam.tat.realtor.tests;
 
+import com.epam.jira.JIRATestKey;
 import com.epam.tat.realtor.steps.SearchPageStep;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
+@Listeners({com.epam.jira.testng.ExecutionListener.class})
 public class MapMarksTest extends BaseTest {
     private final String CITY_NAME = "Berkeley, CA";
     private final String MIN_PRICE_VALUE = "$250k";
@@ -20,6 +23,7 @@ public class MapMarksTest extends BaseTest {
      * click map view button
      * check if all map marks contain values that match search parameters
      */
+    @JIRATestKey(key = "EPMFARMATS-4924")
     @Test
     public void checkMapMarks() {
         SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)

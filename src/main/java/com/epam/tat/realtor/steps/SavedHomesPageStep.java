@@ -2,6 +2,7 @@ package com.epam.tat.realtor.steps;
 
 import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.SavedHomesPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
@@ -39,12 +40,14 @@ public class SavedHomesPageStep extends BasePageStep {
      *
      * @return new HomePage
      */
+
     public HomePageStep clearSavedHomes() {
         if (!savedHomesPage.getSaveHomesButtonList().isEmpty()) {
-            savedHomesPage.getSaveHomesButtonList().forEach(x -> {
-                new Actions(driver).click(x).perform();//x.click();
+            savedHomesPage.clickLayerToStartDelete();
+            for (int j = savedHomesPage.getSaveHomesButtonList().size(); j >0; j--) {
+                driver.findElement(By.xpath("(//button[@data-label='pc-save-cta']/span/i[2])[" + j + "]")).click();
                 savedHomesPage.clickDeleteButton();
-            });
+            }
         }
         savedHomesPage.clickRealtorIcon();
         return new HomePageStep(driver);

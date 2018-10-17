@@ -27,6 +27,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.epam.jira</groupId>
+            <artifactId>test-management-adapter</artifactId>
+            <version>1.8</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/test-management-adapter-1.8-jar-with-dependencies.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.14.3</version>

@@ -91,7 +91,10 @@ public class HomePageStep extends BasePageStep {
      * @return saved homes list size
      */
     public int saveHomes() {
-        homePage.getHeartIconsList().stream().forEach(x->{BasePage.scrollToElement(x,driver);x.click();});
+        homePage.getHeartIconsList().stream().forEach(x->{
+            //BasePage.scrollToElement(x,driver);
+                    x.click();});
+        System.out.println(homePage.getHeartIconsList().size());
         return homePage.getHeartIconsList().size();
     }
 
