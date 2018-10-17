@@ -119,7 +119,7 @@ public class RealtorPageStep extends BasePageStep {
 
 
     /**
-     * drag down iframe to 50 yOffset
+     * drag down iframe to 100 yOffset
      *
      * @return this page
      */
