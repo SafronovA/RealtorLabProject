@@ -40,6 +40,16 @@ public class RealtorSearchResultPageStep extends BasePageStep {
     }
 
     /**
+     * get value of realtor recommendations count
+     *
+     * @return recommendations count
+     */
+    public int getRecommendationsCount() {
+        return Integer.valueOf(realtorSearchResultPage.getRecommendations().getText());
+    }
+
+
+    /**
      * click realtor icon
      *
      * @return new RealtorPageStep
@@ -228,7 +238,7 @@ public class RealtorSearchResultPageStep extends BasePageStep {
         String statusFromClassAttribute = Parser.getLastWord(homeElement.findElement(passToAttributeWithStatus).getAttribute("class"));
         return statusFromClassAttribute;
     }
-    
+
     /**
      * checks is web element selected or not
      *

@@ -14,7 +14,7 @@ public class RealtorPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    By soldHouses = By.xpath("//div[@class='leaflet-marker-pane']/div");
+    private By soldHouses = By.xpath("//div[@class='leaflet-marker-pane']/div");
     @FindBy(xpath = "//ul[@class='nav nav-tabs nav-pills']//a[contains(text(),'Recently Sold')]")
     private WebElement soldHousesSection;
     @FindBy(xpath = "//div[@class='leaflet-marker-pane']/div")
@@ -25,8 +25,10 @@ public class RealtorPage extends BasePage {
     private WebElement zoomOutButton;
     @FindBy(xpath = "//p/a[@id='inquiry_cta']")
     private WebElement askQuestionButton;
-    @FindBy(xpath = "//a[@class='btn btn-plain load-more-button load-more-review-button']")
+    @FindBy(xpath = "//a[contains(@class,'btn btn-plain load-more-button load-more-review-button')]")
     private WebElement loadMoreReviewsButton;
+    @FindBy(xpath = "//*[@id='footer-links-secondary']")
+    private WebElement bottomElement;
     @FindBy(xpath = "//ul[@id='agent-review-list']/li[not(@style='display: none;')]")
     private List<WebElement> realtorReviews;
     @FindBy(xpath = "//div[contains(@class,'price leaflet-marker-icon-for-sale')]")
@@ -35,6 +37,10 @@ public class RealtorPage extends BasePage {
     private WebElement houseStatusDescription;
     @FindBy(xpath = "//*[@id='team_nav_holder']/h2")
     private WebElement listingActivity;
+    @FindBy(xpath = "//button[contains(text(),'re Re')]")
+    private WebElement loadMoreRecommendationsButton;
+    @FindBy(xpath = "//div[@class='recommendation-card']")
+    private List<WebElement> realtorRecommendations;
 
     /**
      * get realtor reviews list
@@ -83,6 +89,16 @@ public class RealtorPage extends BasePage {
         waitUntilElementIsVisible(houseStatusDescription);
         return houseStatusDescription.getText();
     }
+
+    /**
+     * get realtor recommendations list
+     *
+     * @return realtor recommendations
+     */
+    public List<WebElement> getRealtorRecommendations() {
+        return realtorRecommendations;
+    }
+
 
     /**
      * click "Recently Sold" section above iframe map
@@ -148,4 +164,34 @@ public class RealtorPage extends BasePage {
     public boolean isLoadMoreReviewsButtonDisplayed() {
         return loadMoreReviewsButton.isDisplayed();
     }
+
+    /**
+     * scroll down the page
+     */
+    public void scrollDown() {
+        scrollToElement(bottomElement, driver);
+    }
+
+    /**
+     * check if LoadMoreRecommendations button is displayed
+     *
+     * @return if LoadMoreRecommendations button is displayed
+     */
+    public boolean isLoadMoreRecommendationsButtonDisplayed() {
+        return loadMoreRecommendationsButton.isDisplayed();
+    }
+
+    /**
+     * click Load More Recommendations button
+     *
+     * @return this page
+     */
+    public RealtorPage clickLoadMoreRecommendationsButton() {
+        scrollToElement(loadMoreRecommendationsButton, driver);
+        waitForJQueryIsLoad();
+        loadMoreRecommendationsButton.click();
+        return this;
+    }
+
+
 }
