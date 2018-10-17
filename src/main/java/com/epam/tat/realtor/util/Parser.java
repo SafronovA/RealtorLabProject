@@ -1,5 +1,8 @@
 package com.epam.tat.realtor.util;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Parser {
 
     /**
@@ -10,6 +13,31 @@ public class Parser {
      */
     public static Integer parse(String str) {
         return Integer.valueOf(str.replaceAll("[^\\d.]", "").trim());
+    }
+
+    /**
+     * parse String value removing any non digit character
+     *
+     * @param str string to be parsed
+     * @return String value after parsing operation
+     */
+    public static String parseToString(String str) {
+        return str.replaceAll("[^\\d.]", "").trim();
+    }
+
+    /**
+     * parse String value getting everything to the right of the last space
+     *
+     * @param str string to be parsed
+     * @return String value after parsing operation
+     */
+    public static String getLastWord(String str) {
+        String lastWord;
+        Pattern pattern = Pattern.compile("\\s(\\w+)$");
+        Matcher matcher = pattern.matcher(str);
+        matcher.find();
+        lastWord = matcher.group().trim();
+        return lastWord;
     }
 
     /**
