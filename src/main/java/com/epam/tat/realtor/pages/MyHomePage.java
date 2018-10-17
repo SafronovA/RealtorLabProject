@@ -159,18 +159,10 @@ public class MyHomePage extends BasePage {
      * @return some house parameter by parameter's name
      */
     private int getHouseParameterByName(String name) {
-        int value = -1;
-        By elementWithParameterName = By.xpath("span");
-        By elementWithParameterValue = By.xpath("div");
-        for (int i = 0; i < homeInfoList.size(); i++) {
-            WebElement parameterElement = homeInfoList.get(i);
-            String parameterName = parameterElement.findElement(elementWithParameterName).getText();
-            if (parameterName.equals(name)) {
-                value = Parser.parse(parameterElement.findElement(elementWithParameterValue).getText());
-                break;
-            }
-        }
-        return value;
+        return Parser.parse(homeInfoList.stream()
+                .filter(x -> x.findElement(By.xpath("span")).getText().equals(name))
+                .findFirst().get()
+                .findElement(By.xpath("div")).getText());
     }
 
     /**

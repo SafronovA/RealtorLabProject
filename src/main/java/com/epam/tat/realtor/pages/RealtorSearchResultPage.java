@@ -122,13 +122,6 @@ public class RealtorSearchResultPage extends BasePage {
         return driver.findElements(By.xpath(ICONS_ON_MAP_LOCATOR));
     }
 
-//    /**
-//     * @return locator of icons from map
-//     */
-//    public String getIconsLocator() {
-//        return ICONS_ON_MAP_LOCATOR;
-//    }
-
     public WebElement getIconByIndex(int index){
         By currentElement = By.xpath("(" + ICONS_ON_MAP_LOCATOR + ")[" + index + "]");
         WebElement icon = driver.findElement(currentElement);
