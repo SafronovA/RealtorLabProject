@@ -82,6 +82,16 @@ public class HomePageStep extends BasePageStep {
     }
 
     /**
+     * create search request in the home estimate section
+     * @return this page
+     */
+    public PropertyRecordsPageStep goToHomeEstimate() {
+        homePage.clickHomeEstimate()
+                .clickSearchButton();
+        return new PropertyRecordsPageStep(driver);
+    }
+
+    /**
      * navigate cursor on mortgage calculator to show drop-down menu
      *
      * @return HomePageStep
