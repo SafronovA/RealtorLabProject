@@ -3,7 +3,7 @@
 <suite name="RealtorSuite" verbose="1" >
 
     <listeners>
-        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <!--<listener class-name="org.uncommons.reportng.HTMLReporter"/>-->
         <!--<listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>-->
     </listeners>
 

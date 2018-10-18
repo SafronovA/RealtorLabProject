@@ -80,7 +80,7 @@
                         <property>
                             <name>listener</name>
                             <value>
-                                org.uncommons.reportng.HTMLReporter,
+                                org.uncommons.reportng.HTMLReporter
                             </value>
                         </property>
                     </properties>
