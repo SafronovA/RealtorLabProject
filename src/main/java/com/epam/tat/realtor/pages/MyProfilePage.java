@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,6 +16,7 @@ public class MyProfilePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    private By strangeLayer = By.xpath("//div[@class='modal fade modal-hero modal-mobile-fullscreen js-modal-lazyload-assets modalOverlayBase_after-open']");
     @FindBy(xpath = "//*[@id='header-login-menu']/li[1]")
     private WebElement userIcon;
     @FindBy(linkText = "Sign Out")
@@ -82,12 +84,14 @@ public class MyProfilePage extends BasePage {
         String country = profileCountry.getAttribute("innerHTML");
         return country;
     }
+
     /**
      * @return WebElement (@code profileAddress)
      */
     public WebElement getProfileAddressWebElement() {
         return profileAddress;
     }
+
 
     /**
      * @return WebElement (@code profileCityAndState)
@@ -200,8 +204,7 @@ public class MyProfilePage extends BasePage {
      * @return this page
      */
     public MyProfilePage clickEditProfileButton() {
-        waitUntilElementIsVisible(editProfileButton);
-        waitUntilElementIsClickable(editProfileButton);
+        waitInvisibilityOfElementLocated(strangeLayer);
         editProfileButton.click();
         return this;
     }

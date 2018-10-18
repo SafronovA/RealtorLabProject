@@ -39,10 +39,10 @@ public class SavedHomesPageStep extends BasePageStep {
      */
     public HomePageStep clearSavedHomes() {
         if (!savedHomesPage.getSaveHomesButtonList().isEmpty()) {
-            savedHomesPage.getSaveHomesButtonList().forEach(x -> {
-                x.click();
-                savedHomesPage.clickDeleteButton();
-            });
+            savedHomesPage.clickLayerToStartDelete();
+            for (int j = savedHomesPage.getSaveHomesButtonList().size(); j >0; j--) {
+                savedHomesPage.clickDeleteButtonByIndex(j).clickDeleteButton();
+            }
         }
         savedHomesPage.clickRealtorIcon();
         return new HomePageStep(driver);

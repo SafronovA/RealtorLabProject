@@ -1,7 +1,9 @@
 package com.epam.tat.realtor.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -11,50 +13,42 @@ public class FindRealtorPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "(//div[@class='agent-detail-item ellipsis']/a/strong)[2]")
-    private WebElement realtorSoldHouses;
-    @FindBy(xpath = "//div[@class='agent-list-card-img']/img")
-    private WebElement userIcon;
-    @FindBy(xpath = "//div[@class='rating-count']")
-    private WebElement ratingCount;
-    @FindBy(xpath = "//div[contains(@class,'agent-recommendation')]//strong")
-    private WebElement recommendationsCount;
+    @FindBy(id = "srchHomeAgent")
+    private WebElement searchInput;
+    @FindBy(id = "srchHomeLocation")
+    private WebElement locationInput;
 
     /**
-     * get number of realtor sold houses
+     * enter realtor name in the search input
      *
-     * @return get number of realtor sold houses
+     * @param realtorName realtor name as search criteria
+     * @return this page
      */
-    public String getRealtorSoldHouses() {
-        return realtorSoldHouses.getText();
+    public FindRealtorPage enterRealtorName(String realtorName) {
+        searchInput.clear();
+        searchInput.sendKeys(realtorName);
+        return this;
     }
 
     /**
-     * get rating count
+     * enter realtor location in the location input
      *
-     * @return rating count
+     * @param realtorLocation realtor name as search criteria
+     * @return this page
      */
-    public WebElement getRatingCount() {
-        return ratingCount;
+    public FindRealtorPage enterLocation(String realtorLocation) {
+        locationInput.clear();
+        locationInput.sendKeys(realtorLocation);
+        return this;
     }
 
     /**
-     * click on the realtor icon
+     * perform submit operation
      *
-     * @return new RealtorPage
+     * @return new RealtorSearchResultPage
      */
-    public RealtorPage clickRealtorIcon() {
-        waitUntilElementIsClickable(userIcon);
-        userIcon.click();
-        return new RealtorPage(driver);
-    }
-
-    /**
-     * get recommendations count
-     *
-     * @return recommendations count
-     */
-    public WebElement getRecommendations() {
-        return recommendationsCount;
+    public RealtorSearchResultPage clickSearchButton() {
+        new Actions(driver).sendKeys(Keys.ENTER).perform();
+        return new RealtorSearchResultPage(driver);
     }
 }

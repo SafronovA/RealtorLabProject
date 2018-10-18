@@ -1,6 +1,8 @@
 package com.epam.tat.realtor.pages;
 
 import com.epam.tat.realtor.ConfigProperties;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -16,34 +18,38 @@ public class HomePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    private By strangeLayer = By.id("loginModal");
     @FindBy(linkText = "Log In")
     private WebElement signInButton;
     @FindBy(id = "email_address")
     private WebElement emailInput;
     @FindBy(id = "password")
     private WebElement passwordInput;
-    @FindBy(id = "global_login_btn")
-    private WebElement logInSubmitButton;
-    @FindBy(xpath = "//*[@id='my-account-url']/following-sibling::span[1]")
+    @FindBy(xpath = "//span[contains(@class,'global-account-')]")
     private WebElement userIcon;
-    @FindBy(xpath = "//*[@id='logout']")
+    @FindBy(linkText = "Sign Out")
     private WebElement logOutLink;
-    @FindBy(xpath = "//a[contains(text(),'Saved Homes')]")
-    private WebElement savedHomesLink;
-    @FindBy(xpath = "//*[@id='my_search_div']/div/a")
-    private WebElement savedSearchLink;
-    @FindBy(xpath = "//*[@id='searchBox']")
+    @FindBy(xpath = "//input[contains(@id,'downshift')]")
     private WebElement searchInput;
-    @FindBy(xpath = "(//button[@class='btn btn-primary js-searchButton '])[1]")
+    @FindBy(xpath = "//button[contains(@class,'search-btn')]")
     private WebElement searchButton;
     @FindBy(xpath = "//*[text()='Just Sold']")
     private WebElement rentButton;
     @FindBy(xpath = "//li[@id='img_far']/a")
     private WebElement realtorButton;
-    @FindBy(xpath = "//a[contains(@class,'js-save-listing btn-save-listing js-save-trigger ')]//i[2]")
-    List<WebElement> heartIconsList;
-    @FindBy (xpath = "//label[@for='property_records']")
+    @FindBy (xpath = "//li/a[contains(text(),'HOME')]")
     private WebElement homeEstimate;
+    @FindBy(xpath = "//a[@title='Find a realtor']")
+    private WebElement findRealtorButton;
+    @FindBy(xpath = "//button[@data-label='pc-save-cta']")
+    private List<WebElement> heartIconsList;
+    @FindBy(linkText = "Mortgage")
+    private WebElement mortgageLink;
+    @FindBy(linkText = "Mortgage Calculator")
+    private WebElement mortgageCalculatorLink;
+    @FindBy(linkText = "My Home")
+    private WebElement myHomeButton;
+
 
     /**
      * get heart icons list on the homes for sale cards
@@ -71,6 +77,7 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage enterEmail() {
+        emailInput.click();
         emailInput.sendKeys(ConfigProperties.getTestProperty("userLogin"));
         return this;
     }
@@ -81,27 +88,18 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage enterPassword() {
+        passwordInput.click();
         passwordInput.sendKeys(ConfigProperties.getTestProperty("userPassword"));
         return this;
     }
 
     /**
-     * click LogInSubmitl button
+     * perform logIn operation
      *
      * @return this page
      */
     public HomePage clickLoginSubmitButton() {
-        logInSubmitButton.click();
-        return this;
-    }
-
-    /**
-     * navigate to user icon
-     *
-     * @return this page
-     */
-    public HomePage navigateToUserIcon() {
-        new Actions(driver).moveToElement(userIcon).perform();
+        new Actions(driver).sendKeys(Keys.ENTER).perform();
         return this;
     }
 
@@ -123,7 +121,9 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage enterCityInMainSearchInput(String city) {
+        searchInput.click();
         searchInput.sendKeys(city);
+        searchInput.click();
         return this;
     }
 
@@ -139,25 +139,13 @@ public class HomePage extends BasePage {
     }
 
     /**
-     * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
-     *
-     * @return new HomePage
-     */
-    public HomePage clickLogOutLink() {
-        waitUntilElementIsVisible(logOutLink);
-        logOutLink.click();
-        return new HomePage(driver);
-    }
-
-    /**
      * wait until user icon become clickable
      * click user icon
      *
      * @return new SavedHomesPage
      */
     public SavedHomesPage clickUserIcon() {
-        waitUntilElementIsVisible(userIcon);
-        waitUntilElementIsClickable(userIcon);
+        waitInvisibilityOfElementLocated(strangeLayer);
         userIcon.click();
         return new SavedHomesPage(driver);
     }
@@ -165,13 +153,45 @@ public class HomePage extends BasePage {
     /**
      * click on the Realtor button
      *
-     * @return new SearchRealtorPage
+     * @return new FindRealtorPage
      */
-    public SearchRealtorPage clickRealtorButton() {
-        waitUntilElementIsClickable(realtorButton);
-        realtorButton.click();
-        return new SearchRealtorPage(driver);
+    public FindRealtorPage clickRealtorButton() {
+        waitUntilElementIsClickable(findRealtorButton);
+        BasePage.clickByJEx(findRealtorButton, driver);
+        return new FindRealtorPage(driver);
     }
+
+    /**
+     * navigate cursor on mortgage calculator to show drop-down menu
+     *
+     * @return this page
+     */
+    public HomePage navigateCursorOnMortgageLink() {
+        new Actions(driver).moveToElement(mortgageLink).perform();
+        return this;
+    }
+
+    /**
+     * click on mortgage calculator link
+     *
+     * @return new MortgageCalculatorPage
+     */
+    public MortgageCalculatorPage clickMortgageCalculatorLink() {
+        mortgageCalculatorLink.click();
+        return new MortgageCalculatorPage(driver);
+    }
+
+    /**
+     * click on the My Home button
+     *
+     * @return new MyHomePage
+     */
+    public MyHomePage clickMyHomeButton() {
+        waitInvisibilityOfElementLocated(strangeLayer);
+        myHomeButton.click();
+        return new MyHomePage(driver);
+    }
+
 
     /**
      * click HomeEstimate section

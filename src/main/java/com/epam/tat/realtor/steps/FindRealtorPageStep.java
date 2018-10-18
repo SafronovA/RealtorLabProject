@@ -1,10 +1,10 @@
 package com.epam.tat.realtor.steps;
 
 import com.epam.tat.realtor.pages.FindRealtorPage;
-import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
 
 public class FindRealtorPageStep extends BasePageStep {
+
     private FindRealtorPage findRealtorPage;
 
     public FindRealtorPageStep(WebDriver driver) {
@@ -13,39 +13,35 @@ public class FindRealtorPageStep extends BasePageStep {
     }
 
     /**
-     * get realtor sold houses number
+     * create realtor search request
      *
-     * @return realtor sold houses number
+     * @param realtorName realtor name to be searched
+     * @return new RealtorSearchResultPageStep
      */
-    public int getRealtorSoldHoses() {
-        return Parser.parse(findRealtorPage.getRealtorSoldHouses());
+    public FindRealtorPageStep enterRealtorName(String realtorName) {
+        findRealtorPage.enterRealtorName(realtorName);
+        return this;
     }
 
     /**
-     * get value of realtor rating count
+     * create search request by location
      *
-     * @return reating count
+     * @param location realtors location
+     * @return new RealtorSearchResultPageStep
      */
-    public int getRatingCount() {
-        return Parser.parse(findRealtorPage.getRatingCount().getText());
+    public FindRealtorPageStep enterRealtorsLocation(String location) {
+        findRealtorPage.enterLocation(location);
+        return this;
     }
 
     /**
-     * click realtor icon
+     * click search button
      *
-     * @return new RealtorPageStep
+     * @return new RealtorSearchResultPageStep
      */
-    public RealtorPageStep clickRealtorIcon() {
-        findRealtorPage.clickRealtorIcon();
-        return new RealtorPageStep(driver);
+    public RealtorSearchResultPageStep clickSearchButton(){
+        findRealtorPage.clickSearchButton();
+        return new RealtorSearchResultPageStep(driver);
     }
 
-    /**
-     * get value of realtor recommendations count
-     *
-     * @return recommendations count
-     */
-    public int getRecommendationsCount() {
-        return Integer.valueOf(findRealtorPage.getRecommendations().getText());
-    }
 }
