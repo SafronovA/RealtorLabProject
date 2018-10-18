@@ -1,12 +1,15 @@
 package com.epam.tat.realtor.steps;
 
+import com.epam.tat.realtor.listeners.WebDriverListener;
 import com.epam.tat.realtor.pages.SavedHomesPage;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Listeners;
+
 
 public class SavedHomesPageStep extends BasePageStep {
     private SavedHomesPage savedHomesPage;
 
-    public SavedHomesPageStep(WebDriver driver) {
+    public SavedHomesPageStep(WebDriver driver)  {
         super(driver);
         savedHomesPage = new SavedHomesPage(driver);
     }
