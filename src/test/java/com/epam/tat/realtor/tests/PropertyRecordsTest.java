@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 public class PropertyRecordsTest extends BaseTest {
-    private static final String CITY_NAME = "San Francisco, CA";
+    private static final String CITY_NAME = "Windsor, NY";
 
     /**
      * enter Property Records for the named city,
