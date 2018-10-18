@@ -32,7 +32,6 @@ public class BaseTest {
             driver.manage().deleteAllCookies();
             driver.navigate().to(ConfigProperties.getTestProperty("url"));
         }
-        System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts;");
         driver.manage().timeouts()
                 .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
     }
