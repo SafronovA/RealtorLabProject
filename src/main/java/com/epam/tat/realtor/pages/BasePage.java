@@ -29,6 +29,15 @@ public class BasePage {
     }
 
     /**
+     * wait until webElement is visible
+     *
+     * @param locator webElement to be visible
+     */
+    public void waitUntilElementIsVisible(By locator) {
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    /**
      * wait until webElement is clickable
      *
      * @param webElement webElement to be clickable

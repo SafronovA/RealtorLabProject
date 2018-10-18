@@ -1,7 +1,7 @@
 package com.epam.tat.realtor.tests;
 
-import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import com.epam.tat.realtor.steps.RealtorPageStep;
+import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -21,7 +21,8 @@ public class RealtorSoldHousesTest extends BaseTest {
     @Test
     public void checkRealtorSoldHouses() {
         RealtorSearchResultPageStep realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
-                .findRealtor(REALTOR_NAME);
+                .enterRealtorName(REALTOR_NAME)
+                .clickSearchButton();
         int realtorSoldHouses = realtorSearchResultPageStep.getRealtorSoldHoses();
         RealtorPageStep realtorPageStep = realtorSearchResultPageStep.clickRealtorIcon()
                 .prepareIFrameMap();

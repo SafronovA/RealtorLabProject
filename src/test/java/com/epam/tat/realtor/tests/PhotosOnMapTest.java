@@ -13,7 +13,8 @@ public class PhotosOnMapTest extends BaseTest {
     public void photosOnMapMatchToSelectedAgentPhoto(){
         RealtorSearchResultPageStep realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
                 .setCity(CITY_NAME)
-                .findRealtor(REALTOR_NAME)
+                .enterRealtorName(REALTOR_NAME)
+                .clickSearchButton()
                 .clickActivityMapButton()
                 .clickGetStartedConfirmButton();
         Assert.assertTrue(realtorSearchResultPageStep.arePhotosOnMapMatchSelectedRealtorPhoto(),

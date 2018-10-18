@@ -5,7 +5,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertTrue;
 
 public class EditProfileAddressTest extends BaseTest {
 
@@ -34,7 +34,7 @@ public class EditProfileAddressTest extends BaseTest {
      * check that the profile address has changed correctly
      */
     @Test
-    public void editProfileName() {
+    public void editAddressFields() {
         myProfilePageStep = homePageStep.clickUserIcon()
                 .goToMyProfileSection()
                 .editAddress(ADDRESS_NEW, CITY_NEW, STATE_NEW, COUNTRY_NEW);
@@ -48,7 +48,7 @@ public class EditProfileAddressTest extends BaseTest {
      * returns the values of the modified fields
      */
     @AfterMethod
-    public void revertProfileName() {
+    public void revertAddressFields() {
         myProfilePageStep.editAddressRevert(ADDRESS_ORIGIN, CITY_ORIGIN, STATE_ORIGIN, COUNTRY_ORIGIN)
                 .logOut();
     }

@@ -16,6 +16,10 @@ public class RealtorSearchResultPage extends BasePage {
 
     private final String XPATH_FOR_PHOTOS_ON_MAP = "(//div[contains(@class,'map-agent-pin-image')])";
     private final String XPATH_IMG = "/img";
+    private final String ICONS_ON_MAP_LOCATOR = "//*[@id='agent_pin']/div";
+    private By getStartedWindow = By.className("modal-header");
+    @FindBy(xpath = "//*[@class='btn btn-secondary block-center']")
+    private WebElement getStartedButton;
     @FindBy(xpath = "(//div[@class='agent-detail-item ellipsis']/a/strong)[2]")
     private WebElement realtorSoldHouses;
     @FindBy(xpath = "//div[@class='agent-list-card-img']/img")
@@ -34,18 +38,41 @@ public class RealtorSearchResultPage extends BasePage {
     private List<WebElement> numberOfRecommendationsList;
     @FindBy(xpath = "//a[@class='next']")
     private List<WebElement> nextPageButton;
-    @FindBy(xpath = "//div[@id='map_link']")
+    @FindBy(xpath = "(//div[@class='agent-list-card-img'])[2]/img")
+    private WebElement secondRealtor;
+    @FindBy(id = "map_view_link")
     private WebElement activityMapButton;
+    @FindBy(xpath = "(//*[@id='agent_map_card'])[1]")
+    private WebElement firstRealtorCard;
+    @FindBy(xpath = "//div[@id='agent_search_detail_more_properties_container']/div")
+    private List<WebElement> homeCards;
+    @FindBy(id = "btn_show_more_property")
+    private WebElement seeAgentsNearbyPropertiesButton;
+    @FindBy(xpath = "//div[contains(@class,'agent-recommendation')]//strong")
+    private WebElement recommendationsCount;
     @FindBy(xpath = "//div[@class='agent-map-card-img']/img")
     private WebElement realtorPhoto;
-    @FindBy(xpath = "//*[@id='map_notification_modal']/div[2]//div[4]/button")
-    private WebElement getStartedButton;
     @FindBy(xpath = "//div[contains(@class,'map-agent-pin-image')]/img")
     private List<WebElement> photosOnMap;
 
+    /**
+     * get recommendations count
+     *
+     * @return recommendations count
+     */
+    public WebElement getRecommendations() {
+        return recommendationsCount;
+    }
+
+    /**
+     * get photo on map count
+     *
+     * @return photo on map count
+     */
     public int getPhotosOnMapCount(){
         return photosOnMap.size();
     }
+
     /**
      * get number of realtor sold houses
      *
@@ -137,6 +164,42 @@ public class RealtorSearchResultPage extends BasePage {
     }
 
     /**
+     * @return list of realtor cards
+     */
+    public WebElement getFirstRealtorCard() {
+        waitForJQueryIsLoad();
+        return firstRealtorCard;
+    }
+
+    /**
+     * @return list of home cards
+     */
+    public List<WebElement> getHomeCards() {
+        waitForJQueryIsLoad();
+        return homeCards;
+    }
+
+    /**
+     * @return list of icons on the map
+     */
+    public List<WebElement> getIconsFromMap() {
+        waitForJQueryIsLoad();
+        return driver.findElements(By.xpath(ICONS_ON_MAP_LOCATOR));
+    }
+
+    /**
+     * find icon on map by index and return it
+     *
+     * @param index by which the icon will be searched
+     * @return icon web element
+     */
+    public WebElement getIconByIndex(int index) {
+        By currentElement = By.xpath("(" + ICONS_ON_MAP_LOCATOR + ")[" + index + "]");
+        WebElement icon = driver.findElement(currentElement);
+        return icon;
+    }
+
+    /**
      * click on the realtor icon
      *
      * @return new RealtorPage
@@ -177,6 +240,30 @@ public class RealtorSearchResultPage extends BasePage {
     public RealtorSearchResultPage clickNextPageButton() {
         waitForJQueryIsLoad();
         nextPageButton.get(0).click();
+        return this;
+    }
+
+    /**
+     * click get started button
+     *
+     * @return this page
+     */
+    public RealtorSearchResultPage clickGetStartedButton() {
+        waitUntilElementIsVisible(getStartedButton);
+        BasePage.clickByJEx(getStartedButton, driver);
+        waitInvisibilityOfElementLocated(getStartedWindow);
+        return this;
+    }
+
+    /**
+     * click see agent's nearby properties button, if it presents on the page
+     *
+     * @return this page
+     */
+    public RealtorSearchResultPage clickSeeAgentsNearbyProperties() {
+        if (seeAgentsNearbyPropertiesButton.isDisplayed()) {
+            seeAgentsNearbyPropertiesButton.click();
+        }
         return this;
     }
 

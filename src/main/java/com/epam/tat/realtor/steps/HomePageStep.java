@@ -52,19 +52,6 @@ public class HomePageStep extends BasePageStep {
     }
 
     /**
-     * navigate to user icon
-     * waiting for the 'Sign Out' link to appear
-     * click sign out button
-     *
-     * @return this page
-     */
-    public HomePageStep logOut() {
-        homePage.navigateToUserIcon()
-                .clickLogOutLink();
-        return this;
-    }
-
-    /**
      * click on user icon
      *
      * @return new SavedHomesPageStep
@@ -95,6 +82,16 @@ public class HomePageStep extends BasePageStep {
     }
 
     /**
+     * create search request in the home estimate section
+     * @return this page
+     */
+    public PropertyRecordsPageStep goToHomeEstimate() {
+        homePage.clickHomeEstimate()
+                .clickSearchButton();
+        return new PropertyRecordsPageStep(driver);
+    }
+
+    /**
      * navigate cursor on mortgage calculator to show drop-down menu
      *
      * @return HomePageStep
@@ -112,6 +109,16 @@ public class HomePageStep extends BasePageStep {
     public MortgageCalculatorPageStep clickMortgageCalculatorLink() {
         homePage.clickMortgageCalculatorLink();
         return new MortgageCalculatorPageStep(driver);
+    }
+
+    /**
+     * click on the My Home button
+     *
+     * @return new MyHomePageStep
+     */
+    public MyHomePageStep clickMyHomeButton() {
+        homePage.clickMyHomeButton();
+        return new MyHomePageStep(driver);
     }
 
 }

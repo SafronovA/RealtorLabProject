@@ -3,6 +3,7 @@ package com.epam.tat.realtor.steps;
 import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.RealtorPage;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class RealtorPageStep extends BasePageStep {
@@ -25,7 +26,7 @@ public class RealtorPageStep extends BasePageStep {
                 .stream()
                 .allMatch(x -> {
                     BasePage.clickByJEx(x, driver);
-                    return isSold(realtorPage.getSaleHouseStatus());
+                    return isSold(realtorPage.getSoldHouseStatus());
                 });
     }
 
@@ -36,16 +37,6 @@ public class RealtorPageStep extends BasePageStep {
      */
     public int getSoldHousesQuantity() {
         return realtorPage.getSoldHousesMapMarkList().size();
-    }
-
-    /**
-     * check if map mark has "sold" text inside
-     *
-     * @param houseStatus text of the map mark
-     * @return 'sold' status
-     */
-    private boolean isSold(String houseStatus) {
-        return houseStatus.trim().equalsIgnoreCase("sold");
     }
 
     /**
@@ -65,16 +56,6 @@ public class RealtorPageStep extends BasePageStep {
     }
 
     /**
-     * drag down iframe to 50 yOffset
-     *
-     * @return this page
-     */
-    private RealtorPageStep dragDownIFrame() {
-        new Actions(driver).dragAndDropBy(realtorPage.getSoldHousesMapMarkList().get(0), 0, 100).click().perform();
-        return this;
-    }
-
-    /**
      * click load all reviews button untill all reviews won't be loaded
      *
      * @return this page
@@ -87,6 +68,28 @@ public class RealtorPageStep extends BasePageStep {
     }
 
     /**
+     * click load all recommendations button until all recommendations won't be loaded
+     *
+     * @return this page
+     */
+    public RealtorPageStep loadAllRecommendations() {
+        realtorPage.scrollDown();
+        while (realtorPage.isLoadMoreRecommendationsButtonDisplayed()) {
+            realtorPage.clickLoadMoreRecommendationsButton();
+        }
+        return this;
+    }
+
+    /**
+     * get realtor recommendations count
+     *
+     * @return realtor recommendations count
+     */
+    public int getRealtorRecommendationsCount() {
+        return realtorPage.getRealtorRecommendations().size();
+    }
+
+    /**
      * get realtor reviews count
      *
      * @return realtor reviews count
@@ -95,5 +98,34 @@ public class RealtorPageStep extends BasePageStep {
         return realtorPage.getRealtorReviews().size();
     }
 
+    public boolean areHousesHaveStatusForSale() {
+        realtorPage.scrollToMap();
+        return realtorPage.getForSaleHouses().stream()
+                .allMatch(WebElement -> {
+                    BasePage.clickByJEx(WebElement, driver);
+                    return realtorPage.getForSaleHouseStatus().equalsIgnoreCase("for sale");
+                });
+    }
+
+    /**
+     * check if map mark has "sold" text inside
+     *
+     * @param houseStatus text of the map mark
+     * @return 'sold' status
+     */
+    private boolean isSold(String houseStatus) {
+        return houseStatus.trim().equalsIgnoreCase("sold");
+    }
+
+
+    /**
+     * drag down iframe to 100 yOffset
+     *
+     * @return this page
+     */
+    private RealtorPageStep dragDownIFrame() {
+        new Actions(driver).dragAndDropBy(realtorPage.getSoldHousesMapMarkList().get(0), 0, 100).click().perform();
+        return this;
+    }
 
 }
