@@ -21,17 +21,6 @@ public class FindRealtorPage extends BasePage {
     private WebElement realtorCityInput;
 
     /**
-     * set city for realtor
-     *
-     * @param city which realtors work in
-     * @return this page
-     */
-    public FindRealtorPage setCity(String city) {
-        realtorCityInput.sendKeys(city);
-        return this;
-    }
-
-    /**
      * enter realtor name in the search input
      *
      * @param realtorName realtor name as search criteria

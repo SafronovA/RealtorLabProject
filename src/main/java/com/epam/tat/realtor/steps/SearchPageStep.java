@@ -205,7 +205,7 @@ public class SearchPageStep extends BasePageStep {
      * @return true, if the declared and actual number of houses matches, otherwise returns false
      */
     public boolean checkFindHomesCount() {
-        return getFindHomesCountFromSearchResult()==findAllHouses().size();
+        return getFindHomesCountFromSearchResult() == findAllHouses().size();
     }
 
     /**
@@ -385,12 +385,10 @@ public class SearchPageStep extends BasePageStep {
      * @return true, if all found lifestyles are restaurants, false, if they are not
      */
     public boolean areAllFoundLifestyleRestaurants() {
-        boolean isRestaurant = true;
-        for (int i = 1; i < searchPage.getRestaurantsCount() + 1; i++) {
+        return IntStream.range(1, searchPage.getRestaurantsCount() + 1).allMatch(i -> {
             BasePage.clickByJEx(searchPage.getRestaurant(i), driver);
-            isRestaurant &= searchPage.getLifestyleType().equalsIgnoreCase("restaurants");
-        }
-        return isRestaurant;
+            return searchPage.getLifestyleType().equalsIgnoreCase("restaurants");
+        });
     }
 
     /**
@@ -429,15 +427,13 @@ public class SearchPageStep extends BasePageStep {
      * check that all displayed on map school have rating mare than 8 and check that all displayed on map school are high
      *
      * @return boolean array, the first elem true, if all displayed on map school have rating mare than 8, false, if have not
-     *  the second elem is true, if all displayed on map school are high, false, if are not
+     * the second elem is true, if all displayed on map school are high, false, if are not
      */
     public boolean doesAllSchoolHaveSelectedRating(String rating) {
-        boolean isRatingMoreThanEight = true;
-        for (int i = 1; i < searchPage.getSchoolOnMapListCount() + 1; i++) {
+        return IntStream.range(1, searchPage.getSchoolOnMapListCount() + 1).allMatch(i -> {
             BasePage.clickByJEx(searchPage.getSchool(i), driver);
-            isRatingMoreThanEight &= Integer.valueOf(searchPage.getSchoolRating()) >= Integer.valueOf(rating);
-        }
-        return isRatingMoreThanEight;
+            return Integer.valueOf(searchPage.getSchoolRating()) >= Integer.valueOf(rating);
+        });
     }
 
     /**

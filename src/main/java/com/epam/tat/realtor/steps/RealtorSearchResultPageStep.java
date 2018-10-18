@@ -117,14 +117,12 @@ public class RealtorSearchResultPageStep extends BasePageStep {
      * @return true, if match, false, if do not match
      */
     public boolean arePhotosOnMapMatchSelectedRealtorPhoto() {
-        boolean arePhotosTheSame = true;
         String selectedRealtorPhoto = realtorSearchResultPage.getRealtorPhotoLink();
-        for (int i = 1; i < realtorSearchResultPage.getPhotosOnMapCount() + 1; i++) {
+        return IntStream.range(1, realtorSearchResultPage.getPhotosOnMapCount()+1).allMatch(i -> {
             WebElement photoOnMap = realtorSearchResultPage.getPhotosOnMap(i);
             BasePage.clickByJEx(photoOnMap, driver);
-            arePhotosTheSame = photoOnMap.getAttribute("src").equals(selectedRealtorPhoto);
-        }
-        return arePhotosTheSame;
+            return photoOnMap.getAttribute("src").equals(selectedRealtorPhoto);
+        });
     }
 
     /**
