@@ -10,8 +10,8 @@ public class SchoolRatingTest extends BaseTest {
     private static final String RATING = "9";
 
     /**
-     * select high and rating 8
-     * check that schools are displayed on mam have rating mare than 8 and high
+     * select high school with selected rating
+     * check that schools are displayed on map have rating more than selected rating
      */
     @Test
     public void schoolRating() {
