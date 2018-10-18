@@ -3,13 +3,14 @@
 <suite name="RealtorSuite" verbose="1" >
 
     <listeners>
-        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+        <!--<listener class-name="org.uncommons.reportng.HTMLReporter"/>-->
+        <!--<listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>-->
     </listeners>
 
     <test name="RealtorTest" >
         <classes>
-            <class name="com.epam.tat.realtor.tests.CheckIconsColorTest"/>
-            <class name="com.epam.tat.realtor.tests.ClickOnIcon"/>
+            <!--<class name="com.epam.tat.realtor.tests.CheckIconsColorTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.ClickOnIcon"/>-->
             <!--<class name="com.epam.tat.realtor.tests.EditMyHomeInfoTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.EditProfileAddressTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.EditProfileNameTest"/>-->
@@ -23,8 +24,8 @@
             <!--<class name="com.epam.tat.realtor.tests.RestaurantsFilterTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.SavedHomesTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.SavedSearchTest"/>-->
-            <!--<class name="com.epam.tat.realtor.tests.SchoolRatingTest"/>-->
-            <!--<class name="com.epam.tat.realtor.tests.SearchByConditionsTest"/>-->
+            <class name="com.epam.tat.realtor.tests.SchoolRatingTest"/>
+            <class name="com.epam.tat.realtor.tests.SearchByConditionsTest"/>
             <!--<class name="com.epam.tat.realtor.tests.SortByPriceTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.SortByRecommendationsTest"/>-->
         </classes>
