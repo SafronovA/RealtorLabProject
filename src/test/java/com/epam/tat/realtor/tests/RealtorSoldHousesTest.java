@@ -21,7 +21,7 @@ public class RealtorSoldHousesTest extends BaseTest {
     @Test
     public void checkRealtorSoldHouses() {
         RealtorSearchResultPageStep realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
-                .setName(REALTOR_NAME)
+                .enterRealtorName(REALTOR_NAME)
                 .clickSearchButton();
         int realtorSoldHouses = realtorSearchResultPageStep.getRealtorSoldHoses();
         RealtorPageStep realtorPageStep = realtorSearchResultPageStep.clickRealtorIcon()

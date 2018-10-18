@@ -426,9 +426,10 @@ public class SearchPageStep extends BasePageStep {
     }
 
     /**
-     * check that all displayed on map school have rating mare than 8
+     * check that all displayed on map school have rating mare than 8 and check that all displayed on map school are high
      *
-     * @return true, if all displayed on map school have rating mare than 8, false, if have not
+     * @return boolean array, the first elem true, if all displayed on map school have rating mare than 8, false, if have not
+     *  the second elem is true, if all displayed on map school are high, false, if are not
      */
     public boolean doesAllSchoolHaveSelectedRating(String rating) {
         boolean isRatingMoreThanEight = true;
@@ -437,20 +438,6 @@ public class SearchPageStep extends BasePageStep {
             isRatingMoreThanEight &= Integer.valueOf(searchPage.getSchoolRating()) >= Integer.valueOf(rating);
         }
         return isRatingMoreThanEight;
-    }
-
-    /**
-     * check that all displayed on map school are high
-     *
-     * @return true, if all displayed on map school are high, false, if are not
-     */
-    public boolean areAllSchoolsHigh(){
-        boolean areAllSchoolsHigh = true;
-        for (int i = 1; i < searchPage.getSchoolOnMapListCount() + 1; i++) {
-            BasePage.clickByJEx(searchPage.getSchool(i), driver);
-            areAllSchoolsHigh &= searchPage.getSchoolName().contains("High");
-        }
-        return areAllSchoolsHigh;
     }
 
     /**

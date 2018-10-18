@@ -115,7 +115,9 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage enterCityInMainSearchInput(String city) {
+        searchInput.click();
         searchInput.sendKeys(city);
+        searchInput.click();
         return this;
     }
 
