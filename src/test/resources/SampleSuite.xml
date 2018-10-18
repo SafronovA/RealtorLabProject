@@ -4,7 +4,6 @@
 
     <listeners>
         <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
-        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
     </listeners>
 
     <test name="RealtorTest" >
