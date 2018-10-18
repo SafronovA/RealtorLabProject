@@ -48,6 +48,12 @@
             <artifactId>logger-java-log4j</artifactId>
             <version>3.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.uncommons</groupId>
+            <artifactId>reportng</artifactId>
+            <version>1.1.4</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
