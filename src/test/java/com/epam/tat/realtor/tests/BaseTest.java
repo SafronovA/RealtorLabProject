@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
-    protected WebDriver driver;
+    protected WebDriver driver = DriverFactory.CHROMEDRIVER.getDriver();;
     protected HomePageStep homePageStep;
 
     /**
@@ -21,7 +21,7 @@ public class BaseTest {
      */
     @BeforeSuite(alwaysRun = true)
     void initPage() {
-        driver = DriverFactory.CHROMEDRIVER.getDriver();
+        //driver = DriverFactory.CHROMEDRIVER.getDriver();
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.navigate().to(ConfigProperties.getTestProperty("url"));
@@ -38,21 +38,25 @@ public class BaseTest {
 
     @BeforeClass
     public void initDriver(){
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.navigate().to(ConfigProperties.getTestProperty("url"));
+        homePageStep = new HomePageStep(driver);
         while (driver.findElements(By.xpath("//input[contains(@id,'downshift')]")).size()==0){
             System.out.println("New version of the home page. Page has to be  reloaded...");
             driver.manage().deleteAllCookies();
             driver.navigate().to(ConfigProperties.getTestProperty("url"));
         }
+        driver.manage().timeouts()
+                .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
     }
 
     /**
      * close browser
      */
-    @AfterSuite
-    void closeResources() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    @AfterSuite
+//    void closeResources() {
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 }
