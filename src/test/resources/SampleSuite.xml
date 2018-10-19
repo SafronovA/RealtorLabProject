@@ -5,26 +5,27 @@
     <listeners>
         <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
         <listener class-name="com.epam.tat.realtor.listeners.RLTRTestListener"/>
+        <listener class-name="com.epam.tat.realtor.listeners.ReportingListner"/>
         <!--<listener class-name="com.epam.tat.realtor.listeners.WebDriverListener"/>-->
         <!--<listener class-name="com.epam.tat.realtor.listeners.TestListener"/>-->
     </listeners>
 
     <test name="RealtorTest" >
         <classes>
-            <class name="com.epam.tat.realtor.tests.CheckIconsColorTest"/>
-            <class name="com.epam.tat.realtor.tests.ClickOnIcon"/>
-            <class name="com.epam.tat.realtor.tests.EditMyHomeInfoTest"/>
-            <class name="com.epam.tat.realtor.tests.EditProfileAddressTest"/>
-            <class name="com.epam.tat.realtor.tests.EditProfileNameTest"/>
-            <class name="com.epam.tat.realtor.tests.ForSaleRealtorHousesTest"/>
-            <class name="com.epam.tat.realtor.tests.MapMarksTest"/>
-            <class name="com.epam.tat.realtor.tests.MortgageCalculatorTest"/>
-            <class name="com.epam.tat.realtor.tests.NumberOfHousesFoundTest"/>
-            <class name="com.epam.tat.realtor.tests.RealtorRecommendationsTest"/>
-            <class name="com.epam.tat.realtor.tests.RealtorReviewsTest"/>
-            <class name="com.epam.tat.realtor.tests.RealtorSoldHousesTest"/>
-            <class name="com.epam.tat.realtor.tests.RestaurantsFilterTest"/>
-            <class name="com.epam.tat.realtor.tests.SavedHomesTest"/>
+            <!--<class name="com.epam.tat.realtor.tests.CheckIconsColorTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.ClickOnIcon"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.EditMyHomeInfoTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.EditProfileAddressTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.EditProfileNameTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.ForSaleRealtorHousesTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.MapMarksTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.MortgageCalculatorTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.NumberOfHousesFoundTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.RealtorRecommendationsTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.RealtorReviewsTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.RealtorSoldHousesTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.RestaurantsFilterTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.SavedHomesTest"/>-->
             <class name="com.epam.tat.realtor.tests.SavedSearchTest"/>
             <class name="com.epam.tat.realtor.tests.SchoolRatingTest"/>
             <class name="com.epam.tat.realtor.tests.SearchByConditionsTest"/>

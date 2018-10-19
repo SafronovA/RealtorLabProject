@@ -18,8 +18,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class RLTRTestListener implements ITestListener, ISuiteListener, IReporter{
+public class RLTRTestListener implements ITestListener, ISuiteListener{
     private final Logger logger = LogManager.getRootLogger();
     @Override
     public void onTestStart(ITestResult iTestResult) {
@@ -86,18 +89,7 @@ public class RLTRTestListener implements ITestListener, ISuiteListener, IReporte
         logger.info("suite "+ iSuite.getName()+" end");
     }
 
-    @Override
-    public void generateReport(List<XmlSuite>  xmlSuites, List<ISuite> suites, String outputDirectory) {
-        suites.stream().forEach(suite -> {
-            List<ITestNGMethod> allMethods = suite.getAllMethods();
-            allMethods.stream().forEach(method->method.);
-            logger.info("*************************************");
-                    logger.info("Report for suite: " + suite.getName());
 
-                    System.out.println("*****End of Report******");
-                }
-        );
-    }
 
 }
 
