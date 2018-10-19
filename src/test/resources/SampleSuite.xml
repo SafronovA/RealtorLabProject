@@ -4,6 +4,7 @@
 
     <listeners>
         <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+        <listener class-name="com.epam.tat.realtor.listeners.IAnnotationTransformerListener"/>
     </listeners>
 
     <test name="RealtorTest" >
