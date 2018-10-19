@@ -20,7 +20,7 @@ public class SortByRecommendationsTest extends BaseTest {
     @Test
     public void sortByRecommendations() {
         realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
-                .setLocation(CITY_NAME)
+                .enterRealtorsLocation(CITY_NAME)
                 .clickSearchButton()
                 .choseRecommendation(RECOMMENDATION_VALUE)
                 .choseSortOption(SORT_OPTION);

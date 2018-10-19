@@ -14,6 +14,8 @@ public class RealtorSearchResultPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    private final String XPATH_FOR_PHOTOS_ON_MAP = "(//div[contains(@class,'map-agent-pin-image')])";
+    private final String XPATH_IMG = "/img";
     private final String ICONS_ON_MAP_LOCATOR = "//*[@id='agent_pin']/div";
     private By getStartedWindow = By.className("modal-header");
     @FindBy(xpath = "//*[@class='btn btn-secondary block-center']")
@@ -36,6 +38,8 @@ public class RealtorSearchResultPage extends BasePage {
     private List<WebElement> numberOfRecommendationsList;
     @FindBy(xpath = "//a[@class='next']")
     private List<WebElement> nextPageButton;
+    @FindBy(xpath = "(//div[@class='agent-list-card-img'])[2]/img")
+    private WebElement secondRealtor;
     @FindBy(id = "map_view_link")
     private WebElement activityMapButton;
     @FindBy(xpath = "(//*[@id='agent_map_card'])[1]")
@@ -46,7 +50,10 @@ public class RealtorSearchResultPage extends BasePage {
     private WebElement seeAgentsNearbyPropertiesButton;
     @FindBy(xpath = "//div[contains(@class,'agent-recommendation')]//strong")
     private WebElement recommendationsCount;
-
+    @FindBy(xpath = "//div[@class='agent-map-card-img']/img")
+    private WebElement realtorPhoto;
+    @FindBy(xpath = "//div[contains(@class,'map-agent-pin-image')]/img")
+    private List<WebElement> photosOnMap;
 
     /**
      * get recommendations count
@@ -55,6 +62,15 @@ public class RealtorSearchResultPage extends BasePage {
      */
     public WebElement getRecommendations() {
         return recommendationsCount;
+    }
+
+    /**
+     * get photo on map count
+     *
+     * @return photo on map count
+     */
+    public int getPhotosOnMapCount(){
+        return photosOnMap.size();
     }
 
     /**
@@ -110,6 +126,41 @@ public class RealtorSearchResultPage extends BasePage {
      */
     public List<WebElement> getNextPageButton() {
         return nextPageButton;
+    }
+
+    /**
+     * get all realtors photo on map
+     *
+     * @return all photos on map
+     */
+    public WebElement getPhotosOnMap(int index) {
+        return driver.findElement(By.xpath(XPATH_FOR_PHOTOS_ON_MAP + "["+index+"]" + XPATH_IMG));
+    }
+
+    /**
+     * get link on realtor photo
+     *
+     * @return link on realtor photo
+     */
+    public String getRealtorPhotoLink() {
+        waitForJQueryIsLoad();
+        return realtorPhoto.getAttribute("src");
+    }
+
+    /**
+     * click on activity map button
+     *
+     * @return this page
+     */
+    public RealtorSearchResultPage clickActivityMapButton() {
+        activityMapButton.click();
+        return this;
+    }
+
+    public RealtorSearchResultPage clickGetStartedConfirmButton(){
+        waitUntilElementIsVisible(getStartedButton);
+        clickByJEx(getStartedButton, driver);
+        return this;
     }
 
     /**
@@ -189,17 +240,6 @@ public class RealtorSearchResultPage extends BasePage {
     public RealtorSearchResultPage clickNextPageButton() {
         waitForJQueryIsLoad();
         nextPageButton.get(0).click();
-        return this;
-    }
-
-    /**
-     * click activity map button
-     *
-     * @return this page
-     */
-    public RealtorSearchResultPage clickActivityMapButton() {
-        waitUntilElementIsClickable(activityMapButton);
-        activityMapButton.click();
         return this;
     }
 

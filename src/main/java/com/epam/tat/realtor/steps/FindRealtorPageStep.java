@@ -13,33 +13,33 @@ public class FindRealtorPageStep extends BasePageStep {
     }
 
     /**
-     * set city for realtor
+     * create realtor search request
      *
-     * @param city which realtors work in
-     * @return RealtorPageStep
+     * @param realtorName realtor name to be searched
+     * @return new RealtorSearchResultPageStep
      */
-    public FindRealtorPageStep setLocation(String city) {
-        findRealtorPage.enterLocation(city);
+    public FindRealtorPageStep enterRealtorName(String realtorName) {
+        findRealtorPage.enterRealtorName(realtorName);
         return this;
     }
 
     /**
-     * set name for realtor
+     * create search request by location
      *
-     * @param name realtor name
-     * @return RealtorPageStep
+     * @param location realtors location
+     * @return new RealtorSearchResultPageStep
      */
-    public FindRealtorPageStep setName(String name) {
-        findRealtorPage.enterRealtorName(name);
+    public FindRealtorPageStep enterRealtorsLocation(String location) {
+        findRealtorPage.enterLocation(location);
         return this;
     }
 
     /**
-     * perform submit operation
+     * click search button
      *
-     * @return RealtorPageStep
+     * @return new RealtorSearchResultPageStep
      */
-    public RealtorSearchResultPageStep clickSearchButton() {
+    public RealtorSearchResultPageStep clickSearchButton(){
         findRealtorPage.clickSearchButton();
         return new RealtorSearchResultPageStep(driver);
     }

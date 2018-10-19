@@ -32,6 +32,8 @@ public class BaseTest {
             driver.manage().deleteAllCookies();
             driver.navigate().to(ConfigProperties.getTestProperty("url"));
         }
+        driver.manage().timeouts()
+                .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
     }
 
     /**
@@ -39,6 +41,8 @@ public class BaseTest {
      */
     @AfterSuite
     void closeResources() {
-        driver.close();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }

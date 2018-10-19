@@ -48,7 +48,6 @@ public class RealtorSearchResultPageStep extends BasePageStep {
         return Integer.valueOf(realtorSearchResultPage.getRecommendations().getText());
     }
 
-
     /**
      * click realtor icon
      *
@@ -79,6 +78,11 @@ public class RealtorSearchResultPageStep extends BasePageStep {
         return this;
     }
 
+    public RealtorSearchResultPageStep clickGetStartedConfirmButton() {
+        realtorSearchResultPage.clickGetStartedConfirmButton();
+        return this;
+    }
+
     /**
      * chose required recommendations value in recommendations filter
      *
@@ -105,6 +109,20 @@ public class RealtorSearchResultPageStep extends BasePageStep {
                 .filter(x -> x.getAttribute("innerHTML").trim().equalsIgnoreCase(sortBy))
                 .findFirst().get().click();
         return this;
+    }
+
+    /**
+     * check that all photos shown on map match with selected realtor photo
+     *
+     * @return true, if match, false, if do not match
+     */
+    public boolean arePhotosOnMapMatchSelectedRealtorPhoto() {
+        String selectedRealtorPhoto = realtorSearchResultPage.getRealtorPhotoLink();
+        return IntStream.range(1, realtorSearchResultPage.getPhotosOnMapCount()+1).allMatch(i -> {
+            WebElement photoOnMap = realtorSearchResultPage.getPhotosOnMap(i);
+            BasePage.clickByJEx(photoOnMap, driver);
+            return photoOnMap.getAttribute("src").equals(selectedRealtorPhoto);
+        });
     }
 
     /**

@@ -20,7 +20,7 @@ public class RealtorPage extends BasePage {
     @FindBy(xpath = "//div[@class='leaflet-marker-pane']/div")
     private List<WebElement> soldHousesMapMarkList;
     @FindBy(xpath = "//div[@class='leaflet-popup-content']//strong")
-    private WebElement saleHouseStatus;
+    private WebElement soldHouseStatus;
     @FindBy(xpath = "//a[@class='leaflet-control-zoom-out']")
     private WebElement zoomOutButton;
     @FindBy(xpath = "//p/a[@id='inquiry_cta']")
@@ -31,6 +31,12 @@ public class RealtorPage extends BasePage {
     private WebElement bottomElement;
     @FindBy(xpath = "//ul[@id='agent-review-list']/li[not(@style='display: none;')]")
     private List<WebElement> realtorReviews;
+    @FindBy(xpath = "//div[contains(@class,'price leaflet-marker-icon-for-sale')]")
+    private List<WebElement> forSaleHouses;
+    @FindBy(xpath = "//div[@class='leaflet-popup-content']/a/p/strong")
+    private WebElement houseStatusDescription;
+    @FindBy(xpath = "//*[@id='team_nav_holder']/h2")
+    private WebElement listingActivity;
     @FindBy(xpath = "//button[contains(text(),'re Re')]")
     private WebElement loadMoreRecommendationsButton;
     @FindBy(xpath = "//div[@class='recommendation-card']")
@@ -60,9 +66,28 @@ public class RealtorPage extends BasePage {
      *
      * @return sold status of the house on the map mark
      */
-    public String getSaleHouseStatus() {
-        waitUntilElementIsVisible(saleHouseStatus);
-        return saleHouseStatus.getText();
+    public String getSoldHouseStatus() {
+        waitUntilElementIsVisible(soldHouseStatus);
+        return soldHouseStatus.getText();
+    }
+
+    /**
+     * get list of for sale houses
+     *
+     * @return list of for sale houses
+     */
+    public List<WebElement> getForSaleHouses(){
+        return forSaleHouses;
+    }
+
+    /**
+     * get status of the house on the map mark
+     *
+     * @return for sale status of the house on the map mark
+     */
+    public String getForSaleHouseStatus() {
+        waitUntilElementIsVisible(houseStatusDescription);
+        return houseStatusDescription.getText();
     }
 
     /**
@@ -94,6 +119,17 @@ public class RealtorPage extends BasePage {
     public RealtorPage scrollToIFrame() {
         waitForPresenceOfAllElementsLocatedBy(soldHouses);
         BasePage.scrollToElement(askQuestionButton, driver);
+        return this;
+    }
+
+    /**
+     * scroll to map
+     *
+     * @return this page
+     */
+    public RealtorPage scrollToMap() {
+        waitForJQueryIsLoad();
+        BasePage.scrollToElement(listingActivity, driver);
         return this;
     }
 

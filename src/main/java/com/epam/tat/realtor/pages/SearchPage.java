@@ -78,8 +78,6 @@ public class SearchPage extends BasePage {
     private WebElement saveSearchButton;
     @FindBy(xpath = "//*[@id='my-account-url']/following-sibling::span[1]")
     private WebElement userIcon;
-    @FindBy(xpath = "//*[@id='js-price-filter-pill-xx']")
-    private WebElement chosenCriteria;
     @FindBy(xpath = "(//*[@id='facet-followbtn'])[2]/span")
     private WebElement saveButtonText;
     @FindBy(xpath = "//select[@id='srp-sortby']")
@@ -114,8 +112,6 @@ public class SearchPage extends BasePage {
     private List<WebElement> schoolOnMapList;
     @FindBy(xpath = "//div[@class='rating']")
     private WebElement schoolRating;
-    @FindBy(xpath = "//a[@class='card-title']")
-    private WebElement schoolName;
 
     /**
      * get list of available min prices in the dropdown menu
@@ -191,15 +187,6 @@ public class SearchPage extends BasePage {
      */
     public int getRestaurantsCount() {
         return allFoundRestaurantsList.size();
-    }
-
-    /**
-     * get school name
-     *
-     * @return school name
-     */
-    public String getSchoolName(){
-        return schoolName.getText();
     }
 
     /**
@@ -437,7 +424,7 @@ public class SearchPage extends BasePage {
      * @return this page
      */
     public SearchPage clickSaveSearchButton() {
-        waitUntilElementIsVisible(chosenCriteria);
+        waitForJQueryIsLoad();
         saveSearchButton.click();
         return this;
     }
@@ -479,7 +466,7 @@ public class SearchPage extends BasePage {
      * @return
      */
     public SearchPage clickSortOptionsDropDown() {
-        waitUntilElementIsVisible(chosenCriteria);
+        waitForJQueryIsLoad();
         sortOptionsDropDown.click();
         return this;
     }

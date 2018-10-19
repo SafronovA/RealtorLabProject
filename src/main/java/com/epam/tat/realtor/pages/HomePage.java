@@ -33,6 +33,12 @@ public class HomePage extends BasePage {
     private WebElement searchInput;
     @FindBy(xpath = "//button[contains(@class,'search-btn')]")
     private WebElement searchButton;
+    @FindBy(xpath = "//*[text()='Just Sold']")
+    private WebElement rentButton;
+    @FindBy(xpath = "//li[@id='img_far']/a")
+    private WebElement realtorButton;
+    @FindBy (xpath = "//li/a[contains(text(),'HOME')]")
+    private WebElement homeEstimate;
     @FindBy(xpath = "//a[@title='Find a realtor']")
     private WebElement findRealtorButton;
     @FindBy(xpath = "//button[@data-label='pc-save-cta']")
@@ -115,7 +121,9 @@ public class HomePage extends BasePage {
      * @return this page
      */
     public HomePage enterCityInMainSearchInput(String city) {
+        searchInput.click();
         searchInput.sendKeys(city);
+        searchInput.click();
         return this;
     }
 
@@ -184,4 +192,13 @@ public class HomePage extends BasePage {
         return new MyHomePage(driver);
     }
 
+
+    /**
+     * click HomeEstimate section
+     */
+    public HomePage clickHomeEstimate() {
+        waitUntilElementIsClickable(homeEstimate);
+        homeEstimate.click();
+        return this;
+    }
 }

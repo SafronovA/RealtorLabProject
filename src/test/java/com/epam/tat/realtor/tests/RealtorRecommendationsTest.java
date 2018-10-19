@@ -22,7 +22,7 @@ public class RealtorRecommendationsTest extends BaseTest {
     @Test
     public void checkRealtorRecommendations() {
         RealtorSearchResultPageStep realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
-                .setName(REALTOR_NAME).clickSearchButton();
+                .enterRealtorName(REALTOR_NAME).clickSearchButton();
         int realtorRecommendations = realtorSearchResultPageStep.getRecommendationsCount();
         RealtorPageStep realtorPageStep = realtorSearchResultPageStep.clickRealtorIcon()
                 .loadAllRecommendations();
