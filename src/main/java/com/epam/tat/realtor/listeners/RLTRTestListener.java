@@ -6,17 +6,20 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
+import org.testng.*;
+import org.testng.xml.XmlSuite;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-public class RLTRTestListener implements ITestListener {
+public class RLTRTestListener implements ITestListener, ISuiteListener, IReporter{
     private final Logger logger = LogManager.getRootLogger();
     @Override
     public void onTestStart(ITestResult iTestResult) {
@@ -48,11 +51,11 @@ public class RLTRTestListener implements ITestListener {
 
     @Override
     public void onFinish(ITestContext iTestContext) {}
+
     private static String getTestMethodName(ITestResult result){
         return result.getMethod().getConstructorOrMethod().getName();
     }
     public void screenshot(ITestResult iTestResult) {
-
         File scrFile = ((TakesScreenshot) DriverFactory.CHROMEDRIVER
                 .getDriver())
                 .getScreenshotAs(OutputType.FILE);
@@ -68,6 +71,34 @@ public class RLTRTestListener implements ITestListener {
             System.out.println("Failed to save screenshot: " + e.getLocalizedMessage());
         }
     }
+
+    @Override
+    public void onStart(ISuite iSuite) {
+        logger.info("*****************************");
+        logger.info("suite "+ iSuite.getName()+" start");
+        int[] count = {1};
+        iSuite.getAllMethods().stream()
+                .forEach(x-> logger.info("method #"+count[0]+++" "+x.getConstructorOrMethod().getName()));
+    }
+
+    @Override
+    public void onFinish(ISuite iSuite) {
+        logger.info("suite "+ iSuite.getName()+" end");
+    }
+
+    @Override
+    public void generateReport(List<XmlSuite>  xmlSuites, List<ISuite> suites, String outputDirectory) {
+        suites.stream().forEach(suite -> {
+            List<ITestNGMethod> allMethods = suite.getAllMethods();
+            allMethods.stream().forEach(method->method.);
+            logger.info("*************************************");
+                    logger.info("Report for suite: " + suite.getName());
+
+                    System.out.println("*****End of Report******");
+                }
+        );
+    }
+
 }
 
 
