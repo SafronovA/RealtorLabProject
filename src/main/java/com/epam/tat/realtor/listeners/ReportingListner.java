@@ -99,7 +99,6 @@ public class ReportingListner implements IReporter {
     private void saveReportTemplate(String outputDirectory, String reportTemplate) {
         new File(outputDirectory).mkdirs();
         try {
-           // PrintWriter reportWriter = new PrintWriter(new BufferedWriter(new FileWriter(new File(outputDirectory, "my-report.html"))));
             PrintWriter reportWriter = new PrintWriter(new BufferedWriter(new FileWriter(new File("src/test/resources/", "my-report1.html"))));
             reportWriter.println(reportTemplate);
             reportWriter.flush();
