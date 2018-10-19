@@ -342,6 +342,7 @@ public class SearchPage extends BasePage {
      * @return get school in turn
      */
     public WebElement getSchool(int number){
+        waitForJQueryIsLoad();
         return driver.findElement(By.xpath(XPATH_FOR_SCHOOL+"["+number+"]"));
     }
 

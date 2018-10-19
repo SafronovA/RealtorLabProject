@@ -19,7 +19,7 @@ public class BaseTest {
      * maximize browser window
      * open the homepage URL in browser
      */
-    @BeforeClass(alwaysRun = true)
+    @BeforeSuite(alwaysRun = true)
     void initPage() {
         driver = DriverFactory.CHROMEDRIVER.getDriver();
         driver.manage().deleteAllCookies();
