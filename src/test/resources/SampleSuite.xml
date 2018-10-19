@@ -6,8 +6,6 @@
         <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
         <listener class-name="com.epam.tat.realtor.listeners.RLTRTestListener"/>
         <listener class-name="com.epam.tat.realtor.listeners.ReportingListner"/>
-        <!--<listener class-name="com.epam.tat.realtor.listeners.WebDriverListener"/>-->
-        <!--<listener class-name="com.epam.tat.realtor.listeners.TestListener"/>-->
     </listeners>
 
     <test name="RealtorTest" >
@@ -28,9 +26,9 @@
             <!--<class name="com.epam.tat.realtor.tests.SavedHomesTest"/>-->
             <class name="com.epam.tat.realtor.tests.SavedSearchTest"/>
             <class name="com.epam.tat.realtor.tests.SchoolRatingTest"/>
-            <class name="com.epam.tat.realtor.tests.SearchByConditionsTest"/>
-            <class name="com.epam.tat.realtor.tests.SortByPriceTest"/>
-            <class name="com.epam.tat.realtor.tests.SortByRecommendationsTest"/>
+            <!--<class name="com.epam.tat.realtor.tests.SearchByConditionsTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.SortByPriceTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.SortByRecommendationsTest"/>-->
         </classes>
     </test>
 </suite>

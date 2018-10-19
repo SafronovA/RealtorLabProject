@@ -1,28 +1,17 @@
 package com.epam.tat.realtor.listeners;
 
 import com.epam.tat.realtor.drivers.DriverFactory;
-import net.bytebuddy.asm.Advice;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.*;
-import org.testng.xml.XmlSuite;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class RLTRTestListener implements ITestListener, ISuiteListener{
     private final Logger logger = LogManager.getRootLogger();
@@ -80,7 +69,7 @@ public class RLTRTestListener implements ITestListener, ISuiteListener{
         return result.getMethod().getConstructorOrMethod().getName();
     }
     public void screenshot(ITestResult iTestResult) {
-        File scrFile = ((TakesScreenshot) DriverFactory.FIREFOXDRIVER
+        File scrFile = ((TakesScreenshot) DriverFactory.CHROMEDRIVER
                 .getDriver())
                 .getScreenshotAs(OutputType.FILE);
         String reportDirectory = new File(System.getProperty("user.dir")).getAbsolutePath() + "/src/test/resources";
@@ -89,8 +78,6 @@ public class RLTRTestListener implements ITestListener, ISuiteListener{
         File destFile = new File( reportDirectory+"/failure_screenshots/"+iTestResult.getMethod().getConstructorOrMethod().getName()+"_"+formatDateTime.replace(':','_')+".png");
         try {
         FileUtils.copyFile(scrFile, destFile);
-//        String fileName = ".//target/screenshots/"  + "/"
-//                + LocalDateTime.now() + "/" + iTestResult.getMethod().getConstructorOrMethod().getName() + ".png";
         logger.info("save screenshot of failed test into "+destFile);
 
         } catch (IOException e) {
