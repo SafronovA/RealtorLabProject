@@ -80,7 +80,7 @@ public class RLTRTestListener implements ITestListener, ISuiteListener{
         return result.getMethod().getConstructorOrMethod().getName();
     }
     public void screenshot(ITestResult iTestResult) {
-        File scrFile = ((TakesScreenshot) DriverFactory.FIREFOXDRIVER
+        File scrFile = ((TakesScreenshot) DriverFactory.CHROMEDRIVER
                 .getDriver())
                 .getScreenshotAs(OutputType.FILE);
         String reportDirectory = new File(System.getProperty("user.dir")).getAbsolutePath() + "/src/test/resources";
@@ -89,8 +89,6 @@ public class RLTRTestListener implements ITestListener, ISuiteListener{
         File destFile = new File( reportDirectory+"/failure_screenshots/"+iTestResult.getMethod().getConstructorOrMethod().getName()+"_"+formatDateTime.replace(':','_')+".png");
         try {
         FileUtils.copyFile(scrFile, destFile);
-//        String fileName = ".//target/screenshots/"  + "/"
-//                + LocalDateTime.now() + "/" + iTestResult.getMethod().getConstructorOrMethod().getName() + ".png";
         logger.info("save screenshot of failed test into "+destFile);
 
         } catch (IOException e) {
