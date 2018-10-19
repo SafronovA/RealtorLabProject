@@ -38,6 +38,7 @@ public class BaseTest {
 
     @BeforeClass
     public void initDriver(){
+        driver.navigate().to(ConfigProperties.getTestProperty("url"));
         while (driver.findElements(By.xpath("//input[contains(@id,'downshift')]")).size()==0){
             System.out.println("New version of the home page. Page has to be  reloaded...");
             driver.manage().deleteAllCookies();
