@@ -23,6 +23,8 @@ public class BaseTest {
     void initPage() {
         driver = DriverFactory.CHROMEDRIVER.getDriver();
         driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
+        driver.navigate().to(ConfigProperties.getTestProperty("url"));
         homePageStep = new HomePageStep(driver);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         while (driver.findElements(By.xpath("//input[contains(@id,'downshift')]")).size()==0){
