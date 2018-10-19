@@ -5,12 +5,12 @@ import org.testng.annotations.DataProvider;
 public class RealtorDataProvider {
 
     /**
-     * data provider for test
+     * data provider for mortgage test
      *
      * @return test parameters for calculator
      */
     @DataProvider(name = "mortgageData")
-    public static Object[][] data(){
+    public static Object[][] dataForMortgageCalculatorTest(){
         return new Object[][]{
                 {"15-Year Fixed","6","110000","10000"},
                 {"20-Year Fixed","8","1200000","300000"},
