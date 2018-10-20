@@ -27,7 +27,7 @@ public class CheckIconsColorTest extends BaseTest {
                 .enterRealtorName(NAME)
                 .clickSearchButton()
                 .clickActivityMapButton()
-                .clickGetStartedButton()
+                .clickGetStartedConfirmButton()
                 .selectFirstRealtorCard()
                 .clickSeeAgentsNearbyProperties();
 

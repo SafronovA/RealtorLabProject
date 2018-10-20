@@ -26,7 +26,7 @@ public class ClickOnIcon extends BaseTest {
                 .enterRealtorName(NAME)
                 .clickSearchButton()
                 .clickActivityMapButton()
-                .clickGetStartedButton()
+                .clickGetStartedConfirmButton()
                 .selectFirstRealtorCard();
 
         Assert.assertTrue(realtorSearchResultPageStep.iconsBecomeSelected(),

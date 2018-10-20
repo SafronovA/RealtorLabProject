@@ -4,6 +4,7 @@ import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.drivers.DriverFactory;
 import com.epam.tat.realtor.steps.HomePageStep;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 

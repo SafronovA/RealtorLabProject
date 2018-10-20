@@ -157,9 +157,15 @@ public class RealtorSearchResultPage extends BasePage {
         return this;
     }
 
-    public RealtorSearchResultPage clickGetStartedConfirmButton(){
+    /**
+     * click get started button
+     *
+     * @return this page
+     */
+    public RealtorSearchResultPage clickGetStartedConfirmButton() {
         waitUntilElementIsVisible(getStartedButton);
         clickByJEx(getStartedButton, driver);
+        waitInvisibilityOfElementLocated(getStartedWindow);
         return this;
     }
 
@@ -240,18 +246,6 @@ public class RealtorSearchResultPage extends BasePage {
     public RealtorSearchResultPage clickNextPageButton() {
         waitForJQueryIsLoad();
         nextPageButton.get(0).click();
-        return this;
-    }
-
-    /**
-     * click get started button
-     *
-     * @return this page
-     */
-    public RealtorSearchResultPage clickGetStartedButton() {
-        waitUntilElementIsVisible(getStartedButton);
-        BasePage.clickByJEx(getStartedButton, driver);
-        waitInvisibilityOfElementLocated(getStartedWindow);
         return this;
     }
 
