@@ -69,7 +69,7 @@ public class RealtorSearchResultPage extends BasePage {
      *
      * @return photo on map count
      */
-    public int getPhotosOnMapCount(){
+    public int getPhotosOnMapCount() {
         return photosOnMap.size();
     }
 
@@ -134,7 +134,7 @@ public class RealtorSearchResultPage extends BasePage {
      * @return all photos on map
      */
     public WebElement getPhotosOnMap(int index) {
-        return driver.findElement(By.xpath(XPATH_FOR_PHOTOS_ON_MAP + "["+index+"]" + XPATH_IMG));
+        return driver.findElement(By.xpath(XPATH_FOR_PHOTOS_ON_MAP + "[" + index + "]" + XPATH_IMG));
     }
 
     /**
@@ -163,9 +163,11 @@ public class RealtorSearchResultPage extends BasePage {
      * @return this page
      */
     public RealtorSearchResultPage clickGetStartedConfirmButton() {
-        waitUntilElementIsVisible(getStartedButton);
-        clickByJEx(getStartedButton, driver);
-        waitInvisibilityOfElementLocated(getStartedWindow);
+        if (isFirstTimeOnActivityMap()) {
+            waitUntilElementIsVisible(getStartedButton);
+            clickByJEx(getStartedButton, driver);
+            waitInvisibilityOfElementLocated(getStartedWindow);
+        }
         return this;
     }
 
