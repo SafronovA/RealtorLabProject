@@ -6490,3 +6490,2182 @@ Log session start time Sun Oct 21 10:37:13 MSK 2018<br>
 <td>LaunchImpl.java:93</td>
 <td title="Message">Not rerun!</td>
 </tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test result</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Oct 21 10:59:44 MSK 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LaunchImpl.java:93</td>
+<td title="Message">Not rerun!</td>
+</tr>
+
+<tr>
+<td>28746</td>
+<td title="rp-io-19 thread">rp-io-19</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[45] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:14 UTC 2018' for resource with ID '5bcc320fbfe52300015ae77f'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29064</td>
+<td title="rp-io-99 thread">rp-io-99</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[125] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:16 UTC 2018' for resource with ID '5bcc3211bfe52300015ae7b5'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29063</td>
+<td title="rp-io-23 thread">rp-io-23</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[49] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:16 UTC 2018' for resource with ID '5bcc3211bfe52300015ae7b7'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29031</td>
+<td title="rp-io-92 thread">rp-io-92</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[118] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:16 UTC 2018' for resource with ID '5bcc3211bfe52300015ae7ae'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29027</td>
+<td title="rp-io-1 thread">rp-io-1</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[21] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:16 UTC 2018' for resource with ID '5bcc3211bfe52300015ae7a9'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>28788</td>
+<td title="rp-io-37 thread">rp-io-37</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[63] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:15 UTC 2018' for resource with ID '5bcc3210bfe52300015ae785'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>28746</td>
+<td title="rp-io-55 thread">rp-io-55</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[81] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:15 UTC 2018' for resource with ID '5bcc3210bfe52300015ae78d'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29079</td>
+<td title="rp-io-55 thread">rp-io-55</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[81] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:15 UTC 2018' for resource with ID '5bcc3210bfe52300015ae78d'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>28746</td>
+<td title="rp-io-18 thread">rp-io-18</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[44] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:14 UTC 2018' for resource with ID '5bcc320fbfe52300015ae77d'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>28746</td>
+<td title="rp-io-31 thread">rp-io-31</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[57] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:14 UTC 2018' for resource with ID '5bcc3210bfe52300015ae784'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29085</td>
+<td title="rp-io-18 thread">rp-io-18</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[44] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:14 UTC 2018' for resource with ID '5bcc320fbfe52300015ae77d'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29076</td>
+<td title="rp-io-37 thread">rp-io-37</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[63] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:15 UTC 2018' for resource with ID '5bcc3210bfe52300015ae785'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29074</td>
+<td title="rp-io-1 thread">rp-io-1</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[21] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:16 UTC 2018' for resource with ID '5bcc3211bfe52300015ae7a9'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29072</td>
+<td title="rp-io-92 thread">rp-io-92</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[118] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:16 UTC 2018' for resource with ID '5bcc3211bfe52300015ae7ae'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29071</td>
+<td title="rp-io-23 thread">rp-io-23</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[49] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:16 UTC 2018' for resource with ID '5bcc3211bfe52300015ae7b7'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29069</td>
+<td title="rp-io-99 thread">rp-io-99</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[125] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:16 UTC 2018' for resource with ID '5bcc3211bfe52300015ae7b5'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29068</td>
+<td title="rp-io-19 thread">rp-io-19</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[45] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:14 UTC 2018' for resource with ID '5bcc320fbfe52300015ae77f'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29087</td>
+<td title="rp-io-31 thread">rp-io-31</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[57] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:14 UTC 2018' for resource with ID '5bcc3210bfe52300015ae784'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29167</td>
+<td title="RxComputationThreadPool-4 thread">RxComputationThreadPool-4</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[31] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:14 UTC 2018' for resource with ID '5bcc320fbfe52300015ae77f'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29281</td>
+<td title="rp-io-46 thread">rp-io-46</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[72] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:14 UTC 2018' for resource with ID '5bcc3211bfe52300015ae7c3'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>29283</td>
+<td title="rp-io-46 thread">rp-io-46</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[72] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:14 UTC 2018' for resource with ID '5bcc3211bfe52300015ae7c3'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>30895</td>
+<td title="RxComputationThreadPool-4 thread">RxComputationThreadPool-4</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[31] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 08:00:14 UTC 2018' for resource with ID '5bcc320fbfe52300015ae77f'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>30937</td>
+<td title="rp-io-25 thread">rp-io-25</td>
+<td title="Level">INFO</td>
+<td title="rp.org.apache.http.impl.execchain.RetryExec category">rp.org.apache.http.impl.execchain.RetryExec</td>
+<td>RetryExec.java:97</td>
+<td title="Message">I/O exception (java.net.SocketException) caught when processing request to {s}-&gt;https://rp.epam.com:443: Socket operation on nonsocket: connect</td>
+</tr>
+
+<tr>
+<td>30937</td>
+<td title="rp-io-67 thread">rp-io-67</td>
+<td title="Level">INFO</td>
+<td title="rp.org.apache.http.impl.execchain.RetryExec category">rp.org.apache.http.impl.execchain.RetryExec</td>
+<td>RetryExec.java:97</td>
+<td title="Message">I/O exception (java.net.SocketException) caught when processing request to {s}-&gt;https://rp.epam.com:443: Socket operation on nonsocket: connect</td>
+</tr>
+
+<tr>
+<td>30937</td>
+<td title="rp-io-34 thread">rp-io-34</td>
+<td title="Level">INFO</td>
+<td title="rp.org.apache.http.impl.execchain.RetryExec category">rp.org.apache.http.impl.execchain.RetryExec</td>
+<td>RetryExec.java:97</td>
+<td title="Message">I/O exception (java.net.SocketException) caught when processing request to {s}-&gt;https://rp.epam.com:443: Socket operation on nonsocket: connect</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test result</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Oct 21 11:00:55 MSK 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LaunchImpl.java:93</td>
+<td title="Message">Not rerun!</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test result</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Oct 21 11:02:54 MSK 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LaunchImpl.java:93</td>
+<td title="Message">Not rerun!</td>
+</tr>
+
+<tr>
+<td>327529</td>
+<td title="rp-io-18 thread">rp-io-18</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:49</td>
+<td title="Message">Start test item completed with error </td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">rp.org.apache.http.conn.HttpHostConnectException: Connect to rp.epam.com:443 [rp.epam.com/217.21.63.228] failed: Connection timed out: connect
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Caused by: java.net.ConnectException: Connection timed out: connect
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.Socket.connect(Socket.java:589)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:339)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	... 22 more
+</td></tr>
+
+<tr>
+<td>378051</td>
+<td title="rp-io-16 thread">rp-io-16</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[42] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">javax.net.ssl.SSLHandshakeException: Remote host closed connection during handshake
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1002)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:396)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:355)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Caused by: java.io.EOFException: SSL peer shut down incorrectly
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.InputRecord.read(InputRecord.java:505)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	... 28 more
+</td></tr>
+
+<tr>
+<td>378052</td>
+<td title="rp-io-16 thread">rp-io-16</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[42] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">javax.net.ssl.SSLHandshakeException: Remote host closed connection during handshake
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1002)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:396)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:355)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Caused by: java.io.EOFException: SSL peer shut down incorrectly
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.InputRecord.read(InputRecord.java:505)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	... 28 more
+</td></tr>
+
+<tr>
+<td>413431</td>
+<td title="rp-io-17 thread">rp-io-17</td>
+<td title="Level">INFO</td>
+<td title="rp.org.apache.http.impl.execchain.RetryExec category">rp.org.apache.http.impl.execchain.RetryExec</td>
+<td>RetryExec.java:97</td>
+<td title="Message">I/O exception (java.net.SocketException) caught when processing request to {s}-&gt;https://rp.epam.com:443: Software caused connection abort: recv failed</td>
+</tr>
+
+<tr>
+<td>413432</td>
+<td title="rp-io-17 thread">rp-io-17</td>
+<td title="Level">INFO</td>
+<td title="rp.org.apache.http.impl.execchain.RetryExec category">rp.org.apache.http.impl.execchain.RetryExec</td>
+<td>RetryExec.java:113</td>
+<td title="Message">Retrying request to {s}-&gt;https://rp.epam.com:443</td>
+</tr>
+
+<tr>
+<td>413738</td>
+<td title="rp-io-17 thread">rp-io-17</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:49</td>
+<td title="Message">Start test item completed with error </td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.net.UnknownHostException: rp.epam.com
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>413740</td>
+<td title="rp-io-17 thread">rp-io-17</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[43] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.net.UnknownHostException: rp.epam.com
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>413740</td>
+<td title="RxComputationThreadPool-3 thread">RxComputationThreadPool-3</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:75</td>
+<td title="Message">Logging context completed with error </td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.net.UnknownHostException: rp.epam.com
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>532164</td>
+<td title="RxComputationThreadPool-3 thread">RxComputationThreadPool-3</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[17] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">rp.org.apache.http.conn.HttpHostConnectException: Connect to rp.epam.com:443 [rp.epam.com/217.21.63.228] failed: Connection timed out: connect
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Caused by: java.net.ConnectException: Connection timed out: connect
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.Socket.connect(Socket.java:589)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:339)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	... 22 more
+</td></tr>
+
+<tr>
+<td>805874</td>
+<td title="rp-io-36 thread">rp-io-36</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:49</td>
+<td title="Message">Start test item completed with error </td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">rp.org.apache.http.NoHttpResponseException: rp.epam.com:443 failed to respond
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>818078</td>
+<td title="RxComputationThreadPool-1 thread">RxComputationThreadPool-1</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[15] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">rp.org.apache.http.NoHttpResponseException: rp.epam.com:443 failed to respond
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>2052756</td>
+<td title="RxComputationThreadPool-4 thread">RxComputationThreadPool-4</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[29] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">javax.net.ssl.SSLHandshakeException: Remote host closed connection during handshake
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1002)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:396)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:355)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Caused by: java.io.EOFException: SSL peer shut down incorrectly
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.InputRecord.read(InputRecord.java:505)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	... 28 more
+</td></tr>
+
+<tr>
+<td>2054459</td>
+<td title="RxComputationThreadPool-4 thread">RxComputationThreadPool-4</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[29] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">javax.net.ssl.SSLHandshakeException: Remote host closed connection during handshake
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1002)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1385)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1413)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1397)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:396)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:355)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Caused by: java.io.EOFException: SSL peer shut down incorrectly
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.InputRecord.read(InputRecord.java:505)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	... 28 more
+</td></tr>
+
+<tr>
+<td>2054470</td>
+<td title="rp-io-17 thread">rp-io-17</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[43] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">java.net.SocketException: Socket closed
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.SocketInputStream.socketRead0(Native Method)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:940)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test result</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Oct 21 11:37:32 MSK 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LaunchImpl.java:93</td>
+<td title="Message">Not rerun!</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test result</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Oct 21 12:27:33 MSK 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LaunchImpl.java:93</td>
+<td title="Message">Not rerun!</td>
+</tr>
+
+<tr>
+<td>259770</td>
+<td title="rp-io-42 thread">rp-io-42</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[68] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478bbfe52300015c065b'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259931</td>
+<td title="rp-io-42 thread">rp-io-42</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[68] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478bbfe52300015c065b'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259892</td>
+<td title="rp-io-0 thread">rp-io-0</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[18] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:55 UTC 2018' for resource with ID '5bcc478cbfe52300015c0685'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259959</td>
+<td title="rp-io-0 thread">rp-io-0</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[18] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:55 UTC 2018' for resource with ID '5bcc478cbfe52300015c0685'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259834</td>
+<td title="rp-io-54 thread">rp-io-54</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[80] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478bbfe52300015c0666'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259780</td>
+<td title="rp-io-43 thread">rp-io-43</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[69] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478bbfe52300015c065c'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259778</td>
+<td title="rp-io-40 thread">rp-io-40</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[66] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478bbfe52300015c0656'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259777</td>
+<td title="rp-io-38 thread">rp-io-38</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[64] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478bbfe52300015c0659'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259771</td>
+<td title="rp-io-72 thread">rp-io-72</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[98] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478cbfe52300015c066b'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259992</td>
+<td title="rp-io-72 thread">rp-io-72</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[98] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478cbfe52300015c066b'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259991</td>
+<td title="rp-io-38 thread">rp-io-38</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[64] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478bbfe52300015c0659'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259989</td>
+<td title="rp-io-40 thread">rp-io-40</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[66] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478bbfe52300015c0656'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259999</td>
+<td title="rp-io-40 thread">rp-io-40</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[66] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478bbfe52300015c0656'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259988</td>
+<td title="rp-io-43 thread">rp-io-43</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[69] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478bbfe52300015c065c'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259986</td>
+<td title="rp-io-54 thread">rp-io-54</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[80] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478bbfe52300015c0666'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259955</td>
+<td title="rp-io-6 thread">rp-io-6</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[32] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:55 UTC 2018' for resource with ID '5bcc478cbfe52300015c068a'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>260013</td>
+<td title="rp-io-6 thread">rp-io-6</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[32] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:55 UTC 2018' for resource with ID '5bcc478cbfe52300015c068a'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>259953</td>
+<td title="rp-io-2 thread">rp-io-2</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[22] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:55 UTC 2018' for resource with ID '5bcc478cbfe52300015c068b'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>260017</td>
+<td title="rp-io-2 thread">rp-io-2</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[22] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:55 UTC 2018' for resource with ID '5bcc478cbfe52300015c068b'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>260027</td>
+<td title="rp-io-85 thread">rp-io-85</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LoggingCallback.java:51</td>
+<td title="Message">[111] ReportPortal execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:55 UTC 2018' for resource with ID '5bcc478cbfe52300015c0695'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>260028</td>
+<td title="rp-io-85 thread">rp-io-85</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[111] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:55 UTC 2018' for resource with ID '5bcc478cbfe52300015c0695'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+
+<tr>
+<td>261539</td>
+<td title="RxComputationThreadPool-4 thread">RxComputationThreadPool-4</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="com.epam.reportportal.utils.SubscriptionUtils category">com.epam.reportportal.utils.SubscriptionUtils</td>
+<td>SubscriptionUtils.java:96</td>
+<td title="Message">[29] ReportPortal Finish test item execution error</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status code: 406
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Status message: Not Acceptable
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Sun Oct 21 09:31:54 UTC 2018' for resource with ID '5bcc478bbfe52300015c0656'
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test result</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Oct 21 12:35:02 MSK 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LaunchImpl.java:93</td>
+<td title="Message">Not rerun!</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test result</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Oct 21 12:58:28 MSK 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LaunchImpl.java:93</td>
+<td title="Message">Not rerun!</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test result</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Oct 21 13:32:01 MSK 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LaunchImpl.java:93</td>
+<td title="Message">Not rerun!</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test result</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Sun Oct 21 14:01:11 MSK 2018<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>File:Line</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="com.epam.reportportal.service.Launch category">com.epam.reportportal.service.Launch</td>
+<td>LaunchImpl.java:93</td>
+<td title="Message">Not rerun!</td>
+</tr>
