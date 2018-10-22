@@ -4,7 +4,7 @@ import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ClickOnIcon extends BaseTest {
+public class ClickOnRealtorIconTest extends BaseTest {
     private static final String LOCATION = "Boston, MA";
     private static final String NAME = "Kristen Gaughan";
     private RealtorSearchResultPageStep realtorSearchResultPageStep;

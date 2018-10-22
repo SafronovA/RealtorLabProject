@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Realtor" verbose="1" parallel="classes" thread-count="1">
+    <test name="SearchPage">
+        <classes>
+            <class name="com.epam.tat.realtor.tests.RestaurantsFilterTest"></class>
+            <class name="com.epam.tat.realtor.tests.SchoolRatingTest"></class>
+            <class name="com.epam.tat.realtor.tests.MapMarksTest"></class>
+            <class name="com.epam.tat.realtor.tests.NumberOfHousesFoundTest"></class>
+            <class name="com.epam.tat.realtor.tests.SearchByConditionsTest"></class>
+            <class name="com.epam.tat.realtor.tests.SortByPriceTest"></class>
+        </classes>
+    </test>
+</suite>

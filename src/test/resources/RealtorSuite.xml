@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Realtor" verbose="1">
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+        <listener class-name="com.epam.tat.realtor.listeners.IAnnotationTransformerListener"/>
+        <listener class-name="com.epam.tat.realtor.listeners.RLTRTestListener"/>
+        <listener class-name="com.epam.tat.realtor.listeners.ReportingListner"/>
+    </listeners>
+
+    <suite-files>
+        <suite-file path="SearchPageSuite.xml"></suite-file>
+    </suite-files>
+    <suite-files>
+        <suite-file path="RealtorPageSuite.xml"></suite-file>
+    </suite-files>
+    <suite-files>
+        <suite-file path="ProfilePageSuite.xml"></suite-file>
+    </suite-files>
+    <suite-files>
+        <suite-file path="MiscSuite.xml"></suite-file>
+    </suite-files>
+
+</suite>
