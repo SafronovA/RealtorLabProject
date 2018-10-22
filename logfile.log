@@ -2572,3 +2572,1892 @@ Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
 2018-10-21 21:30:14 INFO  Launch:93 - Not rerun!
 2018-10-21 21:41:48 INFO  Launch:93 - Not rerun!
 2018-10-22 10:00:52 INFO  Launch:93 - Not rerun!
+2018-10-22 10:27:11 INFO  Launch:93 - Not rerun!
+2018-10-22 10:30:39 INFO  Launch:93 - Not rerun!
+2018-10-22 10:35:14 INFO  Launch:93 - Not rerun!
+2018-10-22 10:35:59 INFO  Launch:93 - Not rerun!
+2018-10-22 10:37:18 ERROR Launch:51 - [82] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda37'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR SubscriptionUtils:96 - [82] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda37'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR Launch:51 - [83] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda38'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR SubscriptionUtils:96 - [83] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda38'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR Launch:51 - [87] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda39'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR SubscriptionUtils:96 - [87] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda39'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR Launch:51 - [89] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda41'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR SubscriptionUtils:96 - [89] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda41'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR Launch:51 - [79] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda3a'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR SubscriptionUtils:96 - [79] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda3a'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR Launch:51 - [88] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda42'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR SubscriptionUtils:96 - [88] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda42'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR Launch:51 - [32] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda77'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR SubscriptionUtils:96 - [32] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda77'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR Launch:51 - [37] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda7b'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR SubscriptionUtils:96 - [37] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda7b'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR Launch:51 - [34] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda80'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR Launch:51 - [49] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda84'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR SubscriptionUtils:96 - [34] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda80'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR SubscriptionUtils:96 - [49] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda84'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR SubscriptionUtils:96 - [27] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda39'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:37:18 ERROR SubscriptionUtils:96 - [27] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:37:18 UTC 2018' for resource with ID '5bcd7e2ebfe52300018bda39'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:38:57 INFO  Launch:93 - Not rerun!
+2018-10-22 10:39:29 INFO  Launch:93 - Not rerun!
+2018-10-22 10:41:06 INFO  Launch:93 - Not rerun!
+2018-10-22 10:42:16 ERROR Launch:51 - [78] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1de2'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:16 ERROR SubscriptionUtils:96 - [78] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1de2'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:16 ERROR Launch:51 - [70] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1dd9'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:16 ERROR Launch:51 - [73] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1ddd'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:16 ERROR SubscriptionUtils:96 - [70] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1dd9'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:16 ERROR Launch:51 - [88] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1df0'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:16 ERROR Launch:51 - [87] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1dec'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:16 ERROR SubscriptionUtils:96 - [87] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1dec'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:16 ERROR Launch:51 - [80] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1deb'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:16 ERROR SubscriptionUtils:96 - [80] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1deb'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:16 ERROR SubscriptionUtils:96 - [88] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1df0'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:16 ERROR SubscriptionUtils:96 - [73] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1ddd'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:17 ERROR Launch:51 - [32] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:17 UTC 2018' for resource with ID '5bcd7f59bfe52300018c1e26'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:17 ERROR Launch:51 - [36] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:17 UTC 2018' for resource with ID '5bcd7f59bfe52300018c1e2b'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:17 ERROR SubscriptionUtils:96 - [36] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:17 UTC 2018' for resource with ID '5bcd7f59bfe52300018c1e2b'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:17 ERROR SubscriptionUtils:96 - [32] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:17 UTC 2018' for resource with ID '5bcd7f59bfe52300018c1e26'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:17 ERROR Launch:51 - [30] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:17 UTC 2018' for resource with ID '5bcd7f59bfe52300018c1e2e'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:17 ERROR SubscriptionUtils:96 - [30] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:17 UTC 2018' for resource with ID '5bcd7f59bfe52300018c1e2e'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:17 ERROR Launch:51 - [37] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:17 UTC 2018' for resource with ID '5bcd7f59bfe52300018c1e30'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:17 ERROR SubscriptionUtils:96 - [37] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:17 UTC 2018' for resource with ID '5bcd7f59bfe52300018c1e30'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:17 ERROR SubscriptionUtils:96 - [27] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 07:42:16 UTC 2018' for resource with ID '5bcd7f58bfe52300018c1dd9'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 10:42:34 INFO  Launch:93 - Not rerun!
+2018-10-22 13:02:05 INFO  Launch:93 - Not rerun!
+2018-10-22 13:03:13 ERROR Launch:51 - [75] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe5230001958876'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:13 ERROR SubscriptionUtils:96 - [75] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe5230001958876'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:13 ERROR Launch:51 - [90] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe52300019588d3'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR SubscriptionUtils:96 - [90] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe52300019588d3'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:13 ERROR Launch:51 - [73] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe5230001958878'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:13 ERROR Launch:51 - [81] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe5230001958890'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR SubscriptionUtils:96 - [81] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe5230001958890'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:13 ERROR Launch:51 - [85] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe52300019588a2'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR SubscriptionUtils:96 - [85] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe52300019588a2'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR SubscriptionUtils:96 - [73] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe5230001958878'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR Launch:51 - [110] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe52300019588fb'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR SubscriptionUtils:96 - [110] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe52300019588fb'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR Launch:51 - [78] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda062bfe523000195896e'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR SubscriptionUtils:96 - [78] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda062bfe523000195896e'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR Launch:51 - [17] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda062bfe523000195896a'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR SubscriptionUtils:96 - [17] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda062bfe523000195896a'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR Launch:51 - [35] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:14 UTC 2018' for resource with ID '5bcda062bfe523000195897e'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR SubscriptionUtils:96 - [35] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:14 UTC 2018' for resource with ID '5bcda062bfe523000195897e'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR Launch:51 - [43] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:14 UTC 2018' for resource with ID '5bcda062bfe5230001958982'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR SubscriptionUtils:96 - [43] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:14 UTC 2018' for resource with ID '5bcda062bfe5230001958982'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR SubscriptionUtils:96 - [27] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe5230001958878'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR SubscriptionUtils:96 - [27] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:03:13 UTC 2018' for resource with ID '5bcda061bfe5230001958878'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR Launch:51 - [61] ReportPortal execution error
+java.lang.IllegalStateException: Connection pool shut down
+	at rp.org.apache.http.util.Asserts.check(Asserts.java:34)
+	at rp.org.apache.http.pool.AbstractConnPool.lease(AbstractConnPool.java:189)
+	at rp.org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection(PoolingHttpClientConnectionManager.java:257)
+	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:176)
+	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:03:14 ERROR SubscriptionUtils:96 - [61] ReportPortal Finish test item execution error
+java.lang.IllegalStateException: Connection pool shut down
+	at rp.org.apache.http.util.Asserts.check(Asserts.java:34)
+	at rp.org.apache.http.pool.AbstractConnPool.lease(AbstractConnPool.java:189)
+	at rp.org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection(PoolingHttpClientConnectionManager.java:257)
+	at rp.org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:176)
+	at rp.org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at rp.org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at rp.org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at rp.org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at rp.org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:493)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:18:49 INFO  Launch:93 - Not rerun!
+2018-10-22 13:24:14 INFO  Launch:93 - Not rerun!
+2018-10-22 13:26:16 ERROR Launch:51 - [69] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:15 UTC 2018' for resource with ID '5bcda5c7bfe523000197900a'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR SubscriptionUtils:96 - [69] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:15 UTC 2018' for resource with ID '5bcda5c7bfe523000197900a'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR Launch:51 - [83] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:15 UTC 2018' for resource with ID '5bcda5c7bfe523000197900b'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR SubscriptionUtils:96 - [83] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:15 UTC 2018' for resource with ID '5bcda5c7bfe523000197900b'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR Launch:51 - [66] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:15 UTC 2018' for resource with ID '5bcda5c7bfe5230001979008'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR Launch:51 - [103] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:15 UTC 2018' for resource with ID '5bcda5c8bfe5230001979028'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR SubscriptionUtils:96 - [103] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:15 UTC 2018' for resource with ID '5bcda5c8bfe5230001979028'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR Launch:51 - [74] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:15 UTC 2018' for resource with ID '5bcda5c7bfe523000197900d'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR SubscriptionUtils:96 - [74] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:15 UTC 2018' for resource with ID '5bcda5c7bfe523000197900d'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR Launch:51 - [90] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:16 UTC 2018' for resource with ID '5bcda5c8bfe5230001979019'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR SubscriptionUtils:96 - [90] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:16 UTC 2018' for resource with ID '5bcda5c8bfe5230001979019'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR SubscriptionUtils:96 - [66] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:15 UTC 2018' for resource with ID '5bcda5c7bfe5230001979008'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR Launch:51 - [19] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:16 UTC 2018' for resource with ID '5bcda5c8bfe5230001979065'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR SubscriptionUtils:96 - [19] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:16 UTC 2018' for resource with ID '5bcda5c8bfe5230001979065'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR Launch:51 - [34] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:16 UTC 2018' for resource with ID '5bcda5c8bfe5230001979080'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR SubscriptionUtils:96 - [34] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:16 UTC 2018' for resource with ID '5bcda5c8bfe5230001979080'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR Launch:51 - [39] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:16 UTC 2018' for resource with ID '5bcda5c8bfe523000197907d'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR SubscriptionUtils:96 - [39] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:16 UTC 2018' for resource with ID '5bcda5c8bfe523000197907d'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR SubscriptionUtils:96 - [27] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:15 UTC 2018' for resource with ID '5bcda5c7bfe5230001979008'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR Launch:51 - [29] ReportPortal execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:16 UTC 2018' for resource with ID '5bcda5c8bfe5230001979079'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR SubscriptionUtils:96 - [29] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:16 UTC 2018' for resource with ID '5bcda5c8bfe5230001979079'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:16 ERROR SubscriptionUtils:96 - [27] ReportPortal Finish test item execution error
+com.epam.reportportal.exception.ReportPortalException: Report Portal returned error
+Status code: 406
+Status message: Not Acceptable
+Error Message: Finish time 'Thu Jan 01 00:00:00 UTC 1970' is earlier than start time 'Mon Oct 22 10:26:15 UTC 2018' for resource with ID '5bcda5c7bfe5230001979008'
+Error Type: FINISH_TIME_EARLIER_THAN_START_TIME
+
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handleError(ReportPortalErrorHandler.java:83)
+	at com.epam.reportportal.service.ReportPortalErrorHandler.handle(ReportPortalErrorHandler.java:59)
+	at com.epam.reportportal.restendpoint.http.HttpClientRestEndpoint$1.subscribe(HttpClientRestEndpoint.java:517)
+	at io.reactivex.internal.operators.maybe.MaybeCreate.subscribeActual(MaybeCreate.java:45)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeCache.subscribeActual(MaybeCache.java:77)
+	at io.reactivex.Maybe.subscribe(Maybe.java:3727)
+	at io.reactivex.internal.operators.maybe.MaybeSubscribeOn$SubscribeTask.run(MaybeSubscribeOn.java:54)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:38)
+	at io.reactivex.internal.schedulers.ScheduledDirectTask.call(ScheduledDirectTask.java:26)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2018-10-22 13:26:21 INFO  Launch:93 - Not rerun!

@@ -22,7 +22,7 @@ public enum DriverFactory {
                 System.setProperty("webdriver.chrome.driver", ConfigProperties.getTestProperty("chromedriver"));
                 DesiredCapabilities capabilitiesChrome = DesiredCapabilities.chrome();
                 capabilitiesChrome.setPlatform(Platform.WINDOWS);
-
+                capabilitiesChrome.setCapability("applicationName", "safronau_node");
                 try {
                     driver = new RemoteWebDriver(new URL(ConfigProperties.getTestProperty("remoteURL")), capabilitiesChrome);
                 } catch (MalformedURLException e) {
@@ -44,7 +44,6 @@ public enum DriverFactory {
                 System.setProperty("webdriver.gecko.driver", ConfigProperties.getTestProperty("geckodriver"));
                 DesiredCapabilities capabilitiesFirefox = DesiredCapabilities.firefox();
                 capabilitiesFirefox.setPlatform(Platform.WINDOWS);
-
                 try {
                     driver = new RemoteWebDriver(new URL(ConfigProperties.getTestProperty("remoteURL")), capabilitiesFirefox);
                 } catch (MalformedURLException e) {

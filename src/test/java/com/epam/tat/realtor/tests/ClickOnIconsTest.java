@@ -4,7 +4,7 @@ import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ClickOnIcon extends BaseTest {
+public class ClickOnIconsTest extends BaseTest {
     private static final String LOCATION = "Boston, MA";
     private static final String NAME = "Kristen Gaughan";
     private RealtorSearchResultPageStep realtorSearchResultPageStep;
@@ -20,7 +20,7 @@ public class ClickOnIcon extends BaseTest {
      * check that icon status become 'selected' after clicking on it. In other words icon should increase.
      */
     @Test
-    public void checkIconsColor() {
+    public void clickOnIcons() {
         realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
                 .enterRealtorsLocation(LOCATION)
                 .enterRealtorName(NAME)
