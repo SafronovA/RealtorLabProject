@@ -1,24 +1,43 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Realtor" verbose="1">
+<suite name="RealtorSuite" verbose="1">
+
     <listeners>
         <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="com.epam.tat.realtor.listeners.IAnnotationTransformerListener"/>
         <listener class-name="com.epam.tat.realtor.listeners.RLTRTestListener"/>
         <listener class-name="com.epam.tat.realtor.listeners.ReportingListner"/>
     </listeners>
 
-    <suite-files>
-        <suite-file path="SearchPageSuite.xml"></suite-file>
-    </suite-files>
-    <suite-files>
-        <suite-file path="RealtorPageSuite.xml"></suite-file>
-    </suite-files>
-    <suite-files>
-        <suite-file path="ProfilePageSuite.xml"></suite-file>
-    </suite-files>
-    <suite-files>
-        <suite-file path="MiscSuite.xml"></suite-file>
-    </suite-files>
+    <test name="RealtorTest" >
+        <classes>
+            <class name="com.epam.tat.realtor.tests.RestaurantsFilterTest"/>
+            <class name="com.epam.tat.realtor.tests.SchoolRatingTest"/>
+            <class name="com.epam.tat.realtor.tests.MapMarksTest"/>
+            <class name="com.epam.tat.realtor.tests.RealtorRecommendationsTest"/>
+            <class name="com.epam.tat.realtor.tests.RealtorReviewsTest"/>
 
+            <class name="com.epam.tat.realtor.tests.CheckIconsColorTest"/>
+            <class name="com.epam.tat.realtor.tests.ClickOnRealtorIconTest"/>
+            <class name="com.epam.tat.realtor.tests.EditMyHomeInfoTest"/>
+            <class name="com.epam.tat.realtor.tests.EditProfileAddressTest"/>
+            <class name="com.epam.tat.realtor.tests.EditProfileNameTest"/>
+            <class name="com.epam.tat.realtor.tests.ForSaleRealtorHousesTest"/>
+
+            <class name="com.epam.tat.realtor.tests.MortgageCalculatorTest"/>
+            <class name="com.epam.tat.realtor.tests.NumberOfHousesFoundTest"/>
+            <class name="com.epam.tat.realtor.tests.PhotosOnMapTest"/>
+            <class name="com.epam.tat.realtor.tests.PropertyRecordsTest"/>
+
+            <class name="com.epam.tat.realtor.tests.RealtorSoldHousesTest"/>
+
+            <class name="com.epam.tat.realtor.tests.SavedHomesTest"/>
+            <class name="com.epam.tat.realtor.tests.SavedSearchTest"/>
+
+            <class name="com.epam.tat.realtor.tests.SearchByConditionsTest"/>
+            <class name="com.epam.tat.realtor.tests.SortByPriceTest"/>
+            <class name="com.epam.tat.realtor.tests.SortByRecommendationsTest"/>
+        </classes>
+    </test>
 </suite>

@@ -23,12 +23,12 @@ public class RLTRTestListener implements ITestListener, ISuiteListener{
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
         long timeTaken = ((iTestResult.getEndMillis() - iTestResult.getStartMillis()));
-        logger.info("Tested: " + iTestResult.getName() + " Time taken:" + timeTaken + " ms");
+        logger.info("Success: " + iTestResult.getName() + " Time taken:" + timeTaken + " ms");
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        logger.info("Failed : "+ getTestMethodName(iTestResult));
+        logger.info("Failed : " + getTestMethodName(iTestResult) + " with exception" + iTestResult.getThrowable());
         screenshot(iTestResult);
 
     }
