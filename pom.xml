@@ -89,7 +89,7 @@
                 <version>2.22.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suitXmlFile>${basedir}\src\test\resources\RealtorSuite.xml</suitXmlFile>
+                        <suitXmlFile>${basedir}\src\test\resources\FullSuite.xml</suitXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
