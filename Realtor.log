@@ -1,0 +1,208 @@
+*****************************
+Started suite RealtorSuite
+method #1 checkIconsColor
+method #2 checkIconsColor
+method #3 editHomeInfo
+method #4 editAddressFields
+method #5 editProfileName
+method #6 forSaleRealtorHouses
+method #7 checkMapMarks
+method #8 mortgageCalculatorTest
+method #9 numberOfHousesFound
+method #10 photosOnMapMatchToSelectedAgentPhoto
+method #11 checkPropertyRecords
+method #12 checkRealtorRecommendations
+method #13 checkRealtorSoldHouses
+method #14 checkRealtorSoldHouses
+method #15 restaurantsFilter
+method #16 checkSavedHomes
+method #17 savedSearch
+method #18 schoolRating
+method #19 searchByCondition
+method #20 sortByPrice
+method #21 sortByRecommendations
+Started testing on: Mon Oct 22 12:06:19 MSK 2018
+Testing: restaurantsFilter
+Success: restaurantsFilter Time taken:103504 ms
+Testing: schoolRating
+Success: schoolRating Time taken:20211 ms
+Testing: checkMapMarks
+Success: checkMapMarks Time taken:38309 ms
+Testing: checkRealtorRecommendations
+Success: checkRealtorRecommendations Time taken:13470 ms
+Testing: checkRealtorSoldHouses
+Success: checkRealtorSoldHouses Time taken:10647 ms
+Testing: checkIconsColor
+Success: checkIconsColor Time taken:17683 ms
+Testing: checkIconsColor
+Success: checkIconsColor Time taken:14145 ms
+Testing: editHomeInfo
+Success: editHomeInfo Time taken:80556 ms
+Testing: editAddressFields
+Success: editAddressFields Time taken:66865 ms
+Testing: editProfileName
+Success: editProfileName Time taken:62807 ms
+Testing: forSaleRealtorHouses
+Success: forSaleRealtorHouses Time taken:12483 ms
+Testing: mortgageCalculatorTest
+Success: mortgageCalculatorTest Time taken:7452 ms
+Testing: mortgageCalculatorTest
+Success: mortgageCalculatorTest Time taken:7029 ms
+Testing: mortgageCalculatorTest
+Failed : mortgageCalculatorTest with exceptionjava.lang.AssertionError: Mortgage calculator calculated incorrect monthly payment did not expect to find [true] but found [false]
+save screenshot of failed test into C:\Users\Siarhei_Volchak\IdeaProjects\tat\realtor\src\test\resources\failure_screenshots\mortgageCalculatorTest_2018-10-22 12_18_28.png
+Testing: mortgageCalculatorTest
+Success: mortgageCalculatorTest Time taken:6776 ms
+Testing: mortgageCalculatorTest
+Success: mortgageCalculatorTest Time taken:5034 ms
+Testing: mortgageCalculatorTest
+Success: mortgageCalculatorTest Time taken:6069 ms
+Testing: numberOfHousesFound
+Success: numberOfHousesFound Time taken:113862 ms
+Testing: photosOnMapMatchToSelectedAgentPhoto
+Success: photosOnMapMatchToSelectedAgentPhoto Time taken:13614 ms
+Testing: checkPropertyRecords
+Success: checkPropertyRecords Time taken:61411 ms
+Testing: checkRealtorSoldHouses
+Success: checkRealtorSoldHouses Time taken:13151 ms
+Testing: checkSavedHomes
+Success: checkSavedHomes Time taken:30811 ms
+Testing: savedSearch
+Success: savedSearch Time taken:62487 ms
+Testing: searchByCondition
+Success: searchByCondition Time taken:62655 ms
+Testing: sortByPrice
+Success: sortByPrice Time taken:97003 ms
+Testing: sortByRecommendations
+Failed : sortByRecommendations with exceptionorg.openqa.selenium.WebDriverException: unknown error: Element <div class="dropdown-toggle filter-toggle" data-toggle="far-dropdown" title="Recommendation" aria-expanded="true" id="filter_5">...</div> is not clickable at point (929, 75). Other element would receive the click: <div class="acsModalBackdrop acsAbandonButton" data-isbackdrop="true">...</div>
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'EPBYMINW7573', ip: '10.6.102.35', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\SIARHE~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59027}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: b7f816df24562c829b1460757cdc73ca
+save screenshot of failed test into C:\Users\Siarhei_Volchak\IdeaProjects\tat\realtor\src\test\resources\failure_screenshots\sortByRecommendations_2018-10-22 12_33_00.png
+PASSED TEST CASES
+checkRealtorSoldHouses
+numberOfHousesFound
+checkMapMarks
+restaurantsFilter
+mortgageCalculatorTest
+searchByCondition
+checkIconsColor
+checkPropertyRecords
+checkRealtorRecommendations
+mortgageCalculatorTest
+savedSearch
+editProfileName
+mortgageCalculatorTest
+mortgageCalculatorTest
+editHomeInfo
+checkRealtorSoldHouses
+checkSavedHomes
+checkIconsColor
+photosOnMapMatchToSelectedAgentPhoto
+editAddressFields
+forSaleRealtorHouses
+schoolRating
+mortgageCalculatorTest
+sortByPrice
+FAILED TEST CASES
+sortByRecommendations
+mortgageCalculatorTest
+Test completed on: Mon Oct 22 12:33:00 MSK 2018
+Suite RealtorSuite ended
+*****************************
+Started suite 1Suite
+method #1 checkMapMarks
+method #2 schoolRating
+Started testing on: Mon Oct 22 12:50:34 MSK 2018
+Testing: schoolRating
+Success: schoolRating Time taken:68311 ms
+Testing: checkMapMarks
+Success: checkMapMarks Time taken:39061 ms
+PASSED TEST CASES
+checkMapMarks
+schoolRating
+FAILED TEST CASES
+Test completed on: Mon Oct 22 12:53:06 MSK 2018
+Suite 1Suite ended
+*****************************
+Started suite 2Suite
+method #1 mortgageCalculatorTest
+method #2 restaurantsFilter
+Started testing on: Mon Oct 22 12:53:08 MSK 2018
+Testing: restaurantsFilter
+Skipped Test: restaurantsFilter
+Testing: mortgageCalculatorTest
+Skipped Test: mortgageCalculatorTest
+Testing: mortgageCalculatorTest
+Skipped Test: mortgageCalculatorTest
+Testing: mortgageCalculatorTest
+Skipped Test: mortgageCalculatorTest
+Testing: mortgageCalculatorTest
+Skipped Test: mortgageCalculatorTest
+Testing: mortgageCalculatorTest
+Skipped Test: mortgageCalculatorTest
+Testing: mortgageCalculatorTest
+Skipped Test: mortgageCalculatorTest
+PASSED TEST CASES
+FAILED TEST CASES
+Test completed on: Mon Oct 22 12:53:08 MSK 2018
+Suite 2Suite ended
+*****************************
+Started suite RealtorSuite
+Suite RealtorSuite ended
+*****************************
+Started suite RealtorSuite
+method #1 checkIconsColor
+method #2 checkIconsColor
+method #3 editHomeInfo
+method #4 editAddressFields
+method #5 editProfileName
+method #6 forSaleRealtorHouses
+method #7 checkMapMarks
+method #8 mortgageCalculatorTest
+method #9 numberOfHousesFound
+method #10 photosOnMapMatchToSelectedAgentPhoto
+method #11 checkPropertyRecords
+method #12 checkRealtorRecommendations
+method #13 checkRealtorSoldHouses
+method #14 checkRealtorSoldHouses
+method #15 restaurantsFilter
+method #16 checkSavedHomes
+method #17 savedSearch
+method #18 schoolRating
+method #19 searchByCondition
+method #20 sortByPrice
+method #21 sortByRecommendations
+Started testing on: Tue Oct 23 09:55:30 MSK 2018
+Testing: restaurantsFilter
+*****************************
+Started suite RealtorSuite
+method #1 restaurantsFilter
+Started testing on: Tue Oct 23 09:56:19 MSK 2018
+Testing: restaurantsFilter
+Success: restaurantsFilter Time taken:76114 ms
+PASSED TEST CASES
+restaurantsFilter
+FAILED TEST CASES
+Test completed on: Tue Oct 23 09:57:46 MSK 2018
+Suite RealtorSuite ended
+Problem initializing template
+java.nio.file.NoSuchFileException: src\test\resources\reportTemplate.html
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79) ~[?:1.8.0_161]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97) ~[?:1.8.0_161]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102) ~[?:1.8.0_161]
+	at sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:230) ~[?:1.8.0_161]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_161]
+	at java.nio.file.Files.newByteChannel(Files.java:407) ~[?:1.8.0_161]
+	at java.nio.file.Files.readAllBytes(Files.java:3152) ~[?:1.8.0_161]
+	at com.epam.tat.realtor.listeners.ReportingListner.initReportTemplate(ReportingListner.java:91) [classes/:?]
+	at com.epam.tat.realtor.listeners.ReportingListner.generateReport(ReportingListner.java:25) [classes/:?]
+	at org.testng.TestNG.generateReports(TestNG.java:1027) [testng-7.0.0-beta1.jar:?]
+	at org.testng.TestNG.run(TestNG.java:970) [testng-7.0.0-beta1.jar:?]
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72) [testng-plugin.jar:?]
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123) [testng-plugin.jar:?]
