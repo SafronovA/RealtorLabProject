@@ -54,6 +54,22 @@
             <version>7.0.0-beta1</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>4.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-expressions</artifactId>
+            <version>4.0.3</version>
+        </dependency>
     </dependencies>
 
     <build>

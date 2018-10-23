@@ -30,7 +30,6 @@ public class CheckIconsColorTest extends BaseTest {
                 .clickGetStartedButton()
                 .selectFirstRealtorCard()
                 .clickSeeAgentsNearbyProperties();
-
         Assert.assertTrue(realtorSearchResultPageStep.colorIsCorrect(),
                 "Found at least 1 mismatch of home status and status of the icon on the map");
     }
