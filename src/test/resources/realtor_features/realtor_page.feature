@@ -1,17 +1,6 @@
 Feature: realtor page
 
-  Scenario: go to realtor page, choose realtor, check that photos on map match realtor photo
-    Given open realtor.com
-    When click find realtor button
-    * enter realtor location "San Francisco, CA"
-    * enter realtor name "Laura Lanzone"
-    And click search button
-    And click activity map button
-    And click get started activity map button
-    Then photos on map match realtor photo
-
-  Scenario: go to realtor page, choose realtor, check that icon colors on map match house status
-    Given open realtor.com
+  Scenario: icon colors on map match house status
     When click find realtor button
     And enter realtor location "Boston, MA"
     And enter realtor name "Kristen Gaughan"
@@ -22,8 +11,7 @@ Feature: realtor page
     And click see agents nearby properties
     Then icon colors on map match house status
 
-  Scenario: go to realtor page, choose realtor, check that icon become selected after click
-    Given open realtor.com
+  Scenario: icon become selected after click
     When click find realtor button
     And enter realtor location "Boston, MA"
     And enter realtor name "Kristen Gaughan"
@@ -33,18 +21,7 @@ Feature: realtor page
     And select first realtor card
     Then icon become selected after click
 
-  Scenario: go to realtor page, choose realtor, check that recommendations count on the page match recommendations count in the realtor's card
-    Given open realtor.com
-    When click find realtor button
-    And enter realtor name "Adora Lazaro"
-    And click search button
-    And get recommendation count from realtor card
-    And click on realtor icon
-    And click load all recommendation
-    Then recommendation count on the page match recommendations count in the realtor's card
-
-  Scenario: go to realtor page, choose realtor, check that for sale houses on realtor page have status for sale
-    Given open realtor.com
+  Scenario: for sale houses on realtor page have status for sale
     When click find realtor button
     And enter realtor location "San Francisco, CA"
     And enter realtor name "Grace Lucero"
@@ -52,27 +29,44 @@ Feature: realtor page
     And click on realtor icon
     Then houses with red icon have for sale status
 
-  Scenario: go to realtor page, choose realtor, check that number of reviews on the page match reviews number in the realtor's card
-    Given open realtor.com
+  Scenario: photos on map match realtor photo
     When click find realtor button
-    And enter realtor name "Adora Lazaro"
-    And click search button
-    And get rating from realtor card
-    And click on realtor icon
-    And click load all reviews
-    Then reviews count on the page match reviews count in the realtor's card
-
-  Scenario: go to realtor page, choose realtor, check if every house on the iframe map has "Sold" status
-    Given open realtor.com
-    When click find realtor button
-    And enter realtor name "Amanda Hurtt"
+    And enter realtor location "San Francisco, CA"
+    And enter realtor name "Laura Lanzone"
     And click search button
     And click activity map button
     And click get started activity map button
     Then photos on map match realtor photo
 
-  Scenario: go to realtor page, choose realtor, check that realtors are displayed on page sorted by recommendations
-    Given open realtor.com
+  Scenario: recommendations count on the page match recommendations count in the realtor's card
+    When click find realtor button
+    And enter realtor name "Adora Lazaro"
+    And click search button
+    And get recommendation count
+    And click on realtor icon
+    And click load all recommendation
+    Then recommendation count on the page match recommendations count in the realtor's card
+
+  Scenario: number of reviews on the page match reviews number in the realtor's card
+    When click find realtor button
+    And enter realtor name "Adora Lazaro"
+    And click search button
+    And get rating count
+    And click on realtor icon
+    And click load all reviews
+    Then reviews count on the page match reviews count in the realtor's card
+
+  Scenario: every house on the iframe map has "Sold" status
+    When click find realtor button
+    And enter realtor name "Amanda Hurtt"
+    And click search button
+    And get realtor sold houses count
+    And click on realtor icon
+    And scroll to map, click realtor sold houses, double zoom out
+    Then sold houses count in the realtor card match count on the iframe map
+    And houses on the iframe map have sold status
+
+  Scenario: realtors are displayed on page sorted by recommendations
     When click find realtor button
     And enter realtor location "San Francisco, CA"
     And get realtor sold houses count
