@@ -41,7 +41,7 @@ public class EditProfileAddressTest extends BaseTest {
         assertTrue(myProfilePageStep.addressIsCorrect(ADDRESS_NEW), "Profile address has not changed to the required");
         assertTrue(myProfilePageStep.cityIsCorrect(CITY_NEW), "Profile city  has not changed to the required");
         assertTrue(myProfilePageStep.stateIsCorrect(STATE_NEW), "Profile state  has not changed to the required");
-        assertTrue(myProfilePageStep.countryIsCorrect(COUNTRY_NEW), "Profile address has not changed to the required");
+        assertTrue(myProfilePageStep.countryIsCorrect(COUNTRY_NEW), "Profile country has not changed to the required");
     }
 
     /**
