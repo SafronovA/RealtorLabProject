@@ -15,6 +15,14 @@ Feature: perform different actions on my profile page
       | FIRST_NAME | LAST_NAME |
       | New_Lo     | New_ko    |
 
+  @EditProfileName
+  Scenario: user edit first and last name,
+  profile name should become equal "first name + last name"
+    Given user moved to my profile page
+    When user changes first name to "NEW_FIRST_NAME" and last name to "NEW_LAST_NAME"
+    Then profile name should be equal "NEW_FIRST_NAME NEW_LAST_NAME"
+# postconditions
+
   @EditProfileLocation
   Scenario Outline: user changes the address, city, state, and country field values,
   values of modified fields on the profile page should accept the corresponding values.
@@ -29,6 +37,7 @@ Feature: perform different actions on my profile page
     Examples:
       | ADDRESS   | CITY    | STATE  | COUNTRY       |
       | streetNew | cityNew | Hawaii | United States |
+
 
   @EditMyHomeInfo
   Scenario Outline: user changes the values of the number of bedrooms, bathrooms, car spaces, square and lot size,
@@ -63,12 +72,20 @@ Feature: perform different actions on my profile page
       | CITY_NAME         | MIN_PRICE | MAX_PRICE |
       | San Francisco, CA | $350k     | $600k     |
 
-  @
-  Scenario Outline:
-    Given
-    When  "<>"
-    Then  "<>"
+  @MortgageCalculator
+  Scenario Outline: check that calculated and displayed price is correct
+    Given move to mortgage calculator page
+    When  select "<LOAN_TYPE>"
+    And  select "<RATE>"
+    And  select "<HOME_PRICE>"
+    And  select "<DOWN_PAYMENT>"
+    Then check that price calculated correctly with "<LOAN_TYPE>", "<RATE>", "<HOME_PRICE>", "<DOWN_PAYMENT>"
 
     Examples:
-      |  |
-      |  |
+      | LOAN_TYPE     | RATE | HOME_PRICE | DOWN_PAYMENT |
+      | 15-Year Fixed | 6"   | 110000     | 10000        |
+      | 20-Year Fixed | 8    | 1200000    | 300000       |
+      | 10-Year Fixed | 10   | 560000     | 80000        |
+      | 30-Year Fixed | 5    | 880000     | 10000        |
+      | 15-Year Fixed | 6    | 9900000    | 500000       |
+      | 20-Year Fixed | 7    | 450000     | 50000        |
