@@ -10,8 +10,8 @@ import org.testng.annotations.BeforeClass;
 import java.util.concurrent.TimeUnit;
 
 @CucumberOptions(strict = true, features = "src/test/resources/features/SearchPageActions.feature", glue = {"com.epam.tat.realtor.bddsteps"}
+        ,tags = {"@FoundHouses"}
 )
-        //,tags = {"@RestaurantsFilter"})
 public class SearchPageActionsTest extends AbstractTestNGCucumberTests {
     private WebDriver driver;
 

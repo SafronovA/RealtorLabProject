@@ -20,8 +20,8 @@ Feature: Perform different actions connected with search requests on SearchPage
     Given user perform search by "<CITY_NAME>"
     When user create search request by "<MIN_PRICE_VALUE>", "<MAX_PRICE_VALUE>","<BED_NUMBER>", "<BATH_NUMBER>","<MIN_SQFT_VALUE>", "<MAX_SQFT_VALUE>"
     Then prices in search result should be between "<MIN_PRICE_VALUE>" and "<MAX_PRICE_VALUE>"
-    And map marks in search results hould have beds more than "<BED_NUMBER>"
-    And map marks in search result should have baths more than "<BATH_NUMBER>"
+    And bed quantity in search results should have beds more than "<BED_NUMBER>"
+    And bath quantity in search result should have baths more than "<BATH_NUMBER>"
     And house sqft in search result should be between "<MIN_SQFT_VALUE>" and "<MAX_SQFT_VALUE>"
 
     Examples:
