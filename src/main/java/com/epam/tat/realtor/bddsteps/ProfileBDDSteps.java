@@ -1,14 +1,10 @@
 package com.epam.tat.realtor.bddsteps;
 
-import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.pages.*;
 import com.epam.tat.realtor.util.Parser;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import cucumber.api.PendingException;
+import cucumber.api.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -16,17 +12,15 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class ProfileBDDSteps {
-    private WebDriver driver;
-    private HomePage homePage;
-    private MyProfilePage myProfilePage;
-    private MyHomePage myHomePage;
-    private SavedHomesPage savedHomesPage;
-    private SearchPage searchPage;
-    private SavedSearchesPage savedSearchesPage;
-    private MortgageCalculatorPage mortgageCalculatorPage;
-
+    private static WebDriver driver;
+    private static HomePage homePage;
+    private static MyProfilePage myProfilePage;
+    private static MyHomePage myHomePage;
+    private static SavedHomesPage savedHomesPage;
+    private static SearchPage searchPage;
+    private static SavedSearchesPage savedSearchesPage;
+    private static MortgageCalculatorPage mortgageCalculatorPage;
     private House house;
-
     private int savedHomes;
 
     public void initSteps(WebDriver driver){
@@ -40,18 +34,19 @@ public class ProfileBDDSteps {
         mortgageCalculatorPage = new MortgageCalculatorPage(driver);
     }
 
-    @Before
-    public void initResources() {
-        driver.manage().deleteAllCookies();
-        driver.navigate().to(ConfigProperties.getTestProperty("url"));
-    }
+//    @Before
+//    public void initResources() {
+//        driver.manage().deleteAllCookies();
+//        driver.navigate().to(ConfigProperties.getTestProperty("url"));
+//    }
 
     @Given("user login")
-    public void userPerformLogIn() {
+    public void userPerformLogIn() throws Throwable {
         homePage = new HomePage(driver).clickSignInButton()
                 .enterEmail()
                 .enterPassword()
                 .clickLoginSubmitButton();
+        throw new PendingException();
     }
 
     @Given("user moved to my profile page")

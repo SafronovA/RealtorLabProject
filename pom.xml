@@ -28,20 +28,22 @@
 
     <dependencies>
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
-            <version>1.2.5</version>
-        </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>1.2.5</version>
+            <version>4.0.0</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>gherkin</artifactId>
-            <version>4.0.0</version>
+            <artifactId>cucumber-java8</artifactId>
+            <version>4.0.1</version>
+            <scope>compile</scope>
         </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>io.cucumber</groupId>-->
+            <!--<artifactId>gherkin</artifactId>-->
+            <!--<version>4.0.0</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.testng</groupId>
