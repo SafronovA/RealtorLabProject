@@ -30,7 +30,7 @@ public class HomePage extends BasePage {
     private WebElement userIcon;
     @FindBy(linkText = "Sign Out")
     private WebElement logOutLink;
-    @FindBy(xpath = "//*[@id='downshift-0-input']")
+    @FindBy(xpath = "//input[contains(@id,'downshift')]")
     private WebElement searchInput;
     @FindBy(xpath = "//button[contains(@class,'search-btn')]")
     private WebElement searchButton;
