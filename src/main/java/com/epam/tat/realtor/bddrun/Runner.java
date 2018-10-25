@@ -5,7 +5,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions( features = "src/test/resources/features/MyProfile.feature",
         glue = {"com.epam.tat.realtor.bddsteps"
-                ,"com.epam.tat.realtor.bddrun"}
+                ,"com.epam.tat.realtor.bddrun"}, tags = "@SavedSearch"
 )
 
 public class Runner extends AbstractTestNGCucumberTests {

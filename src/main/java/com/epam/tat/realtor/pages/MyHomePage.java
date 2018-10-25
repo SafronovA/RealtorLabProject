@@ -64,7 +64,7 @@ public class MyHomePage extends BasePage {
      *
      * @return this page
      */
-    public MyHomePage closeVerificationWindows() {
+    public MyHomePage closeVerificationWindow() {
         waitUntilElementIsVisible(verificationButton);
         closeVerificationWindowButton.click();
         waitInvisibilityOfElementLocated(verificationButton);

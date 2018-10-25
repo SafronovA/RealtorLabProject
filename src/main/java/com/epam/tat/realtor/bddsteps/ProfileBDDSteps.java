@@ -3,8 +3,10 @@ package com.epam.tat.realtor.bddsteps;
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.pages.*;
 import com.epam.tat.realtor.util.Parser;
-import cucumber.api.PendingException;
-import cucumber.api.java.en.*;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -23,7 +25,7 @@ public class ProfileBDDSteps {
     private House house;
     private int savedHomes;
 
-    public void initSteps(WebDriver driver){
+    public void initSteps(WebDriver driver) {
         this.driver = driver;
         homePage = new HomePage(driver);
         myProfilePage = new MyProfilePage(driver);
@@ -34,19 +36,12 @@ public class ProfileBDDSteps {
         mortgageCalculatorPage = new MortgageCalculatorPage(driver);
     }
 
-//    @Before
-//    public void initResources() {
-//        driver.manage().deleteAllCookies();
-//        driver.navigate().to(ConfigProperties.getTestProperty("url"));
-//    }
-
     @Given("user login")
-    public void userPerformLogIn() throws Throwable {
-        homePage = new HomePage(driver).clickSignInButton()
+    public void userPerformLogIn() {
+        homePage.clickSignInButton()
                 .enterEmail()
                 .enterPassword()
                 .clickLoginSubmitButton();
-        throw new PendingException();
     }
 
     @Given("user moved to my profile page")
@@ -57,18 +52,24 @@ public class ProfileBDDSteps {
 
     @When("user changes first name to \"([^\"]*)\" and last name to \"([^\"]*)\"")
     public void editProfileName(String firstName, String lastName) {
-        myProfilePage.clickEditProfileButton()
-                .enterFirstName(firstName)
-                .enterLastName(lastName)
-                .clickSaveChangesButton();
+        myProfilePage.enterFirstName(firstName)
+                .enterLastName(lastName);
+    }
+
+    @When("user click save changes button")
+    public void clickSaveChangesButton() {
+        myProfilePage.clickSaveChangesButton();
+    }
+
+    @When("user wait until profile name become: \"([^\"]*)\", \"([^\"]*)\"")
+    public void waitRequiredName(String firstName, String lastName) {
         myProfilePage.waitUntilAttributeInnerHTMLToBe(myProfilePage.getProfileNameWebElement(), firstName + " " + lastName);
     }
 
     @Then("profile name should be equal \"([^\"]*)\"")
     public void nameIsCorrect(String name) {
-        myProfilePage.getProfileName()
-                .replace(" ", "")
-                .equals(name);
+        boolean result = myProfilePage.getProfileName().equals(name);
+        assertTrue(result, "Profile name has not changed to the required");
     }
 
     @When("user click EditProfile button")
@@ -97,7 +98,7 @@ public class ProfileBDDSteps {
     }
 
     @And("user wait until profile location info become: \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"")
-    public void editState(String country, String address, String city, String state) {
+    public void waitRequiredValue(String country, String address, String city, String state) {
         myProfilePage.waitUntilAttributeInnerHTMLToBe(myProfilePage.getProfileAddressWebElement(), address);
         myProfilePage.waitUntilAttributeInnerHTMLToBe(myProfilePage.getProfileCityAndStateWebElement(), (city + ", " + state + " "));
         myProfilePage.waitUntilAttributeInnerHTMLToBe(myProfilePage.getProfileCountryWebElement(), country);
@@ -162,6 +163,16 @@ public class ProfileBDDSteps {
     @And("user edit lot size on \"([^\"]*)\"")
     public void editLotSize(String lotSize) {
         myHomePage.enterLotSize(lotSize);
+    }
+
+    @And("user click save button")
+    public void clickSaveButton(){
+        myHomePage.clickSaveButton();
+    }
+
+    @And("user close verification window")
+    public void closeVerificationWindows(){
+        myHomePage.closeVerificationWindow();
     }
 
     @Then("my home bedrooms value should be equal \"([^\"]*)\"")
