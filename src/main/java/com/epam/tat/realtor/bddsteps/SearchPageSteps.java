@@ -6,10 +6,7 @@ import com.epam.tat.realtor.drivers.DriverFactory;
 import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.HomePage;
 import com.epam.tat.realtor.pages.SearchPage;
-import com.epam.tat.realtor.steps.HomePageStep;
-import com.epam.tat.realtor.steps.SearchPageStep;
 import com.epam.tat.realtor.util.Parser;
-import cucumber.api.PendingException;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -23,23 +20,23 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class SearchPageSteps {
     private WebDriver driver = DriverFactory.CHROMEDRIVER.getDriver();
-    private List<House> searchResult =new ArrayList<>();;
-    private SearchPageStep searchPageStep;
-    private HomePageStep homePageStep;
+    private List<House> searchResult = new ArrayList<>();
     private SearchPage searchPage = new SearchPage(driver);
     private HomePage homePage = new HomePage(driver);
 
     @Before
-    public void initResources(){
+    public void initResources() {
         driver.manage().deleteAllCookies();
         driver.navigate().to(ConfigProperties.getTestProperty("url"));
     }
+
     @After
     public void getScenarioInfo(Scenario scenario) {
         System.out.println(scenario.getId());
@@ -51,15 +48,15 @@ public class SearchPageSteps {
 
 
     @Given("^user perform search by \"([^\"]*)\"$")
-    public void userPerformSearchBy(String city_Name)  {
-        new HomePage(driver).clearInputField()
+    public void userPerformSearchBy(String city_Name) {
+        homePage.clearInputField()
                 .enterCityInMainSearchInput(city_Name).clickSearchButton();
 
     }
 
 
     @When("^user create search request by \"([^\"]*)\", \"([^\"]*)\",\"([^\"]*)\", \"([^\"]*)\",\"([^\"]*)\", \"([^\"]*)\"$")
-    public void userCreateSearchRequestBy(String minValue, String maxValue, String bedNumber, String bathNumber, String minSqft, String maxSqft)  {
+    public void userCreateSearchRequestBy(String minValue, String maxValue, String bedNumber, String bathNumber, String minSqft, String maxSqft) {
         searchPage.clickPriceButton();
         if (!minValue.equals("")) {
             searchPage.clickMinPriceInput();
@@ -94,16 +91,16 @@ public class SearchPageSteps {
     public void pricesOnMapMarksOnTheIframeMapShouldBeBetweenAnd(String minPrice, String maxPrice) {
         searchPage.clickViewMapButton();
         assertTrue(searchPage.getMapMarks().stream()
-                .allMatch(x -> {
-                    BasePage.clickByJEx(x, driver);
-                    return (Parser.parsePrice(minPrice) <= Parser.parse(searchPage.getMapMarkPrice()))
-                            && (Parser.parsePrice(maxPrice) >= Parser.parse(searchPage.getMapMarkPrice()));
-                }),
+                        .allMatch(x -> {
+                            BasePage.clickByJEx(x, driver);
+                            return (Parser.parsePrice(minPrice) <= Parser.parse(searchPage.getMapMarkPrice()))
+                                    && (Parser.parsePrice(maxPrice) >= Parser.parse(searchPage.getMapMarkPrice()));
+                        }),
                 "price value on the map mark mismatch search criteria");
     }
 
     @Then("^map marks on the iframe map should have beds more than \"([^\"]*)\"$")
-    public void mapMarksOnTheIframeMapShouldHaveBedsMoreThan(String bedNumber)  {
+    public void mapMarksOnTheIframeMapShouldHaveBedsMoreThan(String bedNumber) {
         assertTrue(searchPage.getMapMarks().stream().allMatch(x -> {
                     BasePage.clickByJEx(x, driver);
                     return Parser.parse(bedNumber) <= Parser.parse(searchPage.getMapMarkBed());
@@ -124,11 +121,11 @@ public class SearchPageSteps {
     @Then("^house sqft on map marks on the iframe map should be between \"([^\"]*)\" and \"([^\"]*)\"$")
     public void houseSqftOnMapMarksOnTheIframeMapShouldBeBetweenAnd(String minSqft, String maxSqft) {
         assertTrue(searchPage.getMapMarks().stream()
-                .allMatch(x -> {
-                    BasePage.clickByJEx(x, driver);
-                    return (Parser.parse(minSqft) <= Parser.parse(searchPage.getMapMarkSqft()))
-                            && (Parser.parse(maxSqft) >= Parser.parse(searchPage.getMapMarkSqft()));
-                }),
+                        .allMatch(x -> {
+                            BasePage.clickByJEx(x, driver);
+                            return (Parser.parse(minSqft) <= Parser.parse(searchPage.getMapMarkSqft()))
+                                    && (Parser.parse(maxSqft) >= Parser.parse(searchPage.getMapMarkSqft()));
+                        }),
                 "square feet house size on the map mark mismatch search criteria");
     }
 
@@ -142,21 +139,21 @@ public class SearchPageSteps {
         }
 
         assertTrue(searchResult.stream()
-                .allMatch(x -> ((x.getPrice() >= Parser.parsePrice(minPrice)) && (x.getPrice() <= Parser.parsePrice(maxPrice)))),
+                        .allMatch(x -> ((x.getPrice() >= Parser.parsePrice(minPrice)) && (x.getPrice() <= Parser.parsePrice(maxPrice)))),
                 "price value mismatch search criteria");
     }
 
 
     @And("^bed quantity in search results should have beds more than \"([^\"]*)\"$")
     public void bedQuantityInSearchResultsShouldHaveBedsMoreThan(String bedNumber) throws Throwable {
-        assertTrue( searchResult.stream()
-                .allMatch(x -> (x.getBedNumber() >= Parser.parse(bedNumber))),
+        assertTrue(searchResult.stream()
+                        .allMatch(x -> (x.getBedNumber() >= Parser.parse(bedNumber))),
                 "bed quantity mismatch search criteria");
     }
 
     @And("^bath quantity in search result should have baths more than \"([^\"]*)\"$")
     public void bathQuantityInSearchResultShouldHaveBathsMoreThan(String bathNumber) throws Throwable {
-        assertTrue( searchResult.stream()
+        assertTrue(searchResult.stream()
                         .allMatch(x -> (x.getBathNumber() >= Parser.parse(bathNumber))),
                 "bath quantity mismatch search criteria");
     }
@@ -173,57 +170,89 @@ public class SearchPageSteps {
         int elementCount = searchPage.getHomePricesList().size();
         while (!searchPage.getNextPageLink().isEmpty()) {
             searchPage.clickNextLink();
-            elementCount+=searchPage.getHomePricesList().size();
+            elementCount += searchPage.getHomePricesList().size();
         }
         assertEquals((int) Parser.parse(searchPage.getSearchResultCountElement().getText()), elementCount,
                 "The number of homes found and displayed is not equal");
     }
 
     @And("^user choose to sort houses by \"([^\"]*)\"$")
-    public void userChooseToSortHousesBy(String SORT_OPTION) throws Throwable {
-        searchPageStep.selectSortOption(SORT_OPTION);
+    public void userChooseToSortHousesBy(String sortOption) throws Throwable {
+        searchPage.clickSortOptionsDropDown();
+        searchPage.getSortOptionsList().stream()
+                .filter(WebElement -> sortOption.equals(WebElement.getText()))
+                .findFirst()
+                .get().click();
     }
 
     @Then("^elements on the page displayed sorted by price$")
     public void elementsOnThePageDisplayedSortedByPrice() throws Throwable {
-        assertTrue(searchPageStep.isHomesDisplayedSortedByPrice(),
+        List<Integer> homePrices = findAllHouses();
+        boolean sortedDescending =
+                IntStream.range(0, homePrices.size() - 1)
+                        .allMatch(i -> homePrices.get(i).compareTo(homePrices.get(i + 1)) >= 0);
+        assertTrue(sortedDescending,
                 "Homes are not displayed on the page sorted by price");
     }
 
+
     @When("^user create search request by price \"([^\"]*)\", \"([^\"]*)\"$")
-    public void userCreateSearchRequestByPrice(String MIN_PRICE, String MAX_PRICE) throws Throwable {
-        searchPageStep.selectMinMaxPrices(MIN_PRICE, MAX_PRICE);
+    public void userCreateSearchRequestByPrice(String minPrice, String maxPrice) throws Throwable {
+        searchPage.clickPriceButton()
+                .clickMinPriceInput()
+                .getMinPriceRange()
+                .stream()
+                .filter(WebElement -> WebElement.getText().equals(minPrice))
+                .findFirst()
+                .get().click();
+        searchPage.getMaxPriceRange()
+                .stream()
+                .filter(WebElement -> WebElement.getText().equals(maxPrice))
+                .findFirst()
+                .get().click();
     }
 
     @And("^user choose high school and select school \"([^\"]*)\"$")
-    public void userChooseHighSchoolAndSelectSchool(String RATING) throws Throwable {
-        searchPageStep.clickSchoolButton()
-                .selectHighSchool()
-                .selectSchoolRating(RATING);
+    public void userChooseHighSchoolAndSelectSchool(String rating) throws Throwable {
+        searchPage.clickSchoolButton()
+                .clickElementarySchool()
+                .clickMiddleSchool()
+                .clickPrivateSchool()
+                .selectSchoolRating(rating);
     }
 
     @Then("^schools that are displayed on map have rating more than selected \"([^\"]*)\"$")
-    public void schoolsThatAreDisplayedOnMapHaveRatingMoreThanSelected(String RATING) throws Throwable {
-        assertTrue(searchPageStep.doesAllSchoolHaveSelectedRating(RATING),
-                "One of the schools shown on the map does not have a rating more that " + RATING);
+    public void schoolsThatAreDisplayedOnMapHaveRatingMoreThanSelected(String rating) throws Throwable {
+        boolean doesAllSchoolHaveSelectedRating = IntStream.range(1, searchPage.getSchoolOnMapListCount() + 1).allMatch(i -> {
+            BasePage.clickByJEx(searchPage.getSchool(i), driver);
+            return Integer.valueOf(searchPage.getSchoolRating()) >= Integer.valueOf(rating);
+        });
+        assertTrue(doesAllSchoolHaveSelectedRating,
+                "One of the schools shown on the map does not have a rating more that " + rating);
     }
 
     @When("^user click on View Map button$")
     public void userClickOnViewMapButton() throws Throwable {
-        searchPageStep.clickViewMapButton();
+        searchPage.clickViewMapButton();
     }
 
     @And("^click on \"([^\"]*)\" button and select restaurants$")
     public void clickOnButtonAndSelectRestaurants(String arg0) throws Throwable {
-        searchPageStep.clickLifestyleButton()
+        searchPage.clickLifestyleButton()
                 .selectRestaurants();
+
     }
 
     @Then("^all marks on the map are restaurants$")
     public void allMarksOnTheMapAreRestaurants() throws Throwable {
-        assertTrue(searchPageStep.areAllFoundLifestyleRestaurants(),
+        boolean areAllFoundLifestyleRestaurants = IntStream.range(1, searchPage.getRestaurantsCount() + 1).allMatch(i -> {
+            BasePage.clickByJEx(searchPage.getRestaurant(i), driver);
+            return searchPage.getLifestyleType().equalsIgnoreCase("restaurants");
+        });
+        assertTrue(areAllFoundLifestyleRestaurants,
                 "One of found lifestyle is not a restaurant");
     }
+
     /**
      * set value in the max price dropdown list
      *
@@ -294,6 +323,33 @@ public class SearchPageSteps {
                 .filter(x -> maxSqft.equals(x.getText().trim()))
                 .findFirst()
                 .get().click();
+    }
+
+    /**
+     * add homes from all pages to integer list. Add homes from first page, while exist next page, click next link
+     * and add home prices from this page.
+     *
+     * @return list integer prices from all pages
+     */
+    private List<Integer> findAllHouses() {
+        List<Integer> homePrices = new ArrayList<>();
+        homePrices.addAll(receivePricesListFromWebElementList(searchPage.getHomePricesList()));
+        while (!searchPage.getNextPageLink().isEmpty()) {
+            searchPage.clickNextLink();
+            homePrices.addAll(receivePricesListFromWebElementList(searchPage.getHomePricesList()));
+        }
+        return homePrices;
+    }
+
+    /**
+     * receive list home prices from list WebElement
+     *
+     * @param prices List<WebElement> found on page
+     * @return List<Integer> int prices received from WebElement list
+     */
+    private List<Integer> receivePricesListFromWebElementList(List<WebElement> prices) {
+        List<Integer> homePrices = prices.stream().map(WebElement -> Parser.parse(WebElement.getText())).collect(Collectors.toList());
+        return homePrices;
     }
 
 }
