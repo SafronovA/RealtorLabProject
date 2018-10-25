@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.tests;
 
+import com.epam.jira.JIRATestKey;
 import com.epam.tat.realtor.pages.RealtorSearchResultPage;
 import com.epam.tat.realtor.steps.FindRealtorPageStep;
 import com.epam.tat.realtor.steps.RealtorPageStep;
@@ -19,6 +20,7 @@ public class RealtorRecommendationsTest extends BaseTest {
      * click Load More Recommendations button until all recommendations won't be loaded
      * check that number of recommendations on the page match recommendations number in the realtor's card
      */
+    @JIRATestKey(key = "EPMFARMATS-5215")
     @Test
     public void checkRealtorRecommendations() {
         RealtorSearchResultPageStep realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()

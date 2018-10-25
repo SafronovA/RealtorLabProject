@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.tests;
 
+import com.epam.jira.JIRATestKey;
 import com.epam.tat.realtor.steps.RealtorPageStep;
 import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import org.testng.annotations.Test;
@@ -18,6 +19,7 @@ public class RealtorSoldHousesTest extends BaseTest {
      * check that number of sold houses in the "Recently Sold" section match sold houses number in the realtor's card
      * check if every house on the iframe map has "Sold" status
      */
+    @JIRATestKey(key = "EPMFARMATS-4939")
     @Test
     public void checkRealtorSoldHouses() {
         RealtorSearchResultPageStep realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()

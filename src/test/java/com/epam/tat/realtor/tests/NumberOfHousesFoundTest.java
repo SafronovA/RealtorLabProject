@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.tests;
 
+import com.epam.jira.JIRATestKey;
 import com.epam.tat.realtor.steps.SearchPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,6 +14,7 @@ public class NumberOfHousesFoundTest extends BaseTest {
      * click submit button
      * check that the declared number of found houses and the actual number of houses on the pages are the same
      */
+    @JIRATestKey(key = "EPMFARMATS-4920")
     @Test
     public void numberOfHousesFound() {
         searchPageStep = homePageStep.enterCityName(CITY_NAME)

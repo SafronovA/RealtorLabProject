@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.tests;
 
+import com.epam.jira.JIRATestKey;
 import com.epam.tat.realtor.steps.SearchPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,6 +15,7 @@ public class SortByPriceTest extends BaseTest {
     /**
      * check that homes are displayed on page sorted by price
      */
+    @JIRATestKey(key = "EPMFARMATS-4930")
     @Test
     public void sortByPrice() {
         SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)
