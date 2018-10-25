@@ -33,13 +33,13 @@ public class Hook {
         }
         driver.manage().timeouts()
                 .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
-        new ProfileBDDSteps().initSteps(driver);
+        new ProfileBDDSteps().init(driver);
 
     }
 
-//    @After
-//    public void closeDriver(){
-//        DriverFactory.CHROMEDRIVER.quitDriver();
-//    }
+    @After
+    public void closeDriver(){
+        DriverFactory.CHROMEDRIVER.quitDriver();
+    }
 
 }

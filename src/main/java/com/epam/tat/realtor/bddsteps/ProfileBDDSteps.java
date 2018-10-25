@@ -3,10 +3,7 @@ package com.epam.tat.realtor.bddsteps;
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.pages.*;
 import com.epam.tat.realtor.util.Parser;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import cucumber.api.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -14,26 +11,18 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class ProfileBDDSteps {
-    private static WebDriver driver;
     private static HomePage homePage;
-    private static MyProfilePage myProfilePage;
-    private static MyHomePage myHomePage;
-    private static SavedHomesPage savedHomesPage;
-    private static SearchPage searchPage;
-    private static SavedSearchesPage savedSearchesPage;
-    private static MortgageCalculatorPage mortgageCalculatorPage;
+    private MyProfilePage myProfilePage;
+    private MyHomePage myHomePage;
+    private SavedHomesPage savedHomesPage;
+    private SearchPage searchPage;
+    private SavedSearchesPage savedSearchesPage;
+    private MortgageCalculatorPage mortgageCalculatorPage;
     private House house;
     private int savedHomes;
 
-    public void initSteps(WebDriver driver) {
-        this.driver = driver;
+    public void init(WebDriver driver) {
         homePage = new HomePage(driver);
-//        myProfilePage = new MyProfilePage(driver);
-//        myHomePage = new MyHomePage(driver);
-//        savedHomesPage = new SavedHomesPage(driver);
-//        searchPage = new SearchPage(driver);
-//        savedHomesPage = new SavedHomesPage(driver);
-//        mortgageCalculatorPage = new MortgageCalculatorPage(driver);
     }
 
     @Given("user login")
@@ -166,12 +155,12 @@ public class ProfileBDDSteps {
     }
 
     @When("user click save button")
-    public void clickSaveButton(){
+    public void clickSaveButton() {
         myHomePage.clickSaveButton();
     }
 
     @When("user close verification window")
-    public void closeVerificationWindows(){
+    public void closeVerificationWindows() {
         myHomePage.closeVerificationWindow();
     }
 
