@@ -5,6 +5,7 @@
     <listeners>
         <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
         <listener class-name="com.epam.tat.realtor.listeners.RealtorListener"/>
+        <listener class-name="com.epam.jira.testng.ExecutionListener" />
     </listeners>
 
     <test name="RealtorTest" >

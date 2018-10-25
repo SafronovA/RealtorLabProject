@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.tests;
 
+import com.epam.jira.util.Screenshoter;
 import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.drivers.DriverFactory;
 import com.epam.tat.realtor.steps.HomePageStep;
@@ -44,7 +45,10 @@ public class BaseTest {
                         .timeouts()
                         .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
             }
+            Screenshoter.initialize(driver);
         }
+
+
     }
 
     /**
