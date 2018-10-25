@@ -24,9 +24,9 @@ public class SavedSearchesPage extends BasePage {
     private List<WebElement> savedSearchesList;
     @FindBy(xpath = "(//div[contains(@class,'ReactModalPortal')])//div[2]//button")
     private WebElement confirmDeleteButton;
-    @FindBy(xpath = "//*[@id='__next']//div[2]//div[4]/h4/div")
+    @FindBy(xpath = "//*[@id='searchBox']")
     private WebElement cardTextCity;
-    @FindBy(xpath = "//*[@id='__next']//div[2]//div[4]/h4/div[2]")
+    @FindBy(xpath = "//*[@id='js-price-filter-pill-xx']/label")
     private WebElement cardTextPrice;
     @FindBy(xpath = "//*[@id='header-navbar']//ul//span")
     private WebElement userIcon;
@@ -43,7 +43,7 @@ public class SavedSearchesPage extends BasePage {
      * @return city from saved search description
      */
     public String getCity() {
-        return cardTextCity.getText();
+        return cardTextCity.getAttribute("value");
     }
 
     /**
