@@ -1,7 +1,8 @@
 package com.epam.tat.realtor.bddrun;
 
 import com.epam.tat.realtor.ConfigProperties;
-import com.epam.tat.realtor.bddsteps.ProfileBDDSteps;
+import com.epam.tat.realtor.bddsteps.ProfilePageStep;
+import com.epam.tat.realtor.bddsteps.RealtorPageFeatureStep;
 import com.epam.tat.realtor.drivers.DriverFactory;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -25,15 +26,16 @@ public class Hook {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.navigate().to(ConfigProperties.getTestProperty("url"));
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts()
+                .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
         while (driver.findElements(By.xpath("//input[contains(@id,'downshift')]")).size()==0){
             System.out.println("New version of the home page. Page has to be  reloaded...");
             driver.manage().deleteAllCookies();
             driver.navigate().to(ConfigProperties.getTestProperty("url"));
         }
-        driver.manage().timeouts()
-                .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
-        new ProfileBDDSteps().init(driver);
+//        new ProfilePageStep().init(driver);
+//        new RealtorPageFeatureStep().setDriver(driver);
+
 
     }
 

@@ -34,6 +34,7 @@ Feature: perform different actions on my profile page
     And profile address should be equal "streetNew"
     And profile city should be equal "cityNew"
     And profile state should be equal "Hawaii"
+
     But user click EditProfile button
     And user edit state on "Arizona"
     And user edit address on "streetOld"

@@ -10,8 +10,8 @@ import org.openqa.selenium.WebElement;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class ProfileBDDSteps {
-    private static HomePage homePage;
+public class ProfilePageStep {
+    private HomePage homePage;
     private MyProfilePage myProfilePage;
     private MyHomePage myHomePage;
     private SavedHomesPage savedHomesPage;
@@ -242,12 +242,12 @@ public class ProfileBDDSteps {
         savedSearchesPage.clickHomePageLink();
     }
 
-    @When("user perform search by \"([^\"]*)\"")
-    public void userPerformSearchBy(String city_Name) {
-        searchPage = homePage.clearInputField()
-                .enterCityInMainSearchInput(city_Name)
-                .clickSearchButton();
-    }
+//    @When("user perform search by \"([^\"]*)\"")
+//    public void userPerformSearchBy(String city_Name) {
+//        searchPage = homePage.clearInputField()
+//                .enterCityInMainSearchInput(city_Name)
+//                .clickSearchButton();
+//    }
 
     @When("user save \"([^\"]*)\" - \"([^\"]*)\" search")
     public void saveSearch(String minPrice, String maxPrice) {
