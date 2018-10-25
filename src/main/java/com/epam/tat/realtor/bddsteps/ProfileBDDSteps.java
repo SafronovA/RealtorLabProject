@@ -2,7 +2,6 @@ package com.epam.tat.realtor.bddsteps;
 
 import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.bo.House;
-import com.epam.tat.realtor.drivers.DriverFactory;
 import com.epam.tat.realtor.pages.*;
 import com.epam.tat.realtor.util.Parser;
 import cucumber.api.java.Before;
@@ -17,13 +16,29 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class ProfileBDDSteps {
-    private WebDriver driver = DriverFactory.CHROMEDRIVER.getDriver();
+    private WebDriver driver;
     private HomePage homePage;
     private MyProfilePage myProfilePage;
     private MyHomePage myHomePage;
     private SavedHomesPage savedHomesPage;
+    private SearchPage searchPage;
+    private SavedSearchesPage savedSearchesPage;
+    private MortgageCalculatorPage mortgageCalculatorPage;
+
     private House house;
 
+    private int savedHomes;
+
+    public void initSteps(WebDriver driver){
+        this.driver = driver;
+        homePage = new HomePage(driver);
+        myProfilePage = new MyProfilePage(driver);
+        myHomePage = new MyHomePage(driver);
+        savedHomesPage = new SavedHomesPage(driver);
+        searchPage = new SearchPage(driver);
+        savedHomesPage = new SavedHomesPage(driver);
+        mortgageCalculatorPage = new MortgageCalculatorPage(driver);
+    }
 
     @Before
     public void initResources() {
@@ -191,7 +206,6 @@ public class ProfileBDDSteps {
     }
 
     //    SavedHomes
-    private int savedHomes;
 
     @Given("user clear saved homes")
     public void clearSavedHomes() {
@@ -220,8 +234,6 @@ public class ProfileBDDSteps {
 
 
     //    SavedSearch
-    private SearchPage searchPage;
-    private SavedSearchesPage savedSearchesPage;
 
     @Given("user clear all old saved searches")
     public void clearSavedSearches() {
@@ -279,7 +291,6 @@ public class ProfileBDDSteps {
     }
 
     //mortgageCalculatorTest
-    private MortgageCalculatorPage mortgageCalculatorPage;
 
     @Given("move to mortgage calculator page")
     public void moveToMortgageCalculatorPage() {
@@ -300,7 +311,7 @@ public class ProfileBDDSteps {
         mortgageCalculatorPage.setRateInput(rate);
     }
 
-    @And("select rate as \"([^\"]*)\"")
+    @And("select home price as \"([^\"]*)\"")
     public void setHomePrice(String homePrice) {
         mortgageCalculatorPage.setHomePrice(homePrice);
     }

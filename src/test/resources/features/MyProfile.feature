@@ -26,6 +26,7 @@ Feature: perform different actions on my profile page
     And profile address should be equal "streetNew"
     And profile city should be equal "cityNew"
     And profile state should be equal "Hawaii"
+
 # postconditions
 
   @EditMyHomeInfo
