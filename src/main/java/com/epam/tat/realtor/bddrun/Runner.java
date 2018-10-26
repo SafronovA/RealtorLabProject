@@ -7,16 +7,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
         "src/test/resources/features/MyProfile.feature",
         "src/test/resources/features/realtor_page.feature"},
         glue = {"com.epam.tat.realtor.bddsteps"
-                , "com.epam.tat.realtor.bddrun"},
-tags = "@RestaurantsFilter"
-//        tags = {"@MortgageCalculator" +
-//                "@CheckIconsColor, " +
-//                "@ClickOnIcon, " +
-//                "@SchoolRating, " +
-//                "@PhotosOnMap, " +
-//                "@RestaurantsFilter, " +
-//                "@SortByRecommendations"}
-
+                , "com.epam.tat.realtor.bddrun"}
 )
 
 public class Runner extends AbstractTestNGCucumberTests {
