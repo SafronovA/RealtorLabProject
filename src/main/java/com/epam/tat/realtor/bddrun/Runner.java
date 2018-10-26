@@ -8,14 +8,14 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
         "src/test/resources/features/realtor_page.feature"},
         glue = {"com.epam.tat.realtor.bddsteps"
                 , "com.epam.tat.realtor.bddrun"},
-
-        tags = {"@MortgageCalculator" +
-                "@CheckIconsColor, " +
-                "@ClickOnIcon, " +
-                "@SchoolRating, " +
-                "@PhotosOnMap, " +
-                "@RestaurantsFilter, " +
-                "@SortByRecommendations"}
+tags = "@RestaurantsFilter"
+//        tags = {"@MortgageCalculator" +
+//                "@CheckIconsColor, " +
+//                "@ClickOnIcon, " +
+//                "@SchoolRating, " +
+//                "@PhotosOnMap, " +
+//                "@RestaurantsFilter, " +
+//                "@SortByRecommendations"}
 
 )
 

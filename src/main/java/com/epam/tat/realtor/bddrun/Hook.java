@@ -27,14 +27,15 @@ public class Hook {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.navigate().to(ConfigProperties.getTestProperty("url"));
-        driver.manage().timeouts()
-                .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 //        while (driver.findElements(By.xpath("//input[contains(@id,'downshift')]")).size()==0){
         while (driver.findElements(By.xpath("//input[@id='searchBox']")).size()==0){
             System.out.println("New version of the home page. Page has to be  reloaded...");
             driver.manage().deleteAllCookies();
             driver.navigate().to(ConfigProperties.getTestProperty("url"));
         }
+        driver.manage().timeouts()
+                .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
         new ProfilePageStep();
         new RealtorPageFeatureStep();
         new SearchPageSteps();
