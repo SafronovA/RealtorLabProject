@@ -63,6 +63,6 @@ Feature: Perform different actions connected with search requests on SearchPage
   all marks on the map are restaurants
     Given user perform search by "San Francisco, CA"
     When user click on View Map button
-    And click on "Life Style" button and select restaurants
+    And click on LifeStyle button and select restaurants
     Then all marks on the map are restaurants
 

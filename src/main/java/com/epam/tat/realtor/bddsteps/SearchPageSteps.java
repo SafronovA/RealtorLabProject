@@ -1,15 +1,12 @@
 package com.epam.tat.realtor.bddsteps;
 
-import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.drivers.DriverFactory;
 import com.epam.tat.realtor.pages.BasePage;
 import com.epam.tat.realtor.pages.HomePage;
 import com.epam.tat.realtor.pages.SearchPage;
 import com.epam.tat.realtor.util.Parser;
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -26,11 +23,17 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class SearchPageSteps {
-    private WebDriver driver=DriverFactory.CHROMEDRIVER.getDriver();
+    private WebDriver driver = DriverFactory.CHROMEDRIVER.getDriver();
     private List<House> searchResult = new ArrayList<>();
-    private SearchPage searchPage = new SearchPage(driver);
     private HomePage homePage = new HomePage(driver);
+    private SearchPage searchPage = new SearchPage(driver);
 
+//    public void init(WebDriver driver) {
+//        this.driver = driver;
+//        searchResult = new ArrayList<>();
+//        homePage = new HomePage(driver);
+//        searchPage = new SearchPage(driver);
+//    }
 //    @Before
 //    public void initResources() {
 //        driver.manage().deleteAllCookies();
@@ -47,15 +50,14 @@ public class SearchPageSteps {
 //    }
 
 
-    @Given("^user perform search by \"([^\"]*)\"$")
+    @Given("user perform search by \"([^\"]*)\"")
     public void userPerformSearchBy(String city_Name) {
         homePage.clearInputField()
                 .enterCityInMainSearchInput(city_Name).clickSearchButton();
 
     }
 
-
-    @When("^user create search request by \"([^\"]*)\", \"([^\"]*)\",\"([^\"]*)\", \"([^\"]*)\",\"([^\"]*)\", \"([^\"]*)\"$")
+    @When("user create search request by \"([^\"]*)\", \"([^\"]*)\",\"([^\"]*)\", \"([^\"]*)\",\"([^\"]*)\", \"([^\"]*)\"")
     public void userCreateSearchRequestBy(String minValue, String maxValue, String bedNumber, String bathNumber, String minSqft, String maxSqft) {
         searchPage.clickPriceButton();
         if (!minValue.equals("")) {
@@ -86,8 +88,7 @@ public class SearchPageSteps {
         searchPage.clickViewListingsButton();
     }
 
-
-    @Then("^prices on map marks on the iframe map should be between \"([^\"]*)\" and \"([^\"]*)\"$")
+    @Then("prices on map marks on the iframe map should be between \"([^\"]*)\" and \"([^\"]*)\"")
     public void pricesOnMapMarksOnTheIframeMapShouldBeBetweenAnd(String minPrice, String maxPrice) {
         searchPage.clickViewMapButton();
         assertTrue(searchPage.getMapMarks().stream()
@@ -99,7 +100,7 @@ public class SearchPageSteps {
                 "price value on the map mark mismatch search criteria");
     }
 
-    @Then("^map marks on the iframe map should have beds more than \"([^\"]*)\"$")
+    @Then("map marks on the iframe map should have beds more than \"([^\"]*)\"")
     public void mapMarksOnTheIframeMapShouldHaveBedsMoreThan(String bedNumber) {
         assertTrue(searchPage.getMapMarks().stream().allMatch(x -> {
                     BasePage.clickByJEx(x, driver);
@@ -108,7 +109,7 @@ public class SearchPageSteps {
                 "bed quantity on the map mark mismatch search criteria");
     }
 
-    @Then("^map marks on the iframe map should have baths more than \"([^\"]*)\"$")
+    @Then("map marks on the iframe map should have baths more than \"([^\"]*)\"")
     public void mapMarksOnTheIframeMapShouldHaveBathsMoreThan(String bathNumber) {
         assertTrue(searchPage.getMapMarks().stream()
                         .allMatch(x -> {
@@ -118,7 +119,7 @@ public class SearchPageSteps {
                 "bath quantity on the map mark mismatch search criteria");
     }
 
-    @Then("^house sqft on map marks on the iframe map should be between \"([^\"]*)\" and \"([^\"]*)\"$")
+    @Then("house sqft on map marks on the iframe map should be between \"([^\"]*)\" and \"([^\"]*)\"")
     public void houseSqftOnMapMarksOnTheIframeMapShouldBeBetweenAnd(String minSqft, String maxSqft) {
         assertTrue(searchPage.getMapMarks().stream()
                         .allMatch(x -> {
@@ -129,8 +130,8 @@ public class SearchPageSteps {
                 "square feet house size on the map mark mismatch search criteria");
     }
 
-    @Then("^prices in search result should be between \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void pricesInSearchResultShouldBeBetweenAnd(String minPrice, String maxPrice) throws Throwable {
+    @Then("prices in search result should be between \"([^\"]*)\" and \"([^\"]*)\"")
+    public void pricesInSearchResultShouldBeBetweenAnd(String minPrice, String maxPrice) {
         for (int i = 0; i < searchPage.getSearchedHousePricesList().size(); i++) {
             searchResult.add(new House(Parser.parse(searchPage.getSearchedHouseBedList().get(i).getText()),
                     Parser.parse(searchPage.getSearchedHouseBathList().get(i).getText()),
@@ -144,29 +145,35 @@ public class SearchPageSteps {
     }
 
 
-    @And("^bed quantity in search results should have beds more than \"([^\"]*)\"$")
-    public void bedQuantityInSearchResultsShouldHaveBedsMoreThan(String bedNumber) throws Throwable {
+    @And("bed quantity in search results should have beds more than \"([^\"]*)\"")
+    public void bedQuantityInSearchResultsShouldHaveBedsMoreThan(String bedNumber) {
         assertTrue(searchResult.stream()
                         .allMatch(x -> (x.getBedNumber() >= Parser.parse(bedNumber))),
                 "bed quantity mismatch search criteria");
     }
 
-    @And("^bath quantity in search result should have baths more than \"([^\"]*)\"$")
-    public void bathQuantityInSearchResultShouldHaveBathsMoreThan(String bathNumber) throws Throwable {
+    @And("bath quantity in search result should have baths more than \"([^\"]*)\"")
+    public void bathQuantityInSearchResultShouldHaveBathsMoreThan(String bathNumber) {
         assertTrue(searchResult.stream()
                         .allMatch(x -> (x.getBathNumber() >= Parser.parse(bathNumber))),
                 "bath quantity mismatch search criteria");
     }
 
-    @And("^house sqft in search result should be between \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void houseSqftInSearchResultShouldBeBetweenAnd(String minSqft, String maxSqft) throws Throwable {
+    @And("house sqft in search result should be between \"([^\"]*)\" and \"([^\"]*)\"")
+    public void houseSqftInSearchResultShouldBeBetweenAnd(String minSqft, String maxSqft) {
         assertTrue(searchResult.stream()
                         .allMatch(x -> ((x.getSquare() >= Parser.parse(minSqft)) && (x.getSquare() <= Parser.parse(maxSqft)))),
                 "square feet house size mismatch search criteria");
     }
 
-    @Then("^number of found houses match result information$")
-    public void numberOfFoundHousesMatchResultInformation() throws Throwable {
+    @And("click on LifeStyle button and select restaurants")
+    public void clickOnLifeStyleButtonAndSelectRestaurants() {
+        searchPage.clickLifestyleButton()
+                .selectRestaurants();
+    }
+
+    @Then("number of found houses match result information")
+    public void numberOfFoundHousesMatchResultInformation() {
         int elementCount = searchPage.getHomePricesList().size();
         while (!searchPage.getNextPageLink().isEmpty()) {
             searchPage.clickNextLink();
@@ -176,8 +183,8 @@ public class SearchPageSteps {
                 "The number of homes found and displayed is not equal");
     }
 
-    @And("^user choose to sort houses by \"([^\"]*)\"$")
-    public void userChooseToSortHousesBy(String sortOption) throws Throwable {
+    @And("user choose to sort houses by \"([^\"]*)\"")
+    public void userChooseToSortHousesBy(String sortOption) {
         searchPage.clickSortOptionsDropDown();
         searchPage.getSortOptionsList().stream()
                 .filter(WebElement -> sortOption.equals(WebElement.getText()))
@@ -185,8 +192,8 @@ public class SearchPageSteps {
                 .get().click();
     }
 
-    @Then("^elements on the page displayed sorted by price$")
-    public void elementsOnThePageDisplayedSortedByPrice() throws Throwable {
+    @Then("elements on the page displayed sorted by price")
+    public void elementsOnThePageDisplayedSortedByPrice() {
         List<Integer> homePrices = findAllHouses();
         boolean sortedDescending =
                 IntStream.range(0, homePrices.size() - 1)
@@ -196,8 +203,8 @@ public class SearchPageSteps {
     }
 
 
-    @When("^user create search request by price \"([^\"]*)\", \"([^\"]*)\"$")
-    public void userCreateSearchRequestByPrice(String minPrice, String maxPrice) throws Throwable {
+    @When("user create search request by price \"([^\"]*)\", \"([^\"]*)\"")
+    public void userCreateSearchRequestByPrice(String minPrice, String maxPrice) {
         searchPage.clickPriceButton()
                 .clickMinPriceInput()
                 .getMinPriceRange()
@@ -212,8 +219,8 @@ public class SearchPageSteps {
                 .get().click();
     }
 
-    @And("^user choose high school and select school \"([^\"]*)\"$")
-    public void userChooseHighSchoolAndSelectSchool(String rating) throws Throwable {
+    @And("user choose high school and select school \"([^\"]*)\"")
+    public void userChooseHighSchoolAndSelectSchool(String rating) {
         searchPage.clickSchoolButton()
                 .clickElementarySchool()
                 .clickMiddleSchool()
@@ -221,8 +228,8 @@ public class SearchPageSteps {
                 .selectSchoolRating(rating);
     }
 
-    @Then("^schools that are displayed on map have rating more than selected \"([^\"]*)\"$")
-    public void schoolsThatAreDisplayedOnMapHaveRatingMoreThanSelected(String rating) throws Throwable {
+    @Then("schools that are displayed on map have rating more than selected \"([^\"]*)\"")
+    public void schoolsThatAreDisplayedOnMapHaveRatingMoreThanSelected(String rating) {
         boolean doesAllSchoolHaveSelectedRating = IntStream.range(1, searchPage.getSchoolOnMapListCount() + 1).allMatch(i -> {
             BasePage.clickByJEx(searchPage.getSchool(i), driver);
             return Integer.valueOf(searchPage.getSchoolRating()) >= Integer.valueOf(rating);
@@ -231,20 +238,13 @@ public class SearchPageSteps {
                 "One of the schools shown on the map does not have a rating more that " + rating);
     }
 
-    @When("^user click on View Map button$")
-    public void userClickOnViewMapButton() throws Throwable {
+    @When("user click on View Map button")
+    public void userClickOnViewMapButton() {
         searchPage.clickViewMapButton();
     }
 
-    @And("^click on \"([^\"]*)\" button and select restaurants$")
-    public void clickOnButtonAndSelectRestaurants(String arg0) throws Throwable {
-        searchPage.clickLifestyleButton()
-                .selectRestaurants();
-
-    }
-
-    @Then("^all marks on the map are restaurants$")
-    public void allMarksOnTheMapAreRestaurants() throws Throwable {
+    @Then("all marks on the map are restaurants")
+    public void allMarksOnTheMapAreRestaurants() {
         boolean areAllFoundLifestyleRestaurants = IntStream.range(1, searchPage.getRestaurantsCount() + 1).allMatch(i -> {
             BasePage.clickByJEx(searchPage.getRestaurant(i), driver);
             return searchPage.getLifestyleType().equalsIgnoreCase("restaurants");

@@ -29,7 +29,7 @@ public enum DriverFactory {
         }
     },
     FIREFOXDRIVER {
-        WebDriver driver;
+        private WebDriver driver;
 
         /**
          * return the single instance of FirefoxDriver

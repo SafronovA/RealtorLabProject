@@ -500,7 +500,8 @@ public class SearchPage extends BasePage {
      * @return this page
      */
     public SearchPage clickViewMapButton() {
-        waitUntilElementIsClickable(viewMapButton);
+//        waitUntilElementIsClickable(viewMapButton);
+        waitUntilElementIsVisible(viewMapButton);
         viewMapButton.click();
         return this;
     }
@@ -512,6 +513,7 @@ public class SearchPage extends BasePage {
      */
     public SearchPage clickLifestyleButton() {
         waitUntilElementIsVisible(lifestyleButton);
+        waitUntilElementIsClickable(lifestyleButton);
         lifestyleButton.click();
         return this;
     }
