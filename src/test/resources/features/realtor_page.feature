@@ -1,5 +1,6 @@
 Feature: realtor page
 
+  @CheckIconsColor
   Scenario: icon colors on map match house status
     When click find realtor button
     And enter realtor location "Boston, MA"
@@ -11,6 +12,7 @@ Feature: realtor page
     And click see agents nearby properties
     Then icon colors on map match house status
 
+  @ClickOnIcon
   Scenario: icon become selected after click
     When click find realtor button
     And enter realtor location "Boston, MA"
@@ -29,6 +31,7 @@ Feature: realtor page
     And click on realtor icon
     Then houses with red icon have for sale status
 
+  @PhotosOnMap
   Scenario: photos on map match realtor photo
     When click find realtor button
     And enter realtor location "San Francisco, CA"

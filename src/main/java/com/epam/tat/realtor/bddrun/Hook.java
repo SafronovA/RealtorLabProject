@@ -43,9 +43,9 @@ public class Hook {
 
     }
 
-//    @After
-//    public void closeDriver(){
-//        DriverFactory.CHROMEDRIVER.quitDriver();
-//    }
+    @After
+    public void closeDriver(){
+        DriverFactory.CHROMEDRIVER.quitDriver();
+    }
 
 }
