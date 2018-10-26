@@ -1,4 +1,4 @@
-package com.epam.tat.realtor.bddrun;
+package com.epam.tat.realtor.cucumber;
 
 import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.bddsteps.ProfilePageStep;
@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Hook {
+public class CucumberHook {
     protected WebDriver driver;
 
     /**
