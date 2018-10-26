@@ -23,6 +23,7 @@ Feature: realtor page
     And select first realtor card
     Then icon become selected after click
 
+  @ForSaleRealtorHouses
   Scenario: for sale houses on realtor page have status for sale
     When click find realtor button
     And enter realtor location "San Francisco, CA"
@@ -41,6 +42,7 @@ Feature: realtor page
     And click get started activity map button
     Then photos on map match realtor photo
 
+  @RealtorRecommendations
   Scenario: recommendations count on the page match recommendations count in the realtor's card
     When click find realtor button
     And enter realtor name "Adora Lazaro"
@@ -50,6 +52,7 @@ Feature: realtor page
     And click load all recommendation
     Then recommendation count on the page match recommendations count in the realtor's card
 
+  @RealtorReviews
   Scenario: number of reviews on the page match reviews number in the realtor's card
     When click find realtor button
     And enter realtor name "Adora Lazaro"
@@ -86,7 +89,6 @@ Feature: realtor page
     And  select rate as "<RATE>"
     And  select home price as "<HOME_PRICE>"
     And  select down payment as "<DOWN_PAYMENT>"
-
     Then check that price calculated correctly with loan type = "<LOAN_TYPE>", rate = "<RATE>", home price = "<HOME_PRICE>", down payment = "<DOWN_PAYMENT>"
 
     Examples:

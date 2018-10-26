@@ -11,8 +11,8 @@ Feature: Perform different actions connected with search requests on SearchPage
     And house sqft on map marks on the iframe map should be between "<MIN_SQFT_VALUE>" and "<MAX_SQFT_VALUE>"
 
     Examples:
-      |CITY_NAME    |MIN_PRICE_VALUE  |MAX_PRICE_VALUE  |BED_NUMBER |BATH_NUMBER  |MIN_SQFT_VALUE |MAX_SQFT_VALUE |
-      |Berkeley, CA |$250k            |$1.4M            |2+         |2+           |1,750 sqft     |2,000 sqft     |
+      | CITY_NAME    | MIN_PRICE_VALUE | MAX_PRICE_VALUE | BED_NUMBER | BATH_NUMBER | MIN_SQFT_VALUE | MAX_SQFT_VALUE |
+      | Berkeley, CA | $250k           | $1.4M           | 2+         | 2+          | 1,750 sqft     | 2,000 sqft     |
 
   @SearchByConditions
   Scenario Outline: user create search request, every result fit search request criteria
@@ -24,8 +24,8 @@ Feature: Perform different actions connected with search requests on SearchPage
     And house sqft in search result should be between "<MIN_SQFT_VALUE>" and "<MAX_SQFT_VALUE>"
 
     Examples:
-      |CITY_NAME    |MIN_PRICE_VALUE  |MAX_PRICE_VALUE  |BED_NUMBER |BATH_NUMBER  |MIN_SQFT_VALUE |MAX_SQFT_VALUE |
-      |Berkeley, CA |$250k            |$1.4M            |2+         |2+           |1,750 sqft     |2,000 sqft     |
+      | CITY_NAME    | MIN_PRICE_VALUE | MAX_PRICE_VALUE | BED_NUMBER | BATH_NUMBER | MIN_SQFT_VALUE | MAX_SQFT_VALUE |
+      | Berkeley, CA | $250k           | $1.4M           | 2+         | 2+          | 1,750 sqft     | 2,000 sqft     |
 
   @FoundHouses
   Scenario: user create search request, check if number of found elements match result information
@@ -41,8 +41,8 @@ Feature: Perform different actions connected with search requests on SearchPage
     Then elements on the page displayed sorted by price
 
     Examples:
-      |CITY_NAME          |MIN_PRICE_VALUE  |MAX_PRICE_VALUE   |SORT_OPTION     |
-      |San Francisco, CA  |$350k            |$600k             |Highest Price   |
+      | CITY_NAME         | MIN_PRICE_VALUE | MAX_PRICE_VALUE | SORT_OPTION   |
+      | San Francisco, CA | $350k           | $600k           | Highest Price |
 
   @SchoolRating
   Scenario Outline: user create search request, user click on the "View map" button,
@@ -54,8 +54,8 @@ Feature: Perform different actions connected with search requests on SearchPage
     Then schools that are displayed on map have rating more than selected "<RATING>"
 
     Examples:
-      |CITY_NAME      |RATING  |
-      |Anchorage, AK  |9       |
+      | CITY_NAME     | RATING |
+      | Anchorage, AK | 9      |
 
   @RestaurantsFilter
   Scenario: user create search request, user click on the "View map" button,
