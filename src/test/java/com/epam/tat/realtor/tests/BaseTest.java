@@ -29,7 +29,8 @@ public class BaseTest {
         homePageStep = new HomePageStep(driver);
         driver.manage().timeouts()
                 .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
-        while (driver.findElements(By.xpath("//input[contains(@id,'downshift')]")).size()==0){
+//        while (driver.findElements(By.xpath("//input[contains(@id,'downshift')]")).size()==0){
+        while (driver.findElements(By.xpath("//input[@id='searchBox']")).size()==0){
             System.out.println("New version of the home page. Page has to be  reloaded...");
             driver.manage().deleteAllCookies();
             driver.navigate().to(ConfigProperties.getTestProperty("url"));
