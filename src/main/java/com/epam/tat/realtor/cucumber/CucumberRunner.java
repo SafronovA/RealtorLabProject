@@ -10,6 +10,4 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
                 , "com.epam.tat.realtor.cucumber"}
 )
 
-public class CucumberRunner extends AbstractTestNGCucumberTests {
-
-}
+public class CucumberRunner extends AbstractTestNGCucumberTests {}
