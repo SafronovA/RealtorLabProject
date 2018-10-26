@@ -95,7 +95,7 @@
                 <version>2.22.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suitXmlFile>${basedir}\src\test\resources\SampleSuite.xml</suitXmlFile>
+                        <suitXmlFile>${basedir}\src\test\resources\bddRun.xml</suitXmlFile>
                     </suiteXmlFiles>
                     <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
                     <systemProperties>

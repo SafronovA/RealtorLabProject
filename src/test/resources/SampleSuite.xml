@@ -23,10 +23,10 @@
             <!--<class name="com.epam.tat.realtor.tests.RealtorRecommendationsTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.RealtorReviewsTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.RealtorSoldHousesTest"/>-->
-            <class name="com.epam.tat.realtor.tests.RestaurantsFilterTest"/>
+            <!--<class name="com.epam.tat.realtor.tests.RestaurantsFilterTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.SavedHomesTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.SavedSearchTest"/>-->
-            <class name="com.epam.tat.realtor.tests.SchoolRatingTest"/>
+            <!--<class name="com.epam.tat.realtor.tests.SchoolRatingTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.SearchByConditionsTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.SortByPriceTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.SortByRecommendationsTest"/>-->

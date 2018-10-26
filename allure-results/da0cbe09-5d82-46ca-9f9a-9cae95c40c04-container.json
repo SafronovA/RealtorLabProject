@@ -1,0 +1,1 @@
+{"uuid":"da0cbe09-5d82-46ca-9f9a-9cae95c40c04","name":"com.epam.tat.realtor.tests.SavedSearchTest.deleteCreatedSaveSearch","description":"","start":1540546724371,"stop":1540546724371,"children":["ac2fd381-61b4-4f19-9668-644f2924cc2c"],"afters":[{"name":"deleteCreatedSaveSearch","status":"broken","stage":"finished","description":"","start":1540546724371,"stop":1540546724371}]}
