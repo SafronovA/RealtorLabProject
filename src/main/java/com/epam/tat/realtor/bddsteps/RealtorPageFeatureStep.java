@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.bddsteps;
 
+import com.epam.tat.realtor.drivers.DriverFactory;
 import com.epam.tat.realtor.pages.*;
 import com.epam.tat.realtor.util.Parser;
 import cucumber.api.java.en.And;
@@ -18,23 +19,22 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class RealtorPageFeatureStep {
-
-    private static HomePage homePage;
-    private static FindRealtorPage findRealtorPage;
-    private static RealtorPage realtorPage;
-    private static RealtorSearchResultPage realtorSearchResultPage;
-    private static WebDriver driver;
+    private WebDriver driver = DriverFactory.CHROMEDRIVER.getDriver();
+    private HomePage homePage = new HomePage(driver);
+    private FindRealtorPage findRealtorPage = new FindRealtorPage(driver);
+    private RealtorPage realtorPage = new RealtorPage(driver);
+    private RealtorSearchResultPage realtorSearchResultPage = new RealtorSearchResultPage(driver);
     private int recommendationCount;
     private int reviewCount;
     private int soldHousesCount;
 
-    public void setDriver(WebDriver driver) {
-        this.driver = driver;
-        homePage = new HomePage(driver);
-        findRealtorPage = new FindRealtorPage(driver);
-        realtorPage = new RealtorPage(driver);
-        realtorSearchResultPage = new RealtorSearchResultPage(driver);
-    }
+//    public void init(WebDriver driver) {
+//        this.driver = driver;
+//        homePage = new HomePage(driver);
+//        findRealtorPage = new FindRealtorPage(driver);
+//        realtorPage = new RealtorPage(driver);
+//        realtorSearchResultPage = new RealtorSearchResultPage(driver);
+//    }
 
     /**
      * click Realtor button
@@ -68,7 +68,7 @@ public class RealtorPageFeatureStep {
      * click search button
      */
     @And("click search button")
-    public void clickSearchButton(){
+    public void clickSearchButton() {
         findRealtorPage.clickSearchButton();
     }
 
@@ -213,7 +213,7 @@ public class RealtorPageFeatureStep {
      *
      * @param recommendation required value
      */
-    @And("choose recommendation")
+    @And("choose recommendation amount: \"([^\"]*)\"")
     public void choseRecommendation(String recommendation) {
         realtorSearchResultPage.clickRecommendationFilterButton()
                 .getRecommendationContainer().stream()
@@ -226,7 +226,7 @@ public class RealtorPageFeatureStep {
      *
      * @param sortBy required value
      */
-    @And("choose sort option")
+    @And("choose sort option: \"([^\"]*)\"")
     public void choseSortOption(String sortBy) {
         realtorSearchResultPage.clickSortByButton()
                 .getSortByOptions().stream()
