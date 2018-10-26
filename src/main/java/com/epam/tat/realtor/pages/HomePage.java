@@ -39,7 +39,7 @@ public class HomePage extends BasePage {
     private WebElement realtorButton;
     @FindBy (xpath = "//li/a[contains(text(),'HOME')]")
     private WebElement homeEstimate;
-    @FindBy(xpath = "//a[@title='Find a realtor']")
+    @FindBy(xpath = "//*[@id=\"img_far\"]/a")
     private WebElement findRealtorButton;
     @FindBy(xpath = "//button[@data-label='pc-save-cta']")
     private List<WebElement> heartIconsList;
