@@ -513,7 +513,6 @@ public class SearchPage extends BasePage {
      */
     public SearchPage clickLifestyleButton() {
         waitUntilElementIsVisible(lifestyleButton);
-        waitUntilElementIsClickable(lifestyleButton);
         lifestyleButton.click();
         return this;
     }
