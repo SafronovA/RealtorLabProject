@@ -1,6 +1,7 @@
 package com.epam.tat.realtor.tests;
 
 import com.epam.jira.JIRATestKey;
+import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.SearchPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,8 +13,8 @@ public class RestaurantsFilterTest extends BaseTest {
     /**
      * check that dots are shown on map are restaurants
      */
-    @JIRATestKey(key = "EPMFARMATS-4937")
-    @Test
+    @JIRATestKey(key = "EPMFARMATS-4937", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void restaurantsFilter() {
         SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)
                 .clickSearchButton()

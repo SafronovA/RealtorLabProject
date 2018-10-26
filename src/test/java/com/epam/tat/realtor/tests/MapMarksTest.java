@@ -1,6 +1,7 @@
 package com.epam.tat.realtor.tests;
 
 import com.epam.jira.JIRATestKey;
+import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.SearchPageStep;
 import org.testng.annotations.Test;
 
@@ -21,8 +22,8 @@ public class MapMarksTest extends BaseTest {
      * click map view button
      * check if all map marks contain values that match search parameters
      */
-    @JIRATestKey(key = "EPMFARMATS-4924")
-    @Test
+    @JIRATestKey(key = "EPMFARMATS-4924", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void checkMapMarks() {
         SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)
                 .clickSearchButton()

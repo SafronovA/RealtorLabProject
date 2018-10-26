@@ -1,6 +1,7 @@
 package com.epam.tat.realtor.tests;
 
 import com.epam.jira.JIRATestKey;
+import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -19,8 +20,8 @@ public class SortByRecommendationsTest extends BaseTest {
      * check that realtors are displayed on page sorted by recommendations
      */
 
-    @JIRATestKey(key = "EPMFARMATS-4921")
-    @Test
+    @JIRATestKey(key = "EPMFARMATS-4921", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void sortByRecommendations() {
         realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
                 .enterRealtorsLocation(CITY_NAME)

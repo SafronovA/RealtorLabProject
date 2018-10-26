@@ -1,6 +1,7 @@
 package com.epam.tat.realtor.tests;
 
 import com.epam.jira.JIRATestKey;
+import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.MyProfilePageStep;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -29,8 +30,8 @@ public class EditProfileNameTest extends BaseTest {
      * edit address name
      * check that the profile name has changed correctly
      */
-    @JIRATestKey(key = "EPMFARMATS-4919")
-    @Test
+    @JIRATestKey(key = "EPMFARMATS-4919", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void editProfileName() {
         myProfilePageStep = homePageStep.clickUserIcon()
                 .goToMyProfileSection()

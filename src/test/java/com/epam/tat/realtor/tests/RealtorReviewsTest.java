@@ -1,6 +1,7 @@
 package com.epam.tat.realtor.tests;
 
 import com.epam.jira.JIRATestKey;
+import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.RealtorPageStep;
 import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import org.testng.annotations.Test;
@@ -21,8 +22,8 @@ public class RealtorReviewsTest extends BaseTest {
      * click Load More Reviews button until all reviews won't be loaded
      * check that number of reviews on the page match reviews number in the realtor's card
      */
-    @JIRATestKey(key = "EPMFARMATS-4940")
-    @Test
+    @JIRATestKey(key = "EPMFARMATS-4940", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void checkRealtorSoldHouses() {
         RealtorSearchResultPageStep realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
                 .enterRealtorName(REALTOR_NAME)

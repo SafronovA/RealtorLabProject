@@ -1,6 +1,7 @@
 package com.epam.tat.realtor.tests;
 
 import com.epam.jira.JIRATestKey;
+import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -21,8 +22,8 @@ public class CheckIconsColorTest extends BaseTest {
      * click 'see agents nearby properties' if it presents on the page
      * check that the statuses of houses and the statuses of icons on the map correspond to each other
      */
-    @JIRATestKey(key = "EPMFARMATS-5237")
-    @Test
+    @JIRATestKey(key = "EPMFARMATS-5237", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void checkIconsColor() {
         realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
                 .enterRealtorsLocation(LOCATION)

@@ -37,8 +37,8 @@ public class EditProfileAddressTest extends BaseTest {
      * edit address fields
      * check that the profile address has changed correctly
      */
-    @JIRATestKey(key = "EPMFARMATS-4946")
-    @Test
+    @JIRATestKey(key = "EPMFARMATS-4946", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void editAddressFields() {
                 myProfilePageStep = homePageStep.clickUserIcon()
                 .goToMyProfileSection()

@@ -1,6 +1,7 @@
 package com.epam.tat.realtor.tests;
 
 import com.epam.jira.JIRATestKey;
+import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.MyHomePageStep;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -34,8 +35,8 @@ public class EditMyHomeInfoTest extends BaseTest {
      * edit info of my home
      * check that home info changed correctly
      */
-    @JIRATestKey(key = "EPMFARMATS-5238")
-    @Test
+    @JIRATestKey(key = "EPMFARMATS-5238", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void editHomeInfo() {
         myHomePageStep = homePageStep.clickMyHomeButton()
                 .editHomeInfo(BEDROOMS_NEW, BATHROOMS_NEW, CAR_SPACES_NEW, SQUARE_NEW, LOT_SIZE_NEW);
