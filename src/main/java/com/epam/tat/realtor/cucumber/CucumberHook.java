@@ -1,7 +1,6 @@
 package com.epam.tat.realtor.cucumber;
 
 import com.epam.tat.realtor.ConfigProperties;
-import com.epam.tat.realtor.bddsteps.RealtorPageFeatureStep;
 import com.epam.tat.realtor.drivers.DriverFactory;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -27,7 +26,6 @@ public class CucumberHook {
         }
         driver.manage().timeouts()
                 .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
-        new RealtorPageFeatureStep().setDriver(driver);
     }
 
     @After

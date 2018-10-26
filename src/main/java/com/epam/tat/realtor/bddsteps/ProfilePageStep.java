@@ -14,16 +14,27 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class ProfilePageStep {
-    private WebDriver driver = DriverFactory.CHROMEDRIVER.getDriver();
-    private HomePage homePage = new HomePage(driver);
-    private MyProfilePage myProfilePage = new MyProfilePage(driver);
-    private MyHomePage myHomePage = new MyHomePage(driver);
-    private SavedHomesPage savedHomesPage = new SavedHomesPage(driver);
-    private SearchPage searchPage = new SearchPage(driver);
-    private SavedSearchesPage savedSearchesPage = new SavedSearchesPage(driver);
-    private MortgageCalculatorPage mortgageCalculatorPage = new MortgageCalculatorPage(driver);
+    private WebDriver driver;
+    private HomePage homePage;
+    private MyProfilePage myProfilePage;
+    private MyHomePage myHomePage;
+    private SavedHomesPage savedHomesPage;
+    private SearchPage searchPage;
+    private SavedSearchesPage savedSearchesPage;
+    private MortgageCalculatorPage mortgageCalculatorPage;
     private House house;
     private int savedHomes;
+
+    public ProfilePageStep() {
+        driver = DriverFactory.CHROMEDRIVER.getDriver();
+        homePage = new HomePage(driver);
+        myProfilePage = new MyProfilePage(driver);
+        myHomePage = new MyHomePage(driver);
+        savedHomesPage = new SavedHomesPage(driver);
+        searchPage = new SearchPage(driver);
+        savedSearchesPage = new SavedSearchesPage(driver);
+        mortgageCalculatorPage = new MortgageCalculatorPage(driver);
+    }
 
 //    public void init(WebDriver driver) {
 //        this.driver = driver;

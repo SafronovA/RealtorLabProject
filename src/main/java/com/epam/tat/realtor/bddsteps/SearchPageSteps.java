@@ -23,32 +23,17 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class SearchPageSteps {
-    private WebDriver driver = DriverFactory.CHROMEDRIVER.getDriver();
-    private List<House> searchResult = new ArrayList<>();
-    private HomePage homePage = new HomePage(driver);
-    private SearchPage searchPage = new SearchPage(driver);
+    private WebDriver driver;
+    private List<House> searchResult;
+    private HomePage homePage;
+    private SearchPage searchPage;
 
-//    public void init(WebDriver driver) {
-//        this.driver = driver;
-//        searchResult = new ArrayList<>();
-//        homePage = new HomePage(driver);
-//        searchPage = new SearchPage(driver);
-//    }
-//    @Before
-//    public void initResources() {
-//        driver.manage().deleteAllCookies();
-//        driver.navigate().to(ConfigProperties.getTestProperty("url"));
-//    }
-//
-//    @After
-//    public void getScenarioInfo(Scenario scenario) {
-//        System.out.println(scenario.getId());
-//        System.out.println(scenario.getName());
-//        System.out.println(scenario.getStatus());
-//        System.out.println(scenario.isFailed());
-//        System.out.println(scenario.getSourceTagNames());
-//    }
-
+    public SearchPageSteps(){
+        driver = DriverFactory.CHROMEDRIVER.getDriver();
+        searchResult = new ArrayList<>();
+        homePage = new HomePage(driver);
+        searchPage = new SearchPage(driver);
+    }
 
     @Given("user perform search by \"([^\"]*)\"")
     public void userPerformSearchBy(String city_Name) {

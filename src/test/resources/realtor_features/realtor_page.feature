@@ -1,5 +1,6 @@
 Feature: realtor page
 
+  @CheckIconsColor
   Scenario: icon colors on map match house status
     When click find realtor button
     And enter realtor location "Boston, MA"
@@ -11,6 +12,7 @@ Feature: realtor page
     And click see agents nearby properties
     Then icon colors on map match house status
 
+  @ClickOnIcon
   Scenario: icon become selected after click
     When click find realtor button
     And enter realtor location "Boston, MA"
@@ -21,6 +23,7 @@ Feature: realtor page
     And select first realtor card
     Then icon become selected after click
 
+  @ForSaleRealtorHouses
   Scenario: for sale houses on realtor page have status for sale
     When click find realtor button
     And enter realtor location "San Francisco, CA"
@@ -29,6 +32,7 @@ Feature: realtor page
     And click on realtor icon
     Then houses with red icon have for sale status
 
+  @PhotosOnMap
   Scenario: photos on map match realtor photo
     When click find realtor button
     And enter realtor location "San Francisco, CA"
@@ -38,6 +42,7 @@ Feature: realtor page
     And click get started activity map button
     Then photos on map match realtor photo
 
+  @RealtorRecommendations
   Scenario: recommendations count on the page match recommendations count in the realtor's card
     When click find realtor button
     And enter realtor name "Adora Lazaro"
@@ -47,6 +52,7 @@ Feature: realtor page
     And click load all recommendation
     Then recommendation count on the page match recommendations count in the realtor's card
 
+  @RealtorReviews
   Scenario: number of reviews on the page match reviews number in the realtor's card
     When click find realtor button
     And enter realtor name "Adora Lazaro"
@@ -56,6 +62,7 @@ Feature: realtor page
     And click load all reviews
     Then reviews count on the page match reviews count in the realtor's card
 
+  @RealtorSoldHouses
   Scenario: every house on the iframe map has "Sold" status
     When click find realtor button
     And enter realtor name "Amanda Hurtt"
@@ -66,10 +73,11 @@ Feature: realtor page
     Then sold houses count in the realtor card match count on the iframe map
     And houses on the iframe map have sold status
 
+  @SortByRecommendations
   Scenario: realtors are displayed on page sorted by recommendations
     When click find realtor button
     And enter realtor location "San Francisco, CA"
-    And get realtor sold houses count
-    And choose recommendation
-    And choose sort option
+    And click search button
+    And choose recommendation amount: "10+"
+    And choose sort option: "Most Recommendations"
     Then realtors are displayed sorted by recommendation

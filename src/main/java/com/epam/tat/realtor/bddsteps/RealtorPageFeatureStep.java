@@ -19,22 +19,22 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class RealtorPageFeatureStep {
-    private WebDriver driver = DriverFactory.CHROMEDRIVER.getDriver();
-    private HomePage homePage = new HomePage(driver);
-    private FindRealtorPage findRealtorPage = new FindRealtorPage(driver);
-    private RealtorPage realtorPage = new RealtorPage(driver);
-    private RealtorSearchResultPage realtorSearchResultPage = new RealtorSearchResultPage(driver);
+    private WebDriver driver;
+    private HomePage homePage;
+    private FindRealtorPage findRealtorPage;
+    private RealtorPage realtorPage;
+    private RealtorSearchResultPage realtorSearchResultPage;
     private int recommendationCount;
     private int reviewCount;
     private int soldHousesCount;
 
-//    public void init(WebDriver driver) {
-//        this.driver = driver;
-//        homePage = new HomePage(driver);
-//        findRealtorPage = new FindRealtorPage(driver);
-//        realtorPage = new RealtorPage(driver);
-//        realtorSearchResultPage = new RealtorSearchResultPage(driver);
-//    }
+    public RealtorPageFeatureStep(){
+        driver = DriverFactory.CHROMEDRIVER.getDriver();
+        homePage = new HomePage(driver);
+        findRealtorPage = new FindRealtorPage(driver);
+        realtorPage = new RealtorPage(driver);
+        realtorSearchResultPage = new RealtorSearchResultPage(driver);
+    }
 
     /**
      * click Realtor button
