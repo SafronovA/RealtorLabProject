@@ -21,7 +21,7 @@ public class BaseTest {
      */
     @BeforeClass(alwaysRun = true)
     void initPage() {
-        driver = DriverFactory.CHROMEDRIVER.getDriver();
+        driver = DriverFactory.FIREFOXDRIVER.getDriver();
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.navigate().to(ConfigProperties.getTestProperty("url"));
@@ -37,13 +37,13 @@ public class BaseTest {
                 .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
     }
 
-    /**
-     * close browser
-     */
-    @AfterSuite
-    void closeResources() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    /**
+//     * close browser
+//     */
+//    @AfterSuite
+//    void closeResources() {
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 }

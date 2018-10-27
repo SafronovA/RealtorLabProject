@@ -173,6 +173,7 @@ public class MyHomePage extends BasePage {
     private MyHomePage clearField(WebElement field) {
         field.sendKeys(Keys.CONTROL + "a");
         field.sendKeys(Keys.DELETE);
+        field.clear();
         return this;
     }
 

@@ -21,7 +21,7 @@
             <!--<class name="com.epam.tat.realtor.tests.CheckIconsColorTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.ClickOnRealtorIconTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.EditMyHomeInfoTest"/>-->
-            <!--<class name="com.epam.tat.realtor.tests.EditProfileAddressTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.EditProfileLocationTestt"/>-->
             <!--<class name="com.epam.tat.realtor.tests.EditProfileNameTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.ForSaleRealtorHousesTest"/>-->
             <!--<class name="com.epam.tat.realtor.tests.MortgageCalculatorTest"/>-->

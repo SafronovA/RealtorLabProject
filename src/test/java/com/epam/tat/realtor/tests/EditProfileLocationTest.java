@@ -11,7 +11,7 @@ import java.util.Random;
 
 import static org.testng.Assert.assertTrue;
 
-public class EditProfileAddressTest extends BaseTest {
+public class EditProfileLocationTest extends BaseTest {
 
     private final String ADDRESS_ORIGIN = "streetOrigin";
     private final String CITY_ORIGIN = "cityOrigin";
