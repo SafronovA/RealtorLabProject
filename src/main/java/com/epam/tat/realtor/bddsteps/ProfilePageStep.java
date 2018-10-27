@@ -25,17 +25,6 @@ public class ProfilePageStep {
     private House house;
     private int savedHomes;
 
-//    public void init(WebDriver driver) {
-//        this.driver = driver;
-//        homePage = new HomePage(driver);
-//        myProfilePage = new MyProfilePage(driver);
-//        myHomePage = new MyHomePage(driver);
-//        savedHomesPage = new SavedHomesPage(driver);
-//        searchPage = new SearchPage(driver);
-//        savedSearchesPage = new SavedSearchesPage(driver);
-//        mortgageCalculatorPage = new MortgageCalculatorPage(driver);
-//    }
-
     @Given("user login")
     public void userPerformLogIn() {
         homePage.clickSignInButton()
@@ -43,6 +32,8 @@ public class ProfilePageStep {
                 .enterPassword()
                 .clickLoginSubmitButton();
     }
+
+    //     EditProfileName&EditProfileLocation
 
     @When("user moved to my profile page")
     public void moveToMyProfilePage() {
@@ -128,7 +119,7 @@ public class ProfilePageStep {
         assertTrue(result, "Profile state  has not changed to the required");
     }
 
-//    MyHomeTest
+    //    EditMyHomeInfo
 
     @When("user move to my home page")
     public void moveToMyHomePage() {
@@ -253,13 +244,6 @@ public class ProfilePageStep {
         savedSearchesPage.clickHomePageLink();
     }
 
-//    @When("user perform search by \"([^\"]*)\"")
-//    public void userPerformSearchBy(String city_Name) {
-//        searchPage = homePage.clearInputField()
-//                .enterCityInMainSearchInput(city_Name)
-//                .clickSearchButton();
-//    }
-
     @When("user save \"([^\"]*)\" - \"([^\"]*)\" search")
     public void saveSearch(String minPrice, String maxPrice) {
         searchPage.clickPriceButton()
@@ -296,7 +280,7 @@ public class ProfilePageStep {
         return minPrice == Parser.parse(minMaxPrices[0]) && maxPrice == Parser.parse(minMaxPrices[1]);
     }
 
-    //mortgageCalculatorTest
+    //mortgageCalculator
 
     @When("move to mortgage calculator page")
     public void moveToMortgageCalculatorPage() {

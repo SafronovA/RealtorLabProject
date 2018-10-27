@@ -28,14 +28,6 @@ public class RealtorPageFeatureStep {
     private int reviewCount;
     private int soldHousesCount;
 
-//    public void init(WebDriver driver) {
-//        this.driver = driver;
-//        homePage = new HomePage(driver);
-//        findRealtorPage = new FindRealtorPage(driver);
-//        realtorPage = new RealtorPage(driver);
-//        realtorSearchResultPage = new RealtorSearchResultPage(driver);
-//    }
-
     /**
      * click Realtor button
      */
