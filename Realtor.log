@@ -142,3 +142,8 @@ Success: clickOnIcons Time taken:15356 ms
 Testing: editHomeInfo
 Success: editHomeInfo Time taken:84218 ms
 Testing: editAddressFields
+*****************************
+Started suite RealtorSuite
+method #1 restaurantsFilter
+method #2 schoolRating
+Started testing on: Mon Oct 29 10:13:45 MSK 2018

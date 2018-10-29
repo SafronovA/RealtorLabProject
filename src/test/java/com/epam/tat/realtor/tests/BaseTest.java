@@ -37,13 +37,13 @@ public class BaseTest {
                 .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
     }
 
-//    /**
-//     * close browser
-//     */
-//    @AfterSuite
-//    void closeResources() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+    /**
+     * close browser
+     */
+    @AfterSuite
+    void closeResources() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }
