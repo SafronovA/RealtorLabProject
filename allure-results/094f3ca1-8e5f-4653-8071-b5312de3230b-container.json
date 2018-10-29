@@ -1,0 +1,1 @@
+{"uuid":"094f3ca1-8e5f-4653-8071-b5312de3230b","name":"com.epam.tat.realtor.tests.EditMyHomeInfoTest","start":1540630066558,"stop":1540630160189,"children":["028efb32-37e0-4dcd-9df5-f7f7ff93df7c","ab065b17-72d9-450a-a4fb-f5d7ca307291"],"befores":[{"name":"initPage","status":"passed","stage":"finished","description":"","start":1540630066686,"stop":1540630081681}]}

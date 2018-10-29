@@ -1,0 +1,1 @@
+{"uuid":"8c7558d4-87ec-4b54-9563-b9724c4ece8b","name":"com.epam.tat.realtor.tests.EditProfileAddressTest.revertAddressFields","description":"","start":1540628155634,"stop":1540628155635,"children":["d852a5bb-3b7a-4144-9f34-b4ad525091e4"],"afters":[{"name":"revertAddressFields","status":"broken","stage":"finished","description":"","start":1540628155634,"stop":1540628155635}]}

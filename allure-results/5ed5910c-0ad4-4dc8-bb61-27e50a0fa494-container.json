@@ -1,0 +1,1 @@
+{"uuid":"5ed5910c-0ad4-4dc8-bb61-27e50a0fa494","name":"com.epam.tat.realtor.tests.EditProfileNameTest.revertProfileName","description":"","start":1540630523935,"stop":1540630558460,"children":["48009cd0-d29f-4b75-8de1-c77d650c3f19"],"afters":[{"name":"revertProfileName","status":"passed","stage":"finished","description":"","start":1540630523936,"stop":1540630558460}]}
