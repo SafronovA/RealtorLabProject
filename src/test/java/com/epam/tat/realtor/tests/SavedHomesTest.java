@@ -1,7 +1,5 @@
 package com.epam.tat.realtor.tests;
 
-import com.epam.jira.JIRATestKey;
-import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.SavedHomesPageStep;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -32,8 +30,7 @@ public class SavedHomesTest extends BaseTest {
      * go to saved homes section,
      * check if saved homes number match saved homes on the main page
      */
-    @JIRATestKey(key = "EPMFARMATS-4922", retryCountIfFailed = 2)
-    @Test(retryAnalyzer = RetryAnalyzer.class)
+    @Test
     public void checkSavedHomes() {
         int savedHomes = homePageStep.saveHomes();
         SavedHomesPageStep savedHomesPageStep = homePageStep.clickUserIcon();

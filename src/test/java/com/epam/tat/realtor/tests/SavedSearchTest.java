@@ -1,7 +1,5 @@
 package com.epam.tat.realtor.tests;
 
-import com.epam.jira.JIRATestKey;
-import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.SavedSearchesPageStep;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -31,8 +29,7 @@ public class SavedSearchTest extends BaseTest {
     /**
      * test that search saved with selected parameters
      */
-    @JIRATestKey(key = "EPMFARMATS-4929", retryCountIfFailed = 2)
-    @Test(retryAnalyzer = RetryAnalyzer.class)
+    @Test
     public void savedSearch() {
         homePageStep.enterCityName(CITY_NAME)
                 .clickSearchButton()
