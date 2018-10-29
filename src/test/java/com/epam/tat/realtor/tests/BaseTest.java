@@ -21,7 +21,7 @@ public class BaseTest {
      */
     @BeforeClass(alwaysRun = true)
     void initPage() {
-        driver = DriverFactory.FIREFOXDRIVER.getDriver();
+        driver = DriverFactory.CHROMEDRIVER.getDriver();
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.navigate().to(ConfigProperties.getTestProperty("url"));

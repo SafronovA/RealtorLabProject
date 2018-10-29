@@ -147,3 +147,28 @@ Started suite RealtorSuite
 method #1 restaurantsFilter
 method #2 schoolRating
 Started testing on: Mon Oct 29 10:13:45 MSK 2018
+*****************************
+Started suite RealtorSuite
+method #1 restaurantsFilter
+method #2 schoolRating
+Started testing on: Mon Oct 29 10:14:25 MSK 2018
+Testing: restaurantsFilter
+Skipped Test: restaurantsFilter
+Testing: restaurantsFilter
+Skipped Test: restaurantsFilter
+Testing: restaurantsFilter
+Failed : restaurantsFilter with exceptionorg.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[text()='Search']' (tried for 30 second(s) with 500 milliseconds interval)
+save screenshot of failed test into C:\Users\Aliaksei_Safronau\IdeaProjects\realtor\src\test\resources\failure_screenshots\restaurantsFilter_2018-10-29 10_17_59.png
+Testing: schoolRating
+Skipped Test: schoolRating
+Testing: schoolRating
+Skipped Test: schoolRating
+Testing: schoolRating
+Failed : schoolRating with exceptionorg.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[text()='Search']' (tried for 30 second(s) with 500 milliseconds interval)
+save screenshot of failed test into C:\Users\Aliaksei_Safronau\IdeaProjects\realtor\src\test\resources\failure_screenshots\schoolRating_2018-10-29 10_21_13.png
+PASSED TEST CASES
+FAILED TEST CASES
+schoolRating
+restaurantsFilter
+Test completed on: Mon Oct 29 10:21:13 MSK 2018
+Suite RealtorSuite ended
