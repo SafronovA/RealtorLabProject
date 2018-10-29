@@ -1,7 +1,5 @@
 package com.epam.tat.realtor.tests;
 
-import com.epam.jira.JIRATestKey;
-import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.RealtorPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,8 +12,7 @@ public class ForSaleRealtorHousesTest extends BaseTest {
     /**
      * check that for sale houses on realtor page have status for sale
      */
-    @JIRATestKey(key = "EPMFARMATS-5232", retryCountIfFailed = 2)
-    @Test(retryAnalyzer = RetryAnalyzer.class)
+    @Test
     public void forSaleRealtorHouses() {
         RealtorPageStep realtorPageStep = homePageStep.clickFindRealtorButton()
                 .enterRealtorsLocation(CITY_NAME)
