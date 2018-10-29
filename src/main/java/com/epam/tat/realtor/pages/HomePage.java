@@ -184,6 +184,7 @@ public class HomePage extends BasePage {
      */
     public MortgageCalculatorPage clickMortgageCalculatorLink() {
         waitInvisibilityOfElementLocated(strangeLayer);
+        waitUntilElementIsVisible(mortgageCalculatorLink);
         mortgageCalculatorLink.click();
         return new MortgageCalculatorPage(driver);
     }
