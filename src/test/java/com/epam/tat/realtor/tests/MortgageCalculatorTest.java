@@ -1,5 +1,7 @@
 package com.epam.tat.realtor.tests;
 
+import com.epam.jira.JIRATestKey;
+import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.listeners.IAnnotationTransformerListener;
 import com.epam.tat.realtor.steps.MortgageCalculatorPageStep;
 import org.testng.Assert;
@@ -12,7 +14,8 @@ public class MortgageCalculatorTest extends BaseTest {
     /**
      * check that calculated and displayed price is correct
      */
-    @Test
+    @JIRATestKey(key = "EPMFARMATS-4931", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void mortgageCalculatorTest(String loanType, String rate, String homePrice, String downPayment) {
         MortgageCalculatorPageStep mortgageCalculatorPageStep = homePageStep.navigateCursorToMortgageLink()
                 .clickMortgageCalculatorLink()

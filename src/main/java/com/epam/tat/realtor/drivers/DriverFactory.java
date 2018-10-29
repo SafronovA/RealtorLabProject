@@ -3,6 +3,8 @@ package com.epam.tat.realtor.drivers;
 import com.epam.tat.realtor.ConfigProperties;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -20,11 +22,10 @@ public enum DriverFactory {
         public WebDriver getDriver() {
             if (driver == null) {
                 System.setProperty("webdriver.chrome.driver", ConfigProperties.getTestProperty("chromedriver"));
-                DesiredCapabilities capabilitiesChrome = DesiredCapabilities.chrome();
-                capabilitiesChrome.setPlatform(Platform.WINDOWS);
-                capabilitiesChrome.setCapability("applicationName", "safronau_node");
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.setCapability("applicationName", "safronau_node");
                 try {
-                    driver = new RemoteWebDriver(new URL(ConfigProperties.getTestProperty("remoteURL")), capabilitiesChrome);
+                    driver = new RemoteWebDriver(new URL(ConfigProperties.getTestProperty("remoteURL")), chromeOptions);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
@@ -42,10 +43,9 @@ public enum DriverFactory {
         public WebDriver getDriver() {
             if (driver == null) {
                 System.setProperty("webdriver.gecko.driver", ConfigProperties.getTestProperty("geckodriver"));
-                DesiredCapabilities capabilitiesFirefox = DesiredCapabilities.firefox();
-                capabilitiesFirefox.setPlatform(Platform.WINDOWS);
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
                 try {
-                    driver = new RemoteWebDriver(new URL(ConfigProperties.getTestProperty("remoteURL")), capabilitiesFirefox);
+                    driver = new RemoteWebDriver(new URL(ConfigProperties.getTestProperty("remoteURL")), firefoxOptions);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }

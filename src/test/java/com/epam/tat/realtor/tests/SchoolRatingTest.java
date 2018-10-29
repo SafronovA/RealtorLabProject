@@ -1,5 +1,7 @@
 package com.epam.tat.realtor.tests;
 
+import com.epam.jira.JIRATestKey;
+import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.SearchPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,7 +15,8 @@ public class SchoolRatingTest extends BaseTest {
      * select high school with selected rating
      * check that schools are displayed on map have rating more than selected rating
      */
-    @Test
+    @JIRATestKey(key = "EPMFARMATS-5230", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void schoolRating() {
         SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)
                 .clickSearchButton()
