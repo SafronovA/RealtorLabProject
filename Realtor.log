@@ -142,3 +142,14 @@ Success: clickOnIcons Time taken:15356 ms
 Testing: editHomeInfo
 Success: editHomeInfo Time taken:84218 ms
 Testing: editAddressFields
+*****************************
+Started suite RealtorSuite
+method #1 checkMapMarks
+Started testing on: Wed Oct 31 15:46:13 MSK 2018
+Testing: checkMapMarks
+Success: checkMapMarks Time taken:40429 ms
+PASSED TEST CASES
+checkMapMarks
+FAILED TEST CASES
+Test completed on: Wed Oct 31 15:47:27 MSK 2018
+Suite RealtorSuite ended
