@@ -1,0 +1,24 @@
+package com.epam.tat.realtor.steps_mob;
+
+import com.epam.tat.realtor.pages_mob.HomePage;
+import io.appium.java_client.AppiumDriver;
+
+public class HomePageStep extends BasePageStep {
+    private HomePage homePage;
+
+    public HomePageStep(AppiumDriver driver) {
+        super(driver);
+        homePage = new HomePage(driver);
+    }
+
+    /**
+
+     */
+    public MenuPageStep clickMenu() {
+        homePage.clickMenuButton();
+        return new MenuPageStep(driver);
+    }
+
+
+
+}

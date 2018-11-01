@@ -1,31 +1,46 @@
-package com.epam.tat.realtor.pages;
+package com.epam.tat.realtor.pages_mob;
 
 import com.epam.tat.realtor.ConfigProperties;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class BasePage {
-    protected WebDriver driver;
+    protected AppiumDriver driver;
     protected WebDriverWait driverWait;
     private static final String INNER_HTML = "innerHTML";
 
-    public BasePage(WebDriver driver) {
+    public BasePage(AppiumDriver driver) {
         this.driver = driver;
         driverWait = new WebDriverWait(driver, Integer.valueOf(ConfigProperties.getTestProperty("webDriverWaitTime")));
+    }
+
+    public void swipeUp() {
+        new TouchAction(driver)
+                .press(new PointOption().withCoordinates(500, 1800))
+                .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
+                .moveTo(new PointOption().withCoordinates(500, 500))
+                .release()
+                .perform();
     }
 
     /**
      * wait until webElement is visible
      *
-     * @param webElement webElement to be visible
+     * @param mobileElement webElement to be visible
      */
-    public void waitUntilElementIsVisible(WebElement webElement) {
-        driverWait.until(ExpectedConditions.visibilityOf(webElement));
+    public void waitUntilElementIsVisible(MobileElement mobileElement) {
+        driverWait.until(ExpectedConditions.visibilityOf(mobileElement));
     }
 
     /**
@@ -40,32 +55,21 @@ public class BasePage {
     /**
      * wait until webElement is clickable
      *
-     * @param webElement webElement to be clickable
+     * @param mobileElement webElement to be clickable
      */
-    public void waitUntilElementIsClickable(WebElement webElement) {
-        driverWait.until(ExpectedConditions.elementToBeClickable(webElement));
+    public void waitUntilElementIsClickable(MobileElement mobileElement) {
+        driverWait.until(ExpectedConditions.elementToBeClickable(mobileElement));
     }
 
     /**
      * click element by Java Executor
      *
-     * @param webElement web element to be clicked
-     * @param webDriver  used webdriver
+     * @param mobileElement web element to be clicked
+     * @param webDriver     used webdriver
      */
-    public static void clickByJEx(WebElement webElement, WebDriver webDriver) {
+    public static void clickByJEx(MobileElement mobileElement, WebDriver webDriver) {
         JavascriptExecutor executor = (JavascriptExecutor) webDriver;
-        executor.executeScript("arguments[0].click();", webElement);
-    }
-
-    /**
-     * scroll to element on the page
-     *
-     * @param webElement element to each page view to be scrolled
-     * @param webDriver  session driver
-     */
-    public static void scrollToElement(WebElement webElement, WebDriver webDriver) {
-        JavascriptExecutor executor = (JavascriptExecutor) webDriver;
-        executor.executeScript("arguments[0].scrollIntoView(true);", webElement);
+        executor.executeScript("arguments[0].click();", mobileElement);
     }
 
     /**
@@ -80,11 +84,11 @@ public class BasePage {
     /**
      * waiting for a specific attribute value in the Web element
      *
-     * @param webElement checked webElement
-     * @param value      expected value
+     * @param mobileElement checked webElement
+     * @param value         expected value
      */
-    public void waitUntilAttributeInnerHTMLToBe(WebElement webElement, String value) {
-        driverWait.until(ExpectedConditions.attributeToBe(webElement, INNER_HTML, value));
+    public void waitUntilAttributeInnerHTMLToBe(MobileElement mobileElement, String value) {
+        driverWait.until(ExpectedConditions.attributeToBe(mobileElement, INNER_HTML, value));
     }
 
     /**
@@ -99,10 +103,10 @@ public class BasePage {
     /**
      * wait until element is invisible
      *
-     * @param webElement element to be invisible
+     * @param mobileElement element to be invisible
      */
-    public void waitUntilElementIsInvisible(WebElement webElement) {
-        driverWait.until(ExpectedConditions.invisibilityOf(webElement));
+    public void waitUntilElementIsInvisible(MobileElement mobileElement) {
+        driverWait.until(ExpectedConditions.invisibilityOf(mobileElement));
     }
 
     /**
@@ -126,5 +130,4 @@ public class BasePage {
             }
         });
     }
-
 }
