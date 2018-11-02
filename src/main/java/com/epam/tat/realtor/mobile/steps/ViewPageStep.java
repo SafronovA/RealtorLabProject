@@ -12,4 +12,15 @@ public class ViewPageStep extends BasePageStep {
         viewPage = new ViewPage(driver);
     }
 
+    public FilterPageStep clickFilterButton(){
+        viewPage.clickFilterButton();
+        return new FilterPageStep(driver);
+    }
+
+    public ViewPageStep selectLowToHighPriceSortOption(){
+        viewPage.clickSortByButton();
+        viewPage.selectLowToHighSortOption();
+        return this;
+    }
+
 }

@@ -20,4 +20,19 @@ public class FilterPage extends BasePage {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
+    public FilterPage enterMinPrice(String minPrice){
+        minPriceInput.sendKeys(minPrice);
+        return this;
+    }
+
+    public FilterPage enterMaxPrice(String maxPrice){
+        maxPriceInput.sendKeys(maxPrice);
+        return this;
+    }
+
+    public ViewPage clickViewResultsButton(){
+        viewResultsButton.click();
+        return new ViewPage(driver);
+    }
+
 }

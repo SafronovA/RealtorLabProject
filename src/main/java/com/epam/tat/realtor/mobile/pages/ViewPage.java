@@ -11,7 +11,7 @@ public class ViewPage extends BasePage {
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/sort_spinner\")")
     private AndroidElement sortByButton;
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/text1\")")
-    private AndroidElement hightPriceSortOption;
+    private AndroidElement lowToHighSortOption;
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"Filter\"]")
     private AndroidElement filterButton;
 
@@ -23,6 +23,16 @@ public class ViewPage extends BasePage {
     public FilterPage clickFilterButton(){
         filterButton.click();
         return new FilterPage(driver);
+    }
+
+    public ViewPage clickSortByButton(){
+        sortByButton.click();
+        return this;
+    }
+
+    public ViewPage selectLowToHighSortOption(){
+        lowToHighSortOption.click();
+        return this;
     }
 
 }

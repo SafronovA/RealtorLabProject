@@ -28,6 +28,7 @@ public class HomePage extends BasePage {
     }
 
     public HomePage enterCity(String city) {
+        searchInput.click();
         searchInput.sendKeys(city + "\n");
         return this;
     }
