@@ -1,1 +1,0 @@
-{"uuid":"d1e84533-cb40-4d91-9d82-e3c4664ec572","name":"com.epam.tat.realtor.tests.EditProfileAddressTest.logIn","description":"","start":1540628155616,"stop":1540628155617,"children":["d852a5bb-3b7a-4144-9f34-b4ad525091e4"],"befores":[{"name":"logIn","status":"broken","stage":"finished","description":"","start":1540628155616,"stop":1540628155617}]}

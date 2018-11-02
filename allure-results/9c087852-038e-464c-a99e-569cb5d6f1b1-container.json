@@ -1,1 +1,0 @@
-{"uuid":"9c087852-038e-464c-a99e-569cb5d6f1b1","name":"com.epam.tat.realtor.tests.SavedHomesTest.clearSavedHomes","description":"","start":1540797904898,"stop":1540797944797,"children":["f3fa541e-744b-48ff-af74-220fa50e2dd8"],"befores":[{"name":"clearSavedHomes","status":"passed","stage":"finished","description":"","start":1540797904898,"stop":1540797944797}]}

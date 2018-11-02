@@ -1,1 +1,0 @@
-{"uuid":"55c9b6ad-44e3-49f9-a249-d2c350188d57","name":"com.epam.tat.realtor.tests.NumberOfHousesFoundTest","start":1540630863738,"stop":1540630955049,"children":["73cd6fdb-a8fa-43c7-9133-3140412a6f09"],"befores":[{"name":"initPage","status":"passed","stage":"finished","description":"","start":1540630863966,"stop":1540630881929}]}

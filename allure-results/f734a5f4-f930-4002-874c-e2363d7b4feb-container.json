@@ -1,1 +1,0 @@
-{"uuid":"f734a5f4-f930-4002-874c-e2363d7b4feb","name":"com.epam.tat.realtor.tests.EditMyHomeInfoTest.revertHomeInfo","description":"","start":1540630160177,"stop":1540630160177,"children":["ab065b17-72d9-450a-a4fb-f5d7ca307291"],"afters":[{"name":"revertHomeInfo","status":"broken","stage":"finished","description":"","start":1540630160177,"stop":1540630160177}]}
