@@ -7,12 +7,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
-    protected AppiumDriver appiumDriver;
+    protected AppiumDriver driver;
     private WebDriverWait webDriverWait;
 
-    public BasePage(AppiumDriver appiumDriver){
-        this.appiumDriver = appiumDriver;
-        webDriverWait = new WebDriverWait(appiumDriver, 20);
+    public BasePage(AppiumDriver driver){
+        this.driver = driver;
+        webDriverWait = new WebDriverWait(driver, 20);
     }
 
     public void waitUntilElementIsVisible(AndroidElement webElement) {

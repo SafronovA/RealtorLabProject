@@ -15,14 +15,14 @@ public class HomePage extends BasePage {
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/save_search\")")
     private AndroidElement saveSearchButton;
 
-    public HomePage(AppiumDriver appiumDriver) {
-        super(appiumDriver);
-        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
+    public HomePage(AppiumDriver driver) {
+        super(driver);
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
     public MenuPage clickMenuButton() {
         menuButton.click();
-        return new MenuPage(appiumDriver);
+        return new MenuPage(driver);
     }
 
     public HomePage enterCity(String city) {

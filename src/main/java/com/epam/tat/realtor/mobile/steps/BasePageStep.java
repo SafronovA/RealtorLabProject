@@ -5,12 +5,12 @@ import io.appium.java_client.AppiumDriver;
 
 public class BasePageStep {
 
-    protected AppiumDriver appiumDriver;
+    protected AppiumDriver driver;
     protected BasePage basePage;
 
-    public BasePageStep(AppiumDriver appiumDriver){
-        this.appiumDriver = appiumDriver;
-        basePage = new BasePage(appiumDriver);
+    public BasePageStep(AppiumDriver driver){
+        this.driver = driver;
+        basePage = new BasePage(driver);
     }
 
 }

@@ -7,14 +7,14 @@ public class HomePageStep extends BasePageStep {
 
     private HomePage homePage;
 
-    public HomePageStep(AppiumDriver appiumDriver){
-        super(appiumDriver);
-        homePage = new HomePage(appiumDriver);
+    public HomePageStep(AppiumDriver driver){
+        super(driver);
+        homePage = new HomePage(driver);
     }
 
     public MenuPageStep clickMenuButton(){
         homePage.clickMenuButton();
-        return new MenuPageStep(appiumDriver);
+        return new MenuPageStep(driver);
     }
 
     public HomePageStep enterCity(String city){
