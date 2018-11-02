@@ -3,7 +3,7 @@ package com.epam.tat.realtor.tests;
 import com.epam.jira.JIRATestKey;
 import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.bo.House;
-import com.epam.tat.realtor.steps.SearchPageStep;
+import com.epam.tat.realtor.web.steps.SearchPageStep;
 import org.testng.annotations.Test;
 
 import java.util.List;

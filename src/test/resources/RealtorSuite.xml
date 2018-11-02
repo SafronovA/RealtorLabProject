@@ -5,9 +5,9 @@
     <listeners>
         <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
-        <listener class-name="com.epam.tat.realtor.listeners.IAnnotationTransformerListener"/>
-        <listener class-name="com.epam.tat.realtor.listeners.RLTRTestListener"/>
-        <listener class-name="com.epam.tat.realtor.listeners.ReportingListner"/>
+        <listener class-name="com.epam.tat.realtor.web.listeners.IAnnotationTransformerListener"/>
+        <listener class-name="com.epam.tat.realtor.web.listeners.RLTRTestListener"/>
+        <listener class-name="com.epam.tat.realtor.web.listeners.ReportingListner"/>
         <listener class-name="com.epam.jira.testng.ExecutionListener" />
     </listeners>
 

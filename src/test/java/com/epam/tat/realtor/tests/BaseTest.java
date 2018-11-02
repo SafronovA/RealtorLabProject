@@ -1,8 +1,8 @@
 package com.epam.tat.realtor.tests;
 
-import com.epam.tat.realtor.ConfigProperties;
-import com.epam.tat.realtor.drivers.DriverFactory;
-import com.epam.tat.realtor.steps.HomePageStep;
+import com.epam.tat.realtor.web.ConfigProperties;
+import com.epam.tat.realtor.web.drivers.DriverFactory;
+import com.epam.tat.realtor.web.steps.HomePageStep;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;

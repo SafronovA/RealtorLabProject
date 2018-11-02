@@ -2,7 +2,7 @@ package com.epam.tat.realtor.tests;
 
 import com.epam.jira.JIRATestKey;
 import com.epam.jira.testng.RetryAnalyzer;
-import com.epam.tat.realtor.steps.RealtorPageStep;
+import com.epam.tat.realtor.web.steps.RealtorPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

@@ -2,8 +2,8 @@ package com.epam.tat.realtor.tests;
 
 import com.epam.jira.JIRATestKey;
 import com.epam.jira.testng.RetryAnalyzer;
-import com.epam.tat.realtor.listeners.IAnnotationTransformerListener;
-import com.epam.tat.realtor.steps.MortgageCalculatorPageStep;
+import com.epam.tat.realtor.web.listeners.IAnnotationTransformerListener;
+import com.epam.tat.realtor.web.steps.MortgageCalculatorPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
