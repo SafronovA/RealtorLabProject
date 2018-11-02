@@ -14,9 +14,9 @@ public class SavedSearchPageStep extends BasePageStep {
 
     private SavedSearchPage savedSearchPage;
 
-    public SavedSearchPageStep(AppiumDriver appiumDriver) {
-        super(appiumDriver);
-        savedSearchPage = new SavedSearchPage(appiumDriver);
+    public SavedSearchPageStep(AppiumDriver driver) {
+        super(driver);
+        savedSearchPage = new SavedSearchPage(driver);
     }
 
     public boolean doesSavedSearchDescriptionContainsEnteredCity(String enteredCity) {
@@ -30,7 +30,7 @@ public class SavedSearchPageStep extends BasePageStep {
                 .map(index -> savedSearchedCount - 1 - index)
                 .forEach(index -> {
                     Point savedSearchLocation = savedSearches.get(index).getLocation();
-                    new TouchAction(appiumDriver).longPress(PointOption.point(savedSearchLocation.x+50, savedSearchLocation.y+50)).perform();
+                    new TouchAction(driver).longPress(PointOption.point(savedSearchLocation.x+50, savedSearchLocation.y+50)).perform();
                     savedSearchPage.clickUnSaveSearchButton();
                 });
         return this;

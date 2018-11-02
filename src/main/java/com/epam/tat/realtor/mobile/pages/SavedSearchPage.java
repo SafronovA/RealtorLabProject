@@ -16,9 +16,9 @@ public class SavedSearchPage extends BasePage {
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/tracks\")")
     private AndroidElement unsaveSearchButton;
 
-    public SavedSearchPage(AppiumDriver appiumDriver){
-        super(appiumDriver);
-        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, Duration.ofSeconds(20)), this);
+    public SavedSearchPage(AppiumDriver driver){
+        super(driver);
+        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(20)), this);
     }
 
     public List<AndroidElement> getSavedSearchList(){

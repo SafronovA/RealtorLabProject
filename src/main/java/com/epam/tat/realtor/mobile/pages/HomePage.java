@@ -14,15 +14,17 @@ public class HomePage extends BasePage {
     private AndroidElement searchInput;
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/save_search\")")
     private AndroidElement saveSearchButton;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/view_list_label']")
+    private AndroidElement viewListButton;
 
-    public HomePage(AppiumDriver appiumDriver) {
-        super(appiumDriver);
-        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
+    public HomePage(AppiumDriver driver) {
+        super(driver);
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
     public MenuPage clickMenuButton() {
         menuButton.click();
-        return new MenuPage(appiumDriver);
+        return new MenuPage(driver);
     }
 
     public HomePage enterCity(String city) {
@@ -36,6 +38,11 @@ public class HomePage extends BasePage {
             saveSearchButton.click();
         }
         return this;
+    }
+
+    public ViewPage clickViewListButton(){
+        viewListButton.click();
+        return new ViewPage(driver);
     }
 
 }
