@@ -4,6 +4,7 @@ import com.epam.tat.realtor.ConfigProperties;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
@@ -25,11 +26,20 @@ public class BasePage {
         driverWait = new WebDriverWait(driver, Integer.valueOf(ConfigProperties.getTestProperty("webDriverWaitTime")));
     }
 
-    public void swipeUp() {
+    public static void swipeUp(AppiumDriver driver) {
         new TouchAction(driver)
                 .press(new PointOption().withCoordinates(500, 1800))
                 .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
                 .moveTo(new PointOption().withCoordinates(500, 500))
+                .release()
+                .perform();
+    }
+
+    public void swipeFromTo(PointOption from, PointOption to) {
+        new TouchAction(driver)
+                .press(from)
+                .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
+                .moveTo(to)
                 .release()
                 .perform();
     }
@@ -116,6 +126,10 @@ public class BasePage {
      */
     public void waitInvisibilityOfElementLocated(By location) {
         driverWait.until(ExpectedConditions.invisibilityOfElementLocated(location));
+    }
+
+    public void waitInvisibilityOfElement(MobileElement element) {
+        driverWait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     /**

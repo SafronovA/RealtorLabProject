@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
-public class AuthorizedTest extends BaseTestMob {
+public class AuthorizedTest extends BaseTest {
     private SettingsPageStep settingsPageStep;
     private static final String EMAIL = "qwert@mail.ru";
     private static final String PASS = "qwert12345";
@@ -14,7 +14,7 @@ public class AuthorizedTest extends BaseTestMob {
      */
     @Test
     public void authorised() {
-        settingsPageStep = homePageStepMob.clickMenu()
+        settingsPageStep = homePageStep.clickMenu()
                 .clickSignInButton()
                 .clickLogInButton()
                 .logIn(EMAIL, PASS)

@@ -32,7 +32,7 @@ public class MenuPage extends BasePage{
 
     public MenuPage clickSettingsButton() {
         waitUntilElementIsVisible(menuSideBar);
-        swipeUp();
+        swipeUp(driver);
         settingsButton.click();
         return this;
     }

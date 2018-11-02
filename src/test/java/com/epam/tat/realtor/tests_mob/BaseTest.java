@@ -8,9 +8,9 @@ import org.testng.annotations.BeforeClass;
 
 import java.util.concurrent.TimeUnit;
 
-public class BaseTestMob {
+public class BaseTest {
     protected AppiumDriver driver;
-    protected HomePageStep homePageStepMob;
+    protected HomePageStep homePageStep;
 
     /**
      * init specified WebDriver
@@ -21,7 +21,7 @@ public class BaseTestMob {
     @BeforeClass(alwaysRun = true)
     void initPage() {
         driver = DriverMobile.ANDROIDDRIVER.getDriver();
-        homePageStepMob = new HomePageStep(driver);
+        homePageStep = new HomePageStep(driver);
         driver.manage().timeouts().implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
     }
 
