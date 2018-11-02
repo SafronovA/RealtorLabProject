@@ -20,9 +20,9 @@ public class MenuPage extends BasePage {
         PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, Duration.ofSeconds(20)), this);
     }
 
-    public SearchPage clickStartNewSearch(){
+    public HomePage clickStartNewSearch(){
         startNewSearch.click();
-        return new SearchPage(appiumDriver);
+        return new HomePage(appiumDriver);
     }
 
     public SavedSearchPage clickSavedSearch(){

@@ -44,7 +44,7 @@ public class HomePageStep extends BasePageStep {
     /**
      * click search button
      *
-     * @return SearchPageStep
+     * @return HomePageStep
      */
     public SearchPageStep clickSearchButton() {
         homePage.clickSearchButton();

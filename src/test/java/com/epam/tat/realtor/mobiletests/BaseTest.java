@@ -1,6 +1,6 @@
 package com.epam.tat.realtor.mobiletests;
 
-import com.epam.tat.realtor.web.steps.HomePageStep;
+import com.epam.tat.realtor.mobile.steps.HomePageStep;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +13,9 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
+
     protected AppiumDriver driver;
+    protected HomePageStep homePageStep;
 
     /**
      * init specified WebDriver
@@ -32,6 +34,7 @@ public class BaseTest {
         capabilities.setCapability("appActivity", "com.move.realtor.search.results.activity.SearchResultsActivity");
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        homePageStep = new HomePageStep(driver);
     }
     /**
      * close browser

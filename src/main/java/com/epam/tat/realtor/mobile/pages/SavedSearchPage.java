@@ -32,7 +32,6 @@ public class SavedSearchPage extends BasePage {
     public SavedSearchPage clickUnSaveSearchButton(){
         waitUntilElementIsVisible(unsaveSearchButton);
         unsaveSearchButton.click();
-        //waitUntilElementIsInvisible(unsaveSearchButton);
         return this;
     }
 

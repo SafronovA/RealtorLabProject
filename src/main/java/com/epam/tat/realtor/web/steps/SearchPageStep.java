@@ -25,7 +25,7 @@ public class SearchPageStep extends BasePageStep {
      *
      * @param minPrice will be set to drop-down menu
      * @param maxPrice will be set to drop-down menu
-     * @return SearchPageStep
+     * @return HomePageStep
      */
     public SearchPageStep selectMinMaxPrices(String minPrice, String maxPrice) {
         searchPage.clickPriceButton();
@@ -44,7 +44,7 @@ public class SearchPageStep extends BasePageStep {
     /**
      * click save button to save search
      *
-     * @return SearchPageStep
+     * @return HomePageStep
      */
     public SearchPageStep clickSaveSearchButton() {
         searchPage.clickSaveSearchButton();
@@ -352,7 +352,7 @@ public class SearchPageStep extends BasePageStep {
     /**
      * click on view map button to open map
      *
-     * @return SearchPageStep
+     * @return HomePageStep
      */
     public SearchPageStep clickViewMapButton() {
         searchPage.clickViewMapButton();
@@ -362,7 +362,7 @@ public class SearchPageStep extends BasePageStep {
     /**
      * click lifestyle button on map
      *
-     * @return SearchPageStep
+     * @return HomePageStep
      */
     public SearchPageStep clickLifestyleButton() {
         searchPage.clickLifestyleButton();
@@ -372,7 +372,7 @@ public class SearchPageStep extends BasePageStep {
     /**
      * click on restaurants
      *
-     * @return SearchPageStep
+     * @return HomePageStep
      */
     public SearchPageStep selectRestaurants() {
         searchPage.selectRestaurants();
@@ -394,7 +394,7 @@ public class SearchPageStep extends BasePageStep {
     /**
      * click school button on map
      *
-     * @return SearchPageStep
+     * @return HomePageStep
      */
     public SearchPageStep clickSchoolButton() {
         searchPage.clickSchoolButton();
@@ -404,7 +404,7 @@ public class SearchPageStep extends BasePageStep {
     /**
      * select high school, remove ticks from other schools
      *
-     * @return SearchPageStep
+     * @return HomePageStep
      */
     public SearchPageStep selectHighSchool() {
         searchPage.clickElementarySchool()
@@ -416,7 +416,7 @@ public class SearchPageStep extends BasePageStep {
     /**
      * set school rating on 10
      *
-     * @return SearchPageStep
+     * @return HomePageStep
      */
     public SearchPageStep selectSchoolRating(String rating) {
         searchPage.selectSchoolRating(rating);

@@ -12,9 +12,9 @@ public class MenuPageStep extends BasePageStep {
         menuPage = new MenuPage(appiumDriver);
     }
 
-    public SearchPageStep clickStartNewSearch(){
+    public HomePageStep clickStartNewSearch(){
         menuPage.clickStartNewSearch();
-        return new SearchPageStep(appiumDriver);
+        return new HomePageStep(appiumDriver);
     }
 
     public SavedSearchPageStep clickSavedSearchButton(){

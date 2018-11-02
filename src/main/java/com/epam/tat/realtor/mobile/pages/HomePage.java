@@ -6,7 +6,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
-public class SearchPage extends BasePage {
+public class HomePage extends BasePage {
 
     @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc='Drawer Open']")
     private AndroidElement menuButton;
@@ -15,7 +15,7 @@ public class SearchPage extends BasePage {
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/save_search\")")
     private AndroidElement saveSearchButton;
 
-    public SearchPage(AppiumDriver appiumDriver) {
+    public HomePage(AppiumDriver appiumDriver) {
         super(appiumDriver);
         PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
     }
@@ -25,14 +25,12 @@ public class SearchPage extends BasePage {
         return new MenuPage(appiumDriver);
     }
 
-    public SearchPage enterCity(String city) {
-        //searchInput.click();
+    public HomePage enterCity(String city) {
         searchInput.sendKeys(city + "\n");
-        //appiumDriver.getKeyboard().pressKey(AndroidKey.ENTER);
         return this;
     }
 
-    public SearchPage clickSaveSearchButton(){
+    public HomePage clickSaveSearchButton(){
         waitUntilElementIsVisible(saveSearchButton);
         while (!saveSearchButton.getText().equals("UNSAVE SEARCH")) {
             saveSearchButton.click();

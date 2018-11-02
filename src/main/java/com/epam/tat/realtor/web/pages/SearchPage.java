@@ -477,7 +477,7 @@ public class SearchPage extends BasePage {
     /**
      * get first(and single) element from nextPageLink list, and click on link to go on next page with homes
      *
-     * @return new SearchPage to load new houses
+     * @return new HomePage to load new houses
      */
     public SearchPage clickNextLink() {
         nextPageLink.get(0).click();

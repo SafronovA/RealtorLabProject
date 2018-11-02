@@ -15,22 +15,8 @@ public class BasePage {
         webDriverWait = new WebDriverWait(appiumDriver, 20);
     }
 
-    /**
-     * wait until webElement is visible
-     *
-     * @param webElement webElement to be visible
-     */
     public void waitUntilElementIsVisible(AndroidElement webElement) {
         webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
-    }
-
-    /**
-     * wait until webElement is invisible
-     *
-     * @param webElement webElement to be visible
-     */
-    public void waitUntilElementIsInvisible(AndroidElement webElement) {
-        webDriverWait.until(ExpectedConditions.invisibilityOf(webElement));
     }
 
 }
