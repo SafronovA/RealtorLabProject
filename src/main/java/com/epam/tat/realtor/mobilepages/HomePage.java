@@ -7,6 +7,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends BasePage {
     public HomePage(AppiumDriver<WebElement> driver) {
@@ -18,48 +19,22 @@ public class HomePage extends BasePage {
     WebElement menuButton;
     @AndroidFindBy(accessibility = "Filter")
     WebElement filterButton;
-    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='com.move.realtor:id/search_editor_tab_min_price']")
-    WebElement minPriceInput;
-    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='com.move.realtor:id/search_editor_tab_max_price']")
-    WebElement maxPriceInput;
-    @AndroidFindBy(xpath = "//android.view.View[@resource-id='com.move.realtor:id/search_editor_tab_bed_options']")
-    WebElement bedNumber;
-    @AndroidFindBy(xpath = "//android.view.View[@resource-id='com.move.realtor:id/search_editor_tab_bath_options']")
-    WebElement bathNumber;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/view_list_label']")
+    WebElement viewListButton;
+
 
     public MenuPage clickMenuButton() {
         menuButton.click();
         return new MenuPage(driver);
     }
-    public HomePage clickFilterButton() {
+    public FilterPage clickFilterButton() {
         filterButton.click();
-        return this;
+        return new FilterPage(driver);
     }
-    public HomePage enterMinPrice(String minPriceValue){
-        minPriceInput.click();
-        minPriceInput.sendKeys(minPriceValue);
-        return this;
-    }
-    public HomePage enterMaxPrice(String maxPriceValue){
-        maxPriceInput.click();
-        maxPriceInput.sendKeys(maxPriceValue);
-        return this;
-    }
-    public HomePage swipeToBedsSection(){
-        swipeUp(100,860,100,400);
-        return this;
-    }
-    public HomePage tapBedsSection(){
-        tapByCoordinates(100,860);
-        return this;
-    }
-    public HomePage chooseBeds(){
-        tapByCoordinates(bedNumber.getLocation().x+430,bedNumber.getLocation().y+63);
-        return this;
-    }
-    public HomePage chooseBath(){
-        tapByCoordinates(bathNumber.getLocation().x+390,bathNumber.getLocation().y+63);
-        return this;
+    public ViewPage clickViewListButton(){
+        driverWait.until(ExpectedConditions.visibilityOf(viewListButton));
+        viewListButton.click();
+        return new ViewPage(driver);
     }
 
 

@@ -14,6 +14,11 @@ public class House {
         this.price = price;
         this.square = square;
     }
+    public House( int price, int bedNumber, int bathNumber) {
+        this.bedNumber = bedNumber;
+        this.bathNumber = bathNumber;
+        this.price = price;
+    }
 
     public House(int bedNumber, int bathNumber, int square, int lotSize, int carSpaces) {
         this.bedNumber = bedNumber;

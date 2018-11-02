@@ -32,7 +32,7 @@ public class BasePage {
     public void tapByCoordinates(int xOffset, int yOffset) {
         new TouchAction(driver)
                 .press(new PointOption().withCoordinates(xOffset, yOffset))
-                .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
+                .waitAction(new WaitOptions().withDuration(Duration.ofMillis(200)))
                 .release()
                 .perform();
     }
