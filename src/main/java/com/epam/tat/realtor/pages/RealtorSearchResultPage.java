@@ -69,7 +69,7 @@ public class RealtorSearchResultPage extends BasePage {
      *
      * @return photo on map count
      */
-    public int getPhotosOnMapCount(){
+    public int getPhotosOnMapCount() {
         return photosOnMap.size();
     }
 
@@ -134,7 +134,7 @@ public class RealtorSearchResultPage extends BasePage {
      * @return all photos on map
      */
     public WebElement getPhotosOnMap(int index) {
-        return driver.findElement(By.xpath(XPATH_FOR_PHOTOS_ON_MAP + "["+index+"]" + XPATH_IMG));
+        return driver.findElement(By.xpath(XPATH_FOR_PHOTOS_ON_MAP + "[" + index + "]" + XPATH_IMG));
     }
 
     /**
@@ -157,9 +157,17 @@ public class RealtorSearchResultPage extends BasePage {
         return this;
     }
 
-    public RealtorSearchResultPage clickGetStartedConfirmButton(){
-        waitUntilElementIsVisible(getStartedButton);
-        clickByJEx(getStartedButton, driver);
+    /**
+     * click get started button
+     *
+     * @return this page
+     */
+    public RealtorSearchResultPage clickGetStartedConfirmButton() {
+        if (isFirstTimeOnActivityMap()) {
+            waitUntilElementIsVisible(getStartedButton);
+            clickByJEx(getStartedButton, driver);
+            waitInvisibilityOfElementLocated(getStartedWindow);
+        }
         return this;
     }
 
@@ -240,18 +248,6 @@ public class RealtorSearchResultPage extends BasePage {
     public RealtorSearchResultPage clickNextPageButton() {
         waitForJQueryIsLoad();
         nextPageButton.get(0).click();
-        return this;
-    }
-
-    /**
-     * click get started button
-     *
-     * @return this page
-     */
-    public RealtorSearchResultPage clickGetStartedButton() {
-        waitUntilElementIsVisible(getStartedButton);
-        BasePage.clickByJEx(getStartedButton, driver);
-        waitInvisibilityOfElementLocated(getStartedWindow);
         return this;
     }
 

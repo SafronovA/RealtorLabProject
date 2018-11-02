@@ -1,10 +1,12 @@
 package com.epam.tat.realtor.tests;
 
+import com.epam.jira.JIRATestKey;
+import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.RealtorSearchResultPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ClickOnIcon extends BaseTest {
+public class ClickOnRealtorIconTest extends BaseTest {
     private static final String LOCATION = "Boston, MA";
     private static final String NAME = "Kristen Gaughan";
     private RealtorSearchResultPageStep realtorSearchResultPageStep;
@@ -19,14 +21,15 @@ public class ClickOnIcon extends BaseTest {
      * select first realtor
      * check that icon status become 'selected' after clicking on it. In other words icon should increase.
      */
-    @Test
-    public void checkIconsColor() {
+    @JIRATestKey(key = "EPMFARMATS-5234", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
+    public void clickOnIcons() {
         realtorSearchResultPageStep = homePageStep.clickFindRealtorButton()
                 .enterRealtorsLocation(LOCATION)
                 .enterRealtorName(NAME)
                 .clickSearchButton()
                 .clickActivityMapButton()
-                .clickGetStartedButton()
+                .clickGetStartedConfirmButton()
                 .selectFirstRealtorCard();
 
         Assert.assertTrue(realtorSearchResultPageStep.iconsBecomeSelected(),

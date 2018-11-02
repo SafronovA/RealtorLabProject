@@ -57,7 +57,8 @@ public class SavedHomesPage extends BasePage {
      * @return new MyProfilePage
      */
     public MyProfilePage clickMyProfileLink() {
-        myProfileLink.click();
+        waitUntilElementIsVisible(myProfileLink);
+        BasePage.clickByJEx(myProfileLink, driver);
         return new MyProfilePage(driver);
     }
 

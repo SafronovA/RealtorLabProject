@@ -73,11 +73,6 @@ public class RealtorSearchResultPageStep extends BasePageStep {
      *
      * @return this step
      */
-    public RealtorSearchResultPageStep clickGetStartedButton() {
-        realtorSearchResultPage.clickGetStartedButton();
-        return this;
-    }
-
     public RealtorSearchResultPageStep clickGetStartedConfirmButton() {
         realtorSearchResultPage.clickGetStartedConfirmButton();
         return this;

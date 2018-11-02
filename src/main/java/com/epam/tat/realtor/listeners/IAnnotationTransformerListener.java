@@ -1,6 +1,6 @@
 package com.epam.tat.realtor.listeners;
 
-import com.epam.tat.realtor.dataproveder.RealtorDataProvider;
+import com.epam.tat.realtor.dataprovider.RealtorDataProvider;
 import org.testng.IAnnotationTransformer;
 import org.testng.annotations.ITestAnnotation;
 

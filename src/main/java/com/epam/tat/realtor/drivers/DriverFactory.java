@@ -1,9 +1,15 @@
 package com.epam.tat.realtor.drivers;
 
 import com.epam.tat.realtor.ConfigProperties;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public enum DriverFactory {
     CHROMEDRIVER {
@@ -22,7 +28,7 @@ public enum DriverFactory {
         }
     },
     FIREFOXDRIVER {
-        WebDriver driver;
+        private WebDriver driver;
 
         /**
          * return the single instance of FirefoxDriver

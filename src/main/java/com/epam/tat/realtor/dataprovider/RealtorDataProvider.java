@@ -1,4 +1,4 @@
-package com.epam.tat.realtor.dataproveder;
+package com.epam.tat.realtor.dataprovider;
 
 import org.testng.annotations.DataProvider;
 

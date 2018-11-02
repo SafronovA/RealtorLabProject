@@ -1,5 +1,7 @@
 package com.epam.tat.realtor.tests;
 
+import com.epam.jira.JIRATestKey;
+import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.steps.SearchPageStep;
 import org.testng.annotations.Test;
@@ -22,7 +24,8 @@ public class SearchByConditionsTest extends BaseTest {
      * create search request by: min/max house price, number of beds, bathes, min/max square feet house size
      * check that every house in the list of search result match search parameters
      */
-    @Test
+    @JIRATestKey(key = "EPMFARMATS-4923", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void searchByCondition() {
         SearchPageStep searchPageStep = homePageStep.enterCityName(CITY_NAME)
                 .clickSearchButton();

@@ -13,10 +13,23 @@ public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait driverWait;
     private static final String INNER_HTML = "innerHTML";
+    private static boolean isFirstTimeOnActivityMap = true; //flag for Realtors Active map. "Get started window" appears only once, after the first access to a page.
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
         driverWait = new WebDriverWait(driver, Integer.valueOf(ConfigProperties.getTestProperty("webDriverWaitTime")));
+    }
+
+    /**
+     * @return  true, if this is the first entry on the Realtors Active map page
+     */
+    public boolean isFirstTimeOnActivityMap(){
+        if (isFirstTimeOnActivityMap){
+            isFirstTimeOnActivityMap = false;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**

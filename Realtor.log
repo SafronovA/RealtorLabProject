@@ -1,0 +1,174 @@
+*****************************
+Started suite RealtorSuite
+method #1 checkIconsColor
+method #2 clickOnIcons
+method #3 editHomeInfo
+method #4 editAddressFields
+method #5 editProfileName
+method #6 forSaleRealtorHouses
+method #7 checkMapMarks
+method #8 mortgageCalculatorTest
+method #9 numberOfHousesFound
+method #10 photosOnMapMatchToSelectedAgentPhoto
+method #11 checkPropertyRecords
+method #12 checkRealtorRecommendations
+method #13 checkRealtorSoldHouses
+method #14 checkRealtorSoldHouses
+method #15 restaurantsFilter
+method #16 checkSavedHomes
+method #17 savedSearch
+method #18 schoolRating
+method #19 searchByCondition
+method #20 sortByPrice
+method #21 sortByRecommendations
+Started testing on: Fri Oct 26 09:49:11 MSK 2018
+Testing: restaurantsFilter
+Skipped Test: restaurantsFilter
+Testing: schoolRating
+Skipped Test: schoolRating
+Testing: checkMapMarks
+Skipped Test: checkMapMarks
+Testing: checkRealtorRecommendations
+Skipped Test: checkRealtorRecommendations
+Testing: checkRealtorSoldHouses
+Skipped Test: checkRealtorSoldHouses
+Testing: checkIconsColor
+Skipped Test: checkIconsColor
+Testing: clickOnIcons
+Skipped Test: clickOnIcons
+Testing: editHomeInfo
+Skipped Test: editHomeInfo
+Testing: editAddressFields
+Skipped Test: editAddressFields
+Testing: editProfileName
+Skipped Test: editProfileName
+Testing: forSaleRealtorHouses
+Skipped Test: forSaleRealtorHouses
+Testing: mortgageCalculatorTest
+Skipped Test: mortgageCalculatorTest
+Testing: mortgageCalculatorTest
+Skipped Test: mortgageCalculatorTest
+Testing: mortgageCalculatorTest
+Skipped Test: mortgageCalculatorTest
+Testing: mortgageCalculatorTest
+Skipped Test: mortgageCalculatorTest
+Testing: mortgageCalculatorTest
+Skipped Test: mortgageCalculatorTest
+Testing: mortgageCalculatorTest
+Skipped Test: mortgageCalculatorTest
+Testing: numberOfHousesFound
+Skipped Test: numberOfHousesFound
+Testing: photosOnMapMatchToSelectedAgentPhoto
+Skipped Test: photosOnMapMatchToSelectedAgentPhoto
+Testing: checkPropertyRecords
+Skipped Test: checkPropertyRecords
+Testing: checkRealtorSoldHouses
+Skipped Test: checkRealtorSoldHouses
+Testing: checkSavedHomes
+Skipped Test: checkSavedHomes
+Testing: savedSearch
+Skipped Test: savedSearch
+Testing: searchByCondition
+Skipped Test: searchByCondition
+Testing: sortByPrice
+Skipped Test: sortByPrice
+Testing: sortByRecommendations
+Skipped Test: sortByRecommendations
+PASSED TEST CASES
+FAILED TEST CASES
+Test completed on: Fri Oct 26 09:52:10 MSK 2018
+Suite RealtorSuite ended
+*****************************
+Started suite RealtorSuite
+method #1 checkIconsColor
+method #2 clickOnIcons
+method #3 editHomeInfo
+method #4 editAddressFields
+method #5 editProfileName
+method #6 forSaleRealtorHouses
+method #7 checkMapMarks
+method #8 mortgageCalculatorTest
+method #9 numberOfHousesFound
+method #10 photosOnMapMatchToSelectedAgentPhoto
+method #11 checkPropertyRecords
+method #12 checkRealtorRecommendations
+method #13 checkRealtorSoldHouses
+method #14 checkRealtorSoldHouses
+method #15 restaurantsFilter
+method #16 checkSavedHomes
+method #17 savedSearch
+method #18 schoolRating
+method #19 searchByCondition
+method #20 sortByPrice
+method #21 sortByRecommendations
+Started testing on: Fri Oct 26 12:17:47 MSK 2018
+Testing: restaurantsFilter
+Skipped Test: restaurantsFilter
+Testing: restaurantsFilter
+Skipped Test: restaurantsFilter
+Testing: restaurantsFilter
+Failed : restaurantsFilter with exceptionorg.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[contains(@id,'downshift')]' (tried for 30 second(s) with 500 milliseconds interval)
+save screenshot of failed test into C:\Users\Siarhei_Volchak\IdeaProjects\tat\realtor\src\test\resources\failure_screenshots\restaurantsFilter_2018-10-26 12_21_34.png
+Testing: schoolRating
+Skipped Test: schoolRating
+Testing: schoolRating
+*****************************
+Started suite RealtorSuite
+method #1 checkIconsColor
+method #2 clickOnIcons
+method #3 editHomeInfo
+method #4 editAddressFields
+method #5 editProfileName
+method #6 checkMapMarks
+method #7 checkRealtorRecommendations
+method #8 checkRealtorSoldHouses
+method #9 restaurantsFilter
+method #10 schoolRating
+Started testing on: Fri Oct 26 12:24:36 MSK 2018
+Testing: restaurantsFilter
+Success: restaurantsFilter Time taken:109021 ms
+Testing: schoolRating
+Success: schoolRating Time taken:36707 ms
+Testing: checkMapMarks
+Success: checkMapMarks Time taken:37124 ms
+Testing: checkRealtorRecommendations
+Success: checkRealtorRecommendations Time taken:12899 ms
+Testing: checkRealtorSoldHouses
+Success: checkRealtorSoldHouses Time taken:12021 ms
+Testing: checkIconsColor
+Success: checkIconsColor Time taken:16280 ms
+Testing: clickOnIcons
+Success: clickOnIcons Time taken:15356 ms
+Testing: editHomeInfo
+Success: editHomeInfo Time taken:84218 ms
+Testing: editAddressFields
+*****************************
+Started suite RealtorSuite
+method #1 restaurantsFilter
+method #2 schoolRating
+Started testing on: Mon Oct 29 10:13:45 MSK 2018
+*****************************
+Started suite RealtorSuite
+method #1 restaurantsFilter
+method #2 schoolRating
+Started testing on: Mon Oct 29 10:14:25 MSK 2018
+Testing: restaurantsFilter
+Skipped Test: restaurantsFilter
+Testing: restaurantsFilter
+Skipped Test: restaurantsFilter
+Testing: restaurantsFilter
+Failed : restaurantsFilter with exceptionorg.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[text()='Search']' (tried for 30 second(s) with 500 milliseconds interval)
+save screenshot of failed test into C:\Users\Aliaksei_Safronau\IdeaProjects\realtor\src\test\resources\failure_screenshots\restaurantsFilter_2018-10-29 10_17_59.png
+Testing: schoolRating
+Skipped Test: schoolRating
+Testing: schoolRating
+Skipped Test: schoolRating
+Testing: schoolRating
+Failed : schoolRating with exceptionorg.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[text()='Search']' (tried for 30 second(s) with 500 milliseconds interval)
+save screenshot of failed test into C:\Users\Aliaksei_Safronau\IdeaProjects\realtor\src\test\resources\failure_screenshots\schoolRating_2018-10-29 10_21_13.png
+PASSED TEST CASES
+FAILED TEST CASES
+schoolRating
+restaurantsFilter
+Test completed on: Mon Oct 29 10:21:13 MSK 2018
+Suite RealtorSuite ended

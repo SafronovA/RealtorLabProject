@@ -1,13 +1,17 @@
 package com.epam.tat.realtor.tests;
 
+import com.epam.jira.JIRATestKey;
+import com.epam.jira.testng.RetryAnalyzer;
 import com.epam.tat.realtor.steps.MyProfilePageStep;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.Random;
+
 import static org.testng.Assert.assertTrue;
 
-public class EditProfileAddressTest extends BaseTest {
+public class EditProfileLocationTest extends BaseTest {
 
     private final String ADDRESS_ORIGIN = "streetOrigin";
     private final String CITY_ORIGIN = "cityOrigin";
@@ -33,9 +37,10 @@ public class EditProfileAddressTest extends BaseTest {
      * edit address fields
      * check that the profile address has changed correctly
      */
-    @Test
+    @JIRATestKey(key = "EPMFARMATS-4946", retryCountIfFailed = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void editAddressFields() {
-        myProfilePageStep = homePageStep.clickUserIcon()
+                myProfilePageStep = homePageStep.clickUserIcon()
                 .goToMyProfileSection()
                 .editAddress(ADDRESS_NEW, CITY_NEW, STATE_NEW, COUNTRY_NEW);
         assertTrue(myProfilePageStep.addressIsCorrect(ADDRESS_NEW), "Profile address has not changed to the required");
@@ -49,6 +54,7 @@ public class EditProfileAddressTest extends BaseTest {
      */
     @AfterMethod
     public void revertAddressFields() {
+
         myProfilePageStep.editAddressRevert(ADDRESS_ORIGIN, CITY_ORIGIN, STATE_ORIGIN, COUNTRY_ORIGIN)
                 .logOut();
     }

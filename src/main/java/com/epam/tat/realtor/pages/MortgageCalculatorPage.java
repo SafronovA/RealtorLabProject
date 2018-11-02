@@ -54,8 +54,7 @@ public class MortgageCalculatorPage extends BasePage {
      * @return this page
      */
     public MortgageCalculatorPage setHomePrice(String homePrice) {
-        clearField(homePriceInput);
-        homePriceInput.sendKeys(homePrice);
+        setValue(homePriceInput, homePrice);
         return this;
     }
 
@@ -66,9 +65,9 @@ public class MortgageCalculatorPage extends BasePage {
      * @return this page
      */
     public MortgageCalculatorPage setDownPayment(String downPayment) {
-        clearField(downPaymentInput);
-        downPaymentInput.sendKeys(downPayment);
+        setValue(downPaymentInput, downPayment);
         downPaymentInput.sendKeys(Keys.ENTER);
+        homePriceInput.click();
         return this;
     }
 
@@ -79,8 +78,7 @@ public class MortgageCalculatorPage extends BasePage {
      * @return this page
      */
     public MortgageCalculatorPage setRateInput(String rate) {
-        clearField(rateInput);
-        rateInput.sendKeys(rate);
+        setValue(rateInput, rate);
         return this;
     }
 
@@ -100,9 +98,8 @@ public class MortgageCalculatorPage extends BasePage {
      * @param field which text will be delete in
      * @return this page
      */
-    private MortgageCalculatorPage clearField(WebElement field) {
-        field.sendKeys(Keys.CONTROL + "a");
-        field.sendKeys(Keys.DELETE);
+    private MortgageCalculatorPage setValue(WebElement field, String value) {
+        field.sendKeys(Keys.HOME,Keys.chord(Keys.SHIFT,Keys.END),value);
         return this;
     }
 

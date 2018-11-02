@@ -112,6 +112,8 @@ public class SearchPage extends BasePage {
     private List<WebElement> schoolOnMapList;
     @FindBy(xpath = "//div[@class='rating']")
     private WebElement schoolRating;
+    @FindBy(xpath = "//button[@title='Zoom out']")
+    private WebElement zoomOut;
 
     /**
      * get list of available min prices in the dropdown menu
@@ -196,6 +198,7 @@ public class SearchPage extends BasePage {
      * @return get restaurants in turn
      */
     public WebElement getRestaurant(int number){
+        waitForJQueryIsLoad();
         return driver.findElement(By.xpath(XPATH_FOR_RESTAURANT+"["+number+"]"));
     }
 
@@ -260,9 +263,9 @@ public class SearchPage extends BasePage {
      * @return school rating
      */
     public String getSchoolRating(){
+        waitUntilElementIsVisible(schoolRating);
         return schoolRating.getText();
     }
-
     /**
      * get map marks of houses according search result on the iframe map
      *
@@ -342,9 +345,9 @@ public class SearchPage extends BasePage {
      * @return get school in turn
      */
     public WebElement getSchool(int number){
+        waitForJQueryIsLoad();
         return driver.findElement(By.xpath(XPATH_FOR_SCHOOL+"["+number+"]"));
     }
-
     /**
      * click Price button
      *
@@ -535,6 +538,7 @@ public class SearchPage extends BasePage {
     public SearchPage clickSchoolButton() {
         waitUntilElementIsVisible(schoolsButton);
         schoolsButton.click();
+        zoomOut.click();
         return this;
     }
 
