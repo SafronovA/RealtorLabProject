@@ -8,6 +8,10 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.offset.PointOption;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
@@ -78,14 +82,16 @@ public class HomePage extends BasePage {
         return this;
     }
 
+    public int searchResultCount(){
+//        waitUntilElementIsClickable(viewResultsButton);
+        
+        int result = Parser.parse(viewResultsButton.getText());
+        return result;
+    }
+
     public HomePage clickViewResultsButton(){
         viewResultsButton.click();
         return this;
-    }
-
-    public int searchResultCount(){
-        int result = Parser.parse(viewResultsButton.getText());
-        return result;
     }
 
     public List<AndroidElement> getHouseAddressesFromScreen(){

@@ -53,13 +53,17 @@ public class HomePageStep extends BasePageStep {
     }
 
     public int getSearchResultCount(){
+
+        System.out.println(homePage.searchResultCount());
+
         return homePage.searchResultCount();
     }
 
     public int getNumberOfAllHousesFromScreen(){
+        int expectedNumberOfHomes = getSearchResultCount();
         Set<String> homes = new HashSet<>();
         homes.addAll(receiveAddressesFromAndroidElementList(homePage.getHouseAddressesFromScreen()));
-        while (homes.size() < getSearchResultCount()) {
+        while (homes.size() < expectedNumberOfHomes) {
             BasePage.swipeUp(driver);
             homes.addAll(receiveAddressesFromAndroidElementList(homePage.getHouseAddressesFromScreen()));
         }
