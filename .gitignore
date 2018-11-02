@@ -2,4 +2,4 @@
 target/
 *.iml
 *.DS_Store
-*.json
+allure-results/
