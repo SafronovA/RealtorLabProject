@@ -2,45 +2,48 @@ package com.epam.tat.realtor.pages_mob;
 
 import com.epam.tat.realtor.ConfigProperties;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.internal.Coordinates;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class BasePage {
     protected AppiumDriver driver;
     protected WebDriverWait driverWait;
     private static final String INNER_HTML = "innerHTML";
+    private PointOption topCenterWorkScreenCoordinates;
+    private PointOption bottomCenterWorkScreenCoordinates;
 
-    @AndroidFindBy(id = "com.move.realtor:id/main_content_overlay")
+    @AndroidFindBy(className = "android.widget.FrameLayout")
     protected static AndroidElement workScreen;
 
     public BasePage(AppiumDriver driver) {
         this.driver = driver;
         driverWait = new WebDriverWait(driver, Integer.valueOf(ConfigProperties.getTestProperty("webDriverWaitTime")));
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+        generateCoordinates();
     }
 
-    public PointOption getTopLeftWorkScreenCoordinates() {
-        return new PointOption().withCoordinates(0 , workScreen.getRect().getY() * 2);
+    public PointOption getTopCenterWorkScreenCoordinates() {
+        return topCenterWorkScreenCoordinates;
     }
 
-    public PointOption getBottomLeftWorkScreenCoordinates() {
-        return new PointOption().withCoordinates(0 , workScreen.getRect().getHeight());
+    public PointOption getBottomCenterWorkScreenCoordinates() {
+        return bottomCenterWorkScreenCoordinates;
+    }
+
+    private void generateCoordinates() {
+        final double DELTA = 0.1;
+        int commonX = workScreen.getRect().width/2;
+        int topY = (int)(workScreen.getRect().getHeight() * DELTA);
+        int bottomY = (int)(workScreen.getRect().getHeight() * (1 - DELTA));
+
+        topCenterWorkScreenCoordinates = new PointOption().withCoordinates(commonX, topY);
+        bottomCenterWorkScreenCoordinates = new PointOption().withCoordinates(commonX, bottomY);
     }
 
     /**
@@ -83,7 +86,7 @@ public class BasePage {
      * waiting for a specific attribute value in the Web element
      *
      * @param androidElement checked webElement
-     * @param value         expected value
+     * @param value          expected value
      */
     public void waitUntilAttributeInnerHTMLToBe(AndroidElement androidElement, String value) {
         driverWait.until(ExpectedConditions.attributeToBe(androidElement, INNER_HTML, value));

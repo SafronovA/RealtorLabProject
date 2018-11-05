@@ -41,6 +41,8 @@ public class HomePage extends BasePage {
     private AndroidElement viewResultsButton;
     @AndroidFindBy(id = "com.move.realtor:id/search_result_count_text_map")
     private AndroidElement resultsPopUp;
+    @AndroidFindBy(id = "com.move.realtor:id/listingImageView")
+    private AndroidElement firstHouseCard;
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/address_text_view']")
     private List<AndroidElement> houseAddressesFromScreen;
     @AndroidFindBy(xpath = "//*[@text='Expand Search Area']")
@@ -94,6 +96,11 @@ public class HomePage extends BasePage {
     public int searchResultCount(){
         int result = Parser.parse(resultsPopUp.getText());
         return result;
+    }
+
+    public HousePage clickFirstHouseCard(){
+        firstHouseCard.click();
+        return new HousePage(driver);
     }
 
     public List<AndroidElement> getHouseAddressesFromScreen(){

@@ -1,6 +1,7 @@
 package com.epam.tat.realtor.steps_mob;
 
 import com.epam.tat.realtor.pages_mob.HomePage;
+import com.epam.tat.realtor.pages_mob.HousePage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
 
@@ -62,6 +63,11 @@ public class HomePageStep extends BasePageStep {
             homes.addAll(receiveAddressesFromAndroidElementList(homePage.getHouseAddressesFromScreen()));
         }
         return homes.size();
+    }
+
+    public HousePageStep clickFirstHouseCard(){
+        homePage.clickFirstHouseCard();
+        return new HousePageStep(driver);
     }
 
     private Set<String> receiveAddressesFromAndroidElementList(List<AndroidElement> addresses) {
