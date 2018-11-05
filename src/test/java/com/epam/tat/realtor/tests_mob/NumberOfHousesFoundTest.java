@@ -23,7 +23,6 @@ public class NumberOfHousesFoundTest extends BaseTest {
         Assert.assertEquals(expectedNumberOfHousesFound, actualNumberOfHousesFound,
                 "The number of homes found and displayed is not equal");
     }
-
-
+    
 }
 
