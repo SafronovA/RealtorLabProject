@@ -6,11 +6,15 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.internal.Coordinates;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -22,27 +26,21 @@ public class BasePage {
     protected WebDriverWait driverWait;
     private static final String INNER_HTML = "innerHTML";
 
+    @AndroidFindBy(id = "com.move.realtor:id/main_content_overlay")
+    protected static AndroidElement workScreen;
+
     public BasePage(AppiumDriver driver) {
         this.driver = driver;
         driverWait = new WebDriverWait(driver, Integer.valueOf(ConfigProperties.getTestProperty("webDriverWaitTime")));
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    public static void swipeUp(AppiumDriver driver) {
-        new TouchAction(driver)
-                .press(new PointOption().withCoordinates(500, 1800))
-                .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
-                .moveTo(new PointOption().withCoordinates(500, 500))
-                .release()
-                .perform();
+    public PointOption getTopLeftWorkScreenCoordinates() {
+        return new PointOption().withCoordinates(0 , workScreen.getRect().getY() * 2);
     }
 
-    public void swipeFromTo(PointOption from, PointOption to) {
-        new TouchAction(driver)
-                .press(from)
-                .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
-                .moveTo(to)
-                .release()
-                .perform();
+    public PointOption getBottomLeftWorkScreenCoordinates() {
+        return new PointOption().withCoordinates(0 , workScreen.getRect().getHeight());
     }
 
     /**
@@ -70,17 +68,6 @@ public class BasePage {
      */
     public void waitUntilElementIsClickable(AndroidElement androidElement) {
         driverWait.until(ExpectedConditions.elementToBeClickable(androidElement));
-    }
-
-    /**
-     * click element by Java Executor
-     *
-     * @param androidElement web element to be clicked
-     * @param webDriver     used webdriver
-     */
-    public static void clickByJEx(AndroidElement androidElement, WebDriver webDriver) {
-        JavascriptExecutor executor = (JavascriptExecutor) webDriver;
-        executor.executeScript("arguments[0].click();", androidElement);
     }
 
     /**
@@ -133,16 +120,4 @@ public class BasePage {
         driverWait.until(ExpectedConditions.invisibilityOf(androidElement));
     }
 
-    /**
-     * wait until JQuery finish loading page
-     */
-    public void waitForJQueryIsLoad() {
-        driverWait.until((ExpectedCondition<Boolean>) driver -> {
-            try {
-                return ((Long) ((JavascriptExecutor) driver).executeScript("return jQuery.active") == 0);
-            } catch (Exception e) {
-                return true;
-            }
-        });
-    }
 }

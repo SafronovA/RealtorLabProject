@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.tests_mob;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.HashSet;
@@ -14,14 +15,13 @@ public class NumberOfHousesFoundTest extends BaseTest {
     public void numberOfHousesFound() {
         int expectedNumberOfHousesFound = homePageStep.openFilter()
                 .enterPriceRange(MIN_PRICE, MAX_PRICE)
-//                .enterCity(CITY)
+                .enterCity(CITY)
                 .clickViewResultsButton()
                 .getSearchResultCount();
-        System.out.println(expectedNumberOfHousesFound);
-//        int actualNumberOfHousesFound = homePageStep.openHousesList().getNumberOfAllHousesFromScreen();
-//        System.out.println(actualNumberOfHousesFound);
-
-        homePageStep.openHousesList().HFS();
+        int actualNumberOfHousesFound = homePageStep.openHousesList()
+                .getNumberOfAllHousesFromScreen();
+        Assert.assertEquals(expectedNumberOfHousesFound, actualNumberOfHousesFound,
+                "The number of homes found and displayed is not equal");
     }
 
 

@@ -41,8 +41,10 @@ public class HomePage extends BasePage {
     private AndroidElement viewResultsButton;
     @AndroidFindBy(id = "com.move.realtor:id/search_result_count_text_map")
     private AndroidElement resultsPopUp;
-    @AndroidFindBy(xpath = "//*[@resource-id='com.move.realtor:id/address_text_view']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/address_text_view']")
     private List<AndroidElement> houseAddressesFromScreen;
+    @AndroidFindBy(xpath = "//*[@text='Expand Search Area']")
+    private List<AndroidElement> expandSearchAreaButton;
 
     /**
      * click  button
@@ -98,4 +100,7 @@ public class HomePage extends BasePage {
         return houseAddressesFromScreen;
     }
 
+    public List<AndroidElement> getExpandSearchAreaButton() {
+        return expandSearchAreaButton;
+    }
 }

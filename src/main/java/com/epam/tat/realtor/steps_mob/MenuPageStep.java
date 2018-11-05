@@ -18,6 +18,7 @@ public class MenuPageStep extends BasePageStep{
     }
 
     public SettingsPageStep clickSettingsButton(){
+        swipe(driver);
         menuPage.clickSettingsButton();
         return new SettingsPageStep(driver);
     }

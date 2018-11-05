@@ -1,10 +1,8 @@
 package com.epam.tat.realtor.steps_mob;
 
-import com.epam.tat.realtor.pages_mob.BasePage;
 import com.epam.tat.realtor.pages_mob.HomePage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
-import org.openqa.selenium.remote.RemoteWebElement;
 
 import java.util.HashSet;
 import java.util.List;
@@ -57,27 +55,23 @@ public class HomePageStep extends BasePageStep {
     }
 
     public int getNumberOfAllHousesFromScreen(){
-        int expectedNumberOfHomes = getSearchResultCount();
         Set<String> homes = new HashSet<>();
         homes.addAll(receiveAddressesFromAndroidElementList(homePage.getHouseAddressesFromScreen()));
-        while (homes.size() < expectedNumberOfHomes) {
-            BasePage.swipeUp(driver);
+        while (homePage.getExpandSearchAreaButton().isEmpty()) {
+            swipe(driver);
             homes.addAll(receiveAddressesFromAndroidElementList(homePage.getHouseAddressesFromScreen()));
         }
         return homes.size();
     }
 
     private Set<String> receiveAddressesFromAndroidElementList(List<AndroidElement> addresses) {
+        try {                       // waiting for the page to become static after the swipe
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Set<String> homeAddresses = addresses.stream().map(AndroidElement::getText).collect(Collectors.toSet());
         return homeAddresses;
     }
 
-    public void HFS(){
-        List<AndroidElement> list = homePage.getHouseAddressesFromScreen();
-        System.out.println(list.size());
-        BasePage.swipeUp(driver);
-
-        list.addAll(homePage.getHouseAddressesFromScreen());
-        System.out.println(list.size());
-    }
 }
