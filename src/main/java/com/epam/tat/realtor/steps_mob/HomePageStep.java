@@ -53,9 +53,6 @@ public class HomePageStep extends BasePageStep {
     }
 
     public int getSearchResultCount(){
-
-        System.out.println(homePage.searchResultCount());
-
         return homePage.searchResultCount();
     }
 
@@ -71,8 +68,16 @@ public class HomePageStep extends BasePageStep {
     }
 
     private Set<String> receiveAddressesFromAndroidElementList(List<AndroidElement> addresses) {
-        Set<String> homeAddresses = addresses.stream().map(RemoteWebElement::getText).collect(Collectors.toSet());
+        Set<String> homeAddresses = addresses.stream().map(AndroidElement::getText).collect(Collectors.toSet());
         return homeAddresses;
     }
 
+    public void HFS(){
+        List<AndroidElement> list = homePage.getHouseAddressesFromScreen();
+        System.out.println(list.size());
+        BasePage.swipeUp(driver);
+
+        list.addAll(homePage.getHouseAddressesFromScreen());
+        System.out.println(list.size());
+    }
 }

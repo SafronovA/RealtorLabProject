@@ -15,11 +15,13 @@ public class NumberOfHousesFoundTest extends BaseTest {
         int expectedNumberOfHousesFound = homePageStep.openFilter()
                 .enterPriceRange(MIN_PRICE, MAX_PRICE)
 //                .enterCity(CITY)
+                .clickViewResultsButton()
                 .getSearchResultCount();
-//        System.out.println(expectedNumberOfHousesFound);
-//        int actualNumderOfHousesFound =
-        int actualNumberOfHousesFound = homePageStep.clickViewResultsButton().openHousesList().getNumberOfAllHousesFromScreen();
-        System.out.println(actualNumberOfHousesFound);
+        System.out.println(expectedNumberOfHousesFound);
+//        int actualNumberOfHousesFound = homePageStep.openHousesList().getNumberOfAllHousesFromScreen();
+//        System.out.println(actualNumberOfHousesFound);
+
+        homePageStep.openHousesList().HFS();
     }
 
 

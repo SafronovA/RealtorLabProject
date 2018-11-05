@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
@@ -47,10 +48,10 @@ public class BasePage {
     /**
      * wait until webElement is visible
      *
-     * @param mobileElement webElement to be visible
+     * @param androidElement webElement to be visible
      */
-    public void waitUntilElementIsVisible(MobileElement mobileElement) {
-        driverWait.until(ExpectedConditions.visibilityOf(mobileElement));
+    public void waitUntilElementIsVisible(AndroidElement androidElement) {
+        driverWait.until(ExpectedConditions.visibilityOf(androidElement));
     }
 
     /**
@@ -65,21 +66,21 @@ public class BasePage {
     /**
      * wait until webElement is clickable
      *
-     * @param mobileElement webElement to be clickable
+     * @param androidElement webElement to be clickable
      */
-    public void waitUntilElementIsClickable(MobileElement mobileElement) {
-        driverWait.until(ExpectedConditions.elementToBeClickable(mobileElement));
+    public void waitUntilElementIsClickable(AndroidElement androidElement) {
+        driverWait.until(ExpectedConditions.elementToBeClickable(androidElement));
     }
 
     /**
      * click element by Java Executor
      *
-     * @param mobileElement web element to be clicked
+     * @param androidElement web element to be clicked
      * @param webDriver     used webdriver
      */
-    public static void clickByJEx(MobileElement mobileElement, WebDriver webDriver) {
+    public static void clickByJEx(AndroidElement androidElement, WebDriver webDriver) {
         JavascriptExecutor executor = (JavascriptExecutor) webDriver;
-        executor.executeScript("arguments[0].click();", mobileElement);
+        executor.executeScript("arguments[0].click();", androidElement);
     }
 
     /**
@@ -94,11 +95,11 @@ public class BasePage {
     /**
      * waiting for a specific attribute value in the Web element
      *
-     * @param mobileElement checked webElement
+     * @param androidElement checked webElement
      * @param value         expected value
      */
-    public void waitUntilAttributeInnerHTMLToBe(MobileElement mobileElement, String value) {
-        driverWait.until(ExpectedConditions.attributeToBe(mobileElement, INNER_HTML, value));
+    public void waitUntilAttributeInnerHTMLToBe(AndroidElement androidElement, String value) {
+        driverWait.until(ExpectedConditions.attributeToBe(androidElement, INNER_HTML, value));
     }
 
     /**
@@ -113,10 +114,10 @@ public class BasePage {
     /**
      * wait until element is invisible
      *
-     * @param mobileElement element to be invisible
+     * @param androidElement element to be invisible
      */
-    public void waitUntilElementIsInvisible(MobileElement mobileElement) {
-        driverWait.until(ExpectedConditions.invisibilityOf(mobileElement));
+    public void waitUntilElementIsInvisible(AndroidElement androidElement) {
+        driverWait.until(ExpectedConditions.invisibilityOf(androidElement));
     }
 
     /**
@@ -128,8 +129,8 @@ public class BasePage {
         driverWait.until(ExpectedConditions.invisibilityOfElementLocated(location));
     }
 
-    public void waitInvisibilityOfElement(MobileElement element) {
-        driverWait.until(ExpectedConditions.invisibilityOf(element));
+    public void waitInvisibilityOfElement(AndroidElement androidElement) {
+        driverWait.until(ExpectedConditions.invisibilityOf(androidElement));
     }
 
     /**

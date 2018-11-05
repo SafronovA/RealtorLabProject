@@ -31,7 +31,6 @@ public class HomePage extends BasePage {
     private AndroidElement filterButton;
     @AndroidFindBy(xpath = "//*[@resource-id='com.move.realtor:id/search_editor_tab_clear_icon']")
     private AndroidElement clearCityIcon;
-//    @AndroidFindBy(id = "com.move.realtor:id/search_editor_tab_location_ellipsized")
     @AndroidFindBy(id = "com.move.realtor:id/search_editor_tab_location_frame")
     private AndroidElement cityInput;
     @AndroidFindBy(id = "com.move.realtor:id/search_editor_tab_min_price")
@@ -40,6 +39,8 @@ public class HomePage extends BasePage {
     private AndroidElement maxPriceInput;
     @AndroidFindBy(id = "com.move.realtor:id/search_editor_view_results_btn")
     private AndroidElement viewResultsButton;
+    @AndroidFindBy(id = "com.move.realtor:id/search_result_count_text_map")
+    private AndroidElement resultsPopUp;
     @AndroidFindBy(xpath = "//*[@resource-id='com.move.realtor:id/address_text_view']")
     private List<AndroidElement> houseAddressesFromScreen;
 
@@ -54,6 +55,7 @@ public class HomePage extends BasePage {
     }
 
     public HomePage clickFilterButton(){
+        waitUntilElementIsVisible(filterButton);
         filterButton.click();
         return this;
     }
@@ -82,16 +84,14 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public int searchResultCount(){
-//        waitUntilElementIsClickable(viewResultsButton);
-        
-        int result = Parser.parse(viewResultsButton.getText());
-        return result;
-    }
-
     public HomePage clickViewResultsButton(){
         viewResultsButton.click();
         return this;
+    }
+
+    public int searchResultCount(){
+        int result = Parser.parse(resultsPopUp.getText());
+        return result;
     }
 
     public List<AndroidElement> getHouseAddressesFromScreen(){
