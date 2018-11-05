@@ -33,8 +33,6 @@ public class ProfilePageStep {
                 .clickLoginSubmitButton();
     }
 
-    //     EditProfileName&EditProfileLocation
-
     @When("user moved to my profile page")
     public void moveToMyProfilePage() {
         myProfilePage = homePage.clickUserIcon()
@@ -119,8 +117,6 @@ public class ProfilePageStep {
         assertTrue(result, "Profile state  has not changed to the required");
     }
 
-    //    EditMyHomeInfo
-
     @When("user move to my home page")
     public void moveToMyHomePage() {
         myHomePage = homePage.clickMyHomeButton();
@@ -202,8 +198,6 @@ public class ProfilePageStep {
         assertTrue(result, "Lot size has not changed to the required");
     }
 
-    //    SavedHomes
-
     @When("user clear saved homes")
     public void clearSavedHomes() {
         savedHomesPage = homePage.clickUserIcon();
@@ -228,9 +222,6 @@ public class ProfilePageStep {
         int actualSaveHomes = savedHomesPage.getSaveHomesButtonList().size();
         assertEquals(savedHomes, actualSaveHomes, "saved homes number in saved homes section mismatch number of saved homes on the search page");
     }
-
-
-    //    SavedSearch
 
     @When("user clear all old saved searches")
     public void clearSavedSearches() {
@@ -267,20 +258,6 @@ public class ProfilePageStep {
                 && doesSavedSearchDescriptionContainPrice(min, max);
         assertTrue(containingInputTextInDescription, "Saved search description does not contain selected min or max, or entered town");
     }
-
-    /**
-     * check that saved search description min and max price corresponds to entered min and max price
-     *
-     * @param minPrice
-     * @param maxPrice
-     * @return true if description contains input prices, false if if does not
-     */
-    private boolean doesSavedSearchDescriptionContainPrice(int minPrice, int maxPrice) {
-        String[] minMaxPrices = savedSearchesPage.getPrice().split("-");
-        return minPrice == Parser.parse(minMaxPrices[0]) && maxPrice == Parser.parse(minMaxPrices[1]);
-    }
-
-    //mortgageCalculator
 
     @When("move to mortgage calculator page")
     public void moveToMortgageCalculatorPage() {
@@ -320,6 +297,18 @@ public class ProfilePageStep {
     }
 
     /**
+     * check that saved search description min and max price corresponds to entered min and max price
+     *
+     * @param minPrice
+     * @param maxPrice
+     * @return true if description contains input prices, false if if does not
+     */
+    private boolean doesSavedSearchDescriptionContainPrice(int minPrice, int maxPrice) {
+        String[] minMaxPrices = savedSearchesPage.getPrice().split("-");
+        return minPrice == Parser.parse(minMaxPrices[0]) && maxPrice == Parser.parse(minMaxPrices[1]);
+    }
+
+    /**
      * calculate monthly payment for input parameters by formula
      * calculate money which left to pay(Home price - Down payment)
      * calculate rate (input rate divide on month per year)
@@ -341,4 +330,5 @@ public class ProfilePageStep {
         double paymentPerMonth = moneyLeftToPay * (rateInt * Math.pow(1 + rateInt, allPaymentCount)) / (Math.pow((1 + rateInt), allPaymentCount) - 1);
         return (int) Math.round(paymentPerMonth);
     }
+
 }
