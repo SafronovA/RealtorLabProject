@@ -34,16 +34,8 @@ public enum DriverFactory {
             return driver;
         }
 
-        public void quitDriver() {
-            if (driver != null) {
-                driver.quit();
-            }
-            driver = null;
-        }
     };
 
     public abstract AppiumDriver getDriver();
-
-    public abstract void quitDriver();
 
 }
