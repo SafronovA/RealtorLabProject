@@ -27,4 +27,9 @@ public class HomePageStep extends BasePageStep {
         return this;
     }
 
+    public ViewSearchResultsPageStep clickViewListButton(){
+        homePage.clickViewListButton();
+        return new ViewSearchResultsPageStep(driver);
+    }
+
 }

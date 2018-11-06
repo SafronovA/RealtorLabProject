@@ -14,6 +14,8 @@ public class HomePage extends BasePage {
     private AndroidElement searchInput;
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/save_search\")")
     private AndroidElement saveSearchButton;
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/view_list_label\")")
+    private AndroidElement viewListButton;
 
     public HomePage(AppiumDriver driver) {
         super(driver);
@@ -26,6 +28,7 @@ public class HomePage extends BasePage {
     }
 
     public HomePage enterCity(String city) {
+        searchInput.click();
         searchInput.sendKeys(city + "\n");
         return this;
     }
@@ -36,6 +39,13 @@ public class HomePage extends BasePage {
             saveSearchButton.click();
         }
         return this;
+    }
+
+    public ViewSearchResultsPage clickViewListButton(){
+        waitUntilElementIsClickable(viewListButton);
+        viewListButton.click();
+        viewListButton.click();
+        return new ViewSearchResultsPage(driver);
     }
 
 }
