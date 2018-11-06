@@ -3,9 +3,6 @@ package com.epam.tat.realtor.tests_mob;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class NumberOfHousesFoundTest extends BaseTest {
     private final String CITY = "Wildwood, NJ";
     private final String MIN_PRICE = "450000";
@@ -19,7 +16,7 @@ public class NumberOfHousesFoundTest extends BaseTest {
                 .clickViewResultsButton()
                 .getSearchResultCount();
         int actualNumberOfHousesFound = homePageStep.openHousesList()
-                .getNumberOfAllHousesFromScreen();
+                .getNumberOfAllHousesFromSearchResult();
         Assert.assertEquals(expectedNumberOfHousesFound, actualNumberOfHousesFound,
                 "The number of homes found and displayed is not equal");
     }

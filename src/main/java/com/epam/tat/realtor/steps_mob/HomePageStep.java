@@ -51,23 +51,27 @@ public class HomePageStep extends BasePageStep {
         return this;
     }
 
+    public HousePageStep clickFirstHouseCard(){
+        homePage.clickFirstHouseCard();
+        return new HousePageStep(driver);
+    }
+
     public int getSearchResultCount(){
         return homePage.searchResultCount();
     }
 
-    public int getNumberOfAllHousesFromScreen(){
-        Set<String> homes = new HashSet<>();
-        homes.addAll(receiveAddressesFromAndroidElementList(homePage.getHouseAddressesFromScreen()));
-        while (homePage.getExpandSearchAreaButton().isEmpty()) {
-            swipe(driver);
-            homes.addAll(receiveAddressesFromAndroidElementList(homePage.getHouseAddressesFromScreen()));
-        }
-        return homes.size();
+    public int getNumberOfAllHousesFromSearchResult() {
+        return getAllHouseAddressesFromSearchResult().size();
     }
 
-    public HousePageStep clickFirstHouseCard(){
-        homePage.clickFirstHouseCard();
-        return new HousePageStep(driver);
+    private Set getAllHouseAddressesFromSearchResult(){
+        Set<String> homeAddresses = new HashSet<>();
+        homeAddresses.addAll(receiveAddressesFromAndroidElementList(homePage.getHouseAddressesFromScreen()));
+        while (homePage.getExpandSearchAreaButton().isEmpty()) {
+            swipe(driver);
+            homeAddresses.addAll(receiveAddressesFromAndroidElementList(homePage.getHouseAddressesFromScreen()));
+        }
+        return homeAddresses;
     }
 
     private Set<String> receiveAddressesFromAndroidElementList(List<AndroidElement> addresses) {
