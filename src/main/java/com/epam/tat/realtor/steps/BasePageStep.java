@@ -8,7 +8,7 @@ public class BasePageStep {
     protected AppiumDriver driver;
     protected BasePage basePage;
 
-    public BasePageStep(AppiumDriver driver){
+    public BasePageStep(AppiumDriver driver) {
         this.driver = driver;
         basePage = new BasePage(driver);
     }

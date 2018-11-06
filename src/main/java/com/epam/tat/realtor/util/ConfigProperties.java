@@ -37,11 +37,12 @@ public class ConfigProperties {
     }
 
     public static void setAndroidDeviceCapabilities(DesiredCapabilities capabilities, String filename) {
-        String fileName = "src/main/resources/mobileproperties/"+filename+".properties";
+        String fileName = "src/main/resources/mobileproperties/" + filename + ".properties";
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
-            stream.forEach(x->{
+            stream.forEach(x -> {
                 String[] parts = x.split("=");
-                capabilities.setCapability(parts[0],parts[1]);});
+                capabilities.setCapability(parts[0], parts[1]);
+            });
         } catch (IOException e) {
             e.printStackTrace();
         }

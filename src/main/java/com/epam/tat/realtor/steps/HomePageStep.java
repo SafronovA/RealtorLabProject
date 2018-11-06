@@ -7,7 +7,7 @@ public class HomePageStep extends BasePageStep {
 
     private HomePage homePage;
 
-    public HomePageStep(AppiumDriver driver){
+    public HomePageStep(AppiumDriver driver) {
         super(driver);
         homePage = new HomePage(driver);
     }
