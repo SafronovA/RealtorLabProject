@@ -1,7 +1,7 @@
 package com.epam.tat.realtor.web.pages;
 
 import com.epam.tat.realtor.bo.House;
-import com.epam.tat.realtor.web.util.Parser;
+import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;

@@ -3,7 +3,7 @@ package com.epam.tat.realtor.web.steps;
 import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.web.pages.BasePage;
 import com.epam.tat.realtor.web.pages.SearchPage;
-import com.epam.tat.realtor.web.util.Parser;
+import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 

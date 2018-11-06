@@ -8,7 +8,7 @@ public class SortByPriceTest extends BaseTest {
 
     private static final String CITY = "San Francisco, CA";
     private static final String MIN_PRICE = "3500000";
-    private static final String MAX_PRICE = "3700000";
+    private static final String MAX_PRICE = "3550000";
 
     @Test
     public void sortByPrice(){

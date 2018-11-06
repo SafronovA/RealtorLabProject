@@ -1,4 +1,4 @@
-package com.epam.tat.realtor.web.util;
+package com.epam.tat.realtor.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

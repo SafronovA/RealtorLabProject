@@ -1,6 +1,7 @@
 package com.epam.tat.realtor.mobile.steps;
 
 import com.epam.tat.realtor.mobile.pages.ViewSearchResultsPage;
+import com.epam.tat.realtor.util.Parser;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
 
@@ -32,7 +33,7 @@ public class ViewSearchResultsPageStep extends BasePageStep {
         List<Integer> homePrices = getAllHomePricesFromPage();
         boolean sortedDescending =
                 IntStream.range(0, homePrices.size() - 1)
-                        .allMatch(i -> homePrices.get(i).compareTo(homePrices.get(i + 1)) >= 0);
+                        .allMatch(i -> homePrices.get(i).compareTo(homePrices.get(i + 1)) <= 0);
         return sortedDescending;
 
     }
@@ -52,7 +53,7 @@ public class ViewSearchResultsPageStep extends BasePageStep {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return homePricesList.stream().map(AndroidElement::getText).map(Integer::valueOf).collect(Collectors.toList());
+        return homePricesList.stream().map(AndroidElement::getText).map(Parser::parse).collect(Collectors.toList());
     }
 
 }

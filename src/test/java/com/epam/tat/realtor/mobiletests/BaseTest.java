@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -25,24 +26,29 @@ public class BaseTest {
      */
     @BeforeClass(alwaysRun = true)
     void initPage() throws MalformedURLException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("device","Android");
-        capabilities.setCapability("deviceName", "Nexus5");
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("app", "C://realtor.apk");
-        capabilities.setCapability("appPackage", "com.move.realtor");
-        capabilities.setCapability("appActivity", "com.move.realtor.search.results.activity.SearchResultsActivity");
-        driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        File app = new File("C:/Users/Aliaksei_Safronau", "Realtor.apk");
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("deviceName", "Mate");
+        caps.setCapability("udid", "FFY5T18119005277"); //DeviceId from "adb devices" command
+        caps.setCapability("platformName", "Android");
+        caps.setCapability("platformVersion", "8.0.0");
+        caps.setCapability("skipUnlock", "true");
+        caps.setCapability("app", app.getAbsolutePath());
+        caps.setCapability("appPackage", "com.move.realtor");
+        caps.setCapability("appActivity", "com.move.realtor.search.results.activity.SearchResultsActivity");
+        caps.setCapability("noReset", "false");
+        driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         homePageStep = new HomePageStep(driver);
     }
-    /**
-     * close browser
-     */
-    @AfterSuite
-    void closeResources() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+
+//    /**
+//     * close browser
+//     */
+//    @AfterSuite
+//    void closeResources() {
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 }

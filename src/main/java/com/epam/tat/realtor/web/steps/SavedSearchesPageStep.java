@@ -1,7 +1,7 @@
 package com.epam.tat.realtor.web.steps;
 
 import com.epam.tat.realtor.web.pages.SavedSearchesPage;
-import com.epam.tat.realtor.web.util.Parser;
+import com.epam.tat.realtor.util.Parser;
 import org.openqa.selenium.WebDriver;
 
 public class SavedSearchesPageStep extends BasePageStep {
