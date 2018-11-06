@@ -22,9 +22,9 @@ public class FilterPageStep extends BasePageStep {
         return this;
     }
 
-    public ViewPageStep clickViewResultsButton(){
+    public ViewSearchResultsPageStep clickViewResultsButton(){
         filterPage.clickViewResultsButton();
-        return new ViewPageStep(driver);
+        return new ViewSearchResultsPageStep(driver);
     }
 
 }

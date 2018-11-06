@@ -6,18 +6,30 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
-public class ViewPage extends BasePage {
+import java.util.List;
+
+public class ViewSearchResultsPage extends BasePage {
 
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/sort_spinner\")")
     private AndroidElement sortByButton;
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/text1\")")
-    private AndroidElement lowToHighSortOption;
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"Filter\"]")
     private AndroidElement filterButton;
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/priceTextView\")")
+    private List<AndroidElement> homePricesList;
+    @AndroidFindBy(xpath = "//*[@text='Expand Search Area']")
+    private List<AndroidElement> expandSearchAreaButton;
 
-    public ViewPage(AppiumDriver driver) {
+    public ViewSearchResultsPage(AppiumDriver driver) {
         super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+    }
+
+    public List<AndroidElement> getHomePricesList(){
+        return homePricesList;
+    }
+
+    public List<AndroidElement> getExpandSearchAreaButton() {
+        return expandSearchAreaButton;
     }
 
     public FilterPage clickFilterButton(){
@@ -25,14 +37,10 @@ public class ViewPage extends BasePage {
         return new FilterPage(driver);
     }
 
-    public ViewPage clickSortByButton(){
+    public SortOptionsPage clickSortByButton(){
+        waitUntilElementIsClickable(sortByButton);
         sortByButton.click();
-        return this;
-    }
-
-    public ViewPage selectLowToHighSortOption(){
-        lowToHighSortOption.click();
-        return this;
+        return new SortOptionsPage(driver);
     }
 
 }

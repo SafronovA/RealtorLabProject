@@ -1,5 +1,7 @@
 package com.epam.tat.realtor.mobiletests;
 
+import com.epam.tat.realtor.mobile.steps.ViewSearchResultsPageStep;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SortByPriceTest extends BaseTest {
@@ -10,14 +12,19 @@ public class SortByPriceTest extends BaseTest {
 
     @Test
     public void sortByPrice(){
-        homePageStep.clickMenuButton()
+        ViewSearchResultsPageStep viewSearchResultsPageStep =
+                homePageStep.clickMenuButton()
                 .clickStartNewSearch()
                 .enterCity(CITY)
                 .clickViewListButton()
-                .selectLowToHighPriceSortOption()
+                .clickSortByButton()
+                .selectLowToHighSortOption()
                 .clickFilterButton()
                 .enterMinPrice(MIN_PRICE)
-                .enterMaxPrice(MAX_PRICE);
+                .enterMaxPrice(MAX_PRICE)
+                .clickViewResultsButton();
+        Assert.assertTrue(viewSearchResultsPageStep.doesHomeDisplayedSortedByPrice(),
+                "Homes were not displayed in sorted by price order");
     }
 
 }

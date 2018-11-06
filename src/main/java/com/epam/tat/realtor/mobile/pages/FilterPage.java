@@ -30,9 +30,9 @@ public class FilterPage extends BasePage {
         return this;
     }
 
-    public ViewPage clickViewResultsButton(){
+    public ViewSearchResultsPage clickViewResultsButton(){
         viewResultsButton.click();
-        return new ViewPage(driver);
+        return new ViewSearchResultsPage(driver);
     }
 
 }
