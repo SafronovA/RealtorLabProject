@@ -15,7 +15,7 @@ public class SettingsPage extends BasePage {
 
     @AndroidFindBy(id = "com.move.realtor:id/user_name")
     private AndroidElement userName;
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.widget.RelativeLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.RelativeLayout[2]/android.widget.TextView")
+    @AndroidFindBy(id = "com.move.realtor:id/sign_in_button")
     private AndroidElement logInButton;
 
     public String getName(){

@@ -1,29 +1,31 @@
 package com.epam.tat.realtor.tests_mob;
 
+import com.epam.tat.realtor.steps_mob.MortgageCalculatorPageStep;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class MortgageCalculatorTest extends BaseTest {
+    private MortgageCalculatorPageStep mortgageCalculatorPageStep;
+    String loanType = "15-Year Fixed";
+    String rate = "6";
+    String homePrice = "110000";
+    String downPayment = "10000";
 
     @Test
     public void mortgageCalculatorTest(
 //            String loanType, String rate, String homePrice, String downPayment
     ) {
 
-//        homePageStep.clickFirstHouseCard().clickEditMirtgageCalculatorButton();
-
-        System.out.println(driver.manage().window().getSize());
-        System.out.println(driver.manage().window().getSize().getWidth());
-
-//        HousePageStep housePageStep = homePageStep.navigateCursorToMortgageLink()
-//                .clickMortgageCalculatorLink()
-//                .selectLoanType(loanType)
-//                .setRate(rate)
-//                .setHomePrice(homePrice)
-//                .setDownPayment(downPayment);
-//        Assert.assertTrue(housePageStep.isDisplayedPriceCorrect(homePrice, downPayment, rate, loanType),
-//                "Mortgage calculator calculated incorrect monthly payment");
+        mortgageCalculatorPageStep = homePageStep.clickFirstHouseCard()
+                .clickEditMortgageCalculatorButton()
+                .selectLoanType(loanType)
+                .setRate(rate)
+                .setHomePrice(homePrice)
+                .setDownPayment(downPayment);
+//                .selectLoanType(loanType);
+        Assert.assertTrue(mortgageCalculatorPageStep.isDisplayedPriceCorrect(homePrice, downPayment, rate, loanType),
+                "Mortgage calculator calculated incorrect monthly payment");
     }
 
 

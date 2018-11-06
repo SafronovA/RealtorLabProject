@@ -14,7 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
     protected AppiumDriver driver;
     private WebDriverWait driverWait;
-    private static final String INNER_HTML = "innerHTML";
     private Dimension dimension;
     private PointOption topCenterWorkScreenCoordinates;
     private PointOption bottomCenterWorkScreenCoordinates;
@@ -52,74 +51,6 @@ public class BasePage {
      */
     public void waitUntilElementIsVisible(AndroidElement androidElement) {
         driverWait.until(ExpectedConditions.visibilityOf(androidElement));
-    }
-
-    /**
-     * wait until webElement is visible
-     *
-     * @param locator webElement to be visible
-     */
-    public void waitUntilElementIsVisible(By locator) {
-        driverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
-
-    /**
-     * wait until webElement is clickable
-     *
-     * @param androidElement webElement to be clickable
-     */
-    public void waitUntilElementIsClickable(AndroidElement androidElement) {
-        driverWait.until(ExpectedConditions.elementToBeClickable(androidElement));
-    }
-
-    /**
-     * wait for the presence of the elements by locator
-     *
-     * @param by locator of the elements
-     */
-    public void waitForPresenceOfAllElementsLocatedBy(By by) {
-        driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
-    }
-
-    /**
-     * waiting for a specific attribute value in the Web element
-     *
-     * @param androidElement checked webElement
-     * @param value          expected value
-     */
-    public void waitUntilAttributeInnerHTMLToBe(AndroidElement androidElement, String value) {
-        driverWait.until(ExpectedConditions.attributeToBe(androidElement, INNER_HTML, value));
-    }
-
-    /**
-     * wait for presence of all elements by locator
-     *
-     * @param by locator of the elements
-     */
-    public void waitForElements(By by) {
-        driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
-    }
-
-    /**
-     * wait until element is invisible
-     *
-     * @param androidElement element to be invisible
-     */
-    public void waitUntilElementIsInvisible(AndroidElement androidElement) {
-        driverWait.until(ExpectedConditions.invisibilityOf(androidElement));
-    }
-
-    /**
-     * wait until element become invisible
-     *
-     * @param location WebElement with such location should become invisible
-     */
-    public void waitInvisibilityOfElementLocated(By location) {
-        driverWait.until(ExpectedConditions.invisibilityOfElementLocated(location));
-    }
-
-    public void waitInvisibilityOfElement(AndroidElement androidElement) {
-        driverWait.until(ExpectedConditions.invisibilityOf(androidElement));
     }
 
 }

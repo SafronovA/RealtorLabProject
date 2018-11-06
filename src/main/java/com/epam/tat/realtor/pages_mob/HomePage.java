@@ -99,6 +99,7 @@ public class HomePage extends BasePage {
     }
 
     public HousePage clickFirstHouseCard(){
+        waitUntilElementIsVisible(firstHouseCard);
         firstHouseCard.click();
         return new HousePage(driver);
     }

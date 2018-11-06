@@ -1,7 +1,5 @@
 package com.epam.tat.realtor.steps_mob;
 
-import com.epam.tat.realtor.pages_mob.LogInPage;
-import com.epam.tat.realtor.pages_mob.SettingsPage;
 import com.epam.tat.realtor.pages_mob.SignInPage;
 import io.appium.java_client.AppiumDriver;
 

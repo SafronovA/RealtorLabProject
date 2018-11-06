@@ -12,7 +12,7 @@ public class HousePageStep extends BasePageStep {
         housePage = new HousePage(driver);
     }
 
-    public MortgageCalculatorPageStep clickEditMirtgageCalculatorButton(){
+    public MortgageCalculatorPageStep clickEditMortgageCalculatorButton(){
         swipeUntilElementBecomeVisible(driver, housePage.getEditMortgageCalculatorButton());
         housePage.clickEditMirtgageCalculatorButton();
         return new MortgageCalculatorPageStep(driver);

@@ -17,7 +17,7 @@ public class MenuPageStep extends BasePageStep{
     }
 
     public SettingsPageStep clickSettingsButton(){
-        swipe(driver);
+        swipeUntilElementBecomeVisible(driver, menuPage.getSettingsButton());
         menuPage.clickSettingsButton();
         return new SettingsPageStep(driver);
     }

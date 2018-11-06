@@ -15,12 +15,16 @@ public class MenuPage extends BasePage{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.ScrollView/android.widget.LinearLayout")
+    @AndroidFindBy(className = "android.widget.LinearLayout")
     private AndroidElement menuSideBar;
     @AndroidFindBy(id = "com.move.realtor:id/menu_sign_in")
     private AndroidElement signInButton;
     @AndroidFindBy(id = "com.move.realtor:id/menu_item_settings")
-    private AndroidElement settingsButton;
+    private List<AndroidElement> settingsButton;
+
+    public List<AndroidElement> getSettingsButton() {
+        return settingsButton;
+    }
 
     /**
      * click  button
@@ -34,7 +38,7 @@ public class MenuPage extends BasePage{
 
     public MenuPage clickSettingsButton() {
         waitUntilElementIsVisible(menuSideBar);
-        settingsButton.click();
+        settingsButton.get(0).click();
         return this;
     }
 
