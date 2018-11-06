@@ -22,7 +22,6 @@ public class BasePageStep {
        while (element.isEmpty()){
            swipe(driver);
        }
-
     }
 
     public void swipe(AppiumDriver driver) {

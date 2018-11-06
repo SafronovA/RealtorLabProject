@@ -3,29 +3,27 @@ package com.epam.tat.realtor.pages_mob;
 import com.epam.tat.realtor.ConfigProperties;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
     protected AppiumDriver driver;
-    protected WebDriverWait driverWait;
+    private WebDriverWait driverWait;
     private static final String INNER_HTML = "innerHTML";
+    private Dimension dimension;
     private PointOption topCenterWorkScreenCoordinates;
     private PointOption bottomCenterWorkScreenCoordinates;
-
-    @AndroidFindBy(className = "android.widget.FrameLayout")
-    protected static AndroidElement workScreen;
 
     public BasePage(AppiumDriver driver) {
         this.driver = driver;
         driverWait = new WebDriverWait(driver, Integer.valueOf(ConfigProperties.getTestProperty("webDriverWaitTime")));
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        generateCoordinates();
+        generateCoordinates(driver);
     }
 
     public PointOption getTopCenterWorkScreenCoordinates() {
@@ -36,11 +34,12 @@ public class BasePage {
         return bottomCenterWorkScreenCoordinates;
     }
 
-    private void generateCoordinates() {
+    private void generateCoordinates(AppiumDriver driver) {
+        dimension = driver.manage().window().getSize();
         final double DELTA = 0.1;
-        int commonX = workScreen.getRect().width/2;
-        int topY = (int)(workScreen.getRect().getHeight() * DELTA);
-        int bottomY = (int)(workScreen.getRect().getHeight() * (1 - DELTA));
+        int commonX = dimension.width / 2;
+        int topY = (int) (dimension.height * DELTA);
+        int bottomY = (int) (dimension.height * (1 - DELTA));
 
         topCenterWorkScreenCoordinates = new PointOption().withCoordinates(commonX, topY);
         bottomCenterWorkScreenCoordinates = new PointOption().withCoordinates(commonX, bottomY);

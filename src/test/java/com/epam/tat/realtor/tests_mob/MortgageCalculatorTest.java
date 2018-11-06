@@ -10,7 +10,12 @@ public class MortgageCalculatorTest extends BaseTest {
     public void mortgageCalculatorTest(
 //            String loanType, String rate, String homePrice, String downPayment
     ) {
-        homePageStep.clickFirstHouseCard().clickEditMirtgageCalculatorButton();
+
+//        homePageStep.clickFirstHouseCard().clickEditMirtgageCalculatorButton();
+
+        System.out.println(driver.manage().window().getSize());
+        System.out.println(driver.manage().window().getSize().getWidth());
+
 //        HousePageStep housePageStep = homePageStep.navigateCursorToMortgageLink()
 //                .clickMortgageCalculatorLink()
 //                .selectLoanType(loanType)
