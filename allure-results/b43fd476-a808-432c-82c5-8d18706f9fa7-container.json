@@ -1,1 +1,0 @@
-{"uuid":"b43fd476-a808-432c-82c5-8d18706f9fa7","name":"com.epam.tat.realtor.mobiletests.SortByPriceTest","start":1541495539547,"stop":1541495720523,"children":["f53f3815-f609-4b1a-8803-004ff4bcb732"],"befores":[{"name":"initPage","status":"passed","stage":"finished","description":"","start":1541495539629,"stop":1541495558734}]}
