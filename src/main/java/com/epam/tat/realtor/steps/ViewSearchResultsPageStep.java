@@ -24,6 +24,11 @@ public class ViewSearchResultsPageStep extends BasePageStep {
         return new FilterPageStep(driver);
     }
 
+    public HousePageStep clickOnFirstHouse(){
+        viewSearchResultsPage.clickOnFirstHouse();
+        return new HousePageStep(driver);
+    }
+
     public SortOptionsPageStep clickSortByButton(){
         viewSearchResultsPage.clickSortByButton();
         return new SortOptionsPageStep(driver);
@@ -36,6 +41,11 @@ public class ViewSearchResultsPageStep extends BasePageStep {
                         .allMatch(i -> homePrices.get(i).compareTo(homePrices.get(i + 1)) <= 0);
         return sortedDescending;
 
+    }
+
+    public HomePageStep clickGoBackButton(){
+        viewSearchResultsPage.clickGoBackButton();
+        return new HomePageStep(driver);
     }
 
     private List<Integer> getAllHomePricesFromPage(){

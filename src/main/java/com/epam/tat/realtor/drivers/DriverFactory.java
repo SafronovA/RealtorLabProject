@@ -20,7 +20,7 @@ public enum DriverFactory {
         public AppiumDriver getDriver() {
             if (driver == null) {
                 DesiredCapabilities capabilities = new DesiredCapabilities();
-                ConfigProperties.setAndroidDeviceCapabilities(capabilities, "Nexus5");
+                ConfigProperties.setAndroidDeviceCapabilities(capabilities, "Mate");
                 try {
                     driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
                 } catch (MalformedURLException e) {

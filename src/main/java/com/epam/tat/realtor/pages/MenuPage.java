@@ -14,6 +14,8 @@ public class MenuPage extends BasePage {
     private AndroidElement startNewSearch;
     @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/menu_item_badge\")")
     private AndroidElement savedSearchButton;
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/menu_item_recently_viewed_listings\")")
+    private AndroidElement recentlyViewedListingsButton;
 
     public MenuPage(AppiumDriver driver){
         super(driver);
@@ -29,6 +31,11 @@ public class MenuPage extends BasePage {
         waitUntilElementIsVisible(savedSearchButton);
         savedSearchButton.click();
         return new SavedSearchPage(driver);
+    }
+
+    public RecentlyViewedListingsPage clickRecentlyViewedListings(){
+        recentlyViewedListingsButton.click();
+        return new RecentlyViewedListingsPage(driver);
     }
 
 }

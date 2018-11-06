@@ -22,4 +22,9 @@ public class MenuPageStep extends BasePageStep {
         return new SavedSearchPageStep(driver);
     }
 
+    public RecentlyViewedListingsPageStep clickRecentlyViewedListingsButton(){
+        menuPage.clickRecentlyViewedListings();
+        return new RecentlyViewedListingsPageStep(driver);
+    }
+
 }
