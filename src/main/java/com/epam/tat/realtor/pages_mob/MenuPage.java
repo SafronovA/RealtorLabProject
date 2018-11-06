@@ -22,24 +22,24 @@ public class MenuPage extends BasePage{
     @AndroidFindBy(id = "com.move.realtor:id/menu_item_settings")
     private List<AndroidElement> settingsButton;
 
-    public List<AndroidElement> getSettingsButton() {
-        return settingsButton;
-    }
-
     /**
      * click  button
      *
      * @return this page
      */
-    public MenuPage clickSignInButton() {
+    public SignInPage clickSignInButton() {
         signInButton.click();
-        return this;
+        return new SignInPage(driver);
     }
 
-    public MenuPage clickSettingsButton() {
+    public SettingsPage clickSettingsButton() {
         waitUntilElementIsVisible(menuSideBar);
         settingsButton.get(0).click();
-        return this;
+        return new SettingsPage(driver);
+    }
+
+    public List<AndroidElement> getSettingsButton() {
+        return settingsButton;
     }
 
 }

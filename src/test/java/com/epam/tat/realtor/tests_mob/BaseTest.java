@@ -2,7 +2,7 @@ package com.epam.tat.realtor.tests_mob;
 
 import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.drivers.DriverMobile;
-import com.epam.tat.realtor.steps_mob.HomePageStep;
+import com.epam.tat.realtor.steps_mob.MainPageStep;
 import io.appium.java_client.AppiumDriver;
 import org.testng.annotations.BeforeClass;
 
@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     protected AppiumDriver driver;
-    protected HomePageStep homePageStep;
+    protected MainPageStep mainPageStep;
 
     /**
      * init specified WebDriver
@@ -21,7 +21,7 @@ public class BaseTest {
     @BeforeClass(alwaysRun = true)
     void initPage() {
         driver = DriverMobile.ANDROIDDRIVER.getDriver();
-        homePageStep = new HomePageStep(driver);
+        mainPageStep = new MainPageStep(driver);
         driver.manage().timeouts().implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
     }
 

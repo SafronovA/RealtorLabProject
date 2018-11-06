@@ -56,7 +56,6 @@ public class MortgageCalculatorPageStep extends BasePageStep {
         mortgageCalculatorPage.clickMortgageLoanTypeDropDown();
         mortgageCalculatorPage.getLoanTypeOptionList().stream()
                 .filter(element ->
-//                        !element.getText().equals("") &&
                         loanType.equals(element.getText()))
                 .findFirst().get().click();
         mortgageCalculatorPage.clickOkButton();
@@ -78,8 +77,6 @@ public class MortgageCalculatorPageStep extends BasePageStep {
                                            String loanType) {
         boolean result = Parser.parse(mortgageCalculatorPage.getPricePerMonth())
                 == calculateMortgagePricePerMonth(homePrice, downPayment, rate, loanType);
-        System.out.println(Parser.parse(mortgageCalculatorPage.getPricePerMonth()));
-        System.out.println(calculateMortgagePricePerMonth(homePrice, downPayment, rate, loanType));
         return result;
     }
 

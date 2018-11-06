@@ -14,7 +14,7 @@ public class AuthorizedTest extends BaseTest {
      */
     @Test
     public void authorised() {
-        settingsPageStep = homePageStep.clickMenu()
+        settingsPageStep = mainPageStep.clickMenu()
                 .clickSignInButton()
                 .clickLogInButton()
                 .logIn(EMAIL, PASS)
@@ -23,7 +23,7 @@ public class AuthorizedTest extends BaseTest {
     }
 
     @AfterClass
-    public void postconditions(){
+    public void logOut(){
         settingsPageStep.logOut();
     }
 }

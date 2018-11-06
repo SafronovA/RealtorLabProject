@@ -1,7 +1,6 @@
 package com.epam.tat.realtor.steps_mob;
 
 import com.epam.tat.realtor.pages_mob.HousePage;
-import com.epam.tat.realtor.pages_mob.MortgageCalculatorPage;
 import io.appium.java_client.AppiumDriver;
 
 public class HousePageStep extends BasePageStep {

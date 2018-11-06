@@ -15,15 +15,15 @@ public class SettingsPage extends BasePage {
 
     @AndroidFindBy(id = "com.move.realtor:id/user_name")
     private AndroidElement userName;
-    @AndroidFindBy(id = "com.move.realtor:id/sign_in_button")
-    private AndroidElement logInButton;
+    @AndroidFindBy(id = "com.move.realtor:id/sign_out")
+    private AndroidElement logOutButton;
+
+    public void clickLogOut(){
+        logOutButton.click();
+    }
 
     public String getName(){
         return userName.getText();
-    }
-
-    public void clickLogOut(){
-        logInButton.click();
     }
 
 }
