@@ -1,6 +1,5 @@
 package com.epam.tat.realtor.steps_mob;
 
-import com.epam.tat.realtor.pages_mob.HomePage;
 import com.epam.tat.realtor.pages_mob.MenuPage;
 import io.appium.java_client.AppiumDriver;
 
@@ -22,6 +21,5 @@ public class MenuPageStep extends BasePageStep{
         menuPage.clickSettingsButton();
         return new SettingsPageStep(driver);
     }
-
 
 }
