@@ -1,40 +1,39 @@
 package com.epam.tat.realtor.mobilesteps;
 
-import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.mobilepages.ViewPage;
 import com.epam.tat.realtor.util.Parser;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ViewPageStep extends BasePageStep {
     private ViewPage viewPage;
+    private Set<Integer> propertyPrice = new HashSet<>();
+    private Set<Integer> propertyBed = new HashSet<>();
+    private Set<Integer> propertyBath = new HashSet<>();
     public ViewPageStep(AppiumDriver<WebElement> driver){
         super(driver);
         viewPage= new ViewPage(driver);
     }
-    public List<House> createPropertyList(){
-        List<House> propertyList = new ArrayList<>();
-        String propertyAddress;
-        propertyList.add(new House(Parser.parse(viewPage.getHomePrice().get(0).getText()),
-                Parser.parse(viewPage.getHomeBedCount().get(0).getText()),
-                Parser.parse(viewPage.getHomeBathCount().get(0).getText())));
-        viewPage.swipeView();
+    public ViewPageStep createPropertyList(){
+       viewPage.waitForViewList();
+
         do{
-            propertyList.add(new House(Parser.parse(viewPage.getHomePrice().get(0).getText()),
-                    Parser.parse(viewPage.getHomeBedCount().get(0).getText()),
-                    Parser.parse(viewPage.getHomeBathCount().get(0).getText())));
-            propertyAddress = viewPage.getHomeAddress().get(0).getText();
+            propertyPrice.addAll(viewPage.getHomePrice().stream().map(x->Parser.parse(x.getText())).collect(Collectors.toList()));
+            propertyBed.addAll(viewPage.getHomeBedCount().stream().map(x->Parser.parse(x.getText())).collect(Collectors.toList()));
+            propertyBath.addAll(viewPage.getHomeBedCount().stream().map(x->Parser.parse(x.getText())).collect(Collectors.toList()));
             viewPage.swipeView();
         }
-        while(!propertyAddress.equals(viewPage.getHomeAddress().get(0).getText()));
-        for (int i = 1; i < viewPage.getHomePrice().size(); i++) {
-            propertyList.add(new House(Parser.parse(viewPage.getHomePrice().get(i).getText()),
-                    Parser.parse(viewPage.getHomeBedCount().get(i).getText()),
-                    Parser.parse(viewPage.getHomeBathCount().get(i).getText())));
-        }
-        return propertyList;
+        while(viewPage.getExpandButton()<1);
+        return this;
+    }
+
+    public boolean checkSearchResults(String MIN_PRICE_VALUE, String MAX_PRICE_VALUE, int BATH_QUANTITY, int BED_QUANTITY) {
+        return propertyPrice.stream().peek(x->System.out.print(x+" ")).allMatch(x->(x<=Integer.valueOf(MAX_PRICE_VALUE))&&(x>=Integer.valueOf(MIN_PRICE_VALUE)))
+                && propertyBed.stream().peek(x->System.out.print(x+" ")).allMatch(x->x>= BED_QUANTITY)
+                && propertyBath.stream().peek(x->System.out.print(x+" ")).allMatch(x->x>=BATH_QUANTITY);
     }
 }

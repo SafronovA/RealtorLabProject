@@ -7,6 +7,7 @@ public class House {
     private int square;
     private int lotSize;
     private int carSpaces;
+    private String address;
 
     public House(int bedNumber, int bathNumber, int price, int square) {
         this.bedNumber = bedNumber;
@@ -18,6 +19,12 @@ public class House {
         this.bedNumber = bedNumber;
         this.bathNumber = bathNumber;
         this.price = price;
+    }
+    public House( int price, int bedNumber, int bathNumber, String address) {
+        this.bedNumber = bedNumber;
+        this.bathNumber = bathNumber;
+        this.price = price;
+        this.address = address;
     }
 
     public House(int bedNumber, int bathNumber, int square, int lotSize, int carSpaces) {
@@ -80,6 +87,14 @@ public class House {
      */
     public int getCarSpaces() {
         return carSpaces;
+    }
+    /**
+     * get address of the House
+     *
+     * @return address value
+     */
+    public String getAddress() {
+        return address;
     }
 
 }

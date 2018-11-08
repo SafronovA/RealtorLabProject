@@ -31,7 +31,7 @@ public class BaseTest {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         BaseTest.setCapabilities(capabilities,"HuaweiP9");
         AppiumDriver<WebElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
         homePageStep = new HomePageStep(driver);
            }
     /**
