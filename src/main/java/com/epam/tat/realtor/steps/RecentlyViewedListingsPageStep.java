@@ -12,7 +12,8 @@ public class RecentlyViewedListingsPageStep extends BasePageStep {
         recentlyViewedListingsPage = new RecentlyViewedListingsPage(driver);
     }
 
-    public boolean chechAddresses(String address){
-        return address.contains(recentlyViewedListingsPage.getHouseAddress());
+    public HousePageStep clickOnFirstHouse(){
+        recentlyViewedListingsPage.clickOnFirstHome();
+        return new HousePageStep(driver);
     }
 }

@@ -17,11 +17,12 @@ public class RecentlyViewedListingsTest extends BaseTest {
                 .clickViewListButton()
                 .clickOnFirstHouse();
         String houseAddress = housePageStep.getHouseAddress();
-        RecentlyViewedListingsPageStep recentlyViewedListingsPageStep = housePageStep.clickGoBackButton()
+        HousePageStep recentlyHousePageStep = housePageStep.clickGoBackButton()
                 .clickGoBackButton()
                 .clickMenuButton()
-                .clickRecentlyViewedListingsButton();
-        Assert.assertEquals(houseAddress, recentlyViewedListingsPageStep.getHouseAddress(),
+                .clickRecentlyViewedListingsButton()
+                .clickOnFirstHouse();
+        Assert.assertEquals(houseAddress, recentlyHousePageStep.getHouseAddress(),
                 "Addresses do not match");
     }
 

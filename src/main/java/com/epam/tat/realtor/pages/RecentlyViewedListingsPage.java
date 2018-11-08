@@ -11,15 +11,16 @@ import java.time.Duration;
 public class RecentlyViewedListingsPage extends BasePage {
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/address_text_view']")
-    private AndroidElement houseAddress;
+    private AndroidElement firstHome;
 
     public RecentlyViewedListingsPage(AppiumDriver driver) {
         super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
     }
 
-    public String getHouseAddress(){
-        return houseAddress.getText();
+    public HousePage clickOnFirstHome(){
+        firstHome.click();
+        return new HousePage(driver);
     }
 
 }
