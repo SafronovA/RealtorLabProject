@@ -19,7 +19,7 @@ public class SavedSearchTest extends BaseTest {
                 .clickMenuButton()
                 .clickSavedSearchButton();
         Assert.assertTrue(savedSearchPageStep.doesSavedSearchDescriptionContainsEnteredCity(CITY),
-                "do not contains entered text");
+                "Saved search does not contain entered text");
     }
 
     @AfterMethod
