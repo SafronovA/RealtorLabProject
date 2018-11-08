@@ -37,7 +37,7 @@ public class ConfigProperties {
     }
 
     public static void setAndroidDeviceCapabilities(DesiredCapabilities capabilities, String filename) {
-        String fileName = "src/main/resources/mobileproperties/" + filename + ".properties";
+        String fileName = "src/main/resources/" + filename + ".properties";
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
             stream.forEach(x -> {
                 String[] parts = x.split("=");
