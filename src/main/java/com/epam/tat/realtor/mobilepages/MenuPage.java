@@ -12,7 +12,7 @@ public class MenuPage extends BasePage {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
     @AndroidFindBy(xpath = "(//android.widget.RelativeLayout[@resource-id='com.move.realtor:id/menu_item_entry'])[1]")
-    WebElement startNewSearch;
+    private WebElement startNewSearch;
 
     public SearchPage clickNewSearchButton() {
         startNewSearch.click();

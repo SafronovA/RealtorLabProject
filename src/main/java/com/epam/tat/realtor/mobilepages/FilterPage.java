@@ -13,15 +13,15 @@ public class FilterPage extends BasePage {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
     @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='com.move.realtor:id/search_editor_tab_min_price']")
-    WebElement minPriceInput;
+    private WebElement minPriceInput;
     @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='com.move.realtor:id/search_editor_tab_max_price']")
-    WebElement maxPriceInput;
+    private WebElement maxPriceInput;
     @AndroidFindBy(xpath = "//android.view.View[@resource-id='com.move.realtor:id/search_editor_tab_bed_options']")
-    WebElement bedNumber;
+    private WebElement bedNumber;
     @AndroidFindBy(xpath = "//android.view.View[@resource-id='com.move.realtor:id/search_editor_tab_bath_options']")
-    WebElement bathNumber;
+    private WebElement bathNumber;
     @AndroidFindBy(id = "com.move.realtor:id/search_editor_view_results_btn")
-    WebElement viewButton;
+    private WebElement viewButton;
 
     public FilterPage enterMinPrice(String minPriceValue){
         minPriceInput.click();
@@ -54,11 +54,6 @@ public class FilterPage extends BasePage {
         driverWait.until(ExpectedConditions.elementToBeClickable(viewButton));
         viewButton.click();
         return new HomePage(driver);
-    }
-    public FilterPage getTextViewButton(){
-        driverWait.until(ExpectedConditions.visibilityOf(viewButton));
-        System.out.println(viewButton.getText());
-        return this;
     }
 }
 

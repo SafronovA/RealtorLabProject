@@ -1,14 +1,8 @@
 package com.epam.tat.realtor.mobiletests;
 
-import com.epam.tat.realtor.bo.House;
-import com.epam.tat.realtor.mobilepages.HomePage;
-import com.epam.tat.realtor.mobilepages.ViewPage;
 import com.epam.tat.realtor.mobilesteps.ViewPageStep;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.List;
-import java.util.Set;
 
 public class SearchTest extends BaseTest {
     private final String CITY_NAME = "New York, NY";

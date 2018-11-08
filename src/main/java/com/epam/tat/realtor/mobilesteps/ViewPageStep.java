@@ -24,7 +24,7 @@ public class ViewPageStep extends BasePageStep {
         do{
             propertyPrice.addAll(viewPage.getHomePrice().stream().map(x->Parser.parse(x.getText())).collect(Collectors.toList()));
             propertyBed.addAll(viewPage.getHomeBedCount().stream().map(x->Parser.parse(x.getText())).collect(Collectors.toList()));
-            propertyBath.addAll(viewPage.getHomeBedCount().stream().map(x->Parser.parse(x.getText())).collect(Collectors.toList()));
+            propertyBath.addAll(viewPage.getHomeBathCount().stream().map(x->Parser.parse(x.getText())).collect(Collectors.toList()));
             viewPage.swipeView();
         }
         while(viewPage.getExpandButton()<1);

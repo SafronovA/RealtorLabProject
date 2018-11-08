@@ -12,17 +12,20 @@ public class SearchPage extends BasePage {
         super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
+
     @AndroidFindBy(xpath = "//android.view.View[@resource-id='com.move.realtor:id/toolbar_placeholder']")
-    WebElement searchInput;
+    private WebElement searchInput;
     @AndroidFindBy(xpath = "(//android.widget.RelativeLayout[@resource-id='com.move.realtor:id/content'])[1]")
-    WebElement firstResult;
+    private WebElement firstResult;
+
     public SearchPage searchInputSendKeys(String str) {
         driverWait.until(ExpectedConditions.visibilityOf(searchInput));
         searchInput.click();
         searchInput.sendKeys(str);
         return this;
     }
-    public HomePage firstResultClick(){
+
+    public HomePage firstResultClick() {
         driverWait.until(ExpectedConditions.visibilityOf(firstResult));
         firstResult.click();
         return new HomePage(driver);

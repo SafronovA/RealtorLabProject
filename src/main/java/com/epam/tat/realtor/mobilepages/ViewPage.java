@@ -16,25 +16,17 @@ public class ViewPage extends BasePage{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
     @AndroidFindBy(xpath = "//android.widget.ListView/android.widget.FrameLayout")
-    List<WebElement> viewList;
-//    @AndroidFindBy(xpath = "(//android.widget.TextView[@resource-id='com.move.realtor:id/priceTextView'])[1]")
-//    WebElement homePrice;
-//    @AndroidFindBy(xpath = "(//android.widget.TextView[@resource-id='com.move.realtor:id/bedroomCountTextView'])[1]")
-//    WebElement homeBedCount;
-//    @AndroidFindBy(xpath = "(//android.widget.TextView[@resource-id='com.move.realtor:id/bathroomCountTextView'])[1]")
-//    WebElement homeBathCount;
-//    @AndroidFindBy(xpath = "(//android.widget.TextView[@resource-id='com.move.realtor:id/address_text_view'])[1]")
-//    WebElement homeAddress;
+    private List<WebElement> viewList;
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/priceTextView']")
-    List<WebElement> homePrice;
+    private List<WebElement> homePrice;
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/bedroomCountTextView']")
-    List<WebElement> homeBedCount;
+    private List<WebElement> homeBedCount;
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/bathroomCountTextView']")
-    List<WebElement> homeBathCount;
+    private List<WebElement> homeBathCount;
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/address_text_view']")
-    List<WebElement> homeAddress;
+    private  List<WebElement> homeAddress;
     @AndroidFindBy(xpath = "//android.widget.Button")
-    List<WebElement> expandButton;
+    private List<WebElement> expandButton;
 
 
     public List<WebElement> getHomePrice(){
