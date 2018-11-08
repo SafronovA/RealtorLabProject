@@ -21,6 +21,7 @@ public class SearchPage extends BasePage {
     public SearchPage searchInputSendKeys(String str) {
         driverWait.until(ExpectedConditions.visibilityOf(searchInput));
         searchInput.click();
+        searchInput.clear();
         searchInput.sendKeys(str);
         return this;
     }
