@@ -35,7 +35,7 @@ public class BasePage {
     private void generateCoordinates(AppiumDriver driver) {
         dimension = driver.manage().window().getSize();
         final double DELTA = 0.1;
-        int commonX = dimension.width / 2;
+        int commonX = (int) (dimension.width * DELTA);
         int topY = (int) (dimension.height * DELTA);
         int bottomY = (int) (dimension.height * (1 - DELTA));
 
