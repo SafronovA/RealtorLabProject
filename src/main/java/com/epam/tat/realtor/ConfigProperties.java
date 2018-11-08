@@ -12,7 +12,7 @@ public class ConfigProperties {
 
     static {
         try {
-            fileInputStream = new FileInputStream("src/main/resources/config.properties");
+            fileInputStream = new FileInputStream("src/main/resources/mate.properties");
             PROPERTIES = new Properties();
             PROPERTIES.load(fileInputStream);
         } catch (IOException e) {

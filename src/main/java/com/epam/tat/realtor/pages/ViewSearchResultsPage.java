@@ -1,4 +1,4 @@
-package com.epam.tat.realtor.pages_mob;
+package com.epam.tat.realtor.pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -19,6 +19,14 @@ public class ViewSearchResultsPage extends BasePage {
     private List<AndroidElement> houseAddressesFromScreen;
     @AndroidFindBy(xpath = "//*[@text='Expand Search Area']")
     private List<AndroidElement> expandSearchAreaButton;
+    @AndroidFindBy(id = "com.move.realtor:id/listingImageView")
+    private AndroidElement firstHouseCard;
+
+    public HousePage clickFirstHouseCard(){
+        waitUntilElementIsVisible(firstHouseCard);
+        firstHouseCard.click();
+        return new HousePage(driver);
+    }
 
     public List<AndroidElement> getHouseAddressesFromScreen(){
         return houseAddressesFromScreen;

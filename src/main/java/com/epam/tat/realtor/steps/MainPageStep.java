@@ -1,6 +1,6 @@
-package com.epam.tat.realtor.steps_mob;
+package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.pages_mob.MainPage;
+import com.epam.tat.realtor.pages.MainPage;
 import io.appium.java_client.AppiumDriver;
 
 public class MainPageStep extends BasePageStep {
@@ -25,11 +25,6 @@ public class MainPageStep extends BasePageStep {
     public ViewSearchResultsPageStep openViewListPage() {
         mainPage.clickViewListButton();
         return new ViewSearchResultsPageStep(driver);
-    }
-
-    public HousePageStep clickFirstHouseCard(){
-        mainPage.clickFirstHouseCard();
-        return new HousePageStep(driver);
     }
 
     public int getSearchResultCount(){

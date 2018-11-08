@@ -1,6 +1,6 @@
-package com.epam.tat.realtor.steps_mob;
+package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.pages_mob.ViewSearchResultsPage;
+import com.epam.tat.realtor.pages.ViewSearchResultsPage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
 
@@ -15,6 +15,12 @@ public class ViewSearchResultsPageStep extends BasePageStep {
     public ViewSearchResultsPageStep(AppiumDriver driver) {
         super(driver);
         viewSearchResultsPage = new ViewSearchResultsPage(driver);
+    }
+
+
+    public HousePageStep clickFirstHouseCard(){
+        viewSearchResultsPage.clickFirstHouseCard();
+        return new HousePageStep(driver);
     }
 
     public int getNumberOfAllHousesFromSearchResult() {

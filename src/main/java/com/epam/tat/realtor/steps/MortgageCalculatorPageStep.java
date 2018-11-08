@@ -1,6 +1,6 @@
-package com.epam.tat.realtor.steps_mob;
+package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.pages_mob.MortgageCalculatorPage;
+import com.epam.tat.realtor.pages.MortgageCalculatorPage;
 import com.epam.tat.realtor.util.Parser;
 import io.appium.java_client.AppiumDriver;
 

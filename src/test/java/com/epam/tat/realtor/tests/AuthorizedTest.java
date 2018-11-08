@@ -1,6 +1,6 @@
-package com.epam.tat.realtor.tests_mob;
+package com.epam.tat.realtor.tests;
 
-import com.epam.tat.realtor.steps_mob.SettingsPageStep;
+import com.epam.tat.realtor.steps.SettingsPageStep;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;

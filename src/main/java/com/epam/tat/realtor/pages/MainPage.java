@@ -1,4 +1,4 @@
-package com.epam.tat.realtor.pages_mob;
+package com.epam.tat.realtor.pages;
 
 import com.epam.tat.realtor.util.Parser;
 import io.appium.java_client.AppiumDriver;
@@ -6,8 +6,6 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.List;
 
 public class MainPage extends BasePage {
 
@@ -24,8 +22,6 @@ public class MainPage extends BasePage {
     private AndroidElement filterButton;
     @AndroidFindBy(id = "com.move.realtor:id/search_result_count_text_map")
     private AndroidElement resultsPopUp;
-    @AndroidFindBy(id = "com.move.realtor:id/listingImageView")
-    private AndroidElement firstHouseCard;
 
     /**
      * click  button
@@ -48,11 +44,6 @@ public class MainPage extends BasePage {
         return new ViewSearchResultsPage(driver);
     }
 
-    public HousePage clickFirstHouseCard(){
-        waitUntilElementIsVisible(firstHouseCard);
-        firstHouseCard.click();
-        return new HousePage(driver);
-    }
 
     public int searchResultCount(){
         int result = Parser.parse(resultsPopUp.getText());

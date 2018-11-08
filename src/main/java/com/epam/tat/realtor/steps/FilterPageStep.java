@@ -1,6 +1,6 @@
-package com.epam.tat.realtor.steps_mob;
+package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.pages_mob.FilterPage;
+import com.epam.tat.realtor.pages.FilterPage;
 import io.appium.java_client.AppiumDriver;
 
 public class FilterPageStep extends BasePageStep{

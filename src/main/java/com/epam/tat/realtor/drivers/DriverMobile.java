@@ -1,5 +1,6 @@
 package com.epam.tat.realtor.drivers;
 
+import com.epam.tat.realtor.ConfigProperties;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -18,17 +19,16 @@ public enum  DriverMobile {
          */
         public AppiumDriver getDriver() {
             if (driver == null) {
-                File app = new File("C:/Users/Aliaksei_Safronau", "Realtor.apk");
                 DesiredCapabilities caps = new DesiredCapabilities();
-                caps.setCapability("deviceName", "Mate");
-                caps.setCapability("udid", "FFY5T18119005277"); //DeviceId from "adb devices" command
-                caps.setCapability("platformName", "Android");
-                caps.setCapability("platformVersion", "8.0.0");
-                caps.setCapability("skipUnlock", "true");
-                caps.setCapability("app", app.getAbsolutePath());
-                caps.setCapability("appPackage", "com.move.realtor");
-                caps.setCapability("appActivity", "com.move.realtor.search.results.activity.SearchResultsActivity");
-                caps.setCapability("noReset", "false");
+                caps.setCapability("deviceName", ConfigProperties.getTestProperty("deviceName"));
+                caps.setCapability("udid", ConfigProperties.getTestProperty("udid"));
+                caps.setCapability("platformName", ConfigProperties.getTestProperty("platformName"));
+                caps.setCapability("platformVersion", ConfigProperties.getTestProperty("platformVersion"));
+                caps.setCapability("skipUnlock", ConfigProperties.getTestProperty("skipUnlock"));
+                caps.setCapability("app", ConfigProperties.getTestProperty("app"));
+                caps.setCapability("appPackage", ConfigProperties.getTestProperty("appPackage"));
+                caps.setCapability("appActivity", ConfigProperties.getTestProperty("appActivity"));
+                caps.setCapability("noReset", ConfigProperties.getTestProperty("noReset"));
                 try {
                     driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), caps);
                 } catch (MalformedURLException e) {

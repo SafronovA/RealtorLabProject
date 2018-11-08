@@ -1,6 +1,6 @@
-package com.epam.tat.realtor.steps_mob;
+package com.epam.tat.realtor.steps;
 
-import com.epam.tat.realtor.pages_mob.LogInPage;
+import com.epam.tat.realtor.pages.LogInPage;
 import io.appium.java_client.AppiumDriver;
 
 public class LogInPageStep extends BasePageStep{

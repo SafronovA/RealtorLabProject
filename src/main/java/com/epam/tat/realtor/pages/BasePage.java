@@ -1,11 +1,10 @@
-package com.epam.tat.realtor.pages_mob;
+package com.epam.tat.realtor.pages;
 
 import com.epam.tat.realtor.ConfigProperties;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.offset.PointOption;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,7 +19,7 @@ public class BasePage {
 
     public BasePage(AppiumDriver driver) {
         this.driver = driver;
-        driverWait = new WebDriverWait(driver, Integer.valueOf(ConfigProperties.getTestProperty("webDriverWaitTime")));
+        driverWait = new WebDriverWait(driver, Integer.valueOf(ConfigProperties.getTestProperty("driverWaitTime")));
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         generateCoordinates(driver);
     }

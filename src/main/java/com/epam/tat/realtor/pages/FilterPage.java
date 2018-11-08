@@ -1,4 +1,4 @@
-package com.epam.tat.realtor.pages_mob;
+package com.epam.tat.realtor.pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
