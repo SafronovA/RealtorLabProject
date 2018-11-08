@@ -19,7 +19,6 @@ public class BasePage {
     public BasePage(AppiumDriver driver) {
         this.driver = driver;
         driverWait = new WebDriverWait(driver, Integer.valueOf(ConfigProperties.getTestProperty("driverWaitTime")));
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         generateCoordinates(driver);
     }
 
@@ -33,7 +32,7 @@ public class BasePage {
 
     private void generateCoordinates(AppiumDriver driver) {
         Dimension dimension = driver.manage().window().getSize();
-        final double DELTA = 0.05;
+        final double DELTA = 0.10;
         int commonX = (int) (dimension.width * DELTA);
         int topY = (int) (dimension.height * DELTA);
         int bottomY = (int) (dimension.height * (1 - DELTA));

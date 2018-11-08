@@ -5,7 +5,6 @@ import com.epam.tat.realtor.drivers.DriverMobile;
 import com.epam.tat.realtor.steps.MainPageStep;
 import io.appium.java_client.AppiumDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
 import java.util.concurrent.TimeUnit;
@@ -33,14 +32,8 @@ public class BaseTest {
     @AfterClass
     void closeResources() {
         if (driver != null) {
-            driver.closeApp();
-            DriverMobile.ANDROIDDRIVER.quitDriver();
-//            driver.close();
-//            driver.resetApp();
-//            driver.resetInputState();
-//            driver.quit();
-//            driver.closeApp();
-//            driver.quit();
+            driver.resetApp();
+//            DriverMobile.ANDROIDDRIVER.quitDriver();
         }
     }
 }

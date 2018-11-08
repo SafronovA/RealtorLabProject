@@ -22,11 +22,6 @@ public class MenuPage extends BasePage{
     @AndroidFindBy(id = "com.move.realtor:id/menu_item_settings")
     private List<AndroidElement> settingsButton;
 
-    /**
-     * click  button
-     *
-     * @return this page
-     */
     public SignInPage clickSignInButton() {
         signInButton.click();
         return new SignInPage(driver);

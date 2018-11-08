@@ -23,11 +23,6 @@ public class MainPage extends BasePage {
     @AndroidFindBy(id = "com.move.realtor:id/search_result_count_text_map")
     private AndroidElement resultsPopUp;
 
-    /**
-     * click  button
-     *
-     * @return this page
-     */
     public MenuPage clickMenuButton() {
         menuButton.click();
         return new MenuPage(driver);
