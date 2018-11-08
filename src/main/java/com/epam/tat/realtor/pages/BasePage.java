@@ -10,7 +10,7 @@ public class BasePage {
     protected AppiumDriver driver;
     private WebDriverWait webDriverWait;
 
-    public BasePage(AppiumDriver driver){
+    public BasePage(AppiumDriver driver) {
         this.driver = driver;
         webDriverWait = new WebDriverWait(driver, 20);
     }

@@ -23,7 +23,7 @@ public class SavedSearchTest extends BaseTest {
     }
 
     @AfterMethod
-    public void deleteSavedSearch(){
+    public void deleteSavedSearch() {
         savedSearchPageStep.deleteSavedSearches();
     }
 

@@ -30,7 +30,7 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public HomePage clickSaveSearchButton(){
+    public HomePage clickSaveSearchButton() {
         waitUntilElementIsVisible(saveSearchButton);
         while (!saveSearchButton.getText().equals("UNSAVE SEARCH")) {
             saveSearchButton.click();

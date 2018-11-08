@@ -12,12 +12,12 @@ public class MenuPageStep extends BasePageStep {
         menuPage = new MenuPage(driver);
     }
 
-    public HomePageStep clickStartNewSearch(){
+    public HomePageStep clickStartNewSearch() {
         menuPage.clickStartNewSearch();
         return new HomePageStep(driver);
     }
 
-    public SavedSearchPageStep clickSavedSearchButton(){
+    public SavedSearchPageStep clickSavedSearchButton() {
         menuPage.clickSavedSearch();
         return new SavedSearchPageStep(driver);
     }
