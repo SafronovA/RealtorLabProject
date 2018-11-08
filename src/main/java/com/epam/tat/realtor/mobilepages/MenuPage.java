@@ -13,9 +13,16 @@ public class MenuPage extends BasePage {
     }
     @AndroidFindBy(xpath = "(//android.widget.RelativeLayout[@resource-id='com.move.realtor:id/menu_item_entry'])[1]")
     private WebElement startNewSearch;
+    @AndroidFindBy(xpath = "(//android.widget.RelativeLayout[@resource-id='com.move.realtor:id/menu_item_entry'])[4]")
+    private WebElement recentlySoldButton;
 
     public SearchPage clickNewSearchButton() {
         startNewSearch.click();
         return new SearchPage(driver);
+    }
+
+    public HomePage clickRecentlySoldButton() {
+        recentlySoldButton.click();
+        return new HomePage(driver);
     }
 }

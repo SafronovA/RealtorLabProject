@@ -1,8 +1,10 @@
 package com.epam.tat.realtor.mobilepages;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,6 +24,7 @@ public class FilterPage extends BasePage {
     private WebElement bathNumber;
     @AndroidFindBy(id = "com.move.realtor:id/search_editor_view_results_btn")
     private WebElement viewButton;
+
 
     public FilterPage enterMinPrice(String minPriceValue){
         minPriceInput.click();

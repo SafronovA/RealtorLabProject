@@ -27,6 +27,8 @@ public class ViewPage extends BasePage{
     private  List<WebElement> homeAddress;
     @AndroidFindBy(xpath = "//android.widget.Button")
     private List<WebElement> expandButton;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/statusBadge']")
+    private List<WebElement> homeStatus;
 
 
     public List<WebElement> getHomePrice(){
@@ -57,6 +59,9 @@ public class ViewPage extends BasePage{
     public ViewPage waitForViewList(){
         driverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//android.widget.ListView/android.widget.FrameLayout")));
         return this;
+    }
+    public List<WebElement> getHomeStatus(){
+        return homeStatus;
     }
 
 }
