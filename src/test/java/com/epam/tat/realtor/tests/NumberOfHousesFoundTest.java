@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class NumberOfHousesFoundTest extends BaseTest {
     private final String CITY = "Wildwood, NJ";
     private final String MIN_PRICE = "450000";
-    private final String MAX_PRICE = "550000";
+    private final String MAX_PRICE = "480000";
 
     @Test
     public void numberOfHousesFound() {

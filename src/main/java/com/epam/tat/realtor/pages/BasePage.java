@@ -13,7 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
     protected AppiumDriver driver;
     private WebDriverWait driverWait;
-    private Dimension dimension;
     private PointOption topCenterWorkScreenCoordinates;
     private PointOption bottomCenterWorkScreenCoordinates;
 
@@ -33,8 +32,8 @@ public class BasePage {
     }
 
     private void generateCoordinates(AppiumDriver driver) {
-        dimension = driver.manage().window().getSize();
-        final double DELTA = 0.1;
+        Dimension dimension = driver.manage().window().getSize();
+        final double DELTA = 0.05;
         int commonX = (int) (dimension.width * DELTA);
         int topY = (int) (dimension.height * DELTA);
         int bottomY = (int) (dimension.height * (1 - DELTA));
