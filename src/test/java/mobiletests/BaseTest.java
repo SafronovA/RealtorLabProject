@@ -1,6 +1,6 @@
 package mobiletests;
 
-import com.epam.tat.realtor.drivers.DriverFactory;
+import com.epam.tat.realtor.drivers.DriverMobile;
 import com.epam.tat.realtor.steps.HomePageStep;
 import io.appium.java_client.AppiumDriver;
 import org.testng.annotations.AfterSuite;
@@ -13,7 +13,7 @@ public class BaseTest {
 
     @BeforeClass(alwaysRun = true)
     void initPage() {
-        driver = DriverFactory.ANDROIDDRIVER.getDriver();
+        driver = DriverMobile.getDriver();
         homePageStep = new HomePageStep(driver);
     }
 

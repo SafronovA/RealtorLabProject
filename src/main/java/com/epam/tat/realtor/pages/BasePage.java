@@ -15,12 +15,8 @@ public class BasePage {
         webDriverWait = new WebDriverWait(driver, 20);
     }
 
-    public void waitUntilElementIsVisible(AndroidElement androidElement) {
-        webDriverWait.until(ExpectedConditions.visibilityOf(androidElement));
-    }
-
-    public void waitUntilElementIsClickable(AndroidElement androidElement) {
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(androidElement));
+    public void waitUntilElementIsVisible(AndroidElement webElement) {
+        webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
 }
