@@ -112,6 +112,8 @@ public class SearchPage extends BasePage {
     private List<WebElement> schoolOnMapList;
     @FindBy(xpath = "//div[@class='rating']")
     private WebElement schoolRating;
+    @FindBy(xpath = "//button[@title='Zoom out']")
+    private WebElement zoomOut;
 
     /**
      * get list of available min prices in the dropdown menu
@@ -500,8 +502,8 @@ public class SearchPage extends BasePage {
      * @return this page
      */
     public SearchPage clickViewMapButton() {
-        waitUntilElementIsClickable(viewMapButton);
-        viewMapButton.click();
+        waitUntilElementIsVisible(viewMapButton);
+        BasePage.clickByJEx(viewMapButton, driver);
         return this;
     }
 
@@ -511,7 +513,7 @@ public class SearchPage extends BasePage {
      * @return this page
      */
     public SearchPage clickLifestyleButton() {
-        waitUntilElementIsVisible(lifestyleButton);
+        waitUntilElementIsClickable(lifestyleButton);
         lifestyleButton.click();
         return this;
     }
@@ -535,6 +537,7 @@ public class SearchPage extends BasePage {
     public SearchPage clickSchoolButton() {
         waitUntilElementIsVisible(schoolsButton);
         schoolsButton.click();
+        zoomOut.click();
         return this;
     }
 

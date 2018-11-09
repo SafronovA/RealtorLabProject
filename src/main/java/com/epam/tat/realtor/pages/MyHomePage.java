@@ -18,6 +18,7 @@ public class MyHomePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    private By layer = By.className("ReactModal__Overlay ReactModal__Overlay--after-open modal-overlay");
     private By verificationButton = By.xpath("//*[@class='owner-verification-data-form__action-button call-to-action__button centered col-xxxs-12 margin-top-lg']");
     @FindBy(className = "edit-facts")
     private WebElement editHomeFactsButton;
@@ -44,6 +45,7 @@ public class MyHomePage extends BasePage {
      * @return this page
      */
     public MyHomePage clickEditHomeFactsButton() {
+        waitInvisibilityOfElementLocated(layer);
         waitUntilElementIsClickable(editHomeFactsButton);
         editHomeFactsButton.click();
         return this;
@@ -64,7 +66,7 @@ public class MyHomePage extends BasePage {
      *
      * @return this page
      */
-    public MyHomePage closeVerificationWindows() {
+    public MyHomePage closeVerificationWindow() {
         waitUntilElementIsVisible(verificationButton);
         closeVerificationWindowButton.click();
         waitInvisibilityOfElementLocated(verificationButton);

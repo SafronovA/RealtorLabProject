@@ -20,9 +20,16 @@ public enum DriverFactory {
             }
             return driver;
         }
+
+        public void quitDriver() {
+            if (driver != null){
+                driver.quit();
+            }
+            driver = null;
+        }
     },
     FIREFOXDRIVER {
-        WebDriver driver;
+        private WebDriver driver;
 
         /**
          * return the single instance of FirefoxDriver
@@ -35,7 +42,15 @@ public enum DriverFactory {
             }
             return driver;
         }
+
+        public void quitDriver() {
+            if (driver != null){
+                driver.quit();
+            }
+            driver = null;
+        }
     };
 
     public abstract WebDriver getDriver();
+    public abstract void quitDriver();
 }
