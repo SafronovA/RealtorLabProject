@@ -25,6 +25,11 @@ public class MenuPageStep extends BasePageStep {
         menuPage.clickNewSearchButton();
         return new SearchPageStep(driver);
     }
+    public HomePageStep  selectSoldStatus() {
+        menuPage.clickRecentlySoldButton();
+        return new HomePageStep(driver);
+    }
+
 
 
 }

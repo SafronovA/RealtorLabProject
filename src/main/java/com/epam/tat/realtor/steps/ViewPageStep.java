@@ -36,4 +36,15 @@ public class ViewPageStep extends BasePageStep {
                 && propertyBed.stream().peek(x->System.out.print(x+" ")).allMatch(x->x>= BED_QUANTITY)
                 && propertyBath.stream().peek(x->System.out.print(x+" ")).allMatch(x->x>=BATH_QUANTITY);
     }
+    public boolean checkSoldStatus() {
+        viewPage.waitForViewList();
+        boolean soldStatus = true;
+        do{
+            soldStatus&=viewPage.getHomeStatus().stream().allMatch(x->x.getText().trim().equals("Sold"));
+            viewPage.swipeView();
+        }
+        while(viewPage.getExpandButton()<1);
+        return soldStatus;
+    }
+
 }
