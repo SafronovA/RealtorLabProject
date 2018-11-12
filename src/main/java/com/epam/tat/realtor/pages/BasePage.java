@@ -1,143 +1,50 @@
 package com.epam.tat.realtor.pages;
 
-import com.epam.tat.realtor.ConfigProperties;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class BasePage {
-    protected WebDriver driver;
-    protected WebDriverWait driverWait;
-    private static final String INNER_HTML = "innerHTML";
-    private static boolean isFirstTimeOnActivityMap = true; //flag for Realtors Active map. "Get started window" appears only once, after the first access to a page.
 
-    public BasePage(WebDriver driver) {
+    protected AppiumDriver driver;
+    private WebDriverWait webDriverWait;
+
+    public BasePage(AppiumDriver driver) {
         this.driver = driver;
-        driverWait = new WebDriverWait(driver, Integer.valueOf(ConfigProperties.getTestProperty("webDriverWaitTime")));
+        webDriverWait = new WebDriverWait(driver, 20);
     }
 
-    /**
-     * @return  true, if this is the first entry on the Realtors Active map page
-     */
-    public boolean isFirstTimeOnActivityMap(){
-        if (isFirstTimeOnActivityMap){
-            isFirstTimeOnActivityMap = false;
-            return true;
-        } else {
-            return false;
-        }
+    public void waitUntilElementIsVisible(AndroidElement webElement) {
+        webDriverWait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    /**
-     * wait until webElement is visible
-     *
-     * @param webElement webElement to be visible
-     */
-    public void waitUntilElementIsVisible(WebElement webElement) {
-        driverWait.until(ExpectedConditions.visibilityOf(webElement));
+    public void waitUntilElementToBeClickable(AndroidElement webElement){
+    webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
-
-    /**
-     * wait until webElement is visible
-     *
-     * @param locator webElement to be visible
-     */
-    public void waitUntilElementIsVisible(By locator) {
-        driverWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    public void waitUntilAllElementsAreVisible(By by){
+        webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
     }
-
-    /**
-     * wait until webElement is clickable
-     *
-     * @param webElement webElement to be clickable
-     */
-    public void waitUntilElementIsClickable(WebElement webElement) {
-        driverWait.until(ExpectedConditions.elementToBeClickable(webElement));
+    public void swipeUp(int xOffsetStart, int yOffsetStart, int xOffsetFinish, int yOffsetFinish) {
+        new TouchAction(driver)
+                .press(new PointOption().withCoordinates(xOffsetStart, yOffsetStart))
+                .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
+                .moveTo(new PointOption().withCoordinates(xOffsetFinish, yOffsetFinish))
+                .release()
+                .perform();
     }
-
-    /**
-     * click element by Java Executor
-     *
-     * @param webElement web element to be clicked
-     * @param webDriver  used webdriver
-     */
-    public static void clickByJEx(WebElement webElement, WebDriver webDriver) {
-        JavascriptExecutor executor = (JavascriptExecutor) webDriver;
-        executor.executeScript("arguments[0].click();", webElement);
-    }
-
-    /**
-     * scroll to element on the page
-     *
-     * @param webElement element to each page view to be scrolled
-     * @param webDriver  session driver
-     */
-    public static void scrollToElement(WebElement webElement, WebDriver webDriver) {
-        JavascriptExecutor executor = (JavascriptExecutor) webDriver;
-        executor.executeScript("arguments[0].scrollIntoView(true);", webElement);
-    }
-
-    /**
-     * wait for the presence of the elements by locator
-     *
-     * @param by locator of the elements
-     */
-    public void waitForPresenceOfAllElementsLocatedBy(By by) {
-        driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
-    }
-
-    /**
-     * waiting for a specific attribute value in the Web element
-     *
-     * @param webElement checked webElement
-     * @param value      expected value
-     */
-    public void waitUntilAttributeInnerHTMLToBe(WebElement webElement, String value) {
-        driverWait.until(ExpectedConditions.attributeToBe(webElement, INNER_HTML, value));
-    }
-
-    /**
-     * wait for presence of all elements by locator
-     *
-     * @param by locator of the elements
-     */
-    public void waitForElements(By by) {
-        driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
-    }
-
-    /**
-     * wait until element is invisible
-     *
-     * @param webElement element to be invisible
-     */
-    public void waitUntilElementIsInvisible(WebElement webElement) {
-        driverWait.until(ExpectedConditions.invisibilityOf(webElement));
-    }
-
-    /**
-     * wait until element become invisible
-     *
-     * @param location WebElement with such location should become invisible
-     */
-    public void waitInvisibilityOfElementLocated(By location) {
-        driverWait.until(ExpectedConditions.invisibilityOfElementLocated(location));
-    }
-
-    /**
-     * wait until JQuery finish loading page
-     */
-    public void waitForJQueryIsLoad() {
-        driverWait.until((ExpectedCondition<Boolean>) driver -> {
-            try {
-                return ((Long) ((JavascriptExecutor) driver).executeScript("return jQuery.active") == 0);
-            } catch (Exception e) {
-                return true;
-            }
-        });
+    public void tapByCoordinates(int xOffset, int yOffset) {
+        new TouchAction(driver)
+                .press(new PointOption().withCoordinates(xOffset, yOffset))
+                .waitAction(new WaitOptions().withDuration(Duration.ofMillis(200)))
+                .release()
+                .perform();
     }
 
 }

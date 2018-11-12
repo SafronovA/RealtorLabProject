@@ -1,124 +1,41 @@
 package com.epam.tat.realtor.steps;
 
 import com.epam.tat.realtor.pages.HomePage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.AppiumDriver;
 
 public class HomePageStep extends BasePageStep {
+
     private HomePage homePage;
 
-    public HomePageStep(WebDriver driver) {
+    public HomePageStep(AppiumDriver driver) {
         super(driver);
         homePage = new HomePage(driver);
     }
 
-    /**
-     * User LogIn operation on Home page
-     * click signIn button
-     * enter user email
-     * enter user password
-     * submit credentials
-     *
-     * @return HomePageStep
-     */
-    public HomePageStep userLogIn() {
-        homePage.clickSignInButton()
-                .enterEmail()
-                .enterPassword()
-                .clickLoginSubmitButton();
+    public MenuPageStep clickMenuButton() {
+        homePage.clickMenuButton();
+        return new MenuPageStep(driver);
+    }
+
+    public HomePageStep enterCity(String city) {
+        homePage.enterCity(city);
         return this;
     }
 
-    /**
-     * clear entered by default city, enter city in input search field
-     *
-     * @param city
-     * @return search result page
-     */
-    public HomePageStep enterCityName(String city) {
-        homePage.clearInputField()
-                .enterCityInMainSearchInput(city);
+    public HomePageStep clickSaveSearchButton() {
+        homePage.clickSaveSearchButton();
         return this;
     }
 
-    /**
-     * click search button
-     *
-     * @return SearchPageStep
-     */
-    public SearchPageStep clickSearchButton() {
-        homePage.clickSearchButton();
-        return new SearchPageStep(driver);
+
+    public FilterPageStep enterFilterSection() {
+        homePage.clickFilterButton();
+        return new FilterPageStep(driver);
     }
 
-    /**
-     * click on user icon
-     *
-     * @return new SavedHomesPageStep
-     */
-    public SavedHomesPageStep clickUserIcon() {
-        homePage.clickUserIcon();
-        return new SavedHomesPageStep(driver);
-    }
-
-    /**
-     * click Realtor button
-     *
-     * @return new FindRealtorPageStep
-     */
-    public FindRealtorPageStep clickFindRealtorButton() {
-        homePage.clickRealtorButton();
-        return new FindRealtorPageStep(driver);
-    }
-
-    /**
-     * save all homes on the home page
-     *
-     * @return saved homes list size
-     */
-    public int saveHomes() {
-        homePage.getHeartIconsList().forEach(WebElement::click);
-        return homePage.getHeartIconsList().size();
-    }
-
-    /**
-     * create search request in the home estimate section
-     * @return this page
-     */
-    public PropertyRecordsPageStep goToHomeEstimate() {
-        homePage.clickHomeEstimate()
-                .clickSearchButton();
-        return new PropertyRecordsPageStep(driver);
-    }
-
-    /**
-     * navigate cursor on mortgage calculator to show drop-down menu
-     *
-     * @return HomePageStep
-     */
-    public HomePageStep navigateCursorToMortgageLink() {
-        homePage.navigateCursorOnMortgageLink();
-        return this;
-    }
-
-    /**
-     * click on mortgage calculator link
-     *
-     * @return new MortgageCalculatorPageStep
-     */
-    public MortgageCalculatorPageStep clickMortgageCalculatorLink() {
-        homePage.clickMortgageCalculatorLink();
-        return new MortgageCalculatorPageStep(driver);
-    }
-
-    /**
-     * click on the My Home button
-     *
-     * @return new MyHomePageStep
-     */
-    public MyHomePageStep clickMyHomeButton() {
-        homePage.clickMyHomeButton();
-        return new MyHomePageStep(driver);
+    public ViewPageStep showListView() {
+        homePage.clickViewListButton();
+        return new ViewPageStep(driver);
     }
 
 }

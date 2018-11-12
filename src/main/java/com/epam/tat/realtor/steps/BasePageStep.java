@@ -1,13 +1,14 @@
 package com.epam.tat.realtor.steps;
 
 import com.epam.tat.realtor.pages.BasePage;
-import org.openqa.selenium.WebDriver;
+import io.appium.java_client.AppiumDriver;
 
 public class BasePageStep {
-    protected WebDriver driver;
+
+    protected AppiumDriver driver;
     protected BasePage basePage;
 
-    public BasePageStep(WebDriver driver) {
+    public BasePageStep(AppiumDriver driver) {
         this.driver = driver;
         basePage = new BasePage(driver);
     }
