@@ -22,4 +22,23 @@ public class MenuPageStep extends BasePageStep{
         return new SettingsPageStep(driver);
     }
 
+    public SearchPageStep clickStartNewSearch() {
+        menuPage.clickStartNewSearch();
+        return new SearchPageStep(driver);
+    }
+
+    public SavedSearchPageStep clickSavedSearchButton() {
+        menuPage.clickSavedSearch();
+        return new SavedSearchPageStep(driver);
+    }
+
+    public MainPageStep  selectSoldStatus() {
+        menuPage.clickRecentlySoldButton();
+        return new MainPageStep(driver);
+    }
+
+//    public SearchPageStep  startNewSearch() {
+//        menuPage.clickNewSearchButton();
+//        return new SearchPageStep(driver);
+//    }
 }

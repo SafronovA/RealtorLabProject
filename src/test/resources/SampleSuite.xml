@@ -4,9 +4,12 @@
 
     <test name="RealtorTest" >
         <classes>
-            <class name="com.epam.tat.realtor.tests.AuthorizedTest"/>
+            <class name="com.epam.tat.realtor.tests.SearchTest"/>
             <class name="com.epam.tat.realtor.tests.MortgageCalculatorTest"/>
-            <class name="com.epam.tat.realtor.tests.NumberOfHousesFoundTest"/>
+            <class name="com.epam.tat.realtor.tests.SoldStatusTest"/>
+            <!--<class name="com.epam.tat.realtor.tests.AuthorizedTest"/>-->
+            <!--<class name="com.epam.tat.realtor.tests.NumberOfHousesFoundTest"/>-->
+            <class name="com.epam.tat.realtor.tests.SavedSearchTest"/>
         </classes>
     </test>
 </suite>

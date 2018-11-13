@@ -11,15 +11,14 @@ public class MainPageStep extends BasePageStep {
         mainPage = new MainPage(driver);
     }
 
-
-    public MenuPageStep clickMenu() {
+    public MenuPageStep clickMenuButton() {
         mainPage.clickMenuButton();
         return new MenuPageStep(driver);
     }
 
-    public FilterPageStep openFilter() {
-        mainPage.clickFilterButton();
-        return new FilterPageStep(driver);
+    public MainPageStep clickSaveSearchButton() {
+        mainPage.clickSaveSearchButton();
+        return this;
     }
 
     public ViewSearchResultsPageStep openViewListPage() {
@@ -27,9 +26,28 @@ public class MainPageStep extends BasePageStep {
         return new ViewSearchResultsPageStep(driver);
     }
 
+    public FilterPageStep enterFilterSection() {
+        mainPage.clickFilterButton();
+        return new FilterPageStep(driver);
+    }
+
     public int getSearchResultCount(){
         return mainPage.searchResultCount();
     }
 
+    //    public FilterPageStep openFilter() {
+//        mainPage.clickFilterButton();
+//        return new FilterPageStep(driver);
+//    }
+
+//    public HomePageStep enterCity(String city) {
+//        homePage.enterCity(city);
+//        return this;
+//    }
+
+//    public ViewPageStep showListView() {
+//        homePage.clickViewListButton();
+//        return new ViewPageStep(driver);
+//    }
 
 }

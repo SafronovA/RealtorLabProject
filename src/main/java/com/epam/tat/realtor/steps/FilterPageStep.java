@@ -27,4 +27,14 @@ public class FilterPageStep extends BasePageStep{
         filterPage.clickViewResultsButton();
         return new MainPageStep(driver);
     }
+
+    public FilterPageStep createFilterRequest(String minPrice, String maxPrice){
+        filterPage.enterMinPrice(minPrice)
+                .enterMaxPrice(maxPrice)
+                .tapBedsSection()
+                .swipeToBedsSection()
+                .chooseBeds()
+                .chooseBath();
+        return this;
+    }
 }

@@ -18,11 +18,11 @@ public class SettingsPage extends BasePage {
     @AndroidFindBy(id = "com.move.realtor:id/sign_out")
     private AndroidElement logOutButton;
 
-    public void clickLogOut(){
+    public void clickLogOut() {
         logOutButton.click();
     }
 
-    public String getName(){
+    public String getName() {
         return userName.getText();
     }
 

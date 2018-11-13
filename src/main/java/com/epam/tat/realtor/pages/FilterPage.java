@@ -21,30 +21,70 @@ public class FilterPage extends BasePage {
     private AndroidElement minPriceInput;
     @AndroidFindBy(id = "com.move.realtor:id/search_editor_tab_max_price")
     private AndroidElement maxPriceInput;
+    @AndroidFindBy(xpath = "//android.view.View[@resource-id='com.move.realtor:id/search_editor_tab_bed_options']")
+    private AndroidElement bedNumber;
+    @AndroidFindBy(xpath = "//android.view.View[@resource-id='com.move.realtor:id/search_editor_tab_bath_options']")
+    private AndroidElement bathNumber;
     @AndroidFindBy(id = "com.move.realtor:id/search_editor_view_results_btn")
     private AndroidElement viewResultsButton;
 
-    public FilterPage clickClearCityIcon(){
+    public FilterPage clickClearCityIcon() {
         clearCityIcon.click();
         return this;
     }
 
-    public FilterPage enterCity(String city){
+    public FilterPage enterCity(String city) {
         cityInput.sendKeys(city);
         return this;
     }
 
-    public FilterPage enterMinPrice(String minPrice){
+    public FilterPage enterMinPrice(String minPrice) {
         minPriceInput.sendKeys(minPrice);
         return this;
     }
-    public FilterPage enterMaxPrice(String maxPrice){
+
+    public FilterPage enterMaxPrice(String maxPrice) {
         maxPriceInput.sendKeys(maxPrice);
         return this;
     }
 
-    public MainPage clickViewResultsButton(){
+    public MainPage clickViewResultsButton() {
+        waitUntilElementToBeClickable(viewResultsButton);
         viewResultsButton.click();
         return new MainPage(driver);
     }
+    /////////////////
+
+    //    public FilterPage enterMinPrice(String minPriceValue){
+//        minPriceInput.click();
+//        minPriceInput.sendKeys(minPriceValue);
+//        return this;
+//    }
+//    public FilterPage enterMaxPrice(String maxPriceValue){
+//        maxPriceInput.click();
+//        maxPriceInput.sendKeys(maxPriceValue);
+//        return this;
+//    }
+    public FilterPage swipeToBedsSection() {
+        swipeUp(100, 860, 100, 400);
+        return this;
+    }
+
+    public FilterPage tapBedsSection() {
+        tapByCoordinates(100, 860);
+        return this;
+    }
+
+    public FilterPage chooseBeds() {
+        tapByCoordinates(bedNumber.getLocation().x + 430, bedNumber.getLocation().y + 63);
+        return this;
+    }
+
+    public FilterPage chooseBath() {
+        tapByCoordinates(bathNumber.getLocation().x + 390, bathNumber.getLocation().y + 63);
+        swipeToBedsSection();
+        return new FilterPage(driver);
+    }
+
 }
+

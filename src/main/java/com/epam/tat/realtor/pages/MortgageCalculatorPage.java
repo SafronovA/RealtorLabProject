@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MortgageCalculatorPage extends BasePage {
 
-    public MortgageCalculatorPage(AppiumDriver driver){
+    public MortgageCalculatorPage(AppiumDriver driver) {
         super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
@@ -45,6 +45,8 @@ public class MortgageCalculatorPage extends BasePage {
      * @return price per month
      */
     public String getPricePerMonth() {
+        homePriceInput.click();
+        rateInput.click();
         return pricePerMonth.getText();
     }
 
@@ -69,7 +71,6 @@ public class MortgageCalculatorPage extends BasePage {
     public MortgageCalculatorPage setDownPayment(String downPayment) {
         downPaymentInput.clear();
         downPaymentInput.sendKeys(downPayment);
-        homePriceInput.click();
         return this;
     }
 
@@ -95,7 +96,7 @@ public class MortgageCalculatorPage extends BasePage {
         return this;
     }
 
-    public MortgageCalculatorPage clickOkButton(){
+    public MortgageCalculatorPage clickOkButton() {
         okButton.click();
         return this;
     }

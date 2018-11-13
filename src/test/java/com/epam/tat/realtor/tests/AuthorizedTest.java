@@ -14,7 +14,7 @@ public class AuthorizedTest extends BaseTest {
      */
     @Test
     public void authorised() {
-        settingsPageStep = mainPageStep.clickMenu()
+        settingsPageStep = mainPageStep.clickMenuButton()
                 .clickSignInButton()
                 .clickLogInButton()
                 .logIn(EMAIL, PASS)

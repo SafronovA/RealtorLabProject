@@ -6,7 +6,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignInPage extends BasePage{
+public class SignInPage extends BasePage {
 
     public SignInPage(AppiumDriver driver) {
         super(driver);

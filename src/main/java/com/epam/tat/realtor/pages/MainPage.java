@@ -22,6 +22,8 @@ public class MainPage extends BasePage {
     private AndroidElement filterButton;
     @AndroidFindBy(id = "com.move.realtor:id/search_result_count_text_map")
     private AndroidElement resultsPopUp;
+    @AndroidFindBy(id = "com.move.realtor:id/save_search")
+    private AndroidElement saveSearchButton;
 
     public MenuPage clickMenuButton() {
         menuButton.click();
@@ -35,14 +37,38 @@ public class MainPage extends BasePage {
     }
 
     public ViewSearchResultsPage clickViewListButton(){
+        waitUntilElementIsVisible(viewListButton);
         viewListButton.click();
         return new ViewSearchResultsPage(driver);
     }
 
-
     public int searchResultCount(){
         int result = Parser.parse(resultsPopUp.getText());
         return result;
+    }
+
+//    @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc='Drawer Open']")
+//    private AndroidElement menuButton;
+//    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/search_edit_text\")")
+//    private AndroidElement searchInput;
+//    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/save_search\")")
+//    private AndroidElement saveSearchButton;
+//    @AndroidFindBy(accessibility = "Filter")
+//    private AndroidElement filterButton;
+//    @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/view_list_label']")
+//    private AndroidElement viewListButton;
+
+//    public MainPage enterCity(String city) {
+//        searchInput.sendKeys(city + "\n");
+//        return this;
+//    }
+
+    public MainPage clickSaveSearchButton() {
+        waitUntilElementIsVisible(saveSearchButton);
+        while (!saveSearchButton.getText().equals("UNSAVE SEARCH")) {
+            saveSearchButton.click();
+        }
+        return this;
     }
 
 }

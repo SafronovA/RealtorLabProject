@@ -10,7 +10,7 @@ public class NumberOfHousesFoundTest extends BaseTest {
 
     @Test
     public void numberOfHousesFound() {
-        int expectedNumberOfHousesFound = mainPageStep.openFilter()
+        int expectedNumberOfHousesFound = mainPageStep.enterFilterSection()
                 .enterPriceRange(MIN_PRICE, MAX_PRICE)
                 .enterCity(CITY)
                 .clickViewResultsButton()
@@ -20,6 +20,5 @@ public class NumberOfHousesFoundTest extends BaseTest {
         Assert.assertEquals(expectedNumberOfHousesFound, actualNumberOfHousesFound,
                 "The number of homes found and displayed is not equal");
     }
-    
-}
 
+}

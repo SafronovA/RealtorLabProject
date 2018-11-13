@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class MenuPage extends BasePage{
+public class MenuPage extends BasePage {
 
     public MenuPage(AppiumDriver driver) {
         super(driver);
@@ -21,6 +21,12 @@ public class MenuPage extends BasePage{
     private AndroidElement signInButton;
     @AndroidFindBy(id = "com.move.realtor:id/menu_item_settings")
     private List<AndroidElement> settingsButton;
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/menu_item_start_new_search\")")
+    private AndroidElement startNewSearch;
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/menu_item_badge\")")
+    private AndroidElement savedSearchButton;
+    @AndroidFindBy(xpath = "(//android.widget.RelativeLayout[@resource-id='com.move.realtor:id/menu_item_entry'])[4]")
+    private AndroidElement recentlySoldButton;
 
     public SignInPage clickSignInButton() {
         signInButton.click();
@@ -36,5 +42,27 @@ public class MenuPage extends BasePage{
     public List<AndroidElement> getSettingsButton() {
         return settingsButton;
     }
+
+    public SearchPage clickStartNewSearch() {
+        startNewSearch.click();
+        return new SearchPage(driver);
+    }
+
+    public SavedSearchPage clickSavedSearch() {
+        waitUntilElementIsVisible(savedSearchButton);
+        savedSearchButton.click();
+        return new SavedSearchPage(driver);
+    }
+
+    public SearchPage clickNewSearchButton() {
+        startNewSearch.click();
+        return new SearchPage(driver);
+    }
+
+    public MainPage clickRecentlySoldButton() {
+        recentlySoldButton.click();
+        return new MainPage(driver);
+    }
+
 
 }

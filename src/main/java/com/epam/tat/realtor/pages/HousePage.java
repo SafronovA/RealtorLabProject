@@ -18,11 +18,11 @@ public class HousePage extends BasePage {
     @AndroidFindBy(id = "com.move.realtor:id/button_calculate")
     private List<AndroidElement> editMortgageCalculatorButton;
 
-    public List<AndroidElement> getEditMortgageCalculatorButton(){
+    public List<AndroidElement> getEditMortgageCalculatorButton() {
         return editMortgageCalculatorButton;
     }
 
-    public MortgageCalculatorPage clickEditMirtgageCalculatorButton(){
+    public MortgageCalculatorPage clickEditMirtgageCalculatorButton() {
         editMortgageCalculatorButton.get(0).click();
         return new MortgageCalculatorPage(driver);
     }
