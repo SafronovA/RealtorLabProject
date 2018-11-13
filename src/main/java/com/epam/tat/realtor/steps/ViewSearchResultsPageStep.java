@@ -39,7 +39,7 @@ public class ViewSearchResultsPageStep extends BasePageStep {
 
     private Set<String> receiveAddressesFromAndroidElementList(List<AndroidElement> addresses) {
         try {                       // waiting for the page to become static after the swipe
-            Thread.sleep(500);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -1,12 +1,10 @@
 package com.epam.tat.realtor.pages;
 
-import com.epam.tat.realtor.ConfigProperties;
+import com.epam.tat.realtor.util.ConfigProperties;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 

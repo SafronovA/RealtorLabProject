@@ -1,6 +1,6 @@
 package com.epam.tat.realtor.tests;
 
-import com.epam.tat.realtor.ConfigProperties;
+import com.epam.tat.realtor.util.ConfigProperties;
 import com.epam.tat.realtor.drivers.DriverMobile;
 import com.epam.tat.realtor.steps.MainPageStep;
 import io.appium.java_client.AppiumDriver;
@@ -21,7 +21,7 @@ public class BaseTest {
      */
     @BeforeClass(alwaysRun = true)
     void initPage() {
-        driver = DriverMobile.ANDROIDDRIVER.getDriver();
+        driver = DriverMobile.getDriver();
         mainPageStep = new MainPageStep(driver);
         driver.manage().timeouts().implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("driverWaitTime")), TimeUnit.SECONDS);
     }
@@ -33,7 +33,6 @@ public class BaseTest {
     void closeResources() {
         if (driver != null) {
             driver.resetApp();
-//            DriverMobile.ANDROIDDRIVER.quitDriver();
         }
     }
 }
