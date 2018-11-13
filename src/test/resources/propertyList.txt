@@ -1,0 +1,16 @@
+price: 469000;		 beds: 4 ;		 baths: 4 ;		 sqft: 3536 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75013 ;		 city: Allen ;		 street: 1519 Bellnap Dr 
+price: 405000;		 beds: 4 ;		 baths: 3 ;		 sqft: 3394 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75002 ;		 city: Allen ;		 street: 1605 Sweetbay Dr 
+price: 410000;		 beds: 4 ;		 baths: 4 ;		 sqft: 3066 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75013 ;		 city: Allen ;		 street: 938 Dunleer Dr 
+price: 389000;		 beds: 3 ;		 baths: 2 ;		 sqft: 2110 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75002 ;		 city: Lucas ;		 street: 775 E Lucas Rd 
+price: 1590000;		 beds: 5 ;		 baths: 6 ;		 sqft: 5758 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75002 ;		 city: Lucas ;		 street: 255 Winningkoff Rd 
+price: 1280000;		 beds: 4 ;		 baths: 6 ;		 sqft: 6365 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75002 ;		 city: Parker ;		 street: 6903 Audubon Dr 
+price: 1250000;		 beds: 5 ;		 baths: 5 ;		 sqft: 5483 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75002 ;		 city: Lucas ;		 street: 1050 Rimrock Dr 
+price: 1500000;		 beds: 5 ;		 baths: 6 ;		 sqft: 7211 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75002 ;		 city: Parker ;		 street: 5801 Middleton Dr 
+price: 565000;		 beds: 3 ;		 baths: 4 ;		 sqft: 3031 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75013 ;		 city: Allen ;		 street: 1107 Hampstead Ln 
+price: 679488;		 beds: 5 ;		 baths: 4 ;		 sqft: 4246 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75013 ;		 city: Allen ;		 street: 1511 Eton Dr 
+price: 399000;		 beds: 4 ;		 baths: 4 ;		 sqft: 3707 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75013 ;		 city: Allen ;		 street: 2022 Midhurst Dr 
+price: 430000;		 beds: 4 ;		 baths: 4 ;		 sqft: 2895 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75013 ;		 city: Allen ;		 street: 1031 Devonshire Dr 
+price: 940990;		 beds: 5 ;		 baths: 7 ;		 sqft: 5077 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75013 ;		 city: Allen ;		 street: 808 Brett Drive 
+price: 416990;		 beds: 3 ;		 baths: 3 ;		 sqft: 2481 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75013 ;		 city: Allen ;		 street: 1067 Sarah Street 
+price: 668900;		 beds: 4 ;		 baths: 3 ;		 sqft: 3850 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75002 ;		 city: Parker ;		 street: 5906 Middleton Dr 
+price: 601990;		 beds: 4 ;		 baths: 3 ;		 sqft: 3437 ;		 state: Texas ;		 state_code: TX ;		 postal_code: 75002 ;		 city: Allen ;		 street: 6801 Erin Lane,Parker 
