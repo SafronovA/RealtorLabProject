@@ -17,7 +17,7 @@ public class SoldStatusTest extends BaseTest{
                 .enterSearchCity(CITY_NAME)
                 .enterFilterSection()
                 .createFilterRequest(MIN_PRICE_VALUE,MAX_PRICE_VALUE).clickMenuButton().selectSoldStatus().showListView();
-        Assert.assertTrue(viewPageStep.checkSoldStatus());
+        Assert.assertTrue(viewPageStep.checkSoldStatus(), "there are elements without 'sold' status in the view list");
 
     }
 }

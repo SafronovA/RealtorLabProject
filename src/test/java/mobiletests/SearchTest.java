@@ -18,7 +18,7 @@ public class SearchTest extends BaseTest {
                 .enterSearchCity(CITY_NAME)
                 .enterFilterSection()
                 .createFilterRequest(MIN_PRICE_VALUE,MAX_PRICE_VALUE).showListView().createPropertyList();
-        Assert.assertTrue(viewPageStep.checkSearchResults(MIN_PRICE_VALUE,MAX_PRICE_VALUE,BATH_QUANTITY,BED_QUANTITY));
+        Assert.assertTrue(viewPageStep.checkSearchResults(MIN_PRICE_VALUE,MAX_PRICE_VALUE,BATH_QUANTITY,BED_QUANTITY),"search results mismatch search  criteria");
 
         }
 }
