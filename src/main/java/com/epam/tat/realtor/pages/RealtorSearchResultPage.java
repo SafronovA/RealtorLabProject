@@ -38,8 +38,8 @@ public class RealtorSearchResultPage extends BasePage {
     private List<WebElement> numberOfRecommendationsList;
     @FindBy(xpath = "//a[@class='next']")
     private List<WebElement> nextPageButton;
-    @FindBy(xpath = "(//div[@class='agent-list-card-img'])[2]/img")
-    private WebElement secondRealtor;
+//    @FindBy(xpath = "(//div[@class='agent-list-card-img'])[2]/img")
+//    private WebElement secondRealtor;
     @FindBy(id = "map_view_link")
     private WebElement activityMapButton;
     @FindBy(xpath = "(//*[@id='agent_map_card'])[1]")
@@ -157,11 +157,11 @@ public class RealtorSearchResultPage extends BasePage {
         return this;
     }
 
-    public RealtorSearchResultPage clickGetStartedConfirmButton(){
-        waitUntilElementIsVisible(getStartedButton);
-        clickByJEx(getStartedButton, driver);
-        return this;
-    }
+//    public RealtorSearchResultPage clickGetStartedConfirmButton(){
+//        waitUntilElementIsVisible(getStartedButton);
+//        clickByJEx(getStartedButton, driver);
+//        return this;
+//    }
 
     /**
      * @return list of realtor cards

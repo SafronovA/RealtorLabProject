@@ -17,8 +17,6 @@ public class FindRealtorPage extends BasePage {
     private WebElement searchInput;
     @FindBy(id = "srchHomeLocation")
     private WebElement locationInput;
-    @FindBy(xpath = "//input[@id='srchHomeLocation']")
-    private WebElement realtorCityInput;
 
     /**
      * enter realtor name in the search input

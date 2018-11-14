@@ -431,16 +431,16 @@ public class SearchPage extends BasePage {
         return this;
     }
 
-    /**
-     * click on user icon
-     *
-     * @return new SavedHomesPage
-     */
-    public SavedHomesPage clickUserIcon() {
-        waitUntilElementIsClickable(userIcon);
-        userIcon.click();
-        return new SavedHomesPage(driver);
-    }
+//    /**
+//     * click on user icon
+//     *
+//     * @return new SavedHomesPage
+//     */
+//    public SavedHomesPage clickUserIcon() {
+//        waitUntilElementIsClickable(userIcon);
+//        userIcon.click();
+//        return new SavedHomesPage(driver);
+//    }
 
     /**
      * click MinSquare dropdown menu in the Home Size section
@@ -586,14 +586,14 @@ public class SearchPage extends BasePage {
         return this;
     }
 
-    /**
-     * wait until save button will be saved
-     *
-     * @return this page
-     */
-    public SearchPage waitUntilSaveButtonChangeState() {
-        waitUntilElementIsVisible(saveButtonText);
-        return this;
-    }
+//    /**
+//     * wait until save button will be saved
+//     *
+//     * @return this page
+//     */
+//    public SearchPage waitUntilSaveButtonChangeState() {
+//        waitUntilElementIsVisible(saveButtonText);
+//        return this;
+//    }
 
 }

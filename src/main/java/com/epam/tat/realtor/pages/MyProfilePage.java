@@ -187,16 +187,16 @@ public class MyProfilePage extends BasePage {
         return this;
     }
 
-    /**
-     * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
-     *
-     * @return new HomePage
-     */
-    public HomePage clickLogOutLink() {
-        waitUntilElementIsClickable(logOutLink);
-        logOutLink.click();
-        return new HomePage(driver);
-    }
+//    /**
+//     * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
+//     *
+//     * @return new HomePage
+//     */
+//    public HomePage clickLogOutLink() {
+//        waitUntilElementIsClickable(logOutLink);
+//        logOutLink.click();
+//        return new HomePage(driver);
+//    }
 
     /**
      * click 'Edit Profile' button
@@ -209,13 +209,13 @@ public class MyProfilePage extends BasePage {
         return this;
     }
 
-    /**
-     * navigate to user icon
-     *
-     * @return this page
-     */
-    public MyProfilePage navigateToUserIcon() {
-        new Actions(driver).moveToElement(userIcon).perform();
-        return this;
-    }
+//    /**
+//     * navigate to user icon
+//     *
+//     * @return this page
+//     */
+//    public MyProfilePage navigateToUserIcon() {
+//        new Actions(driver).moveToElement(userIcon).perform();
+//        return this;
+//    }
 }

@@ -32,8 +32,8 @@ public class SavedSearchesPage extends BasePage {
     private WebElement userIcon;
     @FindBy(linkText = "Sign Out")
     private WebElement logOutLink;
-    @FindBy(xpath = "//*[@id='header-rdc-logo']/svg")
-    private WebElement logo;
+//    @FindBy(xpath = "//*[@id='header-rdc-logo']/svg")
+//    private WebElement logo;
     @FindBy(xpath = "//*[@id='header-rdc-logo']")
     private WebElement homePageLink;
 
@@ -84,27 +84,27 @@ public class SavedSearchesPage extends BasePage {
         driverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(XPATH_CONFIRM_DELETE_BUTTON)));
         return this;
     }
-
-    /**
-     * navigate to user icon
-     *
-     * @return this page
-     */
-    public SavedSearchesPage navigateToUserIcon() {
-        new Actions(driver).moveToElement(userIcon).perform();
-        return this;
-    }
-
-    /**
-     * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
-     *
-     * @return new HomePage
-     */
-    public HomePage clickLogOutLink() {
-        waitUntilElementIsClickable(logOutLink);
-        logOutLink.click();
-        return new HomePage(driver);
-    }
+//
+//    /**
+//     * navigate to user icon
+//     *
+//     * @return this page
+//     */
+//    public SavedSearchesPage navigateToUserIcon() {
+//        new Actions(driver).moveToElement(userIcon).perform();
+//        return this;
+//    }
+//
+//    /**
+//     * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
+//     *
+//     * @return new HomePage
+//     */
+//    public HomePage clickLogOutLink() {
+//        waitUntilElementIsClickable(logOutLink);
+//        logOutLink.click();
+//        return new HomePage(driver);
+//    }
 
     /**
      * go to home page
