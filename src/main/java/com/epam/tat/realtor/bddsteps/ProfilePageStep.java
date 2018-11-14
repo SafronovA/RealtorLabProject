@@ -59,7 +59,6 @@ public class ProfilePageStep {
     }
 
     @Then("profile name should be equal \"([^\"]*)\"")
-    @Test
     public void nameIsCorrect(String name) {
         boolean result = myProfilePage.getProfileName().equals(name);
         assertTrue(result, "Profile name has not changed to the required");
