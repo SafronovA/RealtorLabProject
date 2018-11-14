@@ -26,6 +26,7 @@ public class MainPage extends BasePage {
     private AndroidElement saveSearchButton;
 
     public MenuPage clickMenuButton() {
+        waitUntilElementIsVisible(menuButton);
         menuButton.click();
         return new MenuPage(driver);
     }

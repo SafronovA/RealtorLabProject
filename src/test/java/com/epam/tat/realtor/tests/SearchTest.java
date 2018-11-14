@@ -13,12 +13,13 @@ public class SearchTest extends BaseTest {
 
     @Test
     void search() {
-        ViewSearchResultsPageStep viewSearchResultsPageStep =mainPageStep.clickMenuButton().clickStartNewSearch()
-//                .startNewSearch()
+        ViewSearchResultsPageStep viewSearchResultsPageStep = mainPageStep.clickMenuButton().clickStartNewSearch()
                 .enterSearchCity(CITY_NAME)
                 .enterFilterSection()
-                .createFilterRequest(MIN_PRICE_VALUE,MAX_PRICE_VALUE).clickViewResultsButton().openViewListPage().createPropertyList();
-        Assert.assertTrue(viewSearchResultsPageStep.checkSearchResults(MIN_PRICE_VALUE,MAX_PRICE_VALUE,BATH_QUANTITY,BED_QUANTITY),"search results mismatch search  criteria");
-
-        }
+                .createFilterRequest(MIN_PRICE_VALUE, MAX_PRICE_VALUE)
+                .clickViewResultsButton()
+                .openViewListPage()
+                .createPropertyList();
+        Assert.assertTrue(viewSearchResultsPageStep.checkSearchResults(MIN_PRICE_VALUE, MAX_PRICE_VALUE, BATH_QUANTITY, BED_QUANTITY), "search results mismatch search  criteria");
+    }
 }
