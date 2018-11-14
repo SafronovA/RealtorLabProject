@@ -4,11 +4,14 @@ import com.epam.tat.realtor.bo.House;
 import com.epam.tat.realtor.drivers.DriverFactory;
 import com.epam.tat.realtor.pages.*;
 import com.epam.tat.realtor.util.Parser;
+import cucumber.api.java.en.But;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -56,6 +59,7 @@ public class ProfilePageStep {
     }
 
     @Then("profile name should be equal \"([^\"]*)\"")
+    @Test
     public void nameIsCorrect(String name) {
         boolean result = myProfilePage.getProfileName().equals(name);
         assertTrue(result, "Profile name has not changed to the required");
@@ -66,25 +70,42 @@ public class ProfilePageStep {
         myProfilePage.clickEditProfileButton();
     }
 
-    @When("user edit country on \"([^\"]*)\"")
-    public void editCountry(String country) {
-        myProfilePage.enterCountry(country);
+    @When("user chooses: country = \"([^\"]*)\", address = \"([^\"]*)\", city = \"([^\"]*)\", state = \"([^\"]*)\"")
+    public void editProfileLocation(String country, String address, String city, String state) {
+        myProfilePage.enterCountry(country)
+                .enterAddress(address)
+                .enterCity(city)
+                .enterState(state);
     }
 
-    @When("user edit address on \"([^\"]*)\"")
-    public void editAddress(String address) {
-        myProfilePage.enterAddress(address);
+    @But("user chooses: state = \"([^\"]*)\", address = \"([^\"]*)\", city = \"([^\"]*)\", country = \"([^\"]*)\"")
+    public void revertProfileLocation(String state, String address, String city, String country) {
+        myProfilePage.enterState(state)
+                .enterAddress(address)
+                .enterCity(city)
+                .enterCountry(country);
     }
-
-    @When("user edit city on \"([^\"]*)\"")
-    public void editCity(String city) {
-        myProfilePage.enterCity(city);
-    }
-
-    @When("user edit state on \"([^\"]*)\"")
-    public void editState(String state) {
-        myProfilePage.enterState(state);
-    }
+//
+//    @When("user edit country on \"([^\"]*)\"")
+//    public void editCountry(String country) {
+//        myProfilePage.enterCountry(country);
+//    }
+//
+//    @When("user edit address on \"([^\"]*)\"")
+//    public void editAddress(String address) {
+//        myProfilePage.enterAddress(address);
+//    }
+//
+//    @When("user edit city on \"([^\"]*)\"")
+//    public void editCity(String city) {
+//        myProfilePage.enterCity(city);
+//    }
+//
+//    @When("user edit state on \"([^\"]*)\"")
+//    public void editState(String state) {
+//        myProfilePage.enterState(state);
+//    }
+////////////////////
 
     @When("user wait until profile location info become: \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"")
     public void waitRequiredValue(String country, String address, String city, String state) {
@@ -93,29 +114,40 @@ public class ProfilePageStep {
         myProfilePage.waitUntilAttributeInnerHTMLToBe(myProfilePage.getProfileCountryWebElement(), country);
     }
 
-    @Then("profile country should be equal \"([^\"]*)\"")
-    public void countryIsCorrect(String country) {
-        boolean result = myProfilePage.getProfileCountry().equals(country);
-        assertTrue(result, "Profile country has not changed to the required");
+    @Then("profile location info should be: country = \"([^\"]*)\", address = \"([^\"]*)\", city = \"([^\"]*)\", state = \"([^\"]*)\"")
+    @Test
+    public void profileLocationIsCorrect(String country, String address, String city, String state) {
+        boolean countryResult = myProfilePage.getProfileCountry().equals(country);
+        boolean addressResult = myProfilePage.getProfileAddress().equals(address);
+        boolean cityResult = myProfilePage.getProfileCityAndState().replaceAll(",.*$", "").trim().equals(city);
+        boolean stateResult = myProfilePage.getProfileCityAndState().replaceAll(".*, $*", "").trim().equals(state);
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(countryResult, "Profile country has not changed to the required");
+        softAssert.assertTrue(addressResult, "Profile address has not changed to the required");
+        softAssert.assertTrue(cityResult, "Profile city has not changed to the required");
+        softAssert.assertTrue(stateResult, "Profile state has not changed to the required");
+        softAssert.assertAll();
     }
-
-    @Then("profile address should be equal \"([^\"]*)\"")
-    public void addressIsCorrect(String address) {
-        boolean result = myProfilePage.getProfileAddress().equals(address);
-        assertTrue(result, "Profile address has not changed to the required");
-    }
-
-    @Then("profile city should be equal \"([^\"]*)\"")
-    public void cityIsCorrect(String city) {
-        boolean result = myProfilePage.getProfileCityAndState().replaceAll(",.*$", "").trim().equals(city);
-        assertTrue(result, "Profile city  has not changed to the required");
-    }
-
-    @Then("profile state should be equal \"([^\"]*)\"")
-    public void stateIsCorrect(String state) {
-        boolean result = myProfilePage.getProfileCityAndState().replaceAll(".*, $*", "").trim().equals(state);
-        assertTrue(result, "Profile state  has not changed to the required");
-    }
+//    @Then("profile country should be equal \"([^\"]*)\"")
+//    public void countryIsCorrect(String country) {
+//        boolean result = myProfilePage.getProfileCountry().equals(country);
+//        assertTrue(result, "Profile country has not changed to the required");
+//    }
+//    @Then("profile address should be equal \"([^\"]*)\"")
+//    public void addressIsCorrect(String address) {
+//        boolean result = myProfilePage.getProfileAddress().equals(address);
+//        assertTrue(result, "Profile address has not changed to the required");
+//    }
+//    @Then("profile city should be equal \"([^\"]*)\"")
+//    public void cityIsCorrect(String city) {
+//        boolean result = myProfilePage.getProfileCityAndState().replaceAll(",.*$", "").trim().equals(city);
+//        assertTrue(result, "Profile city  has not changed to the required");
+//    }
+//    @Then("profile state should be equal \"([^\"]*)\"")
+//    public void stateIsCorrect(String state) {
+//        boolean result = myProfilePage.getProfileCityAndState().replaceAll(".*, $*", "").trim().equals(state);
+//        assertTrue(result, "Profile state  has not changed to the required");
+//    }
 
     @When("user move to my home page")
     public void moveToMyHomePage() {
@@ -127,30 +159,38 @@ public class ProfilePageStep {
         myHomePage.clickEditHomeFactsButton();
     }
 
-    @When("user edit bedrooms on \"([^\"]*)\"")
-    public void editBedrooms(String bedrooms) {
-        myHomePage.enterBedrooms(bedrooms);
+
+    @When("user chooses bedrooms = \"([^\"]*)\", bathrooms = \"([^\"]*)\", car spaces = \"([^\"]*)\", square = \"([^\"]*)\", lot size = \"([^\"]*)\"")
+    public void editMyHomeInfo(String bedrooms, String bathrooms, String carSpaces, String square, String lotSize) {
+        myHomePage.enterBedrooms(bedrooms)
+                .enterBathrooms(bathrooms)
+                .enterCarSpaces(carSpaces)
+                .enterSquare(square)
+                .enterLotSize(lotSize);
     }
 
-    @When("user edit bathrooms on \"([^\"]*)\"")
-    public void editBathrooms(String bathrooms) {
-        myHomePage.enterBathrooms(bathrooms);
-    }
-
-    @When("user edit car spaces on \"([^\"]*)\"")
-    public void editCarSpaces(String carSpaces) {
-        myHomePage.enterCarSpaces(carSpaces);
-    }
-
-    @When("user edit square on \"([^\"]*)\"")
-    public void editSquare(String square) {
-        myHomePage.enterSquare(square);
-    }
-
-    @When("user edit lot size on \"([^\"]*)\"")
-    public void editLotSize(String lotSize) {
-        myHomePage.enterLotSize(lotSize);
-    }
+//    @When("user edit bedrooms on \"([^\"]*)\"")
+//    public void editBedrooms(String bedrooms) { myHomePage.enterBedrooms(bedrooms); }
+//
+//    @When("user edit bathrooms on \"([^\"]*)\"")
+//    public void editBathrooms(String bathrooms) {
+//        myHomePage.enterBathrooms(bathrooms);
+//    }
+//
+//    @When("user edit car spaces on \"([^\"]*)\"")
+//    public void editCarSpaces(String carSpaces) {
+//        myHomePage.enterCarSpaces(carSpaces);
+//    }
+//
+//    @When("user edit square on \"([^\"]*)\"")
+//    public void editSquare(String square) {
+//        myHomePage.enterSquare(square);
+//    }
+//
+//    @When("user edit lot size on \"([^\"]*)\"")
+//    public void editLotSize(String lotSize) {
+//        myHomePage.enterLotSize(lotSize);
+//    }
 
     @When("user click save button")
     public void clickSaveButton() {
@@ -162,41 +202,66 @@ public class ProfilePageStep {
         myHomePage.closeVerificationWindow();
     }
 
-    @Then("my home bedrooms value should be equal \"([^\"]*)\"")
-    public void bedroomsValueIsCorrect(String bedrooms) {
+    @Then("changed parameters should be; bedrooms = \"([^\"]*)\", bathrooms = \"([^\"]*)\", car spaces = \"([^\"]*)\", square = \"([^\"]*)\", lot size = \"([^\"]*)\"")
+    @Test
+    public void myHomeInfoIsCorrect(String bedrooms, String bathrooms, String carSpaces, String square, String lotSize) {
         house = myHomePage.getHouse();
         String houseBedrooms = String.valueOf(house.getBedNumber());
-        boolean result = houseBedrooms.equals(bedrooms);
-        assertTrue(result, "Bedrooms value has not changed to the required");
-    }
-
-    @Then("my home bathrooms value should be equal \"([^\"]*)\"")
-    public void bathroomsValueIsCorrect(String bathrooms) {
         String houseBathrooms = String.valueOf(house.getBathNumber());
-        boolean result = houseBathrooms.equals(bathrooms);
-        assertTrue(result, "Bathrooms value has not changed to the required");
-    }
-
-    @Then("my home car spaces value should be equal \"([^\"]*)\"")
-    public void carSpacesValueIsCorrect(String carSpaces) {
         String houseCarSpaces = String.valueOf(house.getCarSpaces());
-        boolean result = houseCarSpaces.equals(carSpaces);
-        assertTrue(result, "Car spaces value has not changed to the required");
-    }
-
-    @Then("my home square value should be equal \"([^\"]*)\"")
-    public void squareValueIsCorrect(String square) {
         String houseSquare = String.valueOf(house.getSquare());
-        boolean result = houseSquare.equals(square);
-        assertTrue(result, "Square value has not changed to the required");
+        String houseLotSize = String.valueOf(house.getLotSize());
+
+        boolean bedroomsResult = houseBedrooms.equals(bedrooms);
+        boolean bathroomsResult = houseBathrooms.equals(bathrooms);
+        boolean carSpacesResult = houseCarSpaces.equals(carSpaces);
+        boolean squareResult = houseSquare.equals(square);
+        boolean lotSizeResult = houseLotSize.equals(lotSize);
+
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(bedroomsResult, "Bedrooms value has not changed to the required");
+        softAssert.assertTrue(bathroomsResult, "Bathrooms value has not changed to the required");
+        softAssert.assertTrue(carSpacesResult, "Car spaces value has not changed to the required");
+        softAssert.assertTrue(squareResult, "Square value has not changed to the required");
+        softAssert.assertTrue(lotSizeResult, "Lot size value has not changed to the required");
+        softAssert.assertAll();
     }
 
-    @Then("my home lot size value should be equal \"([^\"]*)\"")
-    public void lotSizeIsCorrect(String lotSize) {
-        String houseLotSize = String.valueOf(house.getLotSize());
-        boolean result = houseLotSize.equals(lotSize);
-        assertTrue(result, "Lot size has not changed to the required");
-    }
+//    @Then("my home bedrooms value should be equal \"([^\"]*)\"")
+//    public void bedroomsValueIsCorrect(String bedrooms) {
+//        house = myHomePage.getHouse();
+//        String houseBedrooms = String.valueOf(house.getBedNumber());
+//        boolean result = houseBedrooms.equals(bedrooms);
+//        assertTrue(result, "Bedrooms value has not changed to the required");
+//    }
+//
+//    @Then("my home bathrooms value should be equal \"([^\"]*)\"")
+//    public void bathroomsValueIsCorrect(String bathrooms) {
+//        String houseBathrooms = String.valueOf(house.getBathNumber());
+//        boolean result = houseBathrooms.equals(bathrooms);
+//        assertTrue(result, "Bathrooms value has not changed to the required");
+//    }
+//
+//    @Then("my home car spaces value should be equal \"([^\"]*)\"")
+//    public void carSpacesValueIsCorrect(String carSpaces) {
+//        String houseCarSpaces = String.valueOf(house.getCarSpaces());
+//        boolean result = houseCarSpaces.equals(carSpaces);
+//        assertTrue(result, "Car spaces value has not changed to the required");
+//    }
+//
+//    @Then("my home square value should be equal \"([^\"]*)\"")
+//    public void squareValueIsCorrect(String square) {
+//        String houseSquare = String.valueOf(house.getSquare());
+//        boolean result = houseSquare.equals(square);
+//        assertTrue(result, "Square value has not changed to the required");
+//    }
+//
+//    @Then("my home lot size value should be equal \"([^\"]*)\"")
+//    public void lotSizeIsCorrect(String lotSize) {
+//        String houseLotSize = String.valueOf(house.getLotSize());
+//        boolean result = houseLotSize.equals(lotSize);
+//        assertTrue(result, "Lot size has not changed to the required");
+//    }
 
     @When("user clear saved homes")
     public void clearSavedHomes() {
@@ -217,6 +282,7 @@ public class ProfilePageStep {
     }
 
     @Then("check if saved homes number match saved homes on the main page")
+    @Test
     public void checkSavedHomes() {
         homePage.clickUserIcon();
         int actualSaveHomes = savedHomesPage.getSaveHomesButtonList().size();
@@ -251,6 +317,7 @@ public class ProfilePageStep {
     }
 
     @Then("user check that search saved with selected parameters: city \"([^\"]*)\", min price \"([^\"]*)\", max price \"([^\"]*)\"")
+    @Test
     public void checkSavedSearchDescriptionContainsInputText(String city, String minPrice, String maxPrice) {
         int min = Parser.parse(minPrice);
         int max = Parser.parse(maxPrice);

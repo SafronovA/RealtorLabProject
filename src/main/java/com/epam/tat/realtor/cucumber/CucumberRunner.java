@@ -7,7 +7,8 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
         "src/test/resources/realtor_features/user_profile.feature",
         "src/test/resources/realtor_features/realtor_page.feature"},
         glue = {"com.epam.tat.realtor.bddsteps"
-                , "com.epam.tat.realtor.cucumber"}
+                , "com.epam.tat.realtor.cucumber"},
+        tags = {"@EditMyHomeInfo, @SavedHomes, @SavedSearch"}
 )
 
 public class CucumberRunner extends AbstractTestNGCucumberTests {}

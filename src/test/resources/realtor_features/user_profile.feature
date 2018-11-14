@@ -21,46 +21,24 @@ Feature: perform different actions on my profile page
   values of modified fields on the profile page should accept the corresponding values.
     When user moved to my profile page
     And user click EditProfile button
-    And user edit country on "United States"
-    And user edit address on "streetNew"
-    And user edit city on "cityNew"
-    And user edit state on "Hawaii"
+    And user chooses: country = "United States", address = "streetNew", city = "cityNew", state = "Hawaii"
     And user click save changes button
     And user wait until profile location info become: "United States", "streetNew", "cityNew", "Hawaii"
-    Then profile country should be equal "United States"
-    And profile address should be equal "streetNew"
-    And profile city should be equal "cityNew"
-    And profile state should be equal "Hawaii"
+    Then profile location info should be: country = "United States", address = "streetNew", city = "cityNew", state = "Hawaii"
     But user click EditProfile button
-    And user edit state on "Arizona"
-    And user edit address on "streetOld"
-    And user edit city on "cityOld"
-    And user edit country on "Togo"
-    And user click save changes button
+    And user chooses: state = "Arizona", address = "streetOld", city = "cityOld", country = "Togo"
 
   @EditMyHomeInfo
   Scenario: user changes the values of the number of bedrooms, bathrooms, car spaces, square and lot size,
   values of modified fields on the my home page should take the appropriate values
     When user move to my home page
     And user click EditHomeFacts button
-    And user edit bedrooms on "2"
-    And user edit bathrooms on "1"
-    And user edit car spaces on "3"
-    And user edit square on "2987"
-    And user edit lot size on "3781"
+    And user chooses bedrooms = "2", bathrooms = "1", car spaces = "3", square = "2987", lot size = "3781"
     And user click save button
     And user close verification window
-    Then my home bedrooms value should be equal "2"
-    And my home bathrooms value should be equal "1"
-    And my home car spaces value should be equal "3"
-    And my home square value should be equal "2987"
-    And my home lot size value should be equal "3781"
+    Then changed parameters should be; bedrooms = "2", bathrooms = "1", car spaces = "3", square = "2987", lot size = "3781"
     But user click EditHomeFacts button
-    And user edit bedrooms on "4"
-    And user edit bathrooms on "3"
-    And user edit car spaces on "1"
-    And user edit square on "3030"
-    And user edit lot size on "3485"
+    And user chooses bedrooms = "4", bathrooms = "3", car spaces = "1", square = "3030", lot size = "3485"
     And user click save button
     And user close verification window
 
