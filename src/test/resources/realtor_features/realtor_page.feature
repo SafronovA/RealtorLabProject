@@ -2,8 +2,8 @@ Feature: realtor page
 
   @CheckIconsColor
   Scenario: icon colors on map match house status
-    When click find realtor button
-    And enter realtor location "Boston, MA"
+    Given click find realtor button
+    When enter realtor location "Boston, MA"
     And enter realtor name "Kristen Gaughan"
     And click search button
     And click activity map button
@@ -14,8 +14,8 @@ Feature: realtor page
 
   @ClickOnIcon
   Scenario: icon become selected after click
-    When click find realtor button
-    And enter realtor location "Boston, MA"
+    Given click find realtor button
+    When enter realtor location "Boston, MA"
     And enter realtor name "Kristen Gaughan"
     And click search button
     And click activity map button
@@ -25,8 +25,8 @@ Feature: realtor page
 
   @ForSaleRealtorHouses
   Scenario: for sale houses on realtor page have status for sale
-    When click find realtor button
-    And enter realtor location "San Francisco, CA"
+    Given click find realtor button
+    When enter realtor location "San Francisco, CA"
     And enter realtor name "Grace Lucero"
     And click search button
     And click on realtor icon
@@ -34,8 +34,8 @@ Feature: realtor page
 
   @PhotosOnMap
   Scenario: photos on map match realtor photo
-    When click find realtor button
-    And enter realtor location "San Francisco, CA"
+    Given click find realtor button
+    When enter realtor location "San Francisco, CA"
     And enter realtor name "Laura Lanzone"
     And click search button
     And click activity map button
@@ -44,8 +44,8 @@ Feature: realtor page
 
   @RealtorRecommendations
   Scenario: recommendations count on the page match recommendations count in the realtor's card
-    When click find realtor button
-    And enter realtor name "Adora Lazaro"
+    Given click find realtor button
+    When enter realtor name "Adora Lazaro"
     And click search button
     And get recommendation count
     And click on realtor icon
@@ -54,8 +54,8 @@ Feature: realtor page
 
   @RealtorReviews
   Scenario: number of reviews on the page match reviews number in the realtor's card
-    When click find realtor button
-    And enter realtor name "Adora Lazaro"
+    Given click find realtor button
+    When enter realtor name "Adora Lazaro"
     And click search button
     And get rating count
     And click on realtor icon
@@ -64,8 +64,8 @@ Feature: realtor page
 
   @RealtorSoldHouses
   Scenario: every house on the iframe map has "Sold" status
-    When click find realtor button
-    And enter realtor name "Amanda Hurtt"
+    Given click find realtor button
+    When enter realtor name "Amanda Hurtt"
     And click search button
     And get realtor sold houses count
     And click on realtor icon
@@ -75,8 +75,8 @@ Feature: realtor page
 
   @SortByRecommendations
   Scenario: realtors are displayed on page sorted by recommendations
-    When click find realtor button
-    And enter realtor location "San Francisco, CA"
+    Given click find realtor button
+    When enter realtor location "San Francisco, CA"
     And click search button
     And choose recommendation amount: "10+"
     And choose sort option: "Most Recommendations"
@@ -84,8 +84,8 @@ Feature: realtor page
 
   @MortgageCalculator
   Scenario Outline: check that calculated and displayed price is correct
-    When move to mortgage calculator page
-    And  select loan type as "<LOAN_TYPE>"
+    Given move to mortgage calculator page
+    When  select loan type as "<LOAN_TYPE>"
     And  select rate as "<RATE>"
     And  select home price as "<HOME_PRICE>"
     And  select down payment as "<DOWN_PAYMENT>"

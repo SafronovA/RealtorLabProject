@@ -4,6 +4,7 @@ import com.epam.tat.realtor.drivers.DriverFactory;
 import com.epam.tat.realtor.pages.*;
 import com.epam.tat.realtor.util.Parser;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
@@ -31,7 +32,7 @@ public class RealtorPageFeatureStep {
     /**
      * click Realtor button
      */
-    @When("click find realtor button")
+    @Given("click find realtor button")
     public void clickFindRealtorButton() {
         homePage.clickRealtorButton();
     }
@@ -41,7 +42,7 @@ public class RealtorPageFeatureStep {
      *
      * @param realtorName realtor name as search criteria
      */
-    @And("enter realtor name \"([^\"]*)\"")
+    @When("enter realtor name \"([^\"]*)\"")
     public void enterRealtorName(String realtorName) {
         findRealtorPage.enterRealtorName(realtorName);
     }
@@ -51,7 +52,7 @@ public class RealtorPageFeatureStep {
      *
      * @param realtorLocation realtor name as search criteria
      */
-    @And("enter realtor location \"([^\"]*)\"")
+    @When("enter realtor location \"([^\"]*)\"")
     public void enterLocation(String realtorLocation) {
         findRealtorPage.enterLocation(realtorLocation);
     }

@@ -259,7 +259,7 @@ public class ProfilePageStep {
         assertTrue(containingInputTextInDescription, "Saved search description does not contain selected min or max, or entered town");
     }
 
-    @When("move to mortgage calculator page")
+    @Given("move to mortgage calculator page")
     public void moveToMortgageCalculatorPage() {
         mortgageCalculatorPage = homePage.navigateCursorOnMortgageLink()
                 .clickMortgageCalculatorLink();
