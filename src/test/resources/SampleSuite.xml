@@ -4,7 +4,6 @@
 
     <test name="RealtorTest" >
         <classes>
-            <!--<class name="com.epam.tat.realtor.tests.SearchTest"/>-->
             <class name="com.epam.tat.realtor.tests.SoldStatusTest"/>
             <class name="com.epam.tat.realtor.tests.SortByPriceTest"/>
             <class name="com.epam.tat.realtor.tests.RecentlyViewedListingsTest"/>

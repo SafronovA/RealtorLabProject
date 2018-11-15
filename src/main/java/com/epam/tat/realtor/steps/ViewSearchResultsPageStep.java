@@ -77,8 +77,6 @@ public class ViewSearchResultsPageStep extends BasePageStep {
         return soldStatus;
     }
 
-    //////////////////
-
     public FilterPageStep clickFilterButton(){
         viewSearchResultsPage.clickFilterButton();
         return new FilterPageStep(driver);

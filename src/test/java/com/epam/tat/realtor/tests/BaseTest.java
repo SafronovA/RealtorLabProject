@@ -1,6 +1,6 @@
 package com.epam.tat.realtor.tests;
 
-import com.epam.tat.realtor.drivers.DriverMobile;
+import com.epam.tat.realtor.driver.DriverMobile;
 import com.epam.tat.realtor.steps.MainPageStep;
 import com.epam.tat.realtor.util.ConfigProperties;
 import io.appium.java_client.AppiumDriver;

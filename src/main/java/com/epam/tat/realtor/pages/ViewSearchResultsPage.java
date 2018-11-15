@@ -38,6 +38,14 @@ public class ViewSearchResultsPage extends BasePage {
     private List<WebElement> expandButton;
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/statusBadge']")
     private List<WebElement> homeStatus;
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/sort_spinner\")")
+    private AndroidElement sortByButton;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"Filter\"]")
+    private AndroidElement filterButton;
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/priceTextView\")")
+    private List<AndroidElement> homePricesList;
+    @AndroidFindBy(xpath = "(//android.widget.ImageButton)[3]")
+    private AndroidElement goBackButton;
 
     public List<AndroidElement> getHouseAddressesFromScreen() {
         return houseAddressesFromScreen;
@@ -84,17 +92,6 @@ public class ViewSearchResultsPage extends BasePage {
     public List<WebElement> getHomeStatus() {
         return homeStatus;
     }
-
-
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/sort_spinner\")")
-    private AndroidElement sortByButton;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"Filter\"]")
-    private AndroidElement filterButton;
-    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/priceTextView\")")
-    private List<AndroidElement> homePricesList;
-    //    @AndroidFindBy(xpath = "(//android.widget.ImageButton)[4]")
-    @AndroidFindBy(xpath = "(//android.widget.ImageButton)[3]")
-    private AndroidElement goBackButton;
 
     public List<AndroidElement> getHomePricesList() {
         return homePricesList;

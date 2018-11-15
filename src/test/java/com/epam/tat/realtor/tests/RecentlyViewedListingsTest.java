@@ -6,17 +6,9 @@ import org.testng.annotations.Test;
 
 public class RecentlyViewedListingsTest extends BaseTest {
 
-    private static final String CITY = "Wildwood, NY";
-
     @Test
     public void recentlyViewedListings() {
-        HousePageStep housePageStep = mainPageStep
-//                .clickMenuButton()
-//                .clickStartNewSearch()
-//                .enterSearchCity(CITY)
-
-//                .openViewListPage()
-                .clickFirstHouseCard();
+        HousePageStep housePageStep = mainPageStep.clickFirstHouseCard();
         String houseAddress = housePageStep.getHouseAddress();
         HousePageStep recentlyHousePageStep =
                 housePageStep.clickGoBackButton()

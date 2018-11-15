@@ -40,19 +40,4 @@ public class MainPageStep extends BasePageStep {
         return new HousePageStep(driver);
     }
 
-    //    public FilterPageStep openFilter() {
-//        mainPage.clickFilterButton();
-//        return new FilterPageStep(driver);
-//    }
-
-//    public HomePageStep enterCity(String city) {
-//        homePage.enterCity(city);
-//        return this;
-//    }
-
-//    public ViewPageStep showListView() {
-//        homePage.clickViewListButton();
-//        return new ViewPageStep(driver);
-//    }
-
 }

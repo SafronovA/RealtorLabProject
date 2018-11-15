@@ -57,22 +57,6 @@ public class MainPage extends BasePage {
         return result;
     }
 
-//    @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc='Drawer Open']")
-//    private AndroidElement menuButton;
-//    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/search_edit_text\")")
-//    private AndroidElement searchInput;
-//    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/save_search\")")
-//    private AndroidElement saveSearchButton;
-//    @AndroidFindBy(accessibility = "Filter")
-//    private AndroidElement filterButton;
-//    @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/view_list_label']")
-//    private AndroidElement viewListButton;
-
-//    public MainPage enterCity(String city) {
-//        searchInput.sendKeys(city + "\n");
-//        return this;
-//    }
-
     public MainPage clickSaveSearchButton() {
         waitUntilElementIsVisible(saveSearchButton);
         while (!saveSearchButton.getText().equals("UNSAVE SEARCH")) {

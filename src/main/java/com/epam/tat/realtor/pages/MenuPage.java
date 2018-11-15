@@ -12,12 +12,16 @@ public class MenuPage extends BasePage {
 
     public MenuPage(AppiumDriver driver) {
         super(driver);
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+        PageFactory.initElements(
+                new AppiumFieldDecorator(driver),
+                this);
     }
 
-    @AndroidFindBy(className = "android.widget.LinearLayout")
+    @AndroidFindBy(className =
+            "android.widget.LinearLayout")
     private AndroidElement menuSideBar;
-    @AndroidFindBy(id = "com.move.realtor:id/menu_sign_in")
+    @AndroidFindBy(id =
+            "com.move.realtor:id/menu_sign_in")
     private AndroidElement signInButton;
     @AndroidFindBy(id = "com.move.realtor:id/menu_item_settings")
     private List<AndroidElement> settingsButton;
@@ -66,7 +70,7 @@ public class MenuPage extends BasePage {
         return new MainPage(driver);
     }
 
-    public RecentlyViewedListingsPage clickRecentlyViewedListings(){
+    public RecentlyViewedListingsPage clickRecentlyViewedListings() {
         recentlyViewedListingsButton.click();
         return new RecentlyViewedListingsPage(driver);
     }

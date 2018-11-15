@@ -42,8 +42,4 @@ public class MenuPageStep extends BasePageStep{
         return new RecentlyViewedListingsPageStep(driver);
     }
 
-//    public SearchPageStep  startNewSearch() {
-//        menuPage.clickNewSearchButton();
-//        return new SearchPageStep(driver);
-//    }
 }

@@ -53,18 +53,7 @@ public class FilterPage extends BasePage {
         viewResultsButton.click();
         return new MainPage(driver);
     }
-    /////////////////
 
-    //    public FilterPage enterMinPrice(String minPriceValue){
-//        minPriceInput.click();
-//        minPriceInput.sendKeys(minPriceValue);
-//        return this;
-//    }
-//    public FilterPage enterMaxPrice(String maxPriceValue){
-//        maxPriceInput.click();
-//        maxPriceInput.sendKeys(maxPriceValue);
-//        return this;
-//    }
     public FilterPage swipeToBedsSection() {
         swipeUp(100, 860, 100, 400);
         return this;
