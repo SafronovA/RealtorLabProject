@@ -11,7 +11,8 @@ public class MortgageCalculatorTest extends BaseTest {
 
     @BeforeClass
     public void goToMortgageCalc() {
-        mortgageCalculatorPageStep = mainPageStep.openViewListPage()
+        mortgageCalculatorPageStep = mainPageStep
+//                .openViewListPage()
                 .clickFirstHouseCard()
                 .clickEditMortgageCalculatorButton();
     }

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.time.Duration;
 
 public class SearchPage extends BasePage {
+
     public SearchPage(AppiumDriver<WebElement> driver) {
         super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(5)), this);
@@ -28,7 +29,7 @@ public class SearchPage extends BasePage {
     }
 
     public MainPage firstResultClick() {
-//        waitUntilElementIsVisible(firstResult);
+        waitUntilElementIsVisible(firstResult);
         firstResult.click();
         return new MainPage(driver);
     }

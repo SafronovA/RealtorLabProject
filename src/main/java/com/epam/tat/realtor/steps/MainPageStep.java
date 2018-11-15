@@ -35,6 +35,11 @@ public class MainPageStep extends BasePageStep {
         return mainPage.searchResultCount();
     }
 
+    public HousePageStep clickFirstHouseCard(){
+        mainPage.clickFirstHouseCard();
+        return new HousePageStep(driver);
+    }
+
     //    public FilterPageStep openFilter() {
 //        mainPage.clickFilterButton();
 //        return new FilterPageStep(driver);

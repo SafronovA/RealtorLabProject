@@ -24,6 +24,14 @@ public class MainPage extends BasePage {
     private AndroidElement resultsPopUp;
     @AndroidFindBy(id = "com.move.realtor:id/save_search")
     private AndroidElement saveSearchButton;
+    @AndroidFindBy(id = "com.move.realtor:id/listingImageView")
+    private AndroidElement firstHouseCard;
+
+    public HousePage clickFirstHouseCard() {
+        waitUntilElementIsVisible(firstHouseCard);
+        firstHouseCard.click();
+        return new HousePage(driver);
+    }
 
     public MenuPage clickMenuButton() {
         waitUntilElementIsVisible(menuButton);
@@ -39,6 +47,7 @@ public class MainPage extends BasePage {
 
     public ViewSearchResultsPage clickViewListButton(){
         waitUntilElementIsVisible(viewListButton);
+        waitUntilElementToBeClickable(viewListButton);
         viewListButton.click();
         return new ViewSearchResultsPage(driver);
     }

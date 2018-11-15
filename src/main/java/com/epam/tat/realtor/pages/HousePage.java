@@ -17,6 +17,20 @@ public class HousePage extends BasePage {
 
     @AndroidFindBy(id = "com.move.realtor:id/button_calculate")
     private List<AndroidElement> editMortgageCalculatorButton;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/address_text_view']")
+    private AndroidElement houseAddress;
+    @AndroidFindBy(xpath = "(//android.widget.ImageButton)[3]")
+    private AndroidElement goBackButton;
+
+    public String getHouseAddress(){
+        waitUntilElementIsVisible(houseAddress);
+        return houseAddress.getText();
+    }
+
+    public ViewSearchResultsPage clickGoBackButton(){
+        goBackButton.click();
+        return new ViewSearchResultsPage(driver);
+    }
 
     public List<AndroidElement> getEditMortgageCalculatorButton() {
         return editMortgageCalculatorButton;

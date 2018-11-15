@@ -6,10 +6,12 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class ViewSearchResultsPageStep extends BasePageStep {
     private ViewSearchResultsPage viewSearchResultsPage;
@@ -20,12 +22,6 @@ public class ViewSearchResultsPageStep extends BasePageStep {
     public ViewSearchResultsPageStep(AppiumDriver driver) {
         super(driver);
         viewSearchResultsPage = new ViewSearchResultsPage(driver);
-    }
-
-
-    public HousePageStep clickFirstHouseCard(){
-        viewSearchResultsPage.clickFirstHouseCard();
-        return new HousePageStep(driver);
     }
 
     public int getNumberOfAllHousesFromSearchResult() {
@@ -80,4 +76,54 @@ public class ViewSearchResultsPageStep extends BasePageStep {
         while(viewSearchResultsPage.getExpandButton()<1);
         return soldStatus;
     }
+
+    //////////////////
+
+    public FilterPageStep clickFilterButton(){
+        viewSearchResultsPage.clickFilterButton();
+        return new FilterPageStep(driver);
+    }
+
+    public HousePageStep clickOnFirstHouse(){
+        viewSearchResultsPage.clickOnFirstHouse();
+        return new HousePageStep(driver);
+    }
+
+    public SortOptionsPageStep clickSortByButton(){
+        viewSearchResultsPage.clickSortByButton();
+        return new SortOptionsPageStep(driver);
+    }
+
+    public boolean doesHomeDisplayedSortedByPrice(){
+        List<Integer> homePrices = getAllHomePricesFromPage();
+        boolean sortedDescending =
+                IntStream.range(0, homePrices.size() - 1)
+                        .allMatch(i -> homePrices.get(i).compareTo(homePrices.get(i + 1)) <= 0);
+        return sortedDescending;
+
+    }
+
+    public MainPageStep clickGoBackButton(){
+        viewSearchResultsPage.clickGoBackButton();
+        return new MainPageStep(driver);
+    }
+
+    private List<Integer> getAllHomePricesFromPage(){
+        List<Integer> homePricesList = new ArrayList<>();
+        while (viewSearchResultsPage.getExpandSearchAreaButton().isEmpty()) {
+            swipe(driver);
+            homePricesList.addAll(parseAndroidElementsListToIntegerList(viewSearchResultsPage.getHomePricesList()));
+        }
+        return homePricesList;
+    }
+
+    private List<Integer> parseAndroidElementsListToIntegerList(List<AndroidElement> homePricesList){
+        try {                       // waiting for the page to become static after the swipe
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return homePricesList.stream().map(AndroidElement::getText).map(Parser::parse).collect(Collectors.toList());
+    }
+
 }

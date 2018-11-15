@@ -27,6 +27,8 @@ public class MenuPage extends BasePage {
     private AndroidElement savedSearchButton;
     @AndroidFindBy(xpath = "(//android.widget.RelativeLayout[@resource-id='com.move.realtor:id/menu_item_entry'])[4]")
     private AndroidElement recentlySoldButton;
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/menu_item_recently_viewed_listings\")")
+    private AndroidElement recentlyViewedListingsButton;
 
     public SignInPage clickSignInButton() {
         signInButton.click();
@@ -64,5 +66,9 @@ public class MenuPage extends BasePage {
         return new MainPage(driver);
     }
 
+    public RecentlyViewedListingsPage clickRecentlyViewedListings(){
+        recentlyViewedListingsButton.click();
+        return new RecentlyViewedListingsPage(driver);
+    }
 
 }

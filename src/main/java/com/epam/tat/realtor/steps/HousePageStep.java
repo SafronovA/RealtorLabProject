@@ -17,4 +17,13 @@ public class HousePageStep extends BasePageStep {
         return new MortgageCalculatorPageStep(driver);
     }
 
+    public String getHouseAddress(){
+        return housePage.getHouseAddress();
+    }
+
+    public MainPageStep clickGoBackButton(){
+        housePage.clickGoBackButton();
+        return new MainPageStep(driver);
+    }
+
 }

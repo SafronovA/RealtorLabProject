@@ -21,8 +21,6 @@ public class ViewSearchResultsPage extends BasePage {
     private List<AndroidElement> houseAddressesFromScreen;
     @AndroidFindBy(xpath = "//*[@text='Expand Search Area']")
     private List<AndroidElement> expandSearchAreaButton;
-    @AndroidFindBy(id = "com.move.realtor:id/listingImageView")
-    private AndroidElement firstHouseCard;
     @AndroidFindBy(xpath = "//android.widget.ListView/android.widget.FrameLayout")
     private List<WebElement> viewList;
     //    @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/priceTextView']")
@@ -40,12 +38,6 @@ public class ViewSearchResultsPage extends BasePage {
     private List<WebElement> expandButton;
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.move.realtor:id/statusBadge']")
     private List<WebElement> homeStatus;
-
-    public HousePage clickFirstHouseCard() {
-        waitUntilElementIsVisible(firstHouseCard);
-        firstHouseCard.click();
-        return new HousePage(driver);
-    }
 
     public List<AndroidElement> getHouseAddressesFromScreen() {
         return houseAddressesFromScreen;
@@ -92,4 +84,42 @@ public class ViewSearchResultsPage extends BasePage {
     public List<WebElement> getHomeStatus() {
         return homeStatus;
     }
+
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/sort_spinner\")")
+    private AndroidElement sortByButton;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"Filter\"]")
+    private AndroidElement filterButton;
+    @AndroidFindBy(uiAutomator = "new UiSelector().resourceId(\"com.move.realtor:id/priceTextView\")")
+    private List<AndroidElement> homePricesList;
+    //    @AndroidFindBy(xpath = "(//android.widget.ImageButton)[4]")
+    @AndroidFindBy(xpath = "(//android.widget.ImageButton)[3]")
+    private AndroidElement goBackButton;
+
+    public List<AndroidElement> getHomePricesList() {
+        return homePricesList;
+    }
+
+    public HousePage clickOnFirstHouse() {
+        houseAddressesFromScreen.get(0).click();
+        return new HousePage(driver);
+    }
+
+    public FilterPage clickFilterButton() {
+        filterButton.click();
+        return new FilterPage(driver);
+    }
+
+    public SortOptionsPage clickSortByButton() {
+        waitUntilElementToBeClickable(sortByButton);
+        sortByButton.click();
+        return new SortOptionsPage(driver);
+    }
+
+    public MainPage clickGoBackButton() {
+        waitUntilElementIsVisible(goBackButton);
+        goBackButton.click();
+        return new MainPage(driver);
+    }
+
 }
