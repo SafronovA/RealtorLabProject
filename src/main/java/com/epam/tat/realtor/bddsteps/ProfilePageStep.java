@@ -117,7 +117,7 @@ public class ProfilePageStep {
     }
 
 
-    @When("user chooses bedrooms = \"([^\"]*)\", bathrooms = \"([^\"]*)\", car spaces = \"([^\"]*)\", square = \"([^\"]*)\", lot size = \"([^\"]*)\"")
+    @When("user chooses: bedrooms = \"([^\"]*)\", bathrooms = \"([^\"]*)\", car spaces = \"([^\"]*)\", square = \"([^\"]*)\", lot size = \"([^\"]*)\"")
     public void editMyHomeInfo(String bedrooms, String bathrooms, String carSpaces, String square, String lotSize) {
         myHomePage.enterBedrooms(bedrooms)
                 .enterBathrooms(bathrooms)
@@ -128,12 +128,8 @@ public class ProfilePageStep {
 
     @When("user click save button")
     public void clickSaveButton() {
-        myHomePage.clickSaveButton();
-    }
-
-    @When("user close verification window")
-    public void closeVerificationWindows() {
-        myHomePage.closeVerificationWindow();
+        myHomePage.clickSaveButton()
+                .closeVerificationWindow();
     }
 
     @Then("changed parameters should be; bedrooms = \"([^\"]*)\", bathrooms = \"([^\"]*)\", car spaces = \"([^\"]*)\", square = \"([^\"]*)\", lot size = \"([^\"]*)\"")

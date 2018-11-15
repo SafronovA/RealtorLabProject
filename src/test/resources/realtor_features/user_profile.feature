@@ -27,20 +27,19 @@ Feature: perform different actions on my profile page
     Then profile location info should be: country = "United States", address = "streetNew", city = "cityNew", state = "Hawaii"
     But user click EditProfile button
     And user chooses: state = "Arizona", address = "streetOld", city = "cityOld", country = "Togo"
+    And user click save changes button
 
   @EditMyHomeInfo
   Scenario: user changes the values of the number of bedrooms, bathrooms, car spaces, square and lot size,
   values of modified fields on the my home page should take the appropriate values
     When user move to my home page
     And user click EditHomeFacts button
-    And user chooses bedrooms = "2", bathrooms = "1", car spaces = "3", square = "2987", lot size = "3781"
+    And user chooses: bedrooms = "2", bathrooms = "1", car spaces = "3", square = "2987", lot size = "3781"
     And user click save button
-    And user close verification window
     Then changed parameters should be; bedrooms = "2", bathrooms = "1", car spaces = "3", square = "2987", lot size = "3781"
     But user click EditHomeFacts button
-    And user chooses bedrooms = "4", bathrooms = "3", car spaces = "1", square = "3030", lot size = "3485"
+    And user chooses: bedrooms = "4", bathrooms = "3", car spaces = "1", square = "3030", lot size = "3485"
     And user click save button
-    And user close verification window
 
   @SavedHomes
   Scenario: the user checks that the houses are saved correctly
