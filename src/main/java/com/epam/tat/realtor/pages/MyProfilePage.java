@@ -17,10 +17,6 @@ public class MyProfilePage extends BasePage {
     }
 
     private By strangeLayer = By.xpath("//div[@class='modal fade modal-hero modal-mobile-fullscreen js-modal-lazyload-assets modalOverlayBase_after-open']");
-    @FindBy(xpath = "//*[@id='header-login-menu']/li[1]")
-    private WebElement userIcon;
-    @FindBy(linkText = "Sign Out")
-    private WebElement logOutLink;
     @FindBy(xpath = "//*[text()='Edit Profile']")
     private WebElement editProfileButton;
     @FindBy(xpath = "//*[@id='editFirstName']")
@@ -188,17 +184,6 @@ public class MyProfilePage extends BasePage {
     }
 
     /**
-     * click log out link in drop-down list, which appears after hovering the cursor on the user's logo
-     *
-     * @return new HomePage
-     */
-    public HomePage clickLogOutLink() {
-        waitUntilElementIsClickable(logOutLink);
-        logOutLink.click();
-        return new HomePage(driver);
-    }
-
-    /**
      * click 'Edit Profile' button
      *
      * @return this page
@@ -209,13 +194,4 @@ public class MyProfilePage extends BasePage {
         return this;
     }
 
-    /**
-     * navigate to user icon
-     *
-     * @return this page
-     */
-    public MyProfilePage navigateToUserIcon() {
-        new Actions(driver).moveToElement(userIcon).perform();
-        return this;
-    }
 }

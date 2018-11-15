@@ -25,37 +25,24 @@ public class HomePage extends BasePage {
     private WebElement emailInput;
     @FindBy(id = "password")
     private WebElement passwordInput;
-//    @FindBy(xpath = "//span[contains(@class,'global-account-')]")
-    @FindBy(xpath = "//*[@class='dropdown-toggle disabled dropdown-toggle-desktop']")
+    @FindBy(className = "rdc-global-account-toggle_MGOJW")
     private WebElement userIcon;
-    @FindBy(linkText = "Sign Out")
-    private WebElement logOutLink;
-//    @FindBy(xpath = "//input[contains(@id,'downshift')]")
-    @FindBy(xpath = "//input[@id='searchBox']")
+    @FindBy(xpath = "//input[@id='downshift-2-input']")
     private WebElement searchInput;
-//    @FindBy(xpath = "//button[contains(@class,'search-btn')]")
     @FindBy(xpath = "//span[text()='Search']")
     private WebElement searchButton;
-    @FindBy(xpath = "//*[text()='Just Sold']")
-    private WebElement rentButton;
-    @FindBy(xpath = "//li[@id='img_far']/a")
-    private WebElement realtorButton;
     @FindBy (xpath = "//li/a[contains(text(),'HOME')]")
     private WebElement homeEstimate;
-//    @FindBy(xpath = "//a[@title='Find a realtor']")
-    @FindBy(xpath = "//a[@data-omtag='header-menu:realtors']")
+    @FindBy(xpath = "//*[@title='Find a realtor']")
     private WebElement findRealtorButton;
     @FindBy(xpath = "//button[@data-label='pc-save-cta']")
     private List<WebElement> heartIconsList;
     @FindBy(linkText = "Mortgage")
-//    @FindBy(xpath = "//*[text()='Mortgage']")
     private WebElement mortgageLink;
     @FindBy(linkText = "Mortgage Calculator")
-//    @FindBy(linkText = "Mortgage")
     private WebElement mortgageCalculatorLink;
-    @FindBy(linkText = "My Home")
+    @FindBy(xpath = "//*[@title='For Home owners']")
     private WebElement myHomeButton;
-
 
     /**
      * get heart icons list on the homes for sale cards
@@ -198,15 +185,5 @@ public class HomePage extends BasePage {
         waitInvisibilityOfElementLocated(strangeLayer);
         myHomeButton.click();
         return new MyHomePage(driver);
-    }
-
-
-    /**
-     * click HomeEstimate section
-     */
-    public HomePage clickHomeEstimate() {
-        waitUntilElementIsClickable(homeEstimate);
-        homeEstimate.click();
-        return this;
     }
 }

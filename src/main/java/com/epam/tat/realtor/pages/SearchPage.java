@@ -431,16 +431,16 @@ public class SearchPage extends BasePage {
         return this;
     }
 
-    /**
-     * click on user icon
-     *
-     * @return new SavedHomesPage
-     */
-    public SavedHomesPage clickUserIcon() {
-        waitUntilElementIsClickable(userIcon);
-        userIcon.click();
-        return new SavedHomesPage(driver);
-    }
+//    /**
+//     * click on user icon
+//     *
+//     * @return new SavedHomesPage
+//     */
+//    public SavedHomesPage clickUserIcon() {
+//        waitUntilElementIsClickable(userIcon);
+//        userIcon.click();
+//        return new SavedHomesPage(driver);
+//    }
 
     /**
      * click MinSquare dropdown menu in the Home Size section
@@ -579,20 +579,10 @@ public class SearchPage extends BasePage {
      *
      * @return this page
      */
-    public SearchPage selectSchoolRating(String raiting){
-        WebElement schoolRating = driver.findElement(By.xpath(XPATH_FOR_SCHOOL_RATING + "[" + raiting + "]"));
+    public SearchPage selectSchoolRating(String rating){
+        WebElement schoolRating = driver.findElement(By.xpath(XPATH_FOR_SCHOOL_RATING + "[" + rating + "]"));
         new Actions(driver).dragAndDrop(schoolRatingSlider, schoolRating).perform();
         waitForJQueryIsLoad();
-        return this;
-    }
-
-    /**
-     * wait until save button will be saved
-     *
-     * @return this page
-     */
-    public SearchPage waitUntilSaveButtonChangeState() {
-        waitUntilElementIsVisible(saveButtonText);
         return this;
     }
 
