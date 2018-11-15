@@ -2,7 +2,7 @@ package com.epam.tat.realtor.cucumber;
 
 import com.epam.tat.realtor.ConfigProperties;
 import com.epam.tat.realtor.bddsteps.ProfilePageStep;
-import com.epam.tat.realtor.bddsteps.RealtorPageFeatureStep;
+import com.epam.tat.realtor.bddsteps.RealtorPageStep;
 import com.epam.tat.realtor.bddsteps.SearchPageSteps;
 import com.epam.tat.realtor.drivers.DriverFactory;
 import cucumber.api.java.After;
@@ -15,12 +15,6 @@ import java.util.concurrent.TimeUnit;
 public class CucumberHook {
     protected WebDriver driver;
 
-    /**
-     * init specified WebDriver
-     * configure driver implicitlyWaite timeouts
-     * maximize browser window
-     * open the homepage URL in browser
-     */
     @Before
     public void initDriver() {
         driver = DriverFactory.CHROMEDRIVER.getDriver();
@@ -34,11 +28,11 @@ public class CucumberHook {
             driver.navigate().to(ConfigProperties.getTestProperty("url"));
         }
         driver.manage().timeouts()
-                .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")), TimeUnit.SECONDS);
+                .implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("implicitlyWaitTime")),
+                        TimeUnit.SECONDS);
         new ProfilePageStep();
-        new RealtorPageFeatureStep();
+        new RealtorPageStep();
         new SearchPageSteps();
-
     }
 
     @After
