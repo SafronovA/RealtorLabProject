@@ -579,21 +579,11 @@ public class SearchPage extends BasePage {
      *
      * @return this page
      */
-    public SearchPage selectSchoolRating(String raiting){
-        WebElement schoolRating = driver.findElement(By.xpath(XPATH_FOR_SCHOOL_RATING + "[" + raiting + "]"));
+    public SearchPage selectSchoolRating(String rating){
+        WebElement schoolRating = driver.findElement(By.xpath(XPATH_FOR_SCHOOL_RATING + "[" + rating + "]"));
         new Actions(driver).dragAndDrop(schoolRatingSlider, schoolRating).perform();
         waitForJQueryIsLoad();
         return this;
     }
-
-//    /**
-//     * wait until save button will be saved
-//     *
-//     * @return this page
-//     */
-//    public SearchPage waitUntilSaveButtonChangeState() {
-//        waitUntilElementIsVisible(saveButtonText);
-//        return this;
-//    }
 
 }

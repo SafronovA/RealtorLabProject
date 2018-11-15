@@ -25,22 +25,14 @@ public class HomePage extends BasePage {
     private WebElement emailInput;
     @FindBy(id = "password")
     private WebElement passwordInput;
-//    @FindBy(xpath = "//*[@class='dropdown-toggle disabled dropdown-toggle-desktop']")
     @FindBy(className = "rdc-global-account-toggle_MGOJW")
     private WebElement userIcon;
-//    @FindBy(linkText = "Sign Out")
-//    private WebElement logOutLink;
     @FindBy(xpath = "//input[@id='searchBox']")
     private WebElement searchInput;
     @FindBy(xpath = "//span[text()='Search']")
     private WebElement searchButton;
-//    @FindBy(xpath = "//*[text()='Just Sold']")
-//    private WebElement rentButton;
-//    @FindBy(xpath = "//li[@id='img_far']/a")
-//    private WebElement realtorButton;
     @FindBy (xpath = "//li/a[contains(text(),'HOME')]")
     private WebElement homeEstimate;
-//    @FindBy(xpath = "//a[@data-omtag='header-menu:realtors']")
     @FindBy(xpath = "//*[@title='Find a realtor']")
     private WebElement findRealtorButton;
     @FindBy(xpath = "//button[@data-label='pc-save-cta']")
@@ -49,7 +41,6 @@ public class HomePage extends BasePage {
     private WebElement mortgageLink;
     @FindBy(linkText = "Mortgage Calculator")
     private WebElement mortgageCalculatorLink;
-//    @FindBy(linkText = "My Home")
     @FindBy(xpath = "//*[@title='For Home owners']")
     private WebElement myHomeButton;
 
@@ -195,14 +186,4 @@ public class HomePage extends BasePage {
         myHomeButton.click();
         return new MyHomePage(driver);
     }
-
-
-//    /**
-//     * click HomeEstimate section
-//     */
-//    public HomePage clickHomeEstimate() {
-//        waitUntilElementIsClickable(homeEstimate);
-//        homeEstimate.click();
-//        return this;
-//    }
 }

@@ -97,15 +97,6 @@ public class BasePage {
     }
 
     /**
-     * wait until element is invisible
-     *
-     * @param webElement element to be invisible
-     */
-    public void waitUntilElementIsInvisible(WebElement webElement) {
-        driverWait.until(ExpectedConditions.invisibilityOf(webElement));
-    }
-
-    /**
      * wait until element become invisible
      *
      * @param location WebElement with such location should become invisible

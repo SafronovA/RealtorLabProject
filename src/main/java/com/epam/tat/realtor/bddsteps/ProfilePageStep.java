@@ -144,13 +144,11 @@ public class ProfilePageStep {
         String houseCarSpaces = String.valueOf(house.getCarSpaces());
         String houseSquare = String.valueOf(house.getSquare());
         String houseLotSize = String.valueOf(house.getLotSize());
-
         boolean bedroomsResult = houseBedrooms.equals(bedrooms);
         boolean bathroomsResult = houseBathrooms.equals(bathrooms);
         boolean carSpacesResult = houseCarSpaces.equals(carSpaces);
         boolean squareResult = houseSquare.equals(square);
         boolean lotSizeResult = houseLotSize.equals(lotSize);
-
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(bedroomsResult, "Bedrooms value has not changed to the required");
         softAssert.assertTrue(bathroomsResult, "Bathrooms value has not changed to the required");
