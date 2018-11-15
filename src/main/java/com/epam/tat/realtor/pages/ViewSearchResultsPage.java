@@ -111,7 +111,7 @@ public class ViewSearchResultsPage extends BasePage {
     }
 
     public SortOptionsPage clickSortByButton() {
-        waitUntilElementToBeClickable(sortByButton);
+        waitUntilElementIsVisible(sortByButton);
         sortByButton.click();
         return new SortOptionsPage(driver);
     }

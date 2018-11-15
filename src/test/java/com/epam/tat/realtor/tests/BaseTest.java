@@ -20,10 +20,10 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Integer.valueOf(ConfigProperties.getTestProperty("driverWaitTime")), TimeUnit.SECONDS);
     }
 
-//    @AfterClass
-//    void closeResources() {
-//        if (driver != null) {
-//            driver.resetApp();
-//        }
-//    }
+    @AfterClass
+    void closeResources() {
+        if (driver != null) {
+            driver.resetApp();
+        }
+    }
 }

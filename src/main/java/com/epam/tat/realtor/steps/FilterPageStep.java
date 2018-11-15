@@ -37,4 +37,10 @@ public class FilterPageStep extends BasePageStep{
                 .chooseBath();
         return this;
     }
+
+    public ViewSearchResultsPageStep clickViewResultsButtonAfterSetSort(){
+        filterPage.clickViewResultsButton();
+        return new ViewSearchResultsPageStep(driver);
+    }
+
 }

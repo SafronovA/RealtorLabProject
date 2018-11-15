@@ -17,6 +17,7 @@ public class SortOptionsPage extends BasePage {
     }
 
     public ViewSearchResultsPage selectLowToHighSortOption(){
+        waitUntilElementIsVisible(lowToHighSortOption);
         lowToHighSortOption.click();
         return new ViewSearchResultsPage(driver);
     }

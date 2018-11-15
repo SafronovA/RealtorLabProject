@@ -8,21 +8,20 @@ public class SortByPriceTest extends BaseTest {
 
     private static final String CITY = "San Francisco, CA";
     private static final String MIN_PRICE = "3500000";
-    private static final String MAX_PRICE = "3550000";
+    private static final String MAX_PRICE = "3600000";
 
     @Test
-    public void sortByPrice(){
+    public void sortByPrice() {
         ViewSearchResultsPageStep viewSearchResultsPageStep =
-                homePageStep.clickMenuButton()
+                mainPageStep.clickMenuButton()
                         .clickStartNewSearch()
-                        .enterCity(CITY)
-                        .clickViewListButton()
+                        .enterSearchCity(CITY)
+                        .openViewListPage()
                         .clickSortByButton()
                         .selectLowToHighSortOption()
                         .clickFilterButton()
-                        .enterMinPrice(MIN_PRICE)
-                        .enterMaxPrice(MAX_PRICE)
-                        .clickViewResultsButton();
+                        .enterPriceRange(MIN_PRICE, MAX_PRICE)
+                        .clickViewResultsButtonAfterSetSort();
         Assert.assertTrue(viewSearchResultsPageStep.doesHomeDisplayedSortedByPrice(),
                 "Homes were not displayed in sorted by price order");
     }
