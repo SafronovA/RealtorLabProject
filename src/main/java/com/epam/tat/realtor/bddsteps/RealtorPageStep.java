@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class RealtorPageFeatureStep {
+public class RealtorPageStep {
     private WebDriver driver = DriverFactory.CHROMEDRIVER.getDriver();
     private HomePage homePage = new HomePage(driver);
     private FindRealtorPage findRealtorPage = new FindRealtorPage(driver);

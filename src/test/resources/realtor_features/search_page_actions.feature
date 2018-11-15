@@ -28,7 +28,8 @@ Feature: Perform different actions connected with search requests on SearchPage
       | Berkeley, CA | $250k           | $1.4M           | 2+         | 2+          | 1,750 sqft     | 2,000 sqft     |
 
   @FoundHouses
-  Scenario: user create search request, check if number of found elements match result information
+  Scenario: user create search request,
+  check if number of found elements match result information
     Given user perform search by "Berkeley, CA"
     Then number of found houses match result information
 
@@ -58,7 +59,8 @@ Feature: Perform different actions connected with search requests on SearchPage
       | Anchorage, AK | 9      |
 
   @RestaurantsFilter
-  Scenario: user create search request, user click on the "View map" button,
+  Scenario: user create search request,
+  user click on the "View map" button,
   user click on "Life Style" button, user select restaurants,
   all marks on the map are restaurants
     Given user perform search by "San Francisco, CA"
