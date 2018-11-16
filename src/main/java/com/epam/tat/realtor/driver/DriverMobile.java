@@ -24,15 +24,7 @@ public class DriverMobile {
     public static AppiumDriver getDriver() {
         if (driver == null) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("platform_name", ConfigProperties.getTestProperty("platform_name"));
-            capabilities.setCapability("platform_version", ConfigProperties.getTestProperty("platform_version"));
-            capabilities.setCapability("device_name", ConfigProperties.getTestProperty("device_name"));
-            capabilities.setCapability("appPackage", ConfigProperties.getTestProperty("appPackage"));
-            capabilities.setCapability("appActivity", ConfigProperties.getTestProperty("appActivity"));
-            capabilities.setCapability("udid", ConfigProperties.getTestProperty("udid"));
-            capabilities.setCapability("unicodeKeyboard", ConfigProperties.getTestProperty("unicodeKeyboard"));
-            capabilities.setCapability("resetKeyboard", ConfigProperties.getTestProperty("resetKeyboard"));
-
+            ConfigProperties.setAndroidDeviceCapabilities(capabilities, "farm");
             try {
                 driver = new AndroidDriver(
                         new URL(format("http://%s:%s@%s/wd/hub",
@@ -47,10 +39,4 @@ public class DriverMobile {
         return driver;
     }
 
-    public static void quitDriver() {
-        if (driver != null) {
-            driver.quit();
-        }
-        driver = null;
-    }
 }
