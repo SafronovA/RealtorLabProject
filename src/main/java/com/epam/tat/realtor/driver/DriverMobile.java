@@ -1,4 +1,4 @@
-package com.epam.tat.realtor.drivers;
+package com.epam.tat.realtor.driver;
 
 import com.epam.tat.realtor.util.ConfigProperties;
 import io.appium.java_client.AppiumDriver;
@@ -7,10 +7,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
+
+import static java.lang.String.format;
 
 public class DriverMobile {
-    private DriverMobile(){}
+    private DriverMobile() {
+    }
 
     private static AppiumDriver driver;
 
@@ -22,14 +24,19 @@ public class DriverMobile {
     public static AppiumDriver getDriver() {
         if (driver == null) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            ConfigProperties.setAndroidDeviceCapabilities(capabilities, "Nexus5");
+            ConfigProperties.setAndroidDeviceCapabilities(capabilities, "farm");
             try {
-                driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+                driver = new AndroidDriver(
+                        new URL(format("http://%s:%s@%s/wd/hub",
+                                ConfigProperties.getTestProperty("project_name"),
+                                ConfigProperties.getTestProperty("api_key"),
+                                ConfigProperties.getTestProperty("appium_hub"))),
+                        capabilities);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
         return driver;
     }
+
 }

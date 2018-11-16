@@ -6,7 +6,6 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
-import java.time.Duration;
 import java.util.List;
 
 public class SavedSearchPage extends BasePage {
@@ -18,7 +17,7 @@ public class SavedSearchPage extends BasePage {
 
     public SavedSearchPage(AppiumDriver driver) {
         super(driver);
-        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(20)), this);
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
     public List<AndroidElement> getSavedSearchList() {

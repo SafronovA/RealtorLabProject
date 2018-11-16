@@ -17,7 +17,7 @@ public class ConfigProperties {
 
     static {
         try {
-            fileInputStream = new FileInputStream("src/main/resources/config.properties");
+            fileInputStream = new FileInputStream("src/main/resources/farm.properties");
             properties = new Properties();
             properties.load(fileInputStream);
         } catch (IOException e) {
@@ -49,3 +49,4 @@ public class ConfigProperties {
     }
 
 }
+

@@ -1,4 +1,4 @@
-package mobiletests;
+package com.epam.tat.realtor.tests;
 
 import com.epam.tat.realtor.steps.SavedSearchPageStep;
 import org.testng.Assert;
@@ -12,9 +12,9 @@ public class SavedSearchTest extends BaseTest {
 
     @Test
     public void savedSearch() {
-        savedSearchPageStep = homePageStep.clickMenuButton()
+        savedSearchPageStep = mainPageStep.clickMenuButton()
                 .clickStartNewSearch()
-                .enterCity(CITY)
+                .enterSearchCity(CITY)
                 .clickSaveSearchButton()
                 .clickMenuButton()
                 .clickSavedSearchButton();
