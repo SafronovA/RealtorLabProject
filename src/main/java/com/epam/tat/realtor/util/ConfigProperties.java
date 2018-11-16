@@ -1,4 +1,3 @@
-
 package com.epam.tat.realtor.util;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
