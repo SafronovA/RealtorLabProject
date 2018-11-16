@@ -28,9 +28,9 @@ public class DriverMobile {
             try {
                 driver = new AndroidDriver(
                         new URL(format("http://%s:%s@%s/wd/hub",
-                                ConfigProperties.getTestProperty("project_name"),
-                                ConfigProperties.getTestProperty("api_key"),
-                                ConfigProperties.getTestProperty("appium_hub"))),
+                                capabilities.getCapability("project_name"),
+                                capabilities.getCapability("api_key"),
+                                capabilities.getCapability("appium_hub"))),
                         capabilities);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
