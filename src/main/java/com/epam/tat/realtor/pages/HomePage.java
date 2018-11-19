@@ -27,7 +27,7 @@ public class HomePage extends BasePage {
     private WebElement passwordInput;
     @FindBy(className = "rdc-global-account-toggle_MGOJW")
     private WebElement userIcon;
-    @FindBy(xpath = "//input[@id='downshift-2-input']")
+    @FindBy(xpath = "//input[@id='searchBox']")
     private WebElement searchInput;
     @FindBy(xpath = "//span[text()='Search']")
     private WebElement searchButton;
