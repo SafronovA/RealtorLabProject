@@ -4,8 +4,7 @@ Feature: perform different actions on my profile page
     Given user login
 
   @EditProfileName
-  Scenario: user edit first and last name,
-  profile name should become equal "first name + last name"
+  Scenario: profile name should become equal "first name + last name"
     When user moved to my profile page
     And user click EditProfile button
     And user changes first name to "NEW_FIRST_NAME" and last name to "NEW_LAST_NAME"
@@ -17,8 +16,7 @@ Feature: perform different actions on my profile page
     And user click save changes button
 
   @EditProfileLocation
-  Scenario: user changes the address, city, state, and country field values,
-  values of modified fields on the profile page should accept the corresponding values.
+  Scenario: values of modified fields on the profile page should accept the corresponding values.
     When user moved to my profile page
     And user click EditProfile button
     And user chooses: country = "United States", address = "streetNew", city = "cityNew", state = "Hawaii"
@@ -29,8 +27,7 @@ Feature: perform different actions on my profile page
     And user chooses: state = "Arizona", address = "streetOld", city = "cityOld", country = "Togo"
 
   @EditMyHomeInfo
-  Scenario: user changes the values of the number of bedrooms, bathrooms, car spaces, square and lot size,
-  values of modified fields on the my home page should take the appropriate values
+  Scenario: values of modified fields on the my home page should take the appropriate values
     When user move to my home page
     And user click EditHomeFacts button
     And user chooses bedrooms = "2", bathrooms = "1", car spaces = "3", square = "2987", lot size = "3781"
