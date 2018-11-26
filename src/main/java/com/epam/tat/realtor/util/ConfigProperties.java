@@ -31,10 +31,6 @@ public class ConfigProperties {
         }
     }
 
-    public static String getTestProperty(String key) {
-        return properties.getProperty(key);
-    }
-
     public static void setAndroidDeviceCapabilities(DesiredCapabilities capabilities, String filename) {
         String fileName = "src/main/resources/" + filename + ".properties";
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
@@ -45,6 +41,10 @@ public class ConfigProperties {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static String getTestProperty(String key) {
+        return properties.getProperty(key);
     }
 
 }
